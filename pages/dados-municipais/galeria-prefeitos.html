@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galeria de Prefeitos – Campina Grande do Sul – PR</title>
+  <meta name="description" content="Conheça os prefeitos que governaram Campina Grande do Sul desde sua emancipação política em 1951.">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS global do site -->
+  <link rel="stylesheet" href="../../assets/css/escola.css">
+  <!-- CSS exclusivo da seção Conheça Campina -->
+  <link rel="stylesheet" href="../../assets/css/dados-municipais.css">
+  <link rel="stylesheet" href="../../assets/css/index.css">
+</head>
+
+<body>
+
+  <!-- ══ SKIP NAVIGATION ══ -->
+  <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BARRA SUPERIOR
+  ════════════════════════════════════════════════════════════════ -->
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BREADCRUMB
+  ════════════════════════════════════════════════════════════════ -->
+  <div class="cc-breadcrumb">
+    <div class="container">
+      <a href="../index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
+      <span class="cc-bc-sep" aria-hidden="true">›</span>
+      <a href="index.html">Conheça Campina</a>
+      <span class="cc-bc-sep" aria-hidden="true">›</span>
+      <span class="cc-bc-atual">Galeria de Prefeitos</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-conteudo" tabindex="-1">
+    <section id="cc-pagina">
+      <div class="container">
+        <div class="cc-grid">
+
+          <!-- ── MENU LATERAL ──────────────────────────────────────── -->
+          <aside class="cc-sidebar" aria-label="Menu da seção Conheça Campina">
+
+            <p class="cc-menu-titulo" aria-hidden="true">Conheça Campina</p>
+
+            <button id="cc-menu-toggle" class="cc-menu-toggle" aria-expanded="false" aria-controls="cc-menu-lista">
+              <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Conheça Campina</span>
+              <i class="fas fa-chevron-down cc-toggle-icon" aria-hidden="true"></i>
+            </button>
+
+            <ul id="cc-menu-lista" class="cc-menu-lista" role="list">
+              <li><a class="cc-menu-link" href="dados-municipais.html">Dados Municipais</a></li>
+              <li><a class="cc-menu-link" href="historia.html">Nossa História</a></li>
+              <li><a class="cc-menu-link ativo" href="galeria-prefeitos.html" aria-current="page">Galeria de Prefeitos</a></li>
+              <li><a class="cc-menu-link" href="bandeira-brasao.html">Bandeira e Brasão</a></li>
+              <li><a class="cc-menu-link" href="hino.html">Hino</a></li>
+              <li><a class="cc-menu-link" href="feriados.html">Feriados Municipais</a></li>
+              <li><a class="cc-menu-link" href="pontos-turisticos.html">Pontos Turísticos</a></li>
+              <li><a class="cc-menu-link" href="turismo.html">Portal do Turismo</a></li>
+            </ul>
+
+          </aside>
+
+          <!-- ── ÁREA DE CONTEÚDO ──────────────────────────────────── -->
+          <!--
+            Conteúdo específico desta página: Galeria de Prefeitos.
+            Ao clicar em um card, o JS (conheca-campina.js) exibe a
+            biografia do prefeito logo abaixo da linha do card clicado.
+          -->
+          <div class="cc-conteudo">
+
+            <div class="cc-sec-header">
+              <h1>Galeria de Prefeitos</h1>
+              <p>Conheça os prefeitos que governaram Campina Grande do Sul desde sua emancipação política em 1951.</p>
+            </div>
+
+            <!-- ────────────────────────────────────────────────────────
+               GRID DE PREFEITOS
+               Cada card possui:
+                 - data-id: chave para buscar a biografia no JS
+                 - role="button" + tabindex="0": acessibilidade via teclado
+               A classe "atual" destaca o prefeito em exercício (dourado no repouso).
+               Ao clicar, o JS adiciona a classe "ativo" que aplica VERDE ESCURO.
+            ──────────────────────────────────────────────────────────── -->
+            <div id="cc-prefeitos-grid" class="cc-prefeitos-grid">
+
+              <!-- 01 -->
+              <div class="cc-prefeito-card" data-id="1" role="button" tabindex="0"
+                   aria-label="Ver biografia de Dacyr Siqueira Trevisan">
+                <span class="cc-pref-seq" aria-hidden="true">01</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/wo5qrffkkt2.JPG"
+                       alt="Foto de Dacyr Siqueira Trevisan" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Dacyr Siqueira Trevisan</p>
+                <p class="cc-pref-periodo">1953 – 1956<br>1965 – 1968</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 02 -->
+              <div class="cc-prefeito-card" data-id="2" role="button" tabindex="0"
+                   aria-label="Ver biografia de Ary Alves Bandeira">
+                <span class="cc-pref-seq" aria-hidden="true">02</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/x24xcu2umar.JPG"
+                       alt="Foto de Ary Alves Bandeira" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Ary Alves Bandeira</p>
+                <p class="cc-pref-periodo">1956 – 1960<br>1969 – 1973</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 03 -->
+              <div class="cc-prefeito-card" data-id="3" role="button" tabindex="0"
+                   aria-label="Ver biografia de Mário Strapasson">
+                <span class="cc-pref-seq" aria-hidden="true">03</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/thcy50of30e.JPG"
+                       alt="Foto de Mário Strapasson" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Mário Strapasson</p>
+                <p class="cc-pref-periodo">1961 – 1965</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 04 -->
+              <div class="cc-prefeito-card" data-id="4" role="button" tabindex="0"
+                   aria-label="Ver biografia de João Maria de Barros">
+                <span class="cc-pref-seq" aria-hidden="true">04</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/14i24ttbtli.jpg"
+                       alt="Foto de João Maria de Barros" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">João Maria de Barros</p>
+                <p class="cc-pref-periodo">1973 – 1977</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 05 -->
+              <div class="cc-prefeito-card" data-id="5" role="button" tabindex="0"
+                   aria-label="Ver biografia de Elerian do Rocio Zanetti">
+                <span class="cc-pref-seq" aria-hidden="true">05</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/3udrz3elcpl.JPG"
+                       alt="Foto de Elerian do Rocio Zanetti" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Elerian do Rocio Zanetti</p>
+                <p class="cc-pref-periodo">1977–1982 · 1989–1992<br>1997–2000 · 2001–2004</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 06 -->
+              <div class="cc-prefeito-card" data-id="6" role="button" tabindex="0"
+                   aria-label="Ver biografia de Nivaldo Bernardi">
+                <span class="cc-pref-seq" aria-hidden="true">06</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/urg0t0rsfln.JPG"
+                       alt="Foto de Nivaldo Bernardi" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Nivaldo Bernardi</p>
+                <p class="cc-pref-periodo">1983 – 1988</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 07 -->
+              <div class="cc-prefeito-card" data-id="7" role="button" tabindex="0"
+                   aria-label="Ver biografia de Marco Antonio Caron">
+                <span class="cc-pref-seq" aria-hidden="true">07</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/ekz13uxwt4d.JPG"
+                       alt="Foto de Marco Antonio Caron" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Marco Antonio Caron</p>
+                <p class="cc-pref-periodo">1993 – 1996</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 08 -->
+              <div class="cc-prefeito-card" data-id="8" role="button" tabindex="0"
+                   aria-label="Ver biografia de Nelise Cristiane Dalprá">
+                <span class="cc-pref-seq" aria-hidden="true">08</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/go1fhasroqf.jpg"
+                       alt="Foto de Nelise Cristiane Dalprá" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Nelise Cristiane Dalprá</p>
+                <p class="cc-pref-periodo">2004 – 2008</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 09 -->
+              <div class="cc-prefeito-card" data-id="9" role="button" tabindex="0"
+                   aria-label="Ver biografia de Luiz Carlos Assunção">
+                <span class="cc-pref-seq" aria-hidden="true">09</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/gcn24v3cive.jpg"
+                       alt="Foto de Luiz Carlos Assunção" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Luiz Carlos Assunção</p>
+                <p class="cc-pref-periodo">2008 – 2012<br>2013 – 2016</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 10 -->
+              <div class="cc-prefeito-card" data-id="10" role="button" tabindex="0"
+                   aria-label="Ver biografia de Bihl Zanetti">
+                <span class="cc-pref-seq" aria-hidden="true">10</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/zfzdmho3kdd.jpg"
+                       alt="Foto de Bihl Zanetti" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Bihl Zanetti</p>
+                <p class="cc-pref-periodo">2017 – 2024</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- 11 -->
+              <div class="cc-prefeito-card" data-id="11" role="button" tabindex="0"
+                   aria-label="Ver biografia de Belenice Koffke Buff Rotini">
+                <span class="cc-pref-seq" aria-hidden="true">11</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/1pfqvafwuqz.png"
+                       alt="Foto de Belenice Koffke Buff Rotini" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Belenice Koffke Buff Rotini</p>
+                <p class="cc-pref-periodo">Out. – Dez. 2024</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+              <!-- Atual -->
+              <div class="cc-prefeito-card atual" data-id="atual" role="button" tabindex="0"
+                   aria-label="Ver biografia de Luiz Carlos Assunção, prefeito atual">
+                <span class="cc-pref-seq" aria-hidden="true">Atual</span>
+                <div class="cc-pref-foto">
+                  <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2026/2553/gcn24v3cive.jpg"
+                       alt="Foto de Luiz Carlos Assunção" loading="lazy">
+                </div>
+                <p class="cc-pref-nome">Luiz Carlos Assunção</p>
+                <p class="cc-pref-periodo">2025 – 2028</p>
+                <p class="cc-pref-expand" aria-hidden="true">
+                  <span>Ver biografia</span>
+                  <i class="fas fa-chevron-down cc-pref-expand-icon"></i>
+                </p>
+              </div>
+
+            </div>
+            <!-- fim #cc-prefeitos-grid -->
+
+          </div>
+          <!-- fim .cc-conteudo -->
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ
+  ════════════════════════════════════════════════════════════════ -->
+  <meu-footer></meu-footer>
+
+  <!-- ══ VLIBRAS ══ -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <!-- JS da seção Conheça Campina (menu mobile + biografia dos prefeitos) -->
+  <script src="../../js/dados-municipais.js"></script>
+  <script src="components/acessibilidade-component.js"></script>
+    <script src="../../components/searh-component.js"></script>
+  <script src="../../components/header-component.js"></script>
+  <script src="../../components/footer-component.js"></script>
+
+</body>
+</html>

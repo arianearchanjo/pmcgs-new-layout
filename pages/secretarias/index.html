@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secretaria Municipal da Tecnologia, Inovação e Transformação Digital – Prefeitura de Campina Grande do Sul – PR</title>
+  <meta name="description" content="A Secretaria Municipal da Tecnologia, Inovação e Transformação Digital é responsável por planejar e executar as políticas de TI, modernização e transformação digital do município de Campina Grande do Sul.">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos da secretaria -->
+  <link rel="stylesheet" href="../../assets/css/secretaria.css">
+</head>
+
+<body>
+
+  <!-- ══ SKIP NAVIGATION — WCAG 2.4.1 ══════════════════════════════
+       Permite que usuários de teclado pulem direto para o conteúdo.
+  ════════════════════════════════════════════════════════════════ -->
+  <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
+
+
+  <!-- ══ BARRA SUPERIOR ═════════════════════════════════════════════
+       Contém: controles de acessibilidade, badges de acesso rápido,
+       horário de atendimento, telefone e redes sociais.
+  ════════════════════════════════════════════════════════════════ -->
+  <div id="pi-barra-topo" role="banner">
+    <div class="container">
+      <div class="pi-barra-inner">
+
+        <!-- Controles de acessibilidade eMAG -->
+        <div class="pi-barra-acesso" aria-label="Controles de acessibilidade">
+          <span aria-hidden="true">Acessibilidade</span>
+
+          <a href="#" id="pi-btn-fonte-aumentar" role="button"
+             aria-label="Aumentar tamanho da fonte">A+</a>
+
+          <a href="#" id="pi-btn-fonte-diminuir" role="button"
+             aria-label="Diminuir tamanho da fonte">A-</a>
+
+          <a href="#" id="pi-btn-fonte-resetar" role="button"
+             aria-label="Restaurar tamanho da fonte padrão">A</a>
+
+          <a href="#" id="pi-btn-contraste"
+             class="pi-barra-acesso-contraste"
+             role="button"
+             aria-label="Ativar alto contraste"
+             aria-pressed="false"
+             title="Alto contraste">
+            <i class="fas fa-adjust" aria-hidden="true"></i>
+          </a>
+
+          <a href="../acessibilidade/"
+             class="pi-barra-acesso-icone"
+             title="Página de Acessibilidade"
+             aria-label="Ir para página de acessibilidade">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="pi-barra-sep" aria-hidden="true"></div>
+
+        <!-- Badges de acesso rápido -->
+        <nav class="pi-barra-badges" aria-label="Acesso rápido">
+          <a href="https://campinagrandedosul.pr.gov.br/mapa-do-site"
+             class="pi-badge-item">
+            <i class="fas fa-sitemap" aria-hidden="true"></i>
+            <span>MAPA DO SITE</span>
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao"
+             class="pi-badge-item">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+            <span>ACESSO À<br>INFORMAÇÃO</span>
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/ouvidoria"
+             class="pi-badge-item">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <span>OUVIDORIA</span>
+          </a>
+        </nav>
+
+        <div class="pi-barra-sep" aria-hidden="true"></div>
+
+        <!-- Horário de atendimento e telefone -->
+        <div class="pi-barra-info-bloco" aria-label="Informações de atendimento">
+
+          <div class="pi-barra-horario">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <div class="pi-barra-horario-texto">
+              <span class="pi-barra-horario-dias">Seg – Sex</span>
+              <span class="pi-barra-horario-horas">
+                <span class="pi-barra-horario-turno">08h30–12h</span>
+                <span class="pi-barra-horario-sep" aria-hidden="true">·</span>
+                <span class="pi-barra-horario-turno">13h30–17h30</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="pi-barra-sep" aria-hidden="true"></div>
+
+          <a href="tel:+554131627000"
+             class="pi-barra-telefone"
+             aria-label="Ligar para a Prefeitura: (41) 3162-7000">
+            <span>(41) 3162-7000</span>
+            <small>PREFEITURA</small>
+          </a>
+
+        </div>
+
+        <div class="pi-barra-sep" aria-hidden="true"></div>
+
+        <!-- Redes sociais -->
+        <div class="pi-barra-social" aria-label="Redes sociais da Prefeitura">
+          <a href="https://www.facebook.com/PrefDeCampina"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/prefdecampina"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@prefdecampina"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span>
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/whatsapp"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="sr-only">WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ══ fim barra superior ══ -->
+
+
+  <!-- ══ HEADER — logomarca e busca ═════════════════════════════════
+       Exibe o logo da prefeitura e campo de busca do portal.
+  ════════════════════════════════════════════════════════════════ -->
+  <header id="pi-header">
+    <div class="container">
+      <div class="pi-header-inner">
+
+        <!-- Logo -->
+        <a href="../../index.html"
+           class="pi-logo-wrapper"
+           aria-label="Página inicial da Prefeitura de Campina Grande do Sul">
+          <img class="pi-logo-img"
+               src="../../assets/img/secretarias/logo.png"
+               alt="Prefeitura de Campina Grande do Sul – Paraná">
+        </a>
+
+        <!-- Busca -->
+        <div class="pi-header-search" role="search">
+          <div class="pi-search-group">
+            <label for="pi-busca" class="sr-only">Pesquisar no portal</label>
+            <input type="search"
+                   id="pi-busca"
+                   class="pi-search-input"
+                   placeholder="Pesquisar no portal…"
+                   autocomplete="off"
+                   aria-label="Campo de busca do portal">
+            <button type="button"
+                    class="pi-search-btn"
+                    aria-label="Executar pesquisa">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <!-- ══ fim header ══ -->
+
+
+  <!-- ══ NAVBAR — menu principal ════════════════════════════════════
+       Menu de navegação principal com dropdowns e mega-menus.
+  ════════════════════════════════════════════════════════════════ -->
+  <nav id="pi-navbar" class="navbar navbar-expand-lg" aria-label="Menu principal">
+    <div class="container">
+
+      <!-- Botão hambúrguer (mobile) -->
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#pi-nav-list"
+              aria-controls="pi-nav-list"
+              aria-expanded="false"
+              aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Itens do menu -->
+      <div class="collapse navbar-collapse" id="pi-nav-list">
+        <ul class="navbar-nav ml-auto">
+
+          <!-- Notícias -->
+          <li class="nav-item">
+            <a class="nav-link"
+               href="https://campinagrandedosul.pr.gov.br/noticias">NOTÍCIAS</a>
+          </li>
+
+          <!-- Serviços (dropdown) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">SERVIÇOS</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-group-title">Tributos</div>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a>
+              <div class="dropdown-group-title">Protocolo</div>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic">Acesso à Informação</a>
+              <div class="dropdown-group-title">Diversos</div>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/consulta-enderecos">Endereços e Telefones</a>
+              <a class="dropdown-item pi-dropdown-destaque"
+                 href="https://campinagrandedosul.pr.gov.br/servicos">→ Mais Serviços</a>
+            </div>
+          </li>
+
+          <!-- Prefeitura (mega-menu) — item ativo nesta página -->
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">PREFEITURA</a>
+            <div class="dropdown-menu mega-menu">
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Secretarias</div>
+                <a class="dropdown-item" href="#">Administração</a>
+                <a class="dropdown-item" href="#">Cultura</a>
+                <a class="dropdown-item" href="#">Desenvolvimento Econômico</a>
+                <a class="dropdown-item" href="#">Desenvolvimento Social</a>
+                <a class="dropdown-item" href="#">Educação</a>
+                <a class="dropdown-item" href="#">Infraestrutura</a>
+                <a class="dropdown-item" href="#">Saúde</a>
+                <a class="dropdown-item active" href="#">Tecnologia, Inovação e Transf. Digital</a>
+                <a class="dropdown-item" href="#">Urbanismo</a>
+              </div>
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Outros Órgãos</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria Geral</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/ouvidoria-geral">Ouvidoria Geral</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral</a>
+                <div class="dropdown-group-title" style="margin-top:14px;">Gestão</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/prefeito">Prefeito</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/vice-prefeito">Vice-Prefeito</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/secretarios-municipais">Secretários Municipais</a>
+              </div>
+
+            </div>
+          </li>
+
+          <!-- Transparência (mega-menu) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">TRANSPARÊNCIA</a>
+            <div class="dropdown-menu mega-menu">
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Pessoal</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/servidores">Servidores</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/concursos">Concursos</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/diarias">Diárias</a>
+                <div class="dropdown-group-title" style="margin-top:14px;">Financeiro</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/contratos">Contratos</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/"
+                   target="_blank"
+                   rel="noopener noreferrer">PPA / LDO / LOA</a>
+              </div>
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Legislação e Informação</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a>
+                <a class="dropdown-item"
+                   href="https://radardatransparencia.atricon.org.br/"
+                   target="_blank"
+                   rel="noopener noreferrer">Radar da Transparência</a>
+                <a class="dropdown-item pi-dropdown-destaque"
+                   href="https://campinagrandedosul.pr.gov.br/transparencia">→ Portal da Transparência</a>
+              </div>
+
+            </div>
+          </li>
+
+          <!-- Conheça Campina -->
+          <li class="nav-item">
+            <a class="nav-link"
+               href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">CONHEÇA CAMPINA</a>
+          </li>
+
+          <!-- Ouvidoria -->
+          <li class="nav-item">
+            <a class="nav-link"
+               href="https://campinagrandedosul.pr.gov.br/ouvidoria">OUVIDORIA</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- ══ fim navbar ══ -->
+
+
+  <!-- ══ HERO — título da secretaria e breadcrumb ════════════════════
+       Faixa verde escuro com título da secretaria em caixa alta
+       e trilha de navegação (breadcrumb).
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da secretaria">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação (breadcrumb) -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li>
+              <a href="https://campinagrandedosul.pr.gov.br/secretarias">Secretarias</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">
+              Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">
+          Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+        </h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa de fundo -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../assets/img/secretarias/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- ══ fim hero ══ -->
+
+
+  <!-- ══ CONTEÚDO PRINCIPAL ══════════════════════════════════════════
+       Layout em duas colunas: artigo com abas + sidebar lateral.
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Conteúdo principal">
+    <div class="container">
+      <div id="pi-conteudo" class="pi-layout" tabindex="-1">
+
+
+        <!-- ── COLUNA PRINCIPAL ──────────────────────────────────── -->
+        <article>
+
+          <!-- Sistema de abas de navegação -->
+          <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da secretaria">
+            <li role="presentation">
+              <button class="sec-tab-btn ativo"
+                      role="tab"
+                      id="tab-secretaria"
+                      aria-controls="painel-secretaria"
+                      aria-selected="true">Secretaria</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                      role="tab"
+                      id="tab-departamentos"
+                      aria-controls="painel-departamentos"
+                      aria-selected="false">Departamentos</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                      role="tab"
+                      id="tab-acesso"
+                      aria-controls="painel-acesso"
+                      aria-selected="false">Solicitação de Acesso</button>
+            </li>
+            <li role="presentation">
+              <button class="sec-tab-btn"
+                      role="tab"
+                      id="tab-links"
+                      aria-controls="painel-links"
+                      aria-selected="false">Links Úteis</button>
+            </li>
+          </ul>
+
+
+          <!-- ════════════════════════════════════════════════════
+               ABA 1 — SECRETARIA
+               Apresentação institucional, contato e secretário.
+          ════════════════════════════════════════════════════ -->
+          <div class="sec-tab-painel ativo"
+               id="painel-secretaria"
+               role="tabpanel"
+               aria-labelledby="tab-secretaria">
+
+            <!-- Título da secretaria -->
+            <h2 class="sec-titulo">
+              Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+            </h2>
+
+            <!-- Descrição institucional -->
+            <div class="sec-texto">
+              <p>
+                A Secretaria Municipal da Tecnologia, Inovação e Transformação Digital tem por competência básica
+                planejar, implementar e gerenciar a infraestrutura tecnológica municipal, desenvolver iniciativas de
+                modernização tecnológica e transformação digital no Município, além de propor políticas públicas de
+                incentivo ao empreendedorismo tecnológico e cidades inteligentes.
+              </p>
+              <p>
+                Entre suas principais atribuições estão: a gestão da infraestrutura de TI da administração pública
+                municipal, o desenvolvimento e manutenção dos sistemas de informação institucionais e a garantia da
+                segurança da informação e conformidade com a Lei Geral de Proteção de Dados (LGPD), atuando em
+                conformidade com as diretrizes do Programa de Governo Digital do Governo Federal.
+              </p>
+              <p>
+                A população de Campina Grande do Sul pode contar com a Secretaria de Tecnologia para acesso a
+                serviços digitais, wi-fi público, atendimento por canais eletrônicos e solicitações relacionadas
+                ao uso de sistemas e equipamentos da Prefeitura. Atualmente, a pasta é liderada pelo Secretário
+                Alexandre Capile, que tem como prioridade a ampliação dos serviços digitais ao cidadão e a
+                modernização dos processos administrativos do município.
+              </p>
+            </div>
+
+            <!-- Informações de contato da secretaria -->
+            <div class="sec-contato-lista" aria-label="Informações de contato da secretaria">
+
+              <div class="sec-contato-item">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>
+                  <strong>Endereço:</strong>
+                  Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <span>
+                  <strong>Telefone:</strong>
+                  <a href="tel:+554131627065">(41) 3162-7065</a>
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>
+                  <strong>Email:</strong>
+                  <a href="/cdn-cgi/l/email-protection#a1d5c4c2cfcecdcec6c8c0c5c0c8cfc7ced3ccc0c2c0cee1d1ccc2c6d28fd1d38fc6ced78fc3d3">
+                    <span class="__cf_email__"
+                          data-cfemail="7b0f1e18151417141c121a1f1a12151d1409161a181a143b0b16181c08550b09551c140d551909">[email&#160;protected]</span>
+                  </a>
+                </span>
+              </div>
+
+              <div class="sec-contato-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <span>
+                  <strong>Horário de funcionamento:</strong>
+                  Segunda a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                </span>
+              </div>
+
+            </div>
+
+            <!-- Card do Secretário Municipal -->
+            <div class="sec-secretario-bloco" aria-label="Informações do secretário municipal">
+
+              <div class="sec-secretario-foto" aria-hidden="true">
+                <img src="../../assets/img/secretarias/alexandre-capile.gif"
+                     alt="Foto de Alexandre Capile, Secretário Municipal da Tecnologia, Inovação e Transformação Digital">
+              </div>
+
+              <div class="sec-secretario-corpo">
+                <p class="sec-secretario-label">Secretário Municipal</p>
+                <h3 class="sec-secretario-nome">Alexandre Capile</h3>
+
+                <div class="sec-secretario-bio">
+                  <p>
+                    [Nome completo] nasceu em [data de nascimento], em [município de nascimento], Paraná.
+                    Formado(a) em [curso] pela [instituição] no ano de [ano], construiu uma trajetória
+                    profissional voltada para [área de atuação]. Antes de assumir o cargo atual, atuou
+                    como [experiências profissionais relevantes].
+                  </p>
+                  <p>
+                    Na política, iniciou sua trajetória como [primeiro cargo político]. Ao longo dos anos,
+                    [descrição da trajetória política e mandatos exercidos].
+                    Atualmente, como Secretário Municipal da Tecnologia, Inovação e Transformação Digital,
+                    tem se dedicado a [principais ações e projetos da gestão], com foco em [áreas prioritárias].
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- ── fim aba secretaria ── -->
+
+
+          <!-- ════════════════════════════════════════════════════
+               ABA 2 — DEPARTAMENTOS
+               Cards com informações de cada departamento.
+          ════════════════════════════════════════════════════ -->
+          <div class="sec-tab-painel"
+               id="painel-departamentos"
+               role="tabpanel"
+               aria-labelledby="tab-departamentos">
+
+            <div class="sec-depto-grid">
+
+              <!-- Card: Administrativo -->
+              <div class="sec-depto-card">
+                <h3 class="sec-depto-nome">Administrativo</h3>
+                <div class="sec-depto-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Endereço:</strong>
+                    Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627065">(41) 3162-7065</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="/cdn-cgi/l/email-protection#047061676a6b686b636d6560656d6a626b76696567656b4474696763772a74762a636b722a6676">
+                      <span class="__cf_email__"
+                            data-cfemail="542031373a3b383b333d3530353d3a323b26393537353b1424393733277a24267a333b227a3626">[email&#160;protected]</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: Departamento de Sistemas, Inovação e Transformação Digital -->
+              <div class="sec-depto-card">
+                <h3 class="sec-depto-nome">Departamento de Sistemas, Inovação e Transformação Digital</h3>
+                <div class="sec-depto-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Endereço:</strong>
+                    Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627065">(41) 3162-7065</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="/cdn-cgi/l/email-protection#9beffef8f5f4f7f4fcf2fafffaf2f5fdf4e9f6faf8faf4dbebf6f8fce8b5ebe9b5fcf4edb5f9e9">
+                      <span class="__cf_email__"
+                            data-cfemail="a5d1c0c6cbcac9cac2ccc4c1c4cccbc3cad7c8c4c6c4cae5d5c8c6c2d68bd5d78bc2cad38bc7d7">[email&#160;protected]</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card: Departamento de Operações, Segurança e Infraestrutura de TI -->
+              <div class="sec-depto-card">
+                <h3 class="sec-depto-nome">Departamento de Operações, Segurança e Infraestrutura de TI</h3>
+                <div class="sec-depto-item">
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <div>
+                    <strong>Endereço:</strong>
+                    Praça Bento Munhoz da Rocha Neto, 30 - Centro
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Telefone:</strong>
+                    <a href="tel:+554131627065">(41) 3162-7065</a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email:</strong>
+                    <a href="/cdn-cgi/l/email-protection#fe8a9b9d9091929199979f9a9f979098918c939f9d9f91be8e939d998dd08e8cd0999188d09c8c">
+                      <span class="__cf_email__"
+                            data-cfemail="285c4d4b464744474f41494c4941464e475a45494b49476858454b4f5b06585a064f475e064a5a">[email&#160;protected]</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="sec-depto-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Horário de funcionamento:</strong>
+                    Segunda-feira a sexta-feira, das 08:30 às 12:00 e das 13:30 às 17:30
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- ── fim aba departamentos ── -->
+
+
+          <!-- ════════════════════════════════════════════════════
+               ABA 3 — SOLICITAÇÃO DE ACESSO
+               Instruções e formulários para download.
+          ════════════════════════════════════════════════════ -->
+          <div class="sec-tab-painel"
+               id="painel-acesso"
+               role="tabpanel"
+               aria-labelledby="tab-acesso">
+
+            <div class="sec-acesso-texto">
+              <p>
+                Para obter acesso aos sistemas da Prefeitura Municipal de Campina Grande do Sul, o solicitante
+                deve preencher o formulário correspondente ao seu perfil e encaminhá-lo ao setor responsável
+                pela Tecnologia da Informação.
+              </p>
+              <p>
+                <strong>Usuário Interno (Funcionários):</strong> destinado aos servidores e colaboradores da
+                Prefeitura que necessitam de acesso aos sistemas institucionais para o exercício de suas funções.
+              </p>
+              <p>
+                <strong>Usuário Externo (Terceiros):</strong> destinado a prestadores de serviço, parceiros ou
+                demais usuários externos que, por necessidade comprovada, precisem de acesso temporário ou
+                restrito aos sistemas municipais.
+              </p>
+              <p>
+                <strong>Cadastro de Equipamento Particular:</strong> destinado ao registro de dispositivos
+                pessoais que serão utilizados na rede municipal, conforme política de uso estabelecida pela
+                Secretaria.
+              </p>
+            </div>
+
+            <!-- Aviso sobre preenchimento digital -->
+            <div class="sec-aviso" role="note">
+              Os formulários devem ser preenchidos <strong>digitalmente</strong>.
+              Não serão aceitas fichas preenchidas à mão ou com informações incompletas.
+            </div>
+
+            <div class="sec-acesso-texto">
+              <p>
+                Após o preenchimento, o formulário deve ser enviado ao setor de TI para análise e liberação do acesso.
+              </p>
+            </div>
+
+            <!-- Formulários para download -->
+            <div class="sec-form-grid" aria-label="Formulários disponíveis para download">
+
+              <a href="#"
+                 class="sec-form-item"
+                 aria-label="Download: Formulário para Cadastro de Usuário Interno">
+                <div class="sec-form-icon" aria-hidden="true">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div>
+                  <div class="sec-form-nome">Cadastro de Usuário Interno (Funcionários)</div>
+                  <div class="sec-form-desc">Controle de Acesso aos Sistemas</div>
+                </div>
+              </a>
+
+              <a href="#"
+                 class="sec-form-item"
+                 aria-label="Download: Formulário para Cadastro de Usuário Externo">
+                <div class="sec-form-icon" aria-hidden="true">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div>
+                  <div class="sec-form-nome">Cadastro de Usuário Externo (Terceiros)</div>
+                  <div class="sec-form-desc">Controle de Acesso aos Sistemas</div>
+                </div>
+              </a>
+
+              <a href="#"
+                 class="sec-form-item"
+                 aria-label="Download: Formulário para Cadastro de Equipamento Particular">
+                <div class="sec-form-icon" aria-hidden="true">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div>
+                  <div class="sec-form-nome">Formulário para Cadastro de Equipamento Particular</div>
+                  <div class="sec-form-desc">Registro de dispositivos pessoais na rede municipal</div>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+          <!-- ── fim aba acesso ── -->
+
+
+          <!-- ════════════════════════════════════════════════════
+               ABA 4 — LINKS ÚTEIS
+               Categorias: Serviços e Arquivos.
+          ════════════════════════════════════════════════════ -->
+          <div class="sec-tab-painel"
+               id="painel-links"
+               role="tabpanel"
+               aria-labelledby="tab-links">
+
+            <!-- Categoria: Serviços -->
+            <div class="sec-links-categoria">
+              <h3 class="sec-links-cat-titulo">Serviços</h3>
+              <ul class="sec-links-lista">
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Central de Atendimento Tecnologia da Informação
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Acesso ao Sistema Administrativo de Gestão Pública
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Lista Telefônica
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Acesso ao Email Institucional
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Consulta Endereços de Locais da Prefeitura
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Acesso ao Sistema Administrativo de Fiscalização de Contratos - SIRA
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Categoria: Arquivos -->
+            <div class="sec-links-categoria">
+              <h3 class="sec-links-cat-titulo">Arquivos</h3>
+              <ul class="sec-links-lista">
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Portaria nº 1034-2021 - Designa responsáveis pelo Cadastro e Auditoria do Sistema de Cadastro de Usuários
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 27-2010 Institui Normas para Utilização da Rede de Informática
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 1624-2021 - Instrução Normativa Conjunta 03-2021 - Cadastro de Usuários
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Controle de Acesso aos Sistemas - Formulário para Cadastro de Usuário Interno (Funcionários)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 1521-2021 Aprova e Regulamenta a Política de Segurança da Informação e Comunicação
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Controle de Acesso aos Sistemas - Formulário para Cadastro de Usuário Externo (Terceiros)
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Decreto nº 97-2010 Institui Normas para Utilização das Impressoras
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fas fa-square" aria-hidden="true"></i>
+                    Formulário para Cadastro de Equipamento Particular
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- ── fim aba links ── -->
+
+        </article>
+        <!-- ── fim coluna principal ── -->
+
+
+        <!-- ── SIDEBAR ───────────────────────────────────────────── -->
+        <aside id="pi-sidebar" class="pi-sidebar" aria-label="Navegação lateral e acessibilidade">
+
+          <!-- Controles de acessibilidade -->
+          <div class="pi-controles-bloco">
+            <h3><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h3>
+            <div class="pi-ctrl-row">
+              <span class="pi-ctrl-label">Tamanho da fonte</span>
+              <div class="pi-ctrl-btns">
+                <button class="pi-ctrl-btn"
+                        id="pi-sb-fonte-aumentar"
+                        aria-label="Aumentar tamanho da fonte">A+</button>
+                <button class="pi-ctrl-btn"
+                        id="pi-sb-fonte-diminuir"
+                        aria-label="Diminuir tamanho da fonte">A-</button>
+                <button class="pi-ctrl-btn"
+                        id="pi-sb-fonte-resetar"
+                        aria-label="Restaurar tamanho da fonte padrão">A</button>
+              </div>
+            </div>
+            <div class="pi-ctrl-row">
+              <button class="pi-ctrl-btn-contraste"
+                      id="pi-sb-btn-contraste"
+                      aria-pressed="false"
+                      aria-label="Ativar ou desativar alto contraste">
+                <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
+              </button>
+            </div>
+          </div>
+
+          <!-- Navegação: lista de secretarias -->
+          <div class="pi-sidebar-card">
+            <h3><i class="fas fa-building" aria-hidden="true"></i> Secretarias</h3>
+            <ul class="pi-sidebar-links">
+              <li><a href="#"><span>Administração</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Cultura</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Desenvolvimento Econômico</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Desenvolvimento Social</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Educação</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Infraestrutura</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li><a href="#"><span>Saúde</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+              <li class="ativo">
+                <a href="#" aria-current="page">
+                  <span>Tecnologia e Inovação</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li><a href="#"><span>Urbanismo</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+
+          <!-- Contato rápido da secretaria -->
+          <div class="pi-sidebar-card pi-sidebar-contato">
+            <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h3>
+            <p>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30
+            </p>
+            <p>
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              (41) 3162-7065
+            </p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              tecnologiadainformacao@pmcgs...
+            </p>
+            <a href="https://campinagrandedosul.pr.gov.br/ouvidoria"
+               class="pi-btn-verde pi-btn-full">
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
+            </a>
+          </div>
+
+        </aside>
+        <!-- ── fim sidebar ── -->
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ══ fim conteúdo principal ══ -->
+
+
+  <!-- ══ RODAPÉ ══════════════════════════════════════════════════════
+       Contém: logo, links institucionais, contato e redes sociais.
+  ════════════════════════════════════════════════════════════════ -->
+  <footer id="pi-footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+
+        <!-- Coluna 1: Logo + Sobre Campina -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="pi-footer-logo-wrap">
+            <a href="../../index.html" aria-label="Página inicial da Prefeitura">
+              <img class="pi-logo-img"
+                   src="../../assets/img/secretarias/logo.png"
+                   alt="Logo da Prefeitura de Campina Grande do Sul">
+            </a>
+          </div>
+          <h2 class="pi-footer-heading">Sobre Campina</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">História do Município</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/dados-municipais">Dados Municipais</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/mapa-turismo">Mapa do Turismo</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conheça Campina</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 2: Serviços -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h2 class="pi-footer-heading">Serviços</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Todos os Serviços</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Prefeitura + Transparência -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h2 class="pi-footer-heading">Prefeitura</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/prefeito">Prefeito</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/vice-prefeito">Vice-Prefeito</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/secretarios-municipais">Secretários</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria</a></li>
+          </ul>
+          <h2 class="pi-footer-heading mt-3">Transparência</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência</a></li>
+            <li><a href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener noreferrer">Radar da Transparência</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contato + Redes Sociais -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h2 class="pi-footer-heading">Contato</h2>
+          <address class="pi-footer-contact">
+            <p>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              Praça Bento Munhoz, 30 – Centro<br>
+              <span style="padding-left:24px;">Campina Grande do Sul – PR</span>
+            </p>
+            <p>
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+554131627000">(41) 3162-7000</a>
+            </p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="/cdn-cgi/l/email-protection"
+                 class="__cf_email__"
+                 data-cfemail="b9dfd8d5dcdad6d7d6cadad6f9c9d4dadeca97c9cb97ded6cf97dbcb">[email&#160;protected]</a>
+            </p>
+            <p>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              Seg. a Sex. – 8h30–12h / 13h30–17h30
+            </p>
+          </address>
+
+          <h2 class="pi-footer-heading mt-3">Redes Sociais</h2>
+          <div class="pi-footer-social" aria-label="Redes sociais da Prefeitura">
+            <a href="https://www.facebook.com/PrefDeCampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Facebook da Prefeitura">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/prefdecampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram da Prefeitura">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@prefdecampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="YouTube da Prefeitura">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://campinagrandedosul.pr.gov.br/whatsapp"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="WhatsApp da Prefeitura">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rodapé inferior: copyright -->
+      <div class="pi-footer-bottom">
+        &copy; 2026 Prefeitura Municipal de Campina Grande do Sul – PR &nbsp;|&nbsp;
+        Praça Bento Munhoz da Rocha Neto, 30 – Centro – CEP 83.435-001 &nbsp;|&nbsp;
+        Mantido pela STI – Secretaria de Tecnologia da Informação
+      </div>
+
+    </div>
+  </footer>
+  <!-- ══ fim rodapé ══ -->
+
+
+  <!-- ══ VLIBRAS — tradutor de Libras ═══════════════════════════════
+       Widget do governo federal para tradução em Língua Brasileira
+       de Sinais. Não remover.
+  ════════════════════════════════════════════════════════════════ -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script data-cfasync="false"
+          src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Bootstrap 4 JS + jQuery (necessário para dropdowns do navbar) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scripts da página -->
+  <script src="../../js/secretarias.js"></script>
+
+</body>
+</html>

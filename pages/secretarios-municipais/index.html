@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secretários Municipais – Prefeitura de Campina Grande do Sul – PR</title>
+  <meta name="description" content="Conheça os Secretários Municipais de Campina Grande do Sul e as respectivas secretarias da administração municipal.">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos da página (autossuficiente) -->
+  <link rel="stylesheet" href="../../assets/css/secretarios-municipais.css">
+</head>
+
+<body>
+
+  <!-- ══ SKIP NAVIGATION — WCAG 2.4.1 ══════════════════════════════
+       Permite que usuários de teclado pulem direto para o conteúdo.
+  ════════════════════════════════════════════════════════════════ -->
+  <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
+
+
+  <!-- ══ BARRA SUPERIOR ═════════════════════════════════════════════
+       Contém: controles de acessibilidade, badges, horário e social.
+  ════════════════════════════════════════════════════════════════ -->
+  <div id="pi-barra-topo" role="banner">
+    <div class="container">
+      <div class="pi-barra-inner">
+
+        <!-- Controles de acessibilidade eMAG -->
+        <div class="pi-barra-acesso" aria-label="Controles de acessibilidade">
+          <span aria-hidden="true">Acessibilidade</span>
+
+          <a href="#" id="pi-btn-fonte-aumentar" role="button"
+             aria-label="Aumentar tamanho da fonte">A+</a>
+
+          <a href="#" id="pi-btn-fonte-diminuir" role="button"
+             aria-label="Diminuir tamanho da fonte">A-</a>
+
+          <a href="#" id="pi-btn-fonte-resetar" role="button"
+             aria-label="Restaurar tamanho da fonte padrão">A</a>
+
+          <a href="#" id="pi-btn-contraste"
+             class="pi-barra-acesso-contraste"
+             role="button"
+             aria-label="Ativar alto contraste"
+             aria-pressed="false"
+             title="Alto contraste">
+            <i class="fas fa-adjust" aria-hidden="true"></i>
+          </a>
+
+          <a href="../acessibilidade/"
+             class="pi-barra-acesso-icone"
+             title="Página de Acessibilidade"
+             aria-label="Ir para página de acessibilidade">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="pi-barra-sep" aria-hidden="true"></div>
+
+        <!-- Badges de acesso rápido -->
+        <nav class="pi-barra-badges" aria-label="Acesso rápido">
+          <a href="https://campinagrandedosul.pr.gov.br/mapa-do-site"
+             class="pi-badge-item">
+            <i class="fas fa-sitemap" aria-hidden="true"></i>
+            <span>MAPA DO SITE</span>
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao"
+             class="pi-badge-item">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+            <span>ACESSO À<br>INFORMAÇÃO</span>
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/ouvidoria"
+             class="pi-badge-item">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <span>OUVIDORIA</span>
+          </a>
+        </nav>
+
+        <div class="pi-barra-sep" aria-hidden="true"></div>
+
+        <!-- Horário de atendimento e telefone -->
+        <div class="pi-barra-info-bloco" aria-label="Informações de atendimento">
+
+          <div class="pi-barra-horario">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <div class="pi-barra-horario-texto">
+              <span class="pi-barra-horario-dias">Seg – Sex</span>
+              <span class="pi-barra-horario-horas">
+                <span class="pi-barra-horario-turno">08h30–12h</span>
+                <span class="pi-barra-horario-sep" aria-hidden="true">·</span>
+                <span class="pi-barra-horario-turno">13h30–17h30</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="pi-barra-sep" aria-hidden="true"></div>
+
+          <a href="tel:+554131627000"
+             class="pi-barra-telefone"
+             aria-label="Ligar para a Prefeitura: (41) 3162-7000">
+            <span>(41) 3162-7000</span>
+            <small>PREFEITURA</small>
+          </a>
+
+        </div>
+
+        <div class="pi-barra-sep" aria-hidden="true"></div>
+
+        <!-- Redes sociais -->
+        <div class="pi-barra-social" aria-label="Redes sociais da Prefeitura">
+          <a href="https://www.facebook.com/PrefDeCampina"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/prefdecampina"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@prefdecampina"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span>
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/whatsapp"
+             target="_blank" rel="noopener noreferrer" title="Acesse nosso WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="sr-only">WhatsApp</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ══ fim barra superior ══ -->
+
+
+  <!-- ══ HEADER — logomarca e busca ═════════════════════════════════ -->
+  <header id="pi-header">
+    <div class="container">
+      <div class="pi-header-inner">
+
+        <a href="../../index.html"
+           class="pi-logo-wrapper"
+           aria-label="Página inicial da Prefeitura de Campina Grande do Sul">
+          <img class="pi-logo-img"
+               src="../../assets/img/secretarios-municipais/logo.png"
+               alt="Prefeitura de Campina Grande do Sul – Paraná">
+        </a>
+
+        <div class="pi-header-search" role="search">
+          <div class="pi-search-group">
+            <label for="pi-busca" class="sr-only">Pesquisar no portal</label>
+            <input type="search"
+                   id="pi-busca"
+                   class="pi-search-input"
+                   placeholder="Pesquisar no portal…"
+                   autocomplete="off"
+                   aria-label="Campo de busca do portal">
+            <button type="button"
+                    class="pi-search-btn"
+                    aria-label="Executar pesquisa">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <!-- ══ fim header ══ -->
+
+
+  <!-- ══ NAVBAR — menu principal ════════════════════════════════════ -->
+  <nav id="pi-navbar" class="navbar navbar-expand-lg" aria-label="Menu principal">
+    <div class="container">
+
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#pi-nav-list"
+              aria-controls="pi-nav-list"
+              aria-expanded="false"
+              aria-label="Abrir menu de navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="pi-nav-list">
+        <ul class="navbar-nav ml-auto">
+
+          <!-- Notícias -->
+          <li class="nav-item">
+            <a class="nav-link"
+               href="https://campinagrandedosul.pr.gov.br/noticias">NOTÍCIAS</a>
+          </li>
+
+          <!-- Serviços (dropdown) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">SERVIÇOS</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-group-title">Tributos</div>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a>
+              <div class="dropdown-group-title">Protocolo</div>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic">Acesso à Informação</a>
+              <div class="dropdown-group-title">Diversos</div>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
+              <a class="dropdown-item"
+                 href="https://campinagrandedosul.pr.gov.br/consulta-enderecos">Endereços e Telefones</a>
+              <a class="dropdown-item pi-dropdown-destaque"
+                 href="https://campinagrandedosul.pr.gov.br/servicos">→ Mais Serviços</a>
+            </div>
+          </li>
+
+          <!-- Prefeitura (mega-menu) — item ativo nesta página -->
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">PREFEITURA</a>
+            <div class="dropdown-menu mega-menu">
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Secretarias</div>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/administracao">Administração</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/cultura">Cultura</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">Desenvolvimento Econômico</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">Desenvolvimento Social</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/educacao">Educação</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/infraestrutura">Infraestrutura</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/saude">Saúde</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/tecnologia-da-informacao">Tecnologia, Inovação e Transf. Digital</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/urbanismo">Urbanismo</a>
+              </div>
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Outros Órgãos</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria Geral</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/ouvidoria-geral">Ouvidoria Geral</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral</a>
+                <div class="dropdown-group-title" style="margin-top:14px;">Gestão</div>
+                <a class="dropdown-item" href="../prefeito/">Prefeito</a>
+                <a class="dropdown-item" href="../vice-chave/">Vice-Prefeito</a>
+                <a class="dropdown-item active"
+                   href="../secretarios-municipais/"
+                   aria-current="page">Secretários Municipais</a>
+              </div>
+
+            </div>
+          </li>
+
+          <!-- Transparência (mega-menu) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false">TRANSPARÊNCIA</a>
+            <div class="dropdown-menu mega-menu">
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Pessoal</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/servidores">Servidores</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/concursos">Concursos</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/diarias">Diárias</a>
+                <div class="dropdown-group-title" style="margin-top:14px;">Financeiro</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/contratos">Contratos</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/"
+                   target="_blank"
+                   rel="noopener noreferrer">PPA / LDO / LOA</a>
+              </div>
+
+              <div class="mega-col">
+                <div class="dropdown-group-title">Legislação e Informação</div>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a>
+                <a class="dropdown-item"
+                   href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a>
+                <a class="dropdown-item"
+                   href="https://radardatransparencia.atricon.org.br/"
+                   target="_blank"
+                   rel="noopener noreferrer">Radar da Transparência</a>
+                <a class="dropdown-item pi-dropdown-destaque"
+                   href="https://campinagrandedosul.pr.gov.br/transparencia">→ Portal da Transparência</a>
+              </div>
+
+            </div>
+          </li>
+
+          <!-- Conheça Campina -->
+          <li class="nav-item">
+            <a class="nav-link"
+               href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">CONHEÇA CAMPINA</a>
+          </li>
+
+          <!-- Ouvidoria -->
+          <li class="nav-item">
+            <a class="nav-link"
+               href="https://campinagrandedosul.pr.gov.br/ouvidoria">OUVIDORIA</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- ══ fim navbar ══ -->
+
+
+  <!-- ══ HERO — título + breadcrumb ════════════════════════════════
+       Faixa verde escuro com título e trilha de navegação.
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+
+        <!-- Trilha de navegação -->
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li>
+              <a href="https://campinagrandedosul.pr.gov.br/prefeitura">Gestão</a>
+            </li>
+            <li aria-hidden="true">
+              <span class="pi-breadcrumb-sep">
+                <i class="fas fa-chevron-right"></i>
+              </span>
+            </li>
+            <li aria-current="page">Secretários Municipais</li>
+          </ol>
+        </nav>
+
+        <h1 class="pi-hero-titulo">Secretários Municipais</h1>
+
+      </div>
+    </div>
+
+    <!-- Ilustração decorativa de fundo -->
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../assets/img/secretarios-municipais/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- ══ fim hero ══ -->
+
+
+  <!-- ══ CONTEÚDO PRINCIPAL — Grid de secretários ════════════════════
+       Grade com cards de cada secretaria e seu respectivo secretário.
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main" aria-label="Secretários Municipais">
+    <div class="container">
+      <div id="pi-conteudo" tabindex="-1">
+
+        <div class="secretarios-grid"
+             role="list"
+             aria-label="Lista de secretarias municipais">
+
+
+          <!-- ── Administração ─────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/administracao">
+                Secretaria Municipal de Administração
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/silmara.belo.jpg"
+                   alt="Foto de Silmara Aparecida Giacomitti Belo">
+              <span class="secretario-nome">Silmara Aparecida Giacomitti Belo</span>
+            </div>
+            <p class="secretario-descricao">
+              Contadora, formada em Ciências Contábeis pela FAE – Faculdade Católica de Administração e Economia. Pós-graduada em Planejamento e Gerenciamento Estratégico pela PUC-PR e em Gestão Pública pela UNIBRASIL.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/administracao">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Cultura ─────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/cultura">
+                Secretaria Municipal de Cultura
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/janete.assuncao.jpg"
+                   alt="Foto de Janete Aparecida Ataíde Assunção">
+              <span class="secretario-nome">Janete Aparecida Ataíde Assunção</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/cultura">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Desenvolvimento Econômico ───────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">
+                Secretaria Municipal de Desenvolvimento Econômico
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/pedro.avelar.jpg"
+                   alt="Foto de Pedro Paulo de Avelar">
+              <span class="secretario-nome">Pedro Paulo de Avelar</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Desenvolvimento Social ───────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">
+                Secretaria Municipal de Desenvolvimento Social
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/felipe.veiga.jpg"
+                   alt="Foto de Felipe Veiga">
+              <span class="secretario-nome">Felipe Veiga</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Desenvolvimento Sustentável ───────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">
+                Secretaria Municipal de Desenvolvimento Sustentável
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/ilustracao.png"
+                   alt="Foto do Secretário">
+              <span class="secretario-nome">Andréia Marina Trevisan Del Zotto</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Educação ──────────────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/educacao">
+                Secretaria Municipal da Educação
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/belenice.rotini.jpg"
+                   alt="Foto de Belenice Koffke Buff Rotini">
+              <span class="secretario-nome">Belenice Koffke Buff Rotini</span>
+            </div>
+            <p class="secretario-descricao">
+              Belenice nasceu em Porto União, Santa Catarina, em 15 de junho de 1974, vindo a residir no Jardim Paulista em 13/09/1974, onde reside até hoje.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/educacao">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Governo e Assuntos Jurídicos ─────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">
+                Secretaria Municipal de Governo e Assuntos Jurídicos
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/bruna.ferrarini.berleis.gif"
+                   alt="Foto de Bruna Ferrarini Berleis">
+              <span class="secretario-nome">Bruna Ferrarini Berleis</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Infraestrutura ───────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/infraestrutura">
+                Secretaria Municipal de Infraestrutura
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/odorico.bandeira.jpg"
+                   alt="Foto de Odorico Bandeira de Lima Junior">
+              <span class="secretario-nome">Odorico Bandeira de Lima Junior</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/infraestrutura">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Mulher e Igualdade Racial ────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/mulher">
+                Secretaria Municipal da Mulher e Igualdade Racial
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/nelise.noceti.jpg"
+                   alt="Foto de Nelise Cristiane Dalprá Noceti">
+              <span class="secretario-nome">Nelise Cristiane Dalprá Noceti</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/mulher">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Ordem Pública e Segurança ────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/ordem-publica">
+                Secretaria Municipal de Ordem Pública e Segurança
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/claudio.crozetta.jpg"
+                   alt="Foto de Claudio Adão Crozetta">
+              <span class="secretario-nome">Claudio Adão Crozetta</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/ordem-publica">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Saúde ────────────────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/saude">
+                Secretaria Municipal da Saúde
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/marilda.schwartz.jpg"
+                   alt="Foto de Marilda Barros de Lima Schwartz">
+              <span class="secretario-nome">Marilda Barros de Lima Schwartz</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/saude">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Tecnologia da Informação ─────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/tecnologia-da-informacao">
+                Secretaria Municipal da Tecnologia, Inovação e Transformação Digital
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/alexandre.capile.jpg"
+                   alt="Foto de Alexandre Capile">
+              <span class="secretario-nome">Alexandre Capile</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/tecnologia-da-informacao">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Urbanismo ─────────────────────────────────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/urbanismo">
+                Secretaria Municipal de Urbanismo
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/keli.coradin.jpg"
+                   alt="Foto de Keli Coradin">
+              <span class="secretario-nome">Keli Coradin</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/urbanismo">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+          <!-- ── Procuradoria Geral do Município ────────────────── -->
+          <article class="card-secretario" role="listitem">
+            <h2 class="secretaria-titulo">
+              <a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">
+                Procuradoria Geral do Município
+              </a>
+            </h2>
+            <div class="secretario-perfil">
+              <img class="secretario-foto"
+                   src="../../assets/img/secretarios-municipais/fabiana.caricati.jpg"
+                   alt="Foto de Fabiana Baptista Silva Caricati">
+              <span class="secretario-nome">Fabiana Baptista Silva Caricati</span>
+            </div>
+            <p class="secretario-descricao">
+              Informações biográficas serão inseridas neste espaço.
+            </p>
+            <a class="secretario-botao" href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Secretaria
+            </a>
+          </article>
+
+
+        </div>
+        <!-- ══ fim grid ══ -->
+
+      </div>
+    </div>
+  </main>
+  <!-- ══ fim conteúdo principal ══ -->
+
+
+  <!-- ══ RODAPÉ ══════════════════════════════════════════════════════
+       Contém: logo, links institucionais, contato e redes sociais.
+  ════════════════════════════════════════════════════════════════ -->
+  <footer id="pi-footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+
+        <!-- Coluna 1: Logo + Sobre Campina -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="pi-footer-logo-wrap">
+            <a href="../../index.html" aria-label="Página inicial da Prefeitura">
+              <img class="pi-logo-img"
+                   src="../../assets/img/secretarios-municipais/logo.png"
+                   alt="Logo da Prefeitura de Campina Grande do Sul">
+            </a>
+          </div>
+          <h2 class="pi-footer-heading">Sobre Campina</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">História do Município</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/dados-municipais">Dados Municipais</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/mapa-turismo">Mapa do Turismo</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conheça Campina</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 2: Serviços -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h2 class="pi-footer-heading">Serviços</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Todos os Serviços</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Prefeitura + Transparência -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h2 class="pi-footer-heading">Prefeitura</h2>
+          <ul>
+            <li><a href="../prefeito/">Prefeito</a></li>
+            <li><a href="../vice-chave/">Vice-Prefeito</a></li>
+            <li><a href="#" aria-current="page">Secretários</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria</a></li>
+          </ul>
+          <h2 class="pi-footer-heading mt-3">Transparência</h2>
+          <ul>
+            <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência</a></li>
+            <li><a href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener noreferrer">Radar da Transparência</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contato + Redes Sociais -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h2 class="pi-footer-heading">Contato</h2>
+          <address class="pi-footer-contact">
+            <p>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              Praça Bento Munhoz, 30 – Centro<br>
+              <span style="padding-left:24px;">Campina Grande do Sul – PR</span>
+            </p>
+            <p>
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+554131627000">(41) 3162-7000</a>
+            </p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="/cdn-cgi/l/email-protection"
+                 class="__cf_email__"
+                 data-cfemail="6e0d01031b00070d0f0d0f012e1e030d091d401e1c40090118400c1c">[email&#160;protected]</a>
+            </p>
+            <p>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              Seg. a Sex. – 8h30–12h / 13h30–17h30
+            </p>
+          </address>
+
+          <h2 class="pi-footer-heading mt-3">Redes Sociais</h2>
+          <div class="pi-footer-social" aria-label="Redes sociais da Prefeitura">
+            <a href="https://www.facebook.com/PrefDeCampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Facebook da Prefeitura">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/prefdecampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram da Prefeitura">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@prefdecampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="YouTube da Prefeitura">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://campinagrandedosul.pr.gov.br/whatsapp"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="WhatsApp da Prefeitura">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rodapé inferior: copyright -->
+      <div class="pi-footer-bottom">
+        &copy; 2026 Prefeitura Municipal de Campina Grande do Sul – PR &nbsp;|&nbsp;
+        Praça Bento Munhoz da Rocha Neto, 30 – Centro – CEP 83.435-001 &nbsp;|&nbsp;
+        Mantido pela STI – Secretaria de Tecnologia da Informação
+      </div>
+
+    </div>
+  </footer>
+  <!-- ══ fim rodapé ══ -->
+
+
+  <!-- ══ VLIBRAS — tradutor de Libras ═══════════════════════════════ -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script data-cfasync="false"
+          src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+  <!-- Bootstrap 4 JS + jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS da página -->
+  <script src="../../js/secretarios-municipais.js"></script>
+
+</body>
+</html>

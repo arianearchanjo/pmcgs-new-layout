@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║  ALTERAR: título e description                              ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <title>Dados Municipais – Campina Grande do Sul – PR</title>
+  <meta name="description" content="Dados e informações do município de Campina Grande do Sul – Paraná.">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗
+       ║  CSS EXCLUSIVO DA SEÇÃO "CONHEÇA CAMPINA"                   ║
+       ╚══════════════════════════════════════════════════════════════╝ -->
+  <link rel="stylesheet" href="../../assets/css/dados-municipais.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+</head>
+
+<body>
+
+  <!-- ══ SKIP NAVIGATION — WCAG 2.4.1 ══ -->
+  <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
+
+ <barra-acessibilidade> </barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       BREADCRUMB
+  ════════════════════════════════════════════════════════════════ -->
+  <div class="cc-breadcrumb">
+    <div class="container">
+      <a href="../index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
+      <span class="cc-bc-sep" aria-hidden="true">›</span>
+      <a href="../../index.html">Conheça Campina</a>
+      <span class="cc-bc-sep" aria-hidden="true">›</span>
+      <span class="cc-bc-atual">Dados Municipais</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-conteudo" tabindex="-1">
+    <section id="cc-pagina">
+      <div class="container">
+        <div class="cc-grid">
+
+          <!-- ── MENU LATERAL ──────────────────────────────────────── -->
+          <!--
+            Sidebar de navegação da seção.
+            Em mobile, transforma-se em painel colapsável via cc-menu-toggle.
+          -->
+          <aside class="cc-sidebar" aria-label="Menu da seção Conheça Campina">
+
+            <p class="cc-menu-titulo" aria-hidden="true">Conheça Campina</p>
+
+            <!-- Botão apenas visível em mobile -->
+            <button id="cc-menu-toggle" class="cc-menu-toggle" aria-expanded="false" aria-controls="cc-menu-lista">
+              <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Conheça Campina</span>
+              <i class="fas fa-chevron-down cc-toggle-icon" aria-hidden="true"></i>
+            </button>
+
+            <ul id="cc-menu-lista" class="cc-menu-lista" role="list">
+              <li><a class="cc-menu-link ativo" href="dados-municipais.html" aria-current="page">Dados Municipais</a></li>
+              <li><a class="cc-menu-link" href="historia.html">Nossa História</a></li>
+              <li><a class="cc-menu-link" href="galeria-prefeitos.html">Galeria de Prefeitos</a></li>
+              <li><a class="cc-menu-link" href="bandeira-brasao.html">Bandeira e Brasão</a></li>
+              <li><a class="cc-menu-link" href="hino.html">Hino</a></li>
+              <li><a class="cc-menu-link" href="feriados.html">Feriados Municipais</a></li>
+              <li><a class="cc-menu-link" href="pontos-turisticos.html">Pontos Turísticos</a></li>
+              <li><a class="cc-menu-link" href="turismo.html">Portal do Turismo</a></li>
+            </ul>
+
+          </aside>
+
+          <!-- ── ÁREA DE CONTEÚDO ──────────────────────────────────── -->
+          <!--
+            Conteúdo específico desta página: Dados Municipais.
+            Substitua este bloco nas outras páginas mantendo o wrapper .cc-conteudo.
+          -->
+          <div class="cc-conteudo">
+
+            <div class="cc-sec-header">
+              <h1>Dados Municipais</h1>
+              <p>Informações gerais sobre o município de Campina Grande do Sul – PR</p>
+            </div>
+
+            <!-- Texto introdutório -->
+            <p class="cc-dados-intro">
+              Localizado no primeiro planalto paranaense, o município de Campina Grande do Sul faz parte
+              da região metropolitana de Curitiba. Distância-se 370 km de São Paulo; 102 km do Porto de
+              Paranaguá; 32 km do Aeroporto Internacional de Curitiba Afonso Pena e 20 km do Aeroporto
+              de Bacacheri. Por estar às margens da BR-116, Corredor do Mercosul, é dotado de boa
+              infra-estrutura e destaca-se pelo acelerado processo de urbanização apresentado na última
+              década e também pela sua privilegiada posição geográfica.
+            </p>
+
+            <!-- Cards de dados rápidos -->
+            <div class="cc-dados-grid" aria-label="Dados do município">
+              <div class="cc-dado-item">
+                <p class="cc-dado-label">População Oficial</p>
+                <p class="cc-dado-valor">47.825
+                  <small>hab. — CENSO 2022</small>
+                </p>
+              </div>
+              <div class="cc-dado-item">
+                <p class="cc-dado-label">Área Territorial</p>
+                <p class="cc-dado-valor">539,244 km²</p>
+              </div>
+              <div class="cc-dado-item">
+                <p class="cc-dado-label">Bioma</p>
+                <p class="cc-dado-valor" style="font-size:15px">Mata Atlântica</p>
+              </div>
+              <div class="cc-dado-item">
+                <p class="cc-dado-label">Gentílico</p>
+                <p class="cc-dado-valor" style="font-size:14px">Campinense<br>do Sul</p>
+              </div>
+              <div class="cc-dado-item">
+                <p class="cc-dado-label">Emancipação</p>
+                <p class="cc-dado-valor" style="font-size:15px">14 de nov. 1951</p>
+              </div>
+              <div class="cc-dado-item">
+                <p class="cc-dado-label">Distância de Curitiba</p>
+                <p class="cc-dado-valor" style="font-size:15px">~32 km</p>
+              </div>
+            </div>
+
+            <!-- Limites -->
+            <div class="cc-dados-limites">
+              <strong>Limites geográficos:</strong> Limita-se ao nordeste com o Estado de São Paulo, ao
+              norte com o município de Bocaiúva do Sul, a oeste com o município de Colombo, ao sul com o
+              município de Quatro Barras e a leste com os municípios de Morretes, Antonina e Guaraqueçaba.
+            </div>
+
+            <!-- Mapa -->
+            <figure class="cc-dados-mapa">
+              <img src="https://campinagrandedosul.pr.gov.br/Downloads/Imagens/2024/2339/pr.png"
+                   alt="Mapa de localização de Campina Grande do Sul no estado do Paraná"
+                   loading="lazy">
+              <figcaption>Localização de Campina Grande do Sul no Paraná</figcaption>
+              <a class="cc-dados-link" href="https://www.ibge.gov.br/cidades-e-estados/pr/campina-grande-do-sul.html"
+                 target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                Mais informações sobre Campina no site do IBGE
+              </a>
+            </figure>
+
+          </div>
+          <!-- fim .cc-conteudo -->
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ (idêntico ao site)
+  ════════════════════════════════════════════════════════════════ -->
+    <meu-footer></meu-footer>
+
+  <!-- ══ VLIBRAS ══ -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <!-- JS da seção Conheça Campina -->
+  <script src="../../js/dados-municipais.js"></script>
+  <script src="../../components/searh-component.js"></script>
+  <script src="../../components/header-component.js"></script>
+  <script src="../../components/footer-component.js"></script>
+  <script src="components/acessibilidade-component.js"></script>
+
+
+</body>
+</html>
