@@ -1,31 +1,32 @@
 /* ══════════════════════════════════════════════════════════════
    GLOSSÁRIO — Prefeitura de Campina Grande do Sul
-   CSS AUTOSSUFICIENTE — não depende de nenhum outro arquivo CSS.
-   Contém todos os estilos necessários para renderizar a página.
+   Depende do index.css para: reset, body, focus, skip-nav,
+   navbar-toggler e variáveis globais.
 
    Organização:
-   1.  Variáveis e reset
-   2.  Barra superior (topo verde)
-   3.  Header (logomarca + busca)
-   4.  Navbar
-   5.  Hero da página
-   6.  Layout principal + sidebar
-   7.  Componentes da sidebar
-   8.  Botões e utilitários
-   9.  Rodapé
-   10. Cabeçalho da seção de glossário
-   11. Campo de pesquisa
-   12. Filtro alfabético
-   13. Grupos de letras
-   14. Cards de definição
-   15. Mensagem sem resultado
-   16. Skip navigation
+   1.  Variáveis exclusivas da página
+   2.  Reset parcial (apenas ::before / ::after)
+   3.  Barra superior (topo verde)
+   4.  Header (logomarca + busca)
+   5.  Navbar
+   6.  Hero da página
+   7.  Layout principal + sidebar
+   8.  Componentes da sidebar
+   9.  Botões e utilitários
+   10. Rodapé
+   11. Cabeçalho da seção de glossário
+   12. Campo de pesquisa
+   13. Filtro alfabético
+   14. Grupos de letras
+   15. Cards de definição
+   16. Mensagem sem resultado
    17. Alto contraste eMAG
    18. Responsividade
 ══════════════════════════════════════════════════════════════ */
 
 
-/* ── 1. Variáveis e reset ────────────────────────────────────── */
+/* ── 1. Variáveis exclusivas da página ─────────────────────── */
+/* Mantidas: nomenclatura --pi-* é diferente do index.css      */
 :root {
   --pi-verde:        #2d7a2d;
   --pi-verde-escuro: #1e5c1e;
@@ -36,14 +37,22 @@
   --pi-cinza-borda:  #c8d8c8;
   --pi-texto:        #1a2a1a;
 }
-html { font-size: 1rem; }
-:focus-visible { outline: 3px solid var(--pi-amarelo); outline-offset: 2px; }
-:focus:not(:focus-visible) { outline: none; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-texto); }
+
+/* ── 2. Reset parcial — apenas pseudo-elementos ────────────── */
+/* index.css cobre * { box-sizing; margin; padding }           */
+/* mas não declara ::before e ::after explicitamente           */
+*::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 
-/* ── 2. Barra superior (topo verde) ─────────────────────────── */
+/* ── Skip navigation (eMAG) ────────────────────────────────── */
+/* Redeclarado aqui: o CSS da página carrega ANTES do index.css,
+   portanto esta regra precisa existir neste arquivo para garantir
+   que o skip-nav fique oculto antes de qualquer outro estilo.    */
+.pi-skip-nav { position: absolute; top: -100px; left: 0; background: var(--pi-amarelo); color: #000; font-weight: 700; padding: 10px 20px; z-index: 9999; text-decoration: none; transition: top .1s; }
+.pi-skip-nav:focus { top: 0; }
+
+
+/* ── 3. Barra superior (topo verde) ─────────────────────────── */
 #pi-barra-topo { background: var(--pi-verde); }
 .pi-barra-inner { display: flex; align-items: center; height: 50px; }
 .pi-barra-sep {
@@ -111,7 +120,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 @media (max-width: 768px)  { .pi-barra-badges .pi-badge-item:nth-child(n+3) { display: none; } }
 
 
-/* ── 3. Header ───────────────────────────────────────────────── */
+/* ── 4. Header ───────────────────────────────────────────────── */
 #pi-header { background: #fff; border-bottom: 2px solid var(--pi-verde); }
 .pi-header-inner { display: flex; align-items: center; height: 76px; gap: 24px; }
 .pi-logo-wrapper { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
@@ -133,7 +142,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .pi-search-btn:hover { background: var(--pi-verde); border-color: var(--pi-verde); color: #fff; }
 
 
-/* ── 4. Navbar ───────────────────────────────────────────────── */
+/* ── 5. Navbar ───────────────────────────────────────────────── */
 #pi-navbar { background: var(--pi-verde-escuro); padding: 0; min-height: 46px; }
 #pi-navbar .navbar-collapse { align-items: stretch; }
 #pi-navbar .navbar-nav { align-items: stretch; }
@@ -182,10 +191,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 #pi-navbar .pi-dropdown-destaque { color: var(--pi-verde); font-weight: 700; }
 #pi-navbar .pi-dropdown-destaque:hover { color: #fff; }
-#pi-navbar .navbar-toggler { border-color: rgba(255,255,255,.4); margin: 6px 0; }
-#pi-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu { display: block; animation: piDropFade .18s ease; }
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu.mega-menu { display: flex !important; animation: piDropFade .18s ease; }
@@ -218,7 +223,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 5. Hero da página ───────────────────────────────────────── */
+/* ── 6. Hero da página ───────────────────────────────────────── */
 #pi-hero { background: var(--pi-verde-escuro); padding: 18px 0 0; position: relative; overflow: hidden; }
 .pi-hero-inner { position: relative; z-index: 2; padding-bottom: 12px; }
 
@@ -232,7 +237,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .pi-breadcrumb li[aria-current="page"] { color: rgba(255,255,255,.95); font-weight: 500; }
 .pi-breadcrumb-sep { color: rgba(255,255,255,.4); font-size: 0.625rem; }
 
-/* Título em caixa alta, igual ao antigo */
 .pi-hero-titulo {
   font-size: 1.5rem; font-weight: 900; color: #fff;
   letter-spacing: .2px; line-height: 1.2; margin: 0;
@@ -240,7 +244,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 .pi-hero-subtitulo { font-size: 0.875rem; color: rgba(255,255,255,.75); margin-top: 5px; font-weight: 300; }
 
-/* Ilustração — idêntica ao secretaria.css */
 .pi-hero-ilustracao {
   display: block; width: 100%; line-height: 0;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.4) 35%, rgba(0,0,0,.75) 100%);
@@ -257,7 +260,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 6. Layout principal + sidebar ──────────────────────────── */
+/* ── 7. Layout principal + sidebar ──────────────────────────── */
 #pi-main { background: #fff; padding: 38px 0 56px; }
 
 .pi-layout-glossario {
@@ -276,7 +279,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .pi-secao-divider { border: none; border-top: 2px solid var(--pi-verde-claro); margin: 0 0 16px; }
 
 
-/* ── 7. Componentes da sidebar ───────────────────────────────── */
+/* ── 8. Componentes da sidebar ───────────────────────────────── */
 .pi-sidebar-card {
   background: #fff; border: 1.5px solid var(--pi-cinza-borda);
   border-radius: 10px; padding: 20px; margin-bottom: 16px;
@@ -346,7 +349,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .gloss-sidebar-letra:hover { background: var(--pi-verde); border-color: var(--pi-verde-escuro); color: #fff; text-decoration: none; }
 
 
-/* ── 8. Botões e utilitários ─────────────────────────────────── */
+/* ── 9. Botões e utilitários ─────────────────────────────────── */
 .pi-btn-verde {
   display: inline-flex; align-items: center; gap: 8px; background: var(--pi-verde); color: #fff;
   font-size: 0.8125rem; font-weight: 700; padding: 10px 20px; border-radius: 6px;
@@ -357,7 +360,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .pi-btn-full { width: 100%; justify-content: center; }
 
 
-/* ── 9. Rodapé ───────────────────────────────────────────────── */
+/* ── 10. Rodapé ──────────────────────────────────────────────── */
 #pi-footer { background: var(--pi-verde-escuro); color: rgba(255,255,255,.7); padding: 42px 0 16px; }
 #pi-footer h6 {
   color: #fff; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
@@ -382,17 +385,15 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 10. Cabeçalho da seção de glossário ─────────────────────── */
+/* ── 11. Cabeçalho da seção de glossário ─────────────────────── */
 .gloss-secao-header { margin-bottom: 22px; }
 .gloss-intro-texto {
   font-size: 0.9375rem; color: #555; line-height: 1.75; margin-top: 10px; max-width: 720px;
 }
 
 
-/* ── 11. Campo de pesquisa ───────────────────────────────────── */
-.gloss-pesquisa {
-  margin-bottom: 20px;
-}
+/* ── 12. Campo de pesquisa ───────────────────────────────────── */
+.gloss-pesquisa { margin-bottom: 20px; }
 
 .gloss-pesquisa-group {
   position: relative;
@@ -428,7 +429,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
   box-shadow: 0 0 0 3px rgba(45,122,45,.12);
 }
 
-/* Botão limpar (×) */
 .gloss-pesquisa-limpar {
   position: absolute;
   right: 12px;
@@ -444,7 +444,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 .gloss-pesquisa-limpar:hover { color: var(--pi-verde-escuro); background: var(--pi-verde-claro); }
 
-/* Resultado da pesquisa */
 .gloss-pesquisa-info {
   margin-top: 8px;
   font-size: 0.8rem;
@@ -454,7 +453,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
   padding-left: 2px;
 }
 
-/* Destaque do termo encontrado na pesquisa */
 .gloss-highlight {
   background: #fff3a3;
   border-radius: 2px;
@@ -464,7 +462,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 12. Filtro alfabético ───────────────────────────────────── */
+/* ── 13. Filtro alfabético ───────────────────────────────────── */
 .gloss-filtro-secao {
   background: var(--pi-cinza-bg); border: 1.5px solid var(--pi-cinza-borda);
   border-radius: 10px; padding: 18px 20px 14px; margin-bottom: 32px;
@@ -516,7 +514,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 13. Grupos de letras ────────────────────────────────────── */
+/* ── 14. Grupos de letras ────────────────────────────────────── */
 .gloss-grupo { margin-bottom: 40px; }
 .gloss-grupo:last-child { margin-bottom: 0; }
 .gloss-grupo-titulo {
@@ -526,7 +524,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 14. Cards de definição ──────────────────────────────────── */
+/* ── 15. Cards de definição ──────────────────────────────────── */
 .gloss-card {
   background: #fff; border: 1.5px solid var(--pi-cinza-borda); border-left: 4px solid var(--pi-verde);
   border-radius: 8px; padding: 18px 20px; margin-bottom: 12px;
@@ -540,7 +538,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .gloss-definicao { font-size: 0.9rem; color: #444; line-height: 1.78; margin: 0; }
 
 
-/* ── 15. Mensagem sem resultado ──────────────────────────────── */
+/* ── 16. Mensagem sem resultado ──────────────────────────────── */
 .gloss-sem-resultado {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 14px; padding: 56px 24px; background: var(--pi-cinza-bg);
@@ -550,29 +548,16 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .gloss-sem-resultado p { font-size: 0.9375rem; color: #888; margin: 0; }
 
 
-/* ── 16. Skip navigation ─────────────────────────────────────── */
-.pi-skip-nav {
-  position: absolute; top: -100px; left: 0; background: var(--pi-amarelo); color: #000;
-  font-weight: 700; padding: 10px 20px; z-index: 9999; text-decoration: none; transition: top .1s;
-}
-.pi-skip-nav:focus { top: 0; }
-
-
 /* ── 17. Alto contraste eMAG ─────────────────────────────────── */
-
-/* Base global */
 body.high-contrast { background: #000 !important; color: #fff !important; }
 
-/* Regra global: força branco em todos os textos (exceto links, botões, inputs e VLibras) */
 body.high-contrast *:not(a):not(button):not(input):not(select):not(textarea):not(.vw-plugin-wrapper):not([vw]) {
   color: #fff !important;
 }
 
-/* Links em amarelo vivo */
 body.high-contrast a,
 body.high-contrast a * { color: #ff0 !important; }
 
-/* Fundos pretos nos containers principais */
 body.high-contrast #pi-barra-topo,
 body.high-contrast #pi-navbar,
 body.high-contrast #pi-header,
@@ -580,37 +565,30 @@ body.high-contrast #pi-hero,
 body.high-contrast #pi-main,
 body.high-contrast #pi-footer { background: #000 !important; }
 
-/* Bordas visíveis nos blocos estruturais */
 body.high-contrast #pi-barra-topo,
 body.high-contrast #pi-navbar { border: 1px solid #fff !important; }
 body.high-contrast #pi-header { border-color: #fff !important; }
 body.high-contrast #pi-hero   { border-bottom: 2px solid #fff; }
 body.high-contrast #pi-footer { border-top: 1px solid #fff; }
 
-/* Oculta imagem decorativa do hero */
 body.high-contrast .pi-hero-ilustracao { display: none; }
 
-/* Campo de busca do header */
 body.high-contrast .pi-search-input { background: #000 !important; color: #fff !important; border-color: #fff !important; }
 
-/* Breadcrumb */
 body.high-contrast .pi-breadcrumb li,
 body.high-contrast .pi-breadcrumb li a { color: #ff0 !important; }
 
-/* Dropdowns da navbar */
 body.high-contrast #pi-navbar .dropdown-menu,
 body.high-contrast #pi-navbar .dropdown-menu.mega-menu { background: #111 !important; border: 1px solid #fff !important; }
 body.high-contrast #pi-navbar .dropdown-item,
 body.high-contrast #pi-navbar .mega-col .dropdown-item { color: #ff0 !important; }
 body.high-contrast #pi-navbar .dropdown-item:hover { background: #333 !important; color: #fff !important; }
 
-/* Sidebar */
 body.high-contrast .pi-sidebar-card,
 body.high-contrast .pi-controles-bloco { background: #000 !important; border-color: #fff !important; }
 body.high-contrast .pi-ctrl-btn-contraste { background: var(--pi-amarelo) !important; color: #000 !important; border-color: var(--pi-amarelo) !important; }
 body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo) !important; color: #000 !important; }
 
-/* Filtro alfabético */
 body.high-contrast .gloss-filtro-secao { background: #000 !important; border-color: #fff !important; }
 body.high-contrast .gloss-letra-btn,
 body.high-contrast .gloss-letra-todos   { background: #000 !important; border-color: #fff !important; color: #ff0 !important; }
@@ -619,24 +597,19 @@ body.high-contrast .gloss-letra-todos.ativo { background: #ff0 !important; color
 body.high-contrast .gloss-letra-btn.gloss-letra-vazia,
 body.high-contrast .gloss-letra-btn:disabled { color: #555 !important; border-color: #333 !important; background: transparent !important; }
 
-/* Cards de definição */
 body.high-contrast .gloss-card    { background: #000 !important; border-color: #fff !important; border-left-color: #ff0 !important; }
 body.high-contrast .gloss-grupo-titulo { color: #ff0 !important; border-bottom-color: #555 !important; }
 
-/* Campo de pesquisa */
 body.high-contrast .gloss-pesquisa-input { background: #000 !important; color: #fff !important; border-color: #fff !important; }
 body.high-contrast .gloss-pesquisa-input::placeholder { color: #888 !important; }
 body.high-contrast .gloss-pesquisa-limpar { color: #ff0 !important; }
 body.high-contrast .gloss-highlight { background: #ff0 !important; color: #000 !important; }
 
-/* Mensagem sem resultado */
 body.high-contrast .gloss-sem-resultado { background: #111 !important; border-color: #555 !important; }
 
-/* Letras da sidebar */
 body.high-contrast .gloss-sidebar-letra { background: #000 !important; border-color: #fff !important; color: #ff0 !important; }
 body.high-contrast .gloss-sidebar-letra:hover { background: #ff0 !important; color: #000 !important; }
 
-/* Rodapé */
 body.high-contrast #pi-footer h6              { color: #fff !important; }
 body.high-contrast .pi-footer-bottom          { color: rgba(255,255,255,.6) !important; }
 

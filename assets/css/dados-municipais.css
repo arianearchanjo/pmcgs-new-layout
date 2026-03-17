@@ -1,17 +1,17 @@
 /* ══════════════════════════════════════════════════════════════
-   CONHEÇA CAMPINA — CSS COMPLETO E AUTOSSUFICIENTE
+   CONHEÇA CAMPINA — CSS EXCLUSIVO DA SEÇÃO
    Prefeitura de Campina Grande do Sul – PR
 
-   Este arquivo é 100% isolado: contém todos os estilos
-   necessários, incluindo header, navbar, footer e barra topo.
-   Não depende de nenhum outro CSS do site.
+   Este arquivo contém apenas os estilos exclusivos da seção.
+   Depende do index.css para: reset, body, focus, skip-nav,
+   navbar-toggler e variáveis globais.
 
    Organização:
-   1.  Variáveis e reset
-   2.  Skip navigation (eMAG)
-   3.  Barra superior (topo verde)
-   4.  Header (logomarca + busca)
-   5.  Navbar (menu principal)
+   1.  Variáveis exclusivas da seção
+   2.  Reset parcial (apenas ::before / ::after)
+   3.  Barra superior (topo verde) — prefixo pi-
+   4.  Header (logomarca + busca) — prefixo pi-
+   5.  Navbar (menu principal) — prefixo pi-
    6.  Breadcrumb da seção
    7.  Layout da seção (grid 2 colunas)
    8.  Menu lateral (sidebar)
@@ -29,9 +29,10 @@
 ══════════════════════════════════════════════════════════════ */
 
 
-/* ── 1. Variáveis e reset ──────────────────────────────────── */
+/* ── 1. Variáveis exclusivas da seção ──────────────────────── */
 :root {
-  /* Identidade da Prefeitura (global) */
+  /* Variáveis globais --pi-* mantidas pois usam nomenclatura
+     diferente do index.css (que usa --verde, --amarelo etc.)   */
   --pi-verde:         #2d7a2d;
   --pi-verde-escuro:  #1e5c1e;
   --pi-verde-medio:   #3a9a3a;
@@ -58,20 +59,17 @@
   --cc-transicao:     .2s ease;
 }
 
-html { font-size: 1rem; }
-:focus-visible { outline: 3px solid var(--pi-amarelo); outline-offset: 2px; }
-:focus:not(:focus-visible) { outline: none; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-texto); }
+/* ── 2. Reset parcial — apenas pseudo-elementos ────────────── */
+/* index.css cobre * { box-sizing; margin; padding }
+   mas não declara ::before e ::after explicitamente          */
+*::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 
-/* ── 2. Skip navigation (eMAG) ────────────────────────────── */
-.pi-skip-nav {
-  position: absolute; top: -100px; left: 0;
-  background: var(--pi-amarelo); color: #000;
-  font-weight: 700; padding: 10px 20px;
-  z-index: 9999; text-decoration: none; transition: top .1s;
-}
+/* ── Skip navigation (eMAG) ────────────────────────────────── */
+/* Redeclarado aqui: o CSS da página carrega ANTES do index.css,
+   portanto esta regra precisa existir neste arquivo para garantir
+   que o skip-nav fique oculto antes de qualquer outro estilo.    */
+.pi-skip-nav { position: absolute; top: -100px; left: 0; background: var(--pi-amarelo); color: #000; font-weight: 700; padding: 10px 20px; z-index: 9999; text-decoration: none; transition: top .1s; }
 .pi-skip-nav:focus { top: 0; }
 
 
@@ -156,8 +154,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 #pi-navbar .dropdown-item:hover::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--pi-verde); }
 #pi-navbar .pi-dropdown-destaque { color: var(--pi-verde); font-weight: 700; }
 #pi-navbar .pi-dropdown-destaque:hover { color: #fff; }
-#pi-navbar .navbar-toggler { border-color: rgba(255,255,255,.4); margin: 6px 0; }
-#pi-navbar .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu { display: block; animation: piDropFade .18s ease; }
@@ -191,10 +187,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 /* ── 7. Layout da seção ────────────────────────────────────── */
 #cc-pagina { background: var(--cc-branco); padding: 40px 0 64px; }
 
-/*
- * Grid de duas colunas: menu lateral + conteúdo.
- * Em mobile (<= 991px) vira coluna única.
- */
 .cc-grid { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; }
 
 @media (max-width: 991px) {
@@ -204,19 +196,15 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 
 
 /* ── 8. Menu lateral ───────────────────────────────────────── */
-/*
- * Desktop: sticky à esquerda.
- * Mobile: painel colapsável via botão #cc-menu-toggle.
- */
 .cc-sidebar { position: sticky; top: 20px; }
 
 .cc-menu-titulo { font-size: 18px; font-weight: 800; color: var(--cc-verde); text-transform: uppercase; letter-spacing: .5px; padding: 0 0 14px; border-bottom: 3px solid var(--cc-verde); margin-bottom: 8px; }
 
-.cc-menu-toggle { display: none; width: 100%; background: var(--cc-verde); color: #fff; border: none; border-radius: var(--cc-radius); padding: 12px 18px; font-size: 15px; font-weight: 600; text-align: left; cursor: pointer; align-items: center; justify-content: space-between; margin-bottom: 4px; font-family: 'Roboto', sans-serif; }
-.cc-menu-toggle .cc-toggle-icon { transition: transform var(--cc-transicao); }
+.cc-menu-toggle { display: none; width: 100%; align-items: center; justify-content: space-between; background: var(--cc-verde); color: #fff; border: none; padding: 12px 16px; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: var(--cc-radius); font-family: 'Roboto', sans-serif; }
+.cc-toggle-icon { transition: transform var(--cc-transicao); }
 .cc-menu-toggle[aria-expanded="true"] .cc-toggle-icon { transform: rotate(180deg); }
 
-.cc-menu-lista { list-style: none; padding: 0; margin: 0; }
+.cc-menu-lista { list-style: none; padding: 0; margin: 8px 0 0; }
 .cc-menu-lista li { margin: 0; }
 
 .cc-menu-link { display: block; padding: 10px 14px; font-size: 14px; color: var(--cc-texto); text-decoration: none; border-left: 3px solid transparent; border-radius: 0 4px 4px 0; transition: background var(--cc-transicao), border-color var(--cc-transicao), color var(--cc-transicao); line-height: 1.4; }
@@ -262,10 +250,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 
 
 /* ── 11. Página: Galeria de Prefeitos ──────────────────────── */
-/*
- * Ao clicar num card, o JS (conheca-campina.js) injeta
- * um .cc-bio-painel logo após a linha do card no grid.
- */
 .cc-prefeitos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
 
 .cc-prefeito-card { background: var(--cc-branco); border: 1px solid var(--cc-cinza-borda); border-top: 3px solid var(--cc-verde); border-radius: var(--cc-radius); padding: 18px 12px 14px; text-align: center; cursor: pointer; transition: box-shadow var(--cc-transicao), transform var(--cc-transicao), border-top-color var(--cc-transicao); position: relative; outline: none; }

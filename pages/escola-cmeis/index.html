@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ╔══════════════════════════════════════════════════════════════╗
-       ║  ALTERAR: título e description a cada nova escola/CMEI      ║
-       ╚══════════════════════════════════════════════════════════════╝ -->
   <title>Escola Municipal José Eurípedes Gonçalves – Prefeitura de Campina Grande do Sul – PR</title>
   <meta name="description" content="Informações sobre a Escola Municipal José Eurípedes Gonçalves, localizada no Centro de Campina Grande do Sul – PR.">
 
@@ -16,8 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos da página de escola -->
   <link rel="stylesheet" href="../../assets/css/index.css">
-
+  <link rel="stylesheet" href="../../assets/css/escola.css">
 </head>
 
 <body>
@@ -27,21 +25,19 @@
   ════════════════════════════════════════════════════════════════ -->
   <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
 
-<barra-acessibilidade> </barra-acessibilidade>
+  <!-- Componentes globais: acessibilidade, busca e cabeçalho -->
+  <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-
   <!-- ══════════════════════════════════════════════════════════════
-       HERO — título + breadcrumb
+       HERO — Breadcrumb e título da escola
   ════════════════════════════════════════════════════════════════ -->
   <section id="pi-hero" aria-label="Identificação da escola">
     <div class="container">
       <div class="pi-hero-inner">
 
-        <!-- ╔══════════════════════════════════════════════════════╗
-             ║  ALTERAR: breadcrumb e h1 para cada escola/CMEI     ║
-             ╚══════════════════════════════════════════════════════╝ -->
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
         <nav aria-label="Você está em">
           <ol class="pi-breadcrumb">
             <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
@@ -56,13 +52,12 @@
 
       </div>
     </div>
-    <!-- Imagem decorativa (não informativa) -->
+
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
     <div class="pi-hero-ilustracao" aria-hidden="true">
       <img src="../../assets/img/escola-cmeis/ilustracao.png" alt="">
     </div>
   </section>
-  <!-- ══ /HERO ══ -->
-
 
   <!-- ══════════════════════════════════════════════════════════════
        CONTEÚDO PRINCIPAL
@@ -71,11 +66,7 @@
     <div class="container">
       <div id="pi-conteudo" tabindex="-1">
 
-        <!-- ────────────────────────────────────────────────────────
-             NAVEGAÇÃO POR ABAS
-             3 abas: Informações / Sobre a Escola / Links Úteis
-             O JS (escola.js) alterna os painéis via classe .ativo.
-        ──────────────────────────────────────────────────────────── -->
+        <!-- Navegação por abas — alternância gerenciada pelo escola.js -->
         <ul class="sec-tabs-nav" role="tablist" aria-label="Seções da escola">
           <li role="presentation">
             <button class="sec-tab-btn ativo" role="tab"
@@ -97,7 +88,6 @@
           </li>
         </ul>
 
-
         <!-- ════════════════════════════════════════════════════════
              ABA 1 — INFORMAÇÕES
              Endereço, telefone, e-mail, horário e diretor(a).
@@ -107,9 +97,6 @@
           <div class="es-info-bloco">
             <ul class="es-info-lista">
 
-              <!-- ╔══════════════════════════════════════════╗
-                   ║  ALTERAR: endereço                      ║
-                   ╚══════════════════════════════════════════╝ -->
               <li class="es-info-item">
                 <div class="es-info-icone" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="es-info-texto">
@@ -125,9 +112,6 @@
                 </div>
               </li>
 
-              <!-- ╔══════════════════════════════════════════╗
-                   ║  ALTERAR: telefone                      ║
-                   ╚══════════════════════════════════════════╝ -->
               <li class="es-info-item">
                 <div class="es-info-icone" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
                 <div class="es-info-texto">
@@ -140,24 +124,16 @@
                 </div>
               </li>
 
-              <!-- ╔══════════════════════════════════════════╗
-                   ║  ALTERAR: e-mail                        ║
-                   ╚══════════════════════════════════════════╝ -->
               <li class="es-info-item">
                 <div class="es-info-icone" aria-hidden="true"><i class="fas fa-envelope"></i></div>
                 <div class="es-info-texto">
                   <span class="es-info-label">E-mail</span>
                   <span class="es-info-valor">
-                    <a href="mailto:em.jose.euripedes@pmcgs.pr.gov.br">
-                      em.jose.euripedes@pmcgs.pr.gov.br
-                    </a>
+                    <a href="mailto: escolajoseeg@pmcgs.pr.gov.br">escolajoseeg@pmcgs.pr.gov.br</a>
                   </span>
                 </div>
               </li>
 
-              <!-- ╔══════════════════════════════════════════╗
-                   ║  ALTERAR: horário de atendimento        ║
-                   ╚══════════════════════════════════════════╝ -->
               <li class="es-info-item">
                 <div class="es-info-icone" aria-hidden="true"><i class="fas fa-clock"></i></div>
                 <div class="es-info-texto">
@@ -170,14 +146,7 @@
 
             </ul>
 
-            <!-- ╔══════════════════════════════════════════════╗
-                 ║  ALTERAR: nome e foto do(a) diretor(a)      ║
-                 ║  Sem foto: substituir <img> pelo avatar:    ║
-                 ║  <div class="es-diretor-avatar"             ║
-                 ║       aria-hidden="true">                   ║
-                 ║    <i class="fas fa-user"></i>              ║
-                 ║  </div>                                     ║
-                 ╚══════════════════════════════════════════════╝ -->
+            <!-- Diretor(a) da escola -->
             <div class="es-diretor-bloco">
               <img class="es-diretor-foto"
                    src="../../assets/img/escola-cmeis/rosane-mira-rocha.gif"
@@ -185,19 +154,13 @@
               <div class="es-diretor-info">
                 <span class="es-diretor-label">Diretor(a)</span>
                 <span class="es-diretor-nome">Rosane Aparecida de Mira Rocha</span>
-                <!--
-                  Sem diretor(a), substituir o <span> acima por:
-                  <span class="es-diretor-nome nao-informado">Não informado</span>
-                -->
               </div>
             </div>
 
           </div>
-          <!-- fim es-info-bloco -->
 
         </div>
-        <!-- fim aba Informações -->
-
+        <!-- ══ /ABA INFORMAÇÕES ══ -->
 
         <!-- ════════════════════════════════════════════════════════
              ABA 2 — SOBRE A ESCOLA
@@ -205,11 +168,7 @@
         ════════════════════════════════════════════════════════════ -->
         <div class="sec-tab-painel" id="painel-sobre" role="tabpanel" aria-labelledby="tab-sobre">
 
-          <!-- ── Histórico ───────────────────────────────────────── -->
-          <!-- ╔══════════════════════════════════════════════════════╗
-               ║  ALTERAR: texto do histórico                        ║
-               ║  Adicionar ou remover <p> conforme necessário       ║
-               ╚══════════════════════════════════════════════════════╝ -->
+          <!-- Histórico -->
           <div class="es-sobre-secao">
             <h2 class="es-sobre-titulo">Histórico</h2>
             <div class="es-sobre-texto">
@@ -267,11 +226,7 @@
 
           <hr class="es-divider">
 
-          <!-- ── Breve Biografia ─────────────────────────────────── -->
-          <!-- ╔══════════════════════════════════════════════════════╗
-               ║  ALTERAR: texto da biografia do patrono             ║
-               ║  Remover esta seção inteira se não houver biografia ║
-               ╚══════════════════════════════════════════════════════╝ -->
+          <!-- Breve Biografia do patrono -->
           <div class="es-sobre-secao">
             <h2 class="es-sobre-titulo">Breve Biografia</h2>
             <div class="es-sobre-texto">
@@ -296,10 +251,7 @@
 
           <hr class="es-divider">
 
-          <!-- ── Estrutura ───────────────────────────────────────── -->
-          <!-- ╔══════════════════════════════════════════════════════╗
-               ║  ALTERAR: itens da lista de estrutura               ║
-               ╚══════════════════════════════════════════════════════╝ -->
+          <!-- Estrutura física -->
           <div class="es-sobre-secao">
             <h2 class="es-sobre-titulo">Estrutura</h2>
             <div class="es-sobre-texto">
@@ -323,11 +275,7 @@
 
           <hr class="es-divider">
 
-          <!-- ── Galeria de Fotos (Carrossel) ───────────────────── -->
-          <!-- ╔══════════════════════════════════════════════════════╗
-               ║  ALTERAR: src e alt de cada .es-carrossel-slide     ║
-               ║  Adicionar ou remover slides conforme necessário    ║
-               ╚══════════════════════════════════════════════════════╝ -->
+          <!-- Galeria de fotos (carrossel) -->
           <div class="es-sobre-secao">
             <h2 class="es-galeria-titulo">Fotos</h2>
 
@@ -354,8 +302,6 @@
                        alt="Salas de aula" loading="lazy">
                 </div>
 
-                <!-- Adicionar mais slides seguindo o mesmo padrão acima -->
-
               </div>
               <!-- fim .es-carrossel-track -->
 
@@ -375,24 +321,18 @@
             <div class="es-carrossel-dots" id="es-carrossel-dots" aria-hidden="true"></div>
 
           </div>
-          <!-- fim seção fotos -->
 
         </div>
-        <!-- fim aba Sobre a Escola -->
-
+        <!-- ══ /ABA SOBRE A ESCOLA ══ -->
 
         <!-- ════════════════════════════════════════════════════════
              ABA 3 — LINKS ÚTEIS
              Lista de escolas e CMEIs municipais.
-             Marcar class="atual" no <li> da escola desta página.
+             O <li class="atual"> marca a escola desta página.
         ════════════════════════════════════════════════════════════ -->
         <div class="sec-tab-painel" id="painel-links" role="tabpanel" aria-labelledby="tab-links">
 
-          <!-- Grupo: Escolas Municipais -->
-          <!-- ╔══════════════════════════════════════════════════════╗
-               ║  ALTERAR: hrefs e marcar class="atual"              ║
-               ║  no <li> correspondente à escola/CMEI desta página  ║
-               ╚══════════════════════════════════════════════════════╝ -->
+          <!-- Escolas Municipais -->
           <div class="es-links-grupo">
             <p class="es-links-grupo-titulo">Escolas Municipais</p>
             <div class="es-links-grid">
@@ -402,7 +342,6 @@
                 <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Anna Ferreira da Costa</a></li>
                 <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Antonio José de Carvalho</a></li>
                 <li><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal Augusto Staben</a></li>
-                <!-- Escola atual — marcada com class="atual" -->
                 <li class="atual"><a href="#"><i class="fas fa-square" aria-hidden="true"></i> Escola Municipal José Eurípedes Gonçalves</a></li>
               </ul>
 
@@ -416,7 +355,7 @@
             </div>
           </div>
 
-          <!-- Grupo: CMEIs -->
+          <!-- CMEIs -->
           <div class="es-links-grupo">
             <p class="es-links-grupo-titulo">CMEIs</p>
             <div class="es-links-grid">
@@ -440,15 +379,13 @@
           </div>
 
         </div>
-        <!-- fim aba Links Úteis -->
+        <!-- ══ /ABA LINKS ÚTEIS ══ -->
 
       </div>
     </div>
   </main>
-  <!-- ══ /CONTEÚDO PRINCIPAL ══ -->
 
-
-  <!-- Lightbox — abre ao clicar numa foto do carrossel -->
+  <!-- Lightbox — exibido ao clicar em uma foto do carrossel -->
   <div class="es-lightbox" id="es-lightbox"
        role="dialog" aria-modal="true" aria-label="Visualização de foto">
     <button class="es-lightbox-fechar" id="es-lightbox-fechar"
@@ -456,10 +393,14 @@
     <img class="es-lightbox-img" id="es-lightbox-img" src="" alt="">
   </div>
 
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
+  ════════════════════════════════════════════════════════════════ -->
   <meu-footer></meu-footer>
 
-
-  <!-- ══ VLIBRAS ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       VLIBRAS — Plugin de tradução para Libras (Governo Federal)
+  ════════════════════════════════════════════════════════════════ -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -467,9 +408,8 @@
     </div>
   </div>
 
-
   <!-- ══════════════════════════════════════════════════════════════
-       SCRIPTS — Ordem: jQuery → Bootstrap → VLibras → escola.js
+       SCRIPTS — Ordem: Cloudflare → jQuery → Bootstrap → VLibras → página
   ════════════════════════════════════════════════════════════════ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
@@ -478,6 +418,6 @@
   <script src="../../components/searh-component.js"></script>
   <script src="../../components/header-component.js"></script>
   <script src="../../components/footer-component.js"></script>
-
+  <script src="../../components/acessibilidade-component.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,31 +11,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Estilos da secretaria -->
+  <!-- Estilos do formulário -->
   <link rel="stylesheet" href="../../assets/css/formulario.css">
-    <link rel="stylesheet" href="../../assets/css/index.css">
+  <link rel="stylesheet" href="../../assets/css/index.css">
 </head>
 
 <body>
 
-  <!-- ══ SKIP NAVIGATION — WCAG 2.4.1 ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       SKIP NAVIGATION — WCAG 2.4.1
+  ════════════════════════════════════════════════════════════════ -->
   <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
 
- <barra-acessibilidade> </barra-acessibilidade>
+  <!-- Componentes globais: acessibilidade, busca e cabeçalho -->
+  <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-
   <!-- ══════════════════════════════════════════════════════════════
-       HERO — título + breadcrumb (padrão portal)
+       HERO — Breadcrumb e título da página
   ════════════════════════════════════════════════════════════════ -->
   <section id="pi-hero" aria-label="Identificação da página">
     <div class="container">
       <div class="pi-hero-inner">
 
-        <!-- Breadcrumb -->
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
         <nav aria-label="Você está em">
           <ol class="pi-breadcrumb">
             <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
@@ -47,13 +50,12 @@
           </ol>
         </nav>
 
-        <!-- Título -->
         <h1 class="pi-hero-titulo">Cadastrar Manifestação na Ouvidoria Municipal</h1>
 
       </div>
     </div>
 
-    <!-- Ilustração de fundo -->
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
     <div class="pi-hero-ilustracao" aria-hidden="true">
       <img src="../../assets/img/formularios/ilustracao.png" alt="">
     </div>
@@ -66,22 +68,20 @@
     <div class="container">
       <div id="pi-conteudo" class="pi-layout" tabindex="-1">
 
-        <!-- ── COLUNA PRINCIPAL (formulário) ────────────────────── -->
+        <!-- ── COLUNA PRINCIPAL ──────────────────────────────────── -->
         <section id="formulario-servico" aria-labelledby="form-titulo">
 
-          <!-- Alerta de feedback (aria-live) -->
+          <!-- Área de feedback acessível (aria-live) -->
           <div class="form-alert" id="form-feedback" role="alert" aria-live="polite"></div>
 
           <!-- Card do formulário -->
           <div class="form-card">
 
-            <!-- Cabeçalho do card -->
             <div class="form-header">
               <h2 id="form-titulo"><i class="fas fa-comments" aria-hidden="true"></i> Cadastrar Manifestação</h2>
               <p>Preencha os dados abaixo para registrar sua manifestação na Ouvidoria Municipal.</p>
             </div>
 
-            <!-- Corpo do formulário -->
             <div class="form-body">
               <form id="pi-form-ouvidoria" novalidate>
 
@@ -106,7 +106,7 @@
                   </div>
                 </div>
 
-                <!-- Identificação do solicitante -->
+                <!-- Preferência de identificação do solicitante -->
                 <div class="row mt-2 mb-3">
                   <div class="col-12">
                     <div class="form-check form-check-green mb-2">
@@ -366,7 +366,6 @@
             </div>
             <!-- fim form-body -->
 
-            <!-- Rodapé do card -->
             <div class="form-footer">
               <button type="button" class="btn-cancelar" onclick="history.back()" aria-label="Cancelar e voltar">
                 <i class="fas fa-times" aria-hidden="true"></i> Cancelar
@@ -380,13 +379,12 @@
           <!-- fim form-card -->
 
         </section>
-        <!-- ── fim coluna principal ── -->
+        <!-- ── /COLUNA PRINCIPAL ──────────────────────────────────── -->
 
-
-        <!-- ── SIDEBAR ─────────────────────────────────────────── -->
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
         <aside id="pi-sidebar" class="pi-sidebar" aria-label="Informações e acessibilidade">
 
-          <!-- Card Tipos de Manifestação -->
+          <!-- Tipos de manifestação -->
           <div class="form-help-card" aria-labelledby="help-titulo">
             <div class="help-header" id="help-titulo">
               <i class="fas fa-info-circle" aria-hidden="true"></i> Tipos de Manifestação
@@ -427,7 +425,8 @@
               </div>
             </div>
             <div class="pi-ctrl-row">
-              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste" aria-pressed="false" aria-label="Ativar alto contraste">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Ativar alto contraste">
                 <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
               </button>
             </div>
@@ -436,28 +435,32 @@
           <!-- Contato rápido -->
           <div class="pi-sidebar-card pi-sidebar-contato">
             <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Ouvidoria</h4>
-            <p><i class="fas fa-clock" aria-hidden="true"></i>Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
-            <p><i class="fas fa-phone" aria-hidden="true"></i>(41) 3162-7000</p>
-            <p><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a></p>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a>
+            </p>
             <a href="https://campinagrandedosul.pr.gov.br/ouvidoria" class="pi-btn-verde pi-btn-full mt-2">
-              <i class="fas fa-comments"></i> Ouvidoria
+              <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
             </a>
           </div>
 
         </aside>
-        <!-- ── fim sidebar ── -->
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
 
       </div>
     </div>
   </main>
 
-<!-- ══════════════════════════════════════════════════════════════
-       RODAPÉ
+  <!-- ══════════════════════════════════════════════════════════════
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
   ════════════════════════════════════════════════════════════════ -->
   <meu-footer></meu-footer>
 
-
-  <!-- ══ VLIBRAS ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       VLIBRAS — Plugin de tradução para Libras (Governo Federal)
+  ════════════════════════════════════════════════════════════════ -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -465,7 +468,9 @@
     </div>
   </div>
 
-  <!-- ══ SCRIPTS — Ordem: jQuery → Bootstrap → VLibras → formulario.js ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       SCRIPTS — Ordem: Cloudflare → jQuery → Bootstrap → VLibras → página
+  ════════════════════════════════════════════════════════════════ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
@@ -473,5 +478,7 @@
   <script src="../../components/searh-component.js"></script>
   <script src="../../components/header-component.js"></script>
   <script src="../../components/footer-component.js"></script>
+  <script src="../../components/acessibilidade-component.js"></script>
+
 </body>
 </html>

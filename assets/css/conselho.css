@@ -2,34 +2,21 @@
    conselho.css — Template de Páginas de Conselhos Municipais
    Prefeitura de Campina Grande do Sul – PR
 
-   CSS isolado: não depende de nenhum outro stylesheet do portal.
-   Header, Navbar e Footer copiados pixel a pixel de acessibilidade.css.
+   Carregado antes do index.css. Removidas apenas as regras que o
+   index.css já cobre:
+     • html { font-size: 1rem }
+     • *, *::before, *::after { box-sizing / margin / padding }
+     • body { font-family / background / color }          ← line-height: 1.65 mantida
+     • :focus-visible
+     • :focus:not(:focus-visible)
 
-   Índice:
-     1.  Variáveis e Reset
-     2.  Skip Navigation (WCAG 2.4.1)
-     3.  Barra Superior (topo verde)
-     4.  Header (logomarca e busca)
-     5.  Navbar (menu principal)
-     6.  Estrutura da página de conselho
-     7.  Breadcrumb + Título da página
-     8.  Navegação de abas
-     9.  Conteúdo institucional (textos, listas)
-    10.  Card de informações (secretaria executiva)
-    11.  Blocos de destaque e subtítulos
-    12.  Composição do conselho (diretoria, membros)
-    13.  Badges titular / suplente
-    14.  Acordeon de arquivos
-    15.  Botão voltar ao topo
-    16.  Rodapé
-    17.  Responsividade
-    18.  Alto contraste (eMAG)
+   Tudo mais (prefixo pi-*, cn-*, rodapé pi-footer, alto contraste)
+   é exclusivo deste arquivo e foi mantido integralmente.
    ══════════════════════════════════════════════════════════════════════════ */
 
 
 /* ══════════════════════════════════════════════════════════════════════════
    1. VARIÁVEIS E RESET
-   Paleta idêntica à de acessibilidade.css — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 :root {
@@ -43,29 +30,8 @@
   --pi-texto:        #1a2a1a;
 }
 
-html { font-size: 1rem; }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #fff;
-  color: var(--pi-texto);
-  line-height: 1.65;
-}
-
-:focus-visible {
-  outline: 3px solid var(--pi-amarelo);
-  outline-offset: 2px;
-}
-
-:focus:not(:focus-visible) { outline: none; }
+/* line-height não existe no index.css — mantida */
+body { line-height: 1.65; }
 
 img { max-width: 100%; height: auto; }
 a { color: var(--pi-verde); text-decoration: none; }
@@ -94,7 +60,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    3. BARRA SUPERIOR (topo verde)
-   Copiada de acessibilidade.css — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-barra-topo { background: var(--pi-verde); }
@@ -282,7 +247,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    4. HEADER (logomarca e busca)
-   Copiado de acessibilidade.css — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-header {
@@ -341,7 +305,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    5. NAVBAR (menu principal com dropdowns e mega-menus)
-   Copiada de acessibilidade.css — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-navbar { background: var(--pi-verde-escuro); padding: 0; min-height: 46px; }
@@ -541,7 +504,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    7. BREADCRUMB + TÍTULO DA PÁGINA
-   Fundo verde-escuro igual ao hero do portal (pi-hero)
    ══════════════════════════════════════════════════════════════════════════ */
 
 .cn-page-header {
@@ -576,7 +538,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 .cn-breadcrumb li[aria-current="page"] { color: rgba(255, 255, 255, 0.95); font-weight: 500; }
 .cn-breadcrumb-sep { color: rgba(255, 255, 255, 0.4); font-size: 0.625rem; }
 
-/* Ilustração decorativa — copiada de acessibilidade.css */
 .pi-hero-ilustracao {
   display: block;
   width: 100%;
@@ -594,7 +555,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
   opacity: 0.18;
 }
 
-/* Título — mesmo estilo de .pi-hero-titulo */
 .cn-page-titulo {
   font-size: 1.5rem;
   font-weight: 900;
@@ -682,7 +642,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
   margin-top: 8px;
 }
 
-/* Lista numerada */
 .cn-lista-numerada {
   padding-left: 0;
   list-style: none;
@@ -715,7 +674,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
   padding-top: 1px;
 }
 
-/* Lista com marcadores */
 .cn-lista-marcadores {
   list-style: none;
   padding-left: 0;
@@ -906,7 +864,7 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
   flex-shrink: 0;
 }
 
-.cn-badge-titular { background: var(--pi-verde); color: #fff; }
+.cn-badge-titular  { background: var(--pi-verde); color: #fff; }
 .cn-badge-suplente { background: transparent; color: #666; border: 1px solid var(--pi-cinza-borda); }
 
 
@@ -1003,7 +961,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    16. RODAPÉ
-   Idêntico ao footer de acessibilidade.css — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-footer {
@@ -1088,8 +1045,6 @@ a:hover { color: var(--pi-verde-escuro); text-decoration: underline; }
 
 /* ══════════════════════════════════════════════════════════════════════════
    18. ALTO CONTRASTE (eMAG)
-   Mesma estratégia de acessibilidade.css:
-   regra global força tudo branco, depois refina links (#ff0) e botões.
    ══════════════════════════════════════════════════════════════════════════ */
 
 body.high-contrast {
@@ -1097,15 +1052,12 @@ body.high-contrast {
   color: #fff !important;
 }
 
-/* Força texto branco em todos os elementos não-interativos */
 body.high-contrast *:not(a):not(button):not(input):not(.vw-plugin-wrapper):not([vw]) {
   color: #fff !important;
 }
 
-/* Oculta ilustração no alto contraste */
 body.high-contrast .pi-hero-ilustracao { display: none; }
 
-/* Fundos escuros nos containers principais */
 body.high-contrast #pi-barra-topo,
 body.high-contrast #pi-header,
 body.high-contrast #pi-navbar,
@@ -1116,7 +1068,6 @@ body.high-contrast body {
   background-color: #000 !important;
 }
 
-/* Cards e blocos de conteúdo */
 body.high-contrast .cn-info-card,
 body.high-contrast .cn-bloco-destaque,
 body.high-contrast .cn-secao-cabecalho,
@@ -1133,34 +1084,27 @@ body.high-contrast .cn-acordeon-btn     { background: #111 !important; }
 body.high-contrast .cn-acordeon-btn[aria-expanded="true"] { background: #1a1a00 !important; }
 body.high-contrast .cn-arquivo-lista li a:hover { background: #1a1a00 !important; }
 
-/* Todos os links em amarelo */
 body.high-contrast a,
 body.high-contrast a * { color: #ff0 !important; }
 
-/* Botão de contraste ativo */
 body.high-contrast .pi-barra-acesso-contraste {
   background: var(--pi-amarelo) !important;
   color: #000 !important;
   border: 1px solid #fff;
 }
 
-/* Header */
 body.high-contrast #pi-header { border-color: #fff !important; }
 body.high-contrast .pi-search-input { background: #000 !important; color: #fff !important; border-color: #fff !important; }
 body.high-contrast .pi-search-input::placeholder { color: rgba(255, 255, 255, 0.6) !important; }
 body.high-contrast .pi-search-btn { background: #111 !important; color: #fff !important; border-color: #fff !important; }
 
-/* Navbar */
 body.high-contrast #pi-navbar .dropdown-menu,
 body.high-contrast #pi-navbar .dropdown-menu.mega-menu { background: #111 !important; border: 1px solid #fff !important; }
 
-/* Badges */
 body.high-contrast .cn-badge-titular { background: #ff0 !important; color: #000 !important; }
 body.high-contrast .cn-badge-suplente { border-color: #888 !important; }
 
-/* Botão topo */
 body.high-contrast .cn-btn-topo { background: #ff0 !important; color: #000 !important; box-shadow: 0 0 0 2px #fff; }
 
-/* Rodapé */
 body.high-contrast #pi-footer { border-top: 1px solid #fff; }
 body.high-contrast .pi-footer-bottom { border-color: rgba(255, 255, 255, 0.3) !important; }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,29 +11,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Estilos do glossário (autossuficiente) -->
+  <!-- Estilos do glossário -->
   <link rel="stylesheet" href="../../assets/css/glossario.css">
   <link rel="stylesheet" href="../../assets/css/index.css">
 </head>
+
 <body>
 
-  <!-- ══ SKIP NAVIGATION — WCAG 2.4.1 ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       SKIP NAVIGATION — WCAG 2.4.1
+  ════════════════════════════════════════════════════════════════ -->
   <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
 
-  <barra-acessibilidade> </barra-acessibilidade>
+  <!-- Componentes globais: acessibilidade, busca e cabeçalho -->
+  <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
   <!-- ══════════════════════════════════════════════════════════════
-       HERO — idêntico ao da secretaria (ilustracao.png + máscara)
+       HERO — Breadcrumb e título da página
   ════════════════════════════════════════════════════════════════ -->
   <section id="pi-hero" aria-label="Identificação da página">
     <div class="container">
       <div class="pi-hero-inner">
 
-        <!-- Breadcrumb -->
+        <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
         <nav aria-label="Você está em">
           <ol class="pi-breadcrumb">
             <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
@@ -41,13 +46,12 @@
           </ol>
         </nav>
 
-        <!-- Título -->
         <h1 class="pi-hero-titulo">Glossário</h1>
 
       </div>
     </div>
 
-    <!-- Ilustração de fundo — mesmo arquivo e estilo da secretaria -->
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
     <div class="pi-hero-ilustracao" aria-hidden="true">
       <img src="../../assets/img/glossario/ilustracao.png" alt="">
     </div>
@@ -63,7 +67,6 @@
         <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
         <div class="gloss-coluna-principal">
 
-          <!-- Cabeçalho da seção -->
           <div class="gloss-secao-header">
             <h2 class="pi-secao-titulo">
               <i class="fas fa-book-open" aria-hidden="true"></i> Termos e Definições
@@ -76,9 +79,7 @@
             </p>
           </div>
 
-          <!-- ════════════════════════════════════════════════════
-               CAMPO DE PESQUISA
-          ════════════════════════════════════════════════════ -->
+          <!-- Campo de pesquisa -->
           <div class="gloss-pesquisa" role="search" aria-label="Pesquisar termos do glossário">
             <div class="gloss-pesquisa-group">
               <label for="gloss-input-pesquisa" class="sr-only">Pesquisar termos</label>
@@ -92,16 +93,15 @@
                 aria-controls="gloss-lista"
                 aria-label="Pesquisar termos do glossário"
               >
-              <button type="button" class="gloss-pesquisa-limpar" id="gloss-btn-limpar" aria-label="Limpar pesquisa" style="display:none;">
+              <button type="button" class="gloss-pesquisa-limpar" id="gloss-btn-limpar"
+                      aria-label="Limpar pesquisa" style="display:none;">
                 <i class="fas fa-times" aria-hidden="true"></i>
               </button>
             </div>
             <div class="gloss-pesquisa-info" id="gloss-pesquisa-info" aria-live="polite" aria-atomic="true"></div>
           </div>
 
-          <!-- ════════════════════════════════════════════════════
-               FILTRO ALFABÉTICO
-          ════════════════════════════════════════════════════ -->
+          <!-- Filtro alfabético -->
           <section class="gloss-filtro-secao" aria-label="Filtro por letra do alfabeto">
             <div class="gloss-filtro-header">
               <span class="gloss-filtro-label"><i class="fas fa-filter" aria-hidden="true"></i> Filtrar por letra:</span>
@@ -115,9 +115,7 @@
             <div class="gloss-filtro-info" id="gloss-info-resultado" aria-live="polite" aria-atomic="true"></div>
           </section>
 
-          <!-- ════════════════════════════════════════════════════
-               LISTA DE TERMOS
-          ════════════════════════════════════════════════════ -->
+          <!-- Lista de termos -->
           <section id="gloss-lista" aria-label="Lista de termos do glossário">
 
             <!-- ── Grupo A ── -->
@@ -150,7 +148,6 @@
               </article>
 
             </div>
-            <!-- fim grupo A -->
 
             <!-- ── Grupo B ── -->
             <div class="gloss-grupo" data-grupo="B" id="gloss-grupo-B">
@@ -167,7 +164,6 @@
               </article>
 
             </div>
-            <!-- fim grupo B -->
 
             <!-- ── Grupo C ── -->
             <div class="gloss-grupo" data-grupo="C" id="gloss-grupo-C">
@@ -194,7 +190,6 @@
               </article>
 
             </div>
-            <!-- fim grupo C -->
 
             <!-- ── Grupo D ── -->
             <div class="gloss-grupo" data-grupo="D" id="gloss-grupo-D">
@@ -216,7 +211,6 @@
               </article>
 
             </div>
-            <!-- fim grupo D -->
 
             <!-- ── Grupo E ── -->
             <div class="gloss-grupo" data-grupo="E" id="gloss-grupo-E">
@@ -238,7 +232,6 @@
               </article>
 
             </div>
-            <!-- fim grupo E -->
 
             <!-- ── Grupo F ── -->
             <div class="gloss-grupo" data-grupo="F" id="gloss-grupo-F">
@@ -255,7 +248,6 @@
               </article>
 
             </div>
-            <!-- fim grupo F -->
 
             <!-- ── Grupo G ── -->
             <div class="gloss-grupo" data-grupo="G" id="gloss-grupo-G">
@@ -267,7 +259,6 @@
               </article>
 
             </div>
-            <!-- fim grupo G -->
 
             <!-- ── Grupo I ── -->
             <div class="gloss-grupo" data-grupo="I" id="gloss-grupo-I">
@@ -299,7 +290,6 @@
               </article>
 
             </div>
-            <!-- fim grupo I -->
 
             <!-- ── Grupo L ── -->
             <div class="gloss-grupo" data-grupo="L" id="gloss-grupo-L">
@@ -336,7 +326,6 @@
               </article>
 
             </div>
-            <!-- fim grupo L -->
 
             <!-- ── Grupo O ── -->
             <div class="gloss-grupo" data-grupo="O" id="gloss-grupo-O">
@@ -353,7 +342,6 @@
               </article>
 
             </div>
-            <!-- fim grupo O -->
 
             <!-- ── Grupo P ── -->
             <div class="gloss-grupo" data-grupo="P" id="gloss-grupo-P">
@@ -390,7 +378,6 @@
               </article>
 
             </div>
-            <!-- fim grupo P -->
 
             <!-- ── Grupo R ── -->
             <div class="gloss-grupo" data-grupo="R" id="gloss-grupo-R">
@@ -407,7 +394,6 @@
               </article>
 
             </div>
-            <!-- fim grupo R -->
 
             <!-- ── Grupo S ── -->
             <div class="gloss-grupo" data-grupo="S" id="gloss-grupo-S">
@@ -424,7 +410,6 @@
               </article>
 
             </div>
-            <!-- fim grupo S -->
 
             <!-- ── Grupo T ── -->
             <div class="gloss-grupo" data-grupo="T" id="gloss-grupo-T">
@@ -446,7 +431,6 @@
               </article>
 
             </div>
-            <!-- fim grupo T -->
 
             <!-- ── Grupo U ── -->
             <div class="gloss-grupo" data-grupo="U" id="gloss-grupo-U">
@@ -458,7 +442,6 @@
               </article>
 
             </div>
-            <!-- fim grupo U -->
 
             <!-- ── Grupo V ── -->
             <div class="gloss-grupo" data-grupo="V" id="gloss-grupo-V">
@@ -475,24 +458,23 @@
               </article>
 
             </div>
-            <!-- fim grupo V -->
 
-            <!-- Mensagem quando nenhum termo é encontrado -->
+            <!-- Mensagem exibida quando nenhum termo é encontrado -->
             <div class="gloss-sem-resultado" id="gloss-sem-resultado" style="display:none;" aria-live="polite">
               <i class="fas fa-search" aria-hidden="true"></i>
               <p>Nenhum termo encontrado para esta letra.</p>
             </div>
 
           </section>
-          <!-- fim lista de termos -->
+          <!-- ── /LISTA DE TERMOS ──────────────────────────────────── -->
 
         </div>
-        <!-- fim coluna principal -->
+        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
 
-        <!-- ── SIDEBAR ───────────────────────────────────────────── -->
+        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
         <aside class="pi-sidebar" aria-label="Barra lateral">
 
-          <!-- Controles de Acessibilidade -->
+          <!-- Controles de acessibilidade -->
           <div class="pi-controles-bloco">
             <h4><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</h4>
             <div class="pi-ctrl-row">
@@ -504,12 +486,12 @@
               </div>
             </div>
             <div class="pi-ctrl-row">
-              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste" aria-pressed="false" aria-label="Ativar alto contraste">
+              <button class="pi-ctrl-btn-contraste" id="pi-sb-btn-contraste"
+                      aria-pressed="false" aria-label="Ativar alto contraste">
                 <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
               </button>
             </div>
           </div>
-
 
           <!-- Links úteis -->
           <div class="pi-sidebar-card">
@@ -527,101 +509,32 @@
           <!-- Contato rápido -->
           <div class="pi-sidebar-card pi-sidebar-contato">
             <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
-            <p><i class="fas fa-clock" aria-hidden="true"></i>Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
-            <p><i class="fas fa-phone" aria-hidden="true"></i>(41) 3162-7000</p>
-            <p><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:faleconosco@pmcgs.pr.gov.br">faleconosco@pmcgs.pr.gov.br</a></p>
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a>            
+                </p>
             <a href="https://campinagrandedosul.pr.gov.br/ouvidoria" class="pi-btn-verde pi-btn-full">
               <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
             </a>
           </div>
 
         </aside>
-        <!-- ── fim sidebar ── -->
+        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
 
       </div>
     </div>
   </main>
 
   <!-- ══════════════════════════════════════════════════════════════
-       RODAPÉ
+       RODAPÉ — Links institucionais, contato e créditos
   ════════════════════════════════════════════════════════════════ -->
-  <footer id="pi-footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
+    <meu-footer></meu-footer>
 
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="pi-footer-logo-wrap">
-            <a href="../../index.html" aria-label="Página inicial">
-              <img class="pi-logo-img" src="../../assets/img/glossario/logo.png" alt="Logo da Prefeitura">
-            </a>
-          </div>
-          <h6>Sobre Campina</h6>
-          <ul>
-            <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">História do Município</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/dados-municipais">Dados Municipais</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/mapa-turismo">Mapa do Turismo</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conheça Campina</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h6>Serviços</h6>
-          <ul>
-            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Todos os Serviços</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h6>Prefeitura</h6>
-          <ul>
-            <li><a href="https://campinagrandedosul.pr.gov.br/prefeito">Prefeito</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/vice-prefeito">Vice-Prefeito</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/secretarios-municipais">Secretários</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria</a></li>
-          </ul>
-          <h6 class="mt-3">Transparência</h6>
-          <ul>
-            <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência</a></li>
-            <li><a href="https://radardatransparencia.atricon.org.br/">Radar da Transparência</a></li>
-            <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a></li>
-            <li><a href="#" aria-current="page">Glossário</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h6>Contato</h6>
-          <address class="pi-footer-contact" style="font-style:normal;">
-            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Praça Bento Munhoz, 30 – Centro<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campina Grande do Sul – PR</p>
-            <p><i class="fas fa-phone" aria-hidden="true"></i>(41) 3162-7000</p>
-            <p><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:faleconosco@pmcgs.pr.gov.br">faleconosco@pmcgs.pr.gov.br</a></p>
-            <p><i class="fas fa-clock" aria-hidden="true"></i>Seg. a Sex. – 8h30–12h / 13h30–17h30</p>
-          </address>
-          <h6 class="mt-3">Redes Sociais</h6>
-          <div class="pi-footer-social" aria-label="Redes sociais da Prefeitura">
-            <a href="https://www.facebook.com/PrefDeCampina"        target="_blank" rel="noopener" aria-label="Facebook (abre em nova aba)" ><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/prefdecampina"       target="_blank" rel="noopener" aria-label="Instagram (abre em nova aba)"><i class="fab fa-instagram"   aria-hidden="true"></i></a>
-            <a href="https://www.youtube.com/@prefdecampina"        target="_blank" rel="noopener" aria-label="YouTube (abre em nova aba)"  ><i class="fab fa-youtube"     aria-hidden="true"></i></a>
-            <a href="https://campinagrandedosul.pr.gov.br/whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp (abre em nova aba)" ><i class="fab fa-whatsapp"    aria-hidden="true"></i></a>
-          </div>
-        </div>
-
-      </div>
-      <div class="pi-footer-bottom">
-        &copy; 2026 Prefeitura Municipal de Campina Grande do Sul – PR &nbsp;|&nbsp;
-        Praça Bento Munhoz da Rocha Neto, 30 – Centro – CEP 83.435-001 &nbsp;|&nbsp;
-        Mantido pela STI – Secretaria de Tecnologia da Informação
-      </div>
-    </div>
-  </footer>
-
-  <!-- ══ VLIBRAS ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       VLIBRAS — Plugin de tradução para Libras (Governo Federal)
+  ════════════════════════════════════════════════════════════════ -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -629,10 +542,14 @@
     </div>
   </div>
 
-  <!-- ══ SCRIPTS — Ordem: jQuery → Bootstrap → VLibras → glossario.js ══ -->
+  <!-- ══════════════════════════════════════════════════════════════
+       SCRIPTS — Ordem: Cloudflare → jQuery → Bootstrap → VLibras → página
+  ════════════════════════════════════════════════════════════════ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script src="../../js/glossario.js"></script>
+  <script src="../../components/searh-component.js"></script>
+  <script src="../../components/header-component.js"></script>
+  <script src="../../components/footer-component.js"></script>
+  <script src="../../components/acessibilidade-component.js"></script>
 </body>
 </html>

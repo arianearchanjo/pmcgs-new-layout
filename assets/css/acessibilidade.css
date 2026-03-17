@@ -2,9 +2,6 @@
    acessibilidade.css — Página de Acessibilidade
    Prefeitura de Campina Grande do Sul – PR
 
-   CSS isolado: não depende do style.css da home.
-   Recria a identidade visual completa do portal.
-
    Índice de seções:
      1. Variáveis e Reset
      2. Skip Navigation (WCAG 2.4.1)
@@ -25,6 +22,9 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 /* Paleta de cores da identidade visual da Prefeitura */
+/* NOTA: as variáveis abaixo usam prefixo --pi- e por isso NÃO conflitam
+   com as variáveis --verde, --amarelo etc. do index.css.
+   Mantidas pois são referenciadas em todo este arquivo. */
 :root {
   --pi-verde:        #2d7a2d;
   --pi-verde-escuro: #1e5c1e;
@@ -36,37 +36,17 @@
   --pi-texto:        #1a2a1a;
 }
 
-/* Reset e base tipográfica */
-html { font-size: 1rem; }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #fff;
-  color: var(--pi-texto);
-}
-
-/* Indicador de foco visível (WCAG 2.4.7) — anel amarelo em todos os elementos */
-:focus-visible {
-  outline: 3px solid var(--pi-amarelo);
-  outline-offset: 2px;
-}
-
-/* Remove outline padrão apenas quando não é foco via teclado */
-:focus:not(:focus-visible) {
-  outline: none;
-}
+/* REMOVIDOS (idênticos ao index.css):
+   html { font-size: 1rem; }
+   * { box-sizing: border-box; margin: 0; padding: 0; }
+   body { font-family: 'Roboto', sans-serif; background: #fff; color: ... }
+   :focus-visible { outline: 3px solid ...; outline-offset: 2px; }
+   :focus:not(:focus-visible) { outline: none; }
+*/
 
 
 /* ══════════════════════════════════════════════════════════════════════════
    2. SKIP NAVIGATION (WCAG 2.4.1)
-   Link oculto que aparece ao receber foco via teclado, permitindo pular
-   diretamente para o conteúdo principal sem navegar pelo menu.
    ══════════════════════════════════════════════════════════════════════════ */
 
 .pi-skip-nav {
@@ -82,7 +62,6 @@ body {
   transition: top 0.1s;
 }
 
-/* Exibe o link ao ser focado via teclado */
 .pi-skip-nav:focus {
   top: 0;
 }
@@ -90,22 +69,22 @@ body {
 
 /* ══════════════════════════════════════════════════════════════════════════
    3. BARRA SUPERIOR (Topo verde)
-   Contém: controles de acessibilidade, badges de acesso rápido,
-   horário de atendimento, telefone e redes sociais.
    ══════════════════════════════════════════════════════════════════════════ */
+
+/* NOTA: todos os seletores abaixo usam prefixo #pi- / .pi-
+   e por isso NÃO são duplicatas dos seletores #barra-topo / .barra-* do index.css.
+   Mantidos integralmente. */
 
 #pi-barra-topo {
   background: var(--pi-verde);
 }
 
-/* Container interno da barra — alinha todos os blocos horizontalmente */
 .pi-barra-inner {
   display: flex;
   align-items: center;
   height: 50px;
 }
 
-/* Separador vertical entre blocos da barra */
 .pi-barra-sep {
   width: 1px;
   height: 24px;
@@ -114,7 +93,6 @@ body {
   align-self: center;
 }
 
-/* --- Bloco de controles de acessibilidade (A+ / A- / A / Contraste) --- */
 .pi-barra-acesso {
   display: flex;
   align-items: center;
@@ -123,7 +101,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Rótulo "Acessibilidade" */
 .pi-barra-acesso span {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.6875rem;
@@ -132,7 +109,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Botões A+ / A- / A */
 .pi-barra-acesso a {
   color: #fff;
   font-size: 0.75rem;
@@ -158,7 +134,6 @@ body {
   outline-offset: 2px;
 }
 
-/* Botão de Alto Contraste */
 .pi-barra-acesso-contraste {
   display: inline-flex;
   align-items: center;
@@ -185,7 +160,6 @@ body {
   outline-offset: 2px;
 }
 
-/* Ícone de atalho para a página de acessibilidade */
 .pi-barra-acesso-icone {
   display: inline-flex;
   align-items: center;
@@ -207,7 +181,6 @@ body {
   text-decoration: none;
 }
 
-/* --- Bloco de badges de acesso rápido --- */
 .pi-barra-badges {
   display: flex;
   align-items: center;
@@ -248,7 +221,6 @@ body {
   flex-shrink: 0;
 }
 
-/* --- Bloco de horário e telefone --- */
 .pi-barra-info-bloco {
   display: flex;
   align-items: center;
@@ -305,7 +277,6 @@ body {
   line-height: 1;
 }
 
-/* Telefone clicável */
 .pi-barra-telefone {
   display: flex;
   flex-direction: column;
@@ -340,7 +311,6 @@ body {
   text-decoration: none;
 }
 
-/* --- Bloco de redes sociais --- */
 .pi-barra-social {
   display: flex;
   align-items: center;
@@ -373,7 +343,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Exibe apenas os dois primeiros badges em telas menores */
   .pi-barra-badges .pi-badge-item:nth-child(n+3) { display: none; }
 }
 
@@ -394,7 +363,6 @@ body {
   gap: 24px;
 }
 
-/* Wrapper da logomarca */
 .pi-logo-wrapper {
   display: flex;
   align-items: center;
@@ -407,7 +375,6 @@ body {
   height: 50px;
 }
 
-/* Campo de busca */
 .pi-header-search {
   flex: 1;
   max-width: 380px;
@@ -462,7 +429,6 @@ body {
 
 /* ══════════════════════════════════════════════════════════════════════════
    5. NAVBAR (Menu principal com dropdowns e mega-menus)
-   Idêntica à home — não alterar valores de espaçamento ou cores.
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-navbar {
@@ -475,7 +441,6 @@ body {
 #pi-navbar .navbar-nav      { align-items: stretch; }
 #pi-navbar .navbar-nav .nav-item { display: flex; align-items: stretch; }
 
-/* Links do menu */
 #pi-navbar .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.9) !important;
   font-size: 0.8125rem;
@@ -494,7 +459,6 @@ body {
   color: #fff !important;
 }
 
-/* --- Dropdown padrão (Serviços) --- */
 #pi-navbar .dropdown-menu {
   border: none;
   border-radius: 0 0 6px 6px;
@@ -504,7 +468,6 @@ body {
   padding: 4px 0;
 }
 
-/* Título de grupo dentro do dropdown */
 #pi-navbar .dropdown-group-title {
   font-size: 0.5625rem;
   font-weight: 900;
@@ -514,7 +477,6 @@ body {
   padding: 10px 18px 4px;
 }
 
-/* Item do dropdown */
 #pi-navbar .dropdown-item {
   font-size: 0.8125rem;
   padding: 8px 20px;
@@ -534,7 +496,6 @@ body {
   padding-left: 26px;
 }
 
-/* Barra lateral colorida no hover do item */
 #pi-navbar .dropdown-item:hover::before {
   content: '';
   position: absolute;
@@ -545,7 +506,6 @@ body {
   background: var(--pi-verde);
 }
 
-/* Link de destaque (→ Mais Serviços, → Portal da Transparência) */
 #pi-navbar .pi-dropdown-destaque {
   color: var(--pi-verde);
   font-weight: 700;
@@ -555,7 +515,6 @@ body {
   color: #fff;
 }
 
-/* --- Mega-menu (Prefeitura e Transparência) --- */
 #pi-navbar .dropdown-menu.mega-menu {
   display: none;
   min-width: 0;
@@ -571,7 +530,6 @@ body {
   display: flex !important;
 }
 
-/* Coluna do mega-menu */
 #pi-navbar .mega-col {
   flex: 0 0 auto;
   min-width: 190px;
@@ -609,12 +567,10 @@ body {
   color: var(--pi-verde-escuro);
 }
 
-/* Remove pseudo-elemento de barra no mega-menu */
 #pi-navbar .mega-col .dropdown-item:hover::before {
   display: none;
 }
 
-/* --- Hover abre dropdown no desktop --- */
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
@@ -636,7 +592,6 @@ body {
   }
 }
 
-/* --- Toggler mobile --- */
 #pi-navbar .pi-navbar-toggler,
 #pi-navbar .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.4);
@@ -647,7 +602,6 @@ body {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* --- Menu mobile vertical (≤991px) --- */
 @media (max-width: 991px) {
   #pi-navbar { min-height: 48px; }
 
@@ -724,7 +678,6 @@ body {
     padding-left: 40px;
   }
 
-  /* Desativa hover-open no mobile (usa clique via Bootstrap) */
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu,
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu.mega-menu {
     display: none;
@@ -738,7 +691,6 @@ body {
 
 /* ══════════════════════════════════════════════════════════════════════════
    6. HERO / CABEÇALHO DA PÁGINA INTERNA
-   Padrão idêntico ao secretaria.css — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-hero {
@@ -754,7 +706,6 @@ body {
   padding-bottom: 12px;
 }
 
-/* Breadcrumb de navegação contextual (WCAG 2.4.8) */
 .pi-breadcrumb {
   display: flex;
   align-items: center;
@@ -794,7 +745,6 @@ body {
   font-size: 0.625rem;
 }
 
-/* Título principal da página */
 .pi-hero-titulo {
   font-size: 1.5rem;
   font-weight: 900;
@@ -812,7 +762,6 @@ body {
   font-weight: 300;
 }
 
-/* Ilustração decorativa na base do hero (mascarada com gradiente) */
 .pi-hero-ilustracao {
   display: block;
   width: 100%;
@@ -845,7 +794,6 @@ body {
   padding: 40px 0 56px;
 }
 
-/* Grid de duas colunas: conteúdo + sidebar */
 .pi-layout {
   display: grid;
   grid-template-columns: 1fr 280px;
@@ -853,7 +801,6 @@ body {
   align-items: start;
 }
 
-/* Mobile: coluna única, sidebar sobe para cima */
 @media (max-width: 991px) {
   .pi-layout {
     grid-template-columns: 1fr;
@@ -869,7 +816,6 @@ body {
    8. CONTEÚDO PRINCIPAL
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* --- Texto introdutório --- */
 .pi-intro-texto {
   font-size: 1rem;
   color: #444;
@@ -880,7 +826,6 @@ body {
 .pi-intro-texto p { margin-bottom: 14px; }
 .pi-intro-texto p:last-child { margin-bottom: 0; }
 
-/* --- Título de seção --- */
 .pi-secao-titulo {
   font-size: 1.125rem;
   font-weight: 700;
@@ -897,17 +842,14 @@ body {
   flex-shrink: 0;
 }
 
-/* Divisor decorativo abaixo do título */
 .pi-secao-divider {
   border: none;
   border-top: 2px solid var(--pi-verde-claro);
   margin: 0 0 24px;
 }
 
-/* Margem de separação entre seções */
 .pi-mt-secao { margin-top: 40px; }
 
-/* --- Grid de recursos de acessibilidade --- */
 .pi-recursos-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -919,7 +861,6 @@ body {
   .pi-recursos-grid { grid-template-columns: 1fr; }
 }
 
-/* Card de recurso */
 .pi-recurso-card {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -937,7 +878,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Ícone do card de recurso */
 .pi-recurso-icon {
   display: flex;
   align-items: center;
@@ -951,7 +891,6 @@ body {
   color: var(--pi-verde);
 }
 
-/* Conteúdo textual do card */
 .pi-recurso-corpo h3 {
   font-size: 0.9375rem;
   font-weight: 700;
@@ -966,7 +905,6 @@ body {
   margin: 0;
 }
 
-/* --- Bloco de compromisso com acessibilidade --- */
 .pi-compromisso-bloco {
   background: var(--pi-verde-claro);
   border: 1.5px solid #b3d6be;
@@ -997,7 +935,6 @@ body {
   margin-bottom: 18px;
 }
 
-/* Selos de conformidade */
 .pi-selos-grid {
   display: flex;
   gap: 12px;
@@ -1025,14 +962,12 @@ body {
   flex-shrink: 0;
 }
 
-/* Sub-texto dos selos de conformidade */
 .pi-selo-sub {
   font-weight: 400;
   font-size: 0.75rem;
   color: #555;
 }
 
-/* --- Bloco de contato --- */
 .pi-contato-bloco {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -1075,7 +1010,6 @@ body {
   margin-bottom: 16px;
 }
 
-/* --- Botões de ação --- */
 .pi-btn-verde {
   display: inline-flex;
   align-items: center;
@@ -1121,13 +1055,11 @@ body {
   text-decoration: none;
 }
 
-/* Botão de largura total (usado na sidebar) */
 .pi-btn-full {
   width: 100%;
   justify-content: center;
 }
 
-/* --- Tabela de atalhos de teclado --- */
 .pi-atalhos-tabela {
   width: 100%;
   border-collapse: collapse;
@@ -1161,7 +1093,6 @@ body {
   vertical-align: middle;
 }
 
-/* Elemento visual de tecla de teclado */
 .pi-kbd {
   display: inline-block;
   background: #eee;
@@ -1175,7 +1106,6 @@ body {
   margin: 1px;
 }
 
-/* Nota informativa abaixo da tabela */
 .pi-nota-tabela {
   font-size: 0.8rem;
   color: #777;
@@ -1188,7 +1118,6 @@ body {
    9. SIDEBAR
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* Card genérico da sidebar */
 .pi-sidebar-card {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -1216,7 +1145,6 @@ body {
   color: var(--pi-verde);
 }
 
-/* Card de contato rápido (variação verde) */
 .pi-sidebar-contato {
   background: var(--pi-verde-claro);
   border-color: #b3d6be !important;
@@ -1239,7 +1167,6 @@ body {
 .pi-sidebar-contato p:last-of-type { margin-bottom: 14px; }
 .pi-sidebar-contato p i           { color: var(--pi-verde); flex-shrink: 0; }
 
-/* Lista de links da sidebar */
 .pi-sidebar-links {
   list-style: none;
   padding: 0;
@@ -1277,17 +1204,14 @@ body {
   flex-shrink: 0;
 }
 
-/* Item ativo na sidebar */
 .pi-sidebar-links li.ativo a {
   color: var(--pi-verde);
   font-weight: 600;
 }
 
-/* Ícones decorativos dos links */
 .pi-sidebar-ico       { margin-right: 8px; color: #aaa; }
 .pi-sidebar-ico-ativo { color: var(--pi-verde); }
 
-/* --- Bloco de controles de acessibilidade (sidebar) --- */
 .pi-controles-bloco {
   background: var(--pi-verde-claro);
   border: 1.5px solid #b8dab8;
@@ -1312,7 +1236,6 @@ body {
   color: var(--pi-verde);
 }
 
-/* Linha de controle (rótulo + botões) */
 .pi-ctrl-row {
   display: flex;
   align-items: center;
@@ -1333,7 +1256,6 @@ body {
   gap: 4px;
 }
 
-/* Botões A+ / A- / A da sidebar */
 .pi-ctrl-btn {
   border: 1px solid #b8dab8;
   background: #fff;
@@ -1353,7 +1275,6 @@ body {
   border-color: var(--pi-verde);
 }
 
-/* Botão de alternar alto contraste da sidebar */
 .pi-ctrl-btn-contraste {
   width: 100%;
   border: 1.5px solid #b8dab8;
@@ -1381,7 +1302,6 @@ body {
 
 /* ══════════════════════════════════════════════════════════════════════════
    10. RODAPÉ
-   Idêntico ao footer da home (style.css) — não alterar valores
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-footer {
@@ -1390,7 +1310,6 @@ body {
   padding: 42px 0 16px;
 }
 
-/* Título das colunas do rodapé */
 #pi-footer h6 {
   color: #fff;
   font-size: 0.6875rem;
@@ -1402,7 +1321,6 @@ body {
   margin-bottom: 12px;
 }
 
-/* Listas de links do rodapé */
 #pi-footer ul { list-style: none; padding: 0; margin: 0; }
 #pi-footer ul li { margin-bottom: 5px; }
 
@@ -1415,7 +1333,6 @@ body {
 
 #pi-footer ul li a:hover { color: #fff; }
 
-/* Logo no rodapé */
 .pi-footer-logo-wrap {
   display: flex;
   align-items: center;
@@ -1424,7 +1341,6 @@ body {
 
 .pi-footer-logo-wrap .pi-logo-img { height: 50px; }
 
-/* Informações de contato */
 .pi-footer-contact p {
   font-size: 0.8125rem;
   margin-bottom: 6px;
@@ -1437,7 +1353,6 @@ body {
   margin-right: 6px;
 }
 
-/* Redes sociais no rodapé */
 .pi-footer-social {
   display: flex;
   gap: 10px;
@@ -1454,7 +1369,6 @@ body {
 
 .pi-footer-social a:hover { color: #fff; }
 
-/* Linha inferior com copyright */
 .pi-footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 28px;
@@ -1467,35 +1381,17 @@ body {
 
 /* ══════════════════════════════════════════════════════════════════════════
    11. ALTO CONTRASTE eMAG
-   Ativado via classe .high-contrast no <body>.
-   Segue as diretrizes eMAG 3.1 e WCAG 2.1 AA:
-     - Fundo escuro (#000)
-     - Texto branco (#fff)
-     - Links em amarelo (#ff0) para máxima legibilidade
-     - Bordas sempre visíveis
-     - Botões com contraste garantido
    ══════════════════════════════════════════════════════════════════════════ */
-
-/* ── BASE GLOBAL ────────────────────────────────────────────────────────────
-   Força cor branca em TODOS os textos e fundo preto em todos os elementos.
-   Isso garante que nenhum elemento com cor explícita (ex: color:#444)
-   fique invisível sobre o fundo escuro.
-   As regras específicas abaixo refinam onde necessário (links = #ff0,
-   botões de ação = amarelo, etc.).
-   ──────────────────────────────────────────────────────────────────────── */
 
 body.high-contrast {
   background: #000 !important;
   color: #fff !important;
 }
 
-/* Força cor branca em todos os textos genéricos (parágrafos, títulos, spans, etc.)
-   Exclui links, botões, inputs e o widget VLibras — tratados individualmente. */
 body.high-contrast *:not(a):not(button):not(input):not(.vw-plugin-wrapper):not([vw]) {
   color: #fff !important;
 }
 
-/* Restaura fundos escuros nos containers com fundo próprio */
 body.high-contrast #pi-barra-topo,
 body.high-contrast #pi-navbar,
 body.high-contrast #pi-header,
@@ -1549,13 +1445,11 @@ body.high-contrast .pi-sidebar-contato {
   background-color: #111 !important;
 }
 
-/* Todos os links em amarelo vivo — sobrescreve a regra global acima */
 body.high-contrast a,
 body.high-contrast a * {
   color: #ff0 !important;
 }
 
-/* Ícones de destaque permanecem amarelos */
 body.high-contrast .pi-recurso-icon i,
 body.high-contrast .pi-contato-icon-wrap i,
 body.high-contrast .pi-secao-titulo i,
@@ -1568,7 +1462,6 @@ body.high-contrast .pi-footer-social a i {
   color: #ff0 !important;
 }
 
-/* --- Barra gov.br --- */
 body.high-contrast #pi-govbr-bar {
   background: #000 !important;
   border-bottom: 1px solid #fff;
@@ -1579,20 +1472,17 @@ body.high-contrast .pi-govbr-access a {
   color: #ff0 !important;
 }
 
-/* --- Barra superior (topo verde) --- */
 body.high-contrast #pi-barra-topo {
   background: #000 !important;
   border-bottom: 1px solid #fff;
 }
 
-/* Botão de alto contraste ativo — destaque amarelo */
 body.high-contrast .pi-barra-acesso-contraste {
   background: var(--pi-amarelo);
   color: #000;
   border: 1px solid #fff;
 }
 
-/* --- Header --- */
 body.high-contrast #pi-header {
   background: #000 !important;
   border-color: #fff !important;
@@ -1614,7 +1504,6 @@ body.high-contrast .pi-search-btn {
   border-color: #fff !important;
 }
 
-/* --- Navbar --- */
 body.high-contrast #pi-navbar {
   background: #000 !important;
   border: 1px solid #fff !important;
@@ -1646,13 +1535,11 @@ body.high-contrast #pi-navbar .mega-col .dropdown-group-title {
   color: #ff0 !important;
 }
 
-/* --- Hero --- */
 body.high-contrast #pi-hero {
   background: #000 !important;
   border-bottom: 2px solid #fff;
 }
 
-/* Oculta ilustração decorativa no alto contraste */
 body.high-contrast .pi-hero-ilustracao {
   display: none;
 }
@@ -1667,7 +1554,6 @@ body.high-contrast .pi-breadcrumb li a {
   color: #ff0 !important;
 }
 
-/* --- Conteúdo principal --- */
 body.high-contrast .pi-secao-titulo {
   color: #fff !important;
 }
@@ -1684,7 +1570,6 @@ body.high-contrast .pi-intro-texto p {
   color: #fff !important;
 }
 
-/* Cards de recurso */
 body.high-contrast .pi-recurso-card {
   background: #000 !important;
   border-color: #fff !important;
@@ -1703,7 +1588,6 @@ body.high-contrast .pi-recurso-corpo p {
   color: #ddd !important;
 }
 
-/* Bloco de compromisso */
 body.high-contrast .pi-compromisso-bloco {
   background: #000 !important;
   border-color: #fff !important;
@@ -1718,7 +1602,6 @@ body.high-contrast .pi-compromisso-bloco p {
   color: #ddd !important;
 }
 
-/* Selos de conformidade */
 body.high-contrast .pi-selo {
   background: #111 !important;
   border-color: #fff !important;
@@ -1733,7 +1616,6 @@ body.high-contrast .pi-selo-sub {
   color: #ccc !important;
 }
 
-/* Bloco de contato */
 body.high-contrast .pi-contato-bloco {
   background: #000 !important;
   border-color: #fff !important;
@@ -1752,7 +1634,6 @@ body.high-contrast .pi-contato-corpo p {
   color: #ddd !important;
 }
 
-/* Tabela de atalhos */
 body.high-contrast .pi-atalhos-tabela thead tr {
   background: #222 !important;
 }
@@ -1767,7 +1648,6 @@ body.high-contrast .pi-atalhos-tabela tbody tr:hover {
   background: #222 !important;
 }
 
-/* Elemento visual de tecla */
 body.high-contrast .pi-kbd {
   background: #333 !important;
   color: #ff0 !important;
@@ -1778,7 +1658,6 @@ body.high-contrast .pi-nota-tabela {
   color: #ccc !important;
 }
 
-/* Botões de ação */
 body.high-contrast .pi-btn-verde {
   background: #ff0 !important;
   color: #000 !important;
@@ -1801,7 +1680,6 @@ body.high-contrast .pi-btn-outline:hover {
   color: #000 !important;
 }
 
-/* --- Sidebar --- */
 body.high-contrast .pi-sidebar-card {
   background: #000 !important;
   border-color: #fff !important;
@@ -1849,7 +1727,6 @@ body.high-contrast .pi-ctrl-label {
   color: #ddd !important;
 }
 
-/* Botões de fonte da sidebar */
 body.high-contrast .pi-ctrl-btn {
   background: #111 !important;
   color: #ff0 !important;
@@ -1861,7 +1738,6 @@ body.high-contrast .pi-ctrl-btn:hover {
   color: #000 !important;
 }
 
-/* Botão de alternar contraste — destaque amarelo quando ativo */
 body.high-contrast .pi-ctrl-btn-contraste {
   background: var(--pi-amarelo) !important;
   color: #000 !important;
@@ -1882,7 +1758,6 @@ body.high-contrast .pi-sidebar-contato p i {
   color: #ff0 !important;
 }
 
-/* --- Rodapé --- */
 body.high-contrast #pi-footer {
   background: #000 !important;
   border-top: 1px solid #fff;

@@ -548,18 +548,7 @@ body.high-contrast .barra-acesso-contraste {
   display: none !important;
 }
 
-/* Cards de serviço legado (servico-row ainda usado em outras seções) */
-.servico-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -4px;
-}
-
-.servico-col {
-  flex: 0 0 12.5%;
-  max-width: 12.5%;
-  padding: 4px;
-}
+/* Cards de serviço legado */
 
 .servico-item {
   background: #fff;
@@ -609,7 +598,6 @@ body.high-contrast .barra-acesso-contraste {
 }
 
 .servico-item:hover .servico-icone i,
-.servico-item:hover .ic-teal i,
 .servico-item:hover .ic-blue i,
 .servico-item:hover .ic-amber i,
 .servico-item:hover .ic-red i,
@@ -639,10 +627,6 @@ body.high-contrast .barra-acesso-contraste {
   font-size: 1.875rem;
   color: var(--verde-escuro);
   transition: color .2s;
-}
-
-.ic-teal i {
-  color: #00786e;
 }
 
 .ic-blue i {
@@ -687,11 +671,6 @@ body.high-contrast .barra-acesso-contraste {
 
 
 @media (max-width: 991px) {
-  .servico-col {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-
   #grid-acesso-rapido {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -800,11 +779,6 @@ body.high-contrast .barra-acesso-contraste {
 
 /* MOBILE ≤575px */
 @media (max-width: 575px) {
-  .servico-col {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
   #grid-acesso-rapido {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
@@ -982,62 +956,6 @@ body.high-contrast .barra-acesso-contraste {
 
 #destaquesCarousel .carousel-item.c3 {
   background: linear-gradient(135deg, #6a3800 0%, #b86000 100%);
-}
-
-.banner-body {
-  padding: 32px 40px;
-  color: #fff;
-}
-
-.banner-tag {
-  display: inline-block;
-  background: var(--amarelo);
-  color: #1a1a1a;
-  font-size: 0.625rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 3px 10px;
-  border-radius: 3px;
-  margin-bottom: 12px;
-}
-
-.banner-body h3 {
-  font-size: 1.6rem;
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-
-.banner-body p {
-  font-size: 0.875rem;
-  opacity: .85;
-  margin-bottom: 16px;
-}
-
-.banner-body .btn-banner {
-  background: rgba(255, 255, 255, .15);
-  border: 1.5px solid rgba(255, 255, 255, .5);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 7px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background .2s;
-}
-
-.banner-body .btn-banner:hover {
-  background: rgba(255, 255, 255, .28);
-}
-
-.banner-icone {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5.625rem;
-  color: rgba(255, 255, 255, .18);
-  padding: 20px;
 }
 
 .carousel-indicators li {
@@ -1333,24 +1251,6 @@ footer ul li a:hover {
   font-size: 0.6875rem;
   color: rgba(255, 255, 255, .35);
   text-align: center;
-}
-
-/* ── Telefone badge — alinhamento vertical do número + label ── */
-.badge-tel {
-  height: 28px !important;
-  padding: 0 10px !important;
-  gap: 0 !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start !important;
-  line-height: 1.1;
-  font-size: 0.875rem !important;
-}
-
-.badge-tel small {
-  font-size: 0.5rem;
-  opacity: .75;
-  letter-spacing: .5px;
 }
 
 /*  BARRA DE CLIMA */
@@ -1805,6 +1705,7 @@ body.high-contrast *:focus-visible {
 
 /* Linha 2: container dos turnos */
 .barra-horario-horas {
+  font-size: 0.800rem;
   display: flex;
   align-items: center;
   gap: 4px;

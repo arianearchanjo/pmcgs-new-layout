@@ -1,3 +1,34 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   pesquisa-servicos.css — Página de Pesquisa de Serviços
+   Prefeitura de Campina Grande do Sul – PR
+
+   Depende do index.css para: reset, body, focus, navbar-toggler
+   e variáveis globais.
+
+   Índice de seções:
+     1.  Variáveis exclusivas da página
+     2.  Reset parcial (apenas ::before / ::after)
+     3.  Skip Navigation (WCAG 2.4.1)
+     4.  Barra Superior (Topo verde)
+     5.  Header (Logomarca e busca)
+     6.  Navbar (Menu principal)
+     7.  Hero / Cabeçalho da Página
+     8.  Barra de Pesquisa de Serviços
+     9.  Layout Principal (Filtros + Lista)
+    10.  Filtros (coluna esquerda)
+    11.  Cards de Serviço (coluna direita)
+    12.  Estado Sem Resultado
+    13.  Rodapé
+    14.  Alto Contraste eMAG
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. VARIÁVEIS EXCLUSIVAS DA PÁGINA
+   Mantidas: nomenclatura --pi-* é diferente do index.css.
+   As variáveis --ps-tag-* são exclusivas desta página.
+   ══════════════════════════════════════════════════════════════════════════ */
+
 :root {
   --pi-verde:        #2d7a2d;
   --pi-verde-escuro: #1e5c1e;
@@ -8,40 +39,32 @@
   --pi-cinza-borda:  #c8d8c8;
   --pi-texto:        #1a2a1a;
 
-  /* Cores de tag de atendimento */
+  /* Cores de tag de atendimento — exclusivas desta página */
   --ps-tag-online:     #0a6c34;
   --ps-tag-presencial: #1e5c9a;
   --ps-tag-hibrido:    #7a4a1e;
 }
 
-/* Reset e base tipográfica */
-html { font-size: 1rem; }
 
-*, *::before, *::after {
+/* ══════════════════════════════════════════════════════════════════════════
+   2. RESET PARCIAL — apenas pseudo-elementos
+   index.css cobre *, body, html, focus.
+   *, *::before, *::after já estão declarados neste arquivo original,
+   mas * é coberto pelo index.css — mantemos só os pseudo-elementos.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+*::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #fff;
-  color: var(--pi-texto);
-}
-
-/* Indicador de foco visível (WCAG 2.4.7) */
-:focus-visible {
-  outline: 3px solid var(--pi-amarelo);
-  outline-offset: 2px;
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
 
 /* ══════════════════════════════════════════════════════════════════════════
-   2. SKIP NAVIGATION (WCAG 2.4.1)
+   3. SKIP NAVIGATION (WCAG 2.4.1)
+   Redeclarado aqui: o CSS da página carrega ANTES do index.css,
+   portanto esta regra precisa existir neste arquivo para garantir
+   que o skip-nav fique oculto antes de qualquer outro estilo.
    ══════════════════════════════════════════════════════════════════════════ */
 
 .pi-skip-nav {
@@ -63,8 +86,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   3. BARRA SUPERIOR (Topo verde)
-   Idêntica ao padrão do portal — não alterar.
+   4. BARRA SUPERIOR (Topo verde)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-barra-topo {
@@ -85,7 +107,6 @@ body {
   align-self: center;
 }
 
-/* Controles de acessibilidade */
 .pi-barra-acesso {
   display: flex;
   align-items: center;
@@ -144,7 +165,6 @@ body {
   text-decoration: none;
 }
 
-/* Badges de acesso rápido */
 .pi-barra-badges {
   display: flex;
   align-items: center;
@@ -185,7 +205,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Bloco horário + telefone */
 .pi-barra-info-bloco {
   display: flex;
   align-items: center;
@@ -276,7 +295,6 @@ body {
   text-decoration: none;
 }
 
-/* Redes sociais da barra */
 .pi-barra-social {
   display: flex;
   align-items: center;
@@ -313,7 +331,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   4. HEADER (Logomarca e busca)
+   5. HEADER (Logomarca e busca)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-header {
@@ -391,8 +409,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   5. NAVBAR (Menu principal)
-   Idêntica ao padrão do portal — não alterar.
+   6. NAVBAR (Menu principal)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-navbar {
@@ -466,14 +483,9 @@ body {
   background: var(--pi-verde);
 }
 
-#pi-navbar .pi-dropdown-destaque {
-  color: var(--pi-verde);
-  font-weight: 700;
-}
-
+#pi-navbar .pi-dropdown-destaque { color: var(--pi-verde); font-weight: 700; }
 #pi-navbar .pi-dropdown-destaque:hover { color: #fff; }
 
-/* Mega-menu */
 #pi-navbar .dropdown-menu.mega-menu {
   display: none;
   min-width: 0;
@@ -526,7 +538,6 @@ body {
 
 #pi-navbar .mega-col .dropdown-item:hover::before { display: none; }
 
-/* Hover abre dropdown no desktop */
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
@@ -546,17 +557,6 @@ body {
   #pi-navbar .nav-item.dropdown:hover > .nav-link {
     background: var(--pi-verde);
   }
-}
-
-/* Toggler mobile */
-#pi-navbar .pi-navbar-toggler,
-#pi-navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.4);
-  margin: 6px 0;
-}
-
-#pi-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 @media (max-width: 991px) {
@@ -647,7 +647,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   6. HERO / CABEÇALHO DA PÁGINA
+   7. HERO / CABEÇALHO DA PÁGINA
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-hero {
@@ -663,7 +663,6 @@ body {
   padding-bottom: 12px;
 }
 
-/* Breadcrumb */
 .pi-breadcrumb {
   display: flex;
   align-items: center;
@@ -703,7 +702,6 @@ body {
   font-size: 0.625rem;
 }
 
-/* Título da página */
 .pi-hero-titulo {
   font-size: 1.5rem;
   font-weight: 900;
@@ -721,7 +719,6 @@ body {
   font-weight: 300;
 }
 
-/* Ilustração decorativa */
 .pi-hero-ilustracao {
   display: block;
   width: 100%;
@@ -745,8 +742,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   7. BARRA DE PESQUISA DE SERVIÇOS
-   Campo em destaque logo abaixo do hero, antes dos filtros.
+   8. BARRA DE PESQUISA DE SERVIÇOS
    ══════════════════════════════════════════════════════════════════════════ */
 
 #ps-main {
@@ -754,7 +750,6 @@ body {
   padding: 36px 0 60px;
 }
 
-/* Wrapper da barra de pesquisa */
 .ps-busca-wrapper {
   background: var(--pi-verde-claro);
   border: 1.5px solid var(--pi-cinza-borda);
@@ -763,7 +758,6 @@ body {
   margin-bottom: 36px;
 }
 
-/* Grupo: ícone + input + botão limpar */
 .ps-busca-grupo {
   display: flex;
   align-items: center;
@@ -780,7 +774,6 @@ body {
   box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.15);
 }
 
-/* Ícone de lupa dentro do campo */
 .ps-busca-icone {
   color: #aaa;
   font-size: 1rem;
@@ -788,7 +781,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Input de pesquisa */
 .ps-busca-input {
   flex: 1;
   border: none;
@@ -805,7 +797,6 @@ body {
   font-weight: 300;
 }
 
-/* Botão de limpar (X) */
 .ps-busca-btn {
   background: transparent;
   border: none;
@@ -825,8 +816,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   8. LAYOUT PRINCIPAL (Filtros + Lista de Serviços)
-   Duas colunas no desktop; coluna única no mobile.
+   9. LAYOUT PRINCIPAL (Filtros + Lista de Serviços)
    ══════════════════════════════════════════════════════════════════════════ */
 
 .ps-layout {
@@ -844,16 +834,14 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   9. FILTROS (coluna esquerda)
+   10. FILTROS (coluna esquerda)
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* Coluna de filtros */
 .ps-filtros {
   position: sticky;
   top: 20px;
 }
 
-/* Contador de resultados */
 .ps-contador {
   background: var(--pi-verde-escuro);
   color: #fff;
@@ -870,7 +858,6 @@ body {
   font-weight: 900;
 }
 
-/* Grupo de filtro (bloco com título + opções) */
 .ps-filtro-grupo {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -879,7 +866,6 @@ body {
   margin-bottom: 16px;
 }
 
-/* Título do grupo de filtro */
 .ps-filtro-titulo {
   font-size: 0.8125rem;
   font-weight: 700;
@@ -897,14 +883,12 @@ body {
   color: var(--pi-verde);
 }
 
-/* Opções do filtro (botões) */
 .ps-filtro-opcoes {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Botão de filtro */
 .ps-filtro-btn {
   display: flex;
   align-items: center;
@@ -937,7 +921,6 @@ body {
   color: var(--pi-verde);
 }
 
-/* Estado ativo do botão de filtro */
 .ps-filtro-btn.ativo {
   background: var(--pi-verde-claro);
   border-color: var(--pi-verde);
@@ -949,7 +932,6 @@ body {
   color: var(--pi-verde);
 }
 
-/* Botão de limpar todos os filtros */
 .ps-btn-limpar-filtros {
   display: flex;
   align-items: center;
@@ -974,7 +956,6 @@ body {
   background: var(--pi-verde-claro);
 }
 
-/* Mobile: filtros viram accordion / display horizontal */
 @media (max-width: 991px) {
   .ps-filtros {
     position: static;
@@ -994,23 +975,19 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   10. CARDS DE SERVIÇO (coluna direita)
-   Cada serviço é um card horizontal com tag, nome, descrição e botão.
+   11. CARDS DE SERVIÇO (coluna direita)
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* Wrapper da lista */
 .ps-lista-wrapper {
   min-height: 300px;
 }
 
-/* Lista de cards */
 .ps-lista {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* ── Card de serviço ── */
 .servico-card {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -1030,7 +1007,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Tag de tipo de atendimento */
 .servico-card .tag-online,
 .servico-card .tag-presencial,
 .servico-card .tag-hibrido {
@@ -1067,7 +1043,6 @@ body {
   border: 1px solid #f0c99a;
 }
 
-/* Nome do serviço */
 .servico-card h3 {
   grid-column: 2;
   grid-row: 1;
@@ -1078,7 +1053,6 @@ body {
   line-height: 1.3;
 }
 
-/* Descrição do serviço */
 .servico-card p {
   grid-column: 2;
   grid-row: 2;
@@ -1088,7 +1062,6 @@ body {
   line-height: 1.6;
 }
 
-/* Botão "Iniciar" */
 .servico-card .btn-servico {
   grid-column: 3;
   grid-row: 1 / 3;
@@ -1122,7 +1095,6 @@ body {
   font-size: 0.75rem;
 }
 
-/* Mobile: reorganiza o card em coluna */
 @media (max-width: 575px) {
   .servico-card {
     grid-template-columns: 1fr auto;
@@ -1159,8 +1131,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   11. ESTADO SEM RESULTADO
-   Exibido quando nenhum serviço corresponde aos filtros ativos.
+   12. ESTADO SEM RESULTADO
    ══════════════════════════════════════════════════════════════════════════ */
 
 .ps-sem-resultado {
@@ -1189,8 +1160,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   12. RODAPÉ
-   Idêntico ao padrão do portal — não alterar valores.
+   13. RODAPÉ
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-footer {
@@ -1276,8 +1246,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   13. ALTO CONTRASTE eMAG
-   Ativado via classe .high-contrast no <body>.
+   14. ALTO CONTRASTE eMAG
    ══════════════════════════════════════════════════════════════════════════ */
 
 body.high-contrast {
@@ -1298,9 +1267,7 @@ body.high-contrast #pi-footer {
   background-color: #000 !important;
 }
 
-body.high-contrast #pi-barra-topo {
-  border-bottom: 1px solid #fff;
-}
+body.high-contrast #pi-barra-topo { border-bottom: 1px solid #fff; }
 
 body.high-contrast .pi-barra-acesso-contraste {
   background: var(--pi-amarelo);
@@ -1308,9 +1275,7 @@ body.high-contrast .pi-barra-acesso-contraste {
   border: 1px solid #fff;
 }
 
-body.high-contrast #pi-header {
-  border-color: #fff !important;
-}
+body.high-contrast #pi-header { border-color: #fff !important; }
 
 body.high-contrast .pi-search-input {
   background: #000 !important;
@@ -1318,9 +1283,7 @@ body.high-contrast .pi-search-input {
   border-color: #fff !important;
 }
 
-body.high-contrast .pi-search-input::placeholder {
-  color: rgba(255,255,255,0.6) !important;
-}
+body.high-contrast .pi-search-input::placeholder { color: rgba(255,255,255,0.6) !important; }
 
 body.high-contrast .pi-search-btn {
   background: #111 !important;
@@ -1333,9 +1296,7 @@ body.high-contrast #pi-navbar {
   border: 1px solid #fff !important;
 }
 
-body.high-contrast #pi-navbar .navbar-nav .nav-link {
-  color: #fff !important;
-}
+body.high-contrast #pi-navbar .navbar-nav .nav-link { color: #fff !important; }
 
 body.high-contrast #pi-navbar .dropdown-menu,
 body.high-contrast #pi-navbar .dropdown-menu.mega-menu {
@@ -1344,9 +1305,7 @@ body.high-contrast #pi-navbar .dropdown-menu.mega-menu {
 }
 
 body.high-contrast #pi-navbar .dropdown-item,
-body.high-contrast #pi-navbar .mega-col .dropdown-item {
-  color: #ff0 !important;
-}
+body.high-contrast #pi-navbar .mega-col .dropdown-item { color: #ff0 !important; }
 
 body.high-contrast #pi-navbar .dropdown-item:hover,
 body.high-contrast #pi-navbar .mega-col .dropdown-item:hover {
@@ -1355,9 +1314,7 @@ body.high-contrast #pi-navbar .mega-col .dropdown-item:hover {
 }
 
 body.high-contrast #pi-navbar .dropdown-group-title,
-body.high-contrast #pi-navbar .mega-col .dropdown-group-title {
-  color: #ff0 !important;
-}
+body.high-contrast #pi-navbar .mega-col .dropdown-group-title { color: #ff0 !important; }
 
 body.high-contrast #pi-hero {
   background: #000 !important;
@@ -1372,7 +1329,6 @@ body.high-contrast .pi-hero-subtitulo { color: #fff !important; }
 body.high-contrast .pi-breadcrumb li,
 body.high-contrast .pi-breadcrumb li a { color: #ff0 !important; }
 
-/* Barra de pesquisa */
 body.high-contrast .ps-busca-wrapper {
   background: #000 !important;
   border-color: #fff !important;
@@ -1389,14 +1345,9 @@ body.high-contrast .ps-busca-input {
 }
 
 body.high-contrast .ps-busca-input::placeholder { color: #888 !important; }
-
 body.high-contrast .ps-busca-icone { color: #ff0 !important; }
+body.high-contrast .ps-busca-btn { color: #ff0 !important; }
 
-body.high-contrast .ps-busca-btn {
-  color: #ff0 !important;
-}
-
-/* Filtros */
 body.high-contrast .ps-filtro-grupo {
   background: #000 !important;
   border-color: #fff !important;
@@ -1432,7 +1383,6 @@ body.high-contrast .ps-btn-limpar-filtros:hover {
   color: #fff !important;
 }
 
-/* Cards de serviço */
 body.high-contrast .servico-card {
   background: #000 !important;
   border-color: #fff !important;
@@ -1460,7 +1410,6 @@ body.high-contrast .servico-card .btn-servico:hover {
   color: #000 !important;
 }
 
-/* Rodapé */
 body.high-contrast #pi-footer {
   background: #000 !important;
   border-top: 1px solid #fff;

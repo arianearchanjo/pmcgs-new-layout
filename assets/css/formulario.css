@@ -1,29 +1,32 @@
 /* ══════════════════════════════════════════════════════════════
    TEMPLATE — FORMULÁRIOS INSTITUCIONAIS
    Prefeitura de Campina Grande do Sul – PR
-   CSS isolado: não depende de nenhum outro arquivo CSS do site.
+
+   Depende do index.css para: reset, body, focus, skip-nav,
+   navbar-toggler e variáveis globais.
 
    Organização:
-   1.  Variáveis e reset
-   2.  Barra superior (topo verde)
-   3.  Header (logomarca + busca)
-   4.  Navbar
-   5.  Hero (título + breadcrumb)
-   6.  Layout principal (coluna + sidebar)
-   7.  Abas (tabs)
-   8.  Aba Secretaria — texto + contato + secretário
-   9.  Aba Departamentos
-   10. Aba Solicitação de Acesso
-   11. Aba Links Úteis
-   12. Sidebar
-   13. Rodapé
-   14. Alto contraste eMAG
-   15. Skip navigation
+   1.  Variáveis exclusivas da página
+   2.  Reset parcial (apenas ::before / ::after)
+   3.  Barra superior (topo verde)
+   4.  Header (logomarca + busca)
+   5.  Navbar
+   6.  Hero (título + breadcrumb)
+   7.  Layout principal (coluna + sidebar)
+   8.  Abas (tabs)
+   9.  Aba Secretaria — texto + contato + secretário
+   10. Aba Departamentos
+   11. Aba Solicitação de Acesso
+   12. Aba Links Úteis
+   13. Sidebar
+   14. Rodapé
+   15. Alto contraste eMAG
    16. Formulário institucional
 ══════════════════════════════════════════════════════════════ */
 
 
-/* ── 1. Variáveis e reset ────────────────────────────────────── */
+/* ── 1. Variáveis exclusivas da página ─────────────────────── */
+/* Mantidas: nomenclatura --pi-* é diferente do index.css      */
 :root {
   --pi-verde:        #2d7a2d;
   --pi-verde-escuro: #1e5c1e;
@@ -34,14 +37,22 @@
   --pi-cinza-borda:  #c8d8c8;
   --pi-texto:        #1a2a1a;
 }
-html { font-size: 1rem; }
-:focus-visible { outline: 3px solid var(--pi-amarelo); outline-offset: 2px; }
-:focus:not(:focus-visible) { outline: none; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-texto); }
+
+/* ── 2. Reset parcial — apenas pseudo-elementos ────────────── */
+/* index.css cobre * { box-sizing; margin; padding }           */
+/* mas não declara ::before e ::after explicitamente           */
+*::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 
-/* ── 2. Barra superior (topo verde) ─────────────────────────── */
+/* ── Skip navigation (eMAG) ────────────────────────────────── */
+/* Redeclarado aqui: o CSS da página carrega ANTES do index.css,
+   portanto esta regra precisa existir neste arquivo para garantir
+   que o skip-nav fique oculto antes de qualquer outro estilo.    */
+.pi-skip-nav { position: absolute; top: -100px; left: 0; background: var(--pi-amarelo); color: #000; font-weight: 700; padding: 10px 20px; z-index: 9999; text-decoration: none; transition: top .1s; }
+.pi-skip-nav:focus { top: 0; }
+
+
+/* ── 3. Barra superior (topo verde) ─────────────────────────── */
 #pi-barra-topo { background: var(--pi-verde); }
 .pi-barra-inner { display: flex; align-items: center; height: 50px; }
 .pi-barra-sep { width: 1px; height: 24px; background: rgba(255,255,255,.25); flex-shrink: 0; align-self: center; }
@@ -90,7 +101,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 @media (max-width: 768px)  { .pi-barra-badges .pi-badge-item:nth-child(n+3) { display: none; } }
 
 
-/* ── 3. Header ───────────────────────────────────────────────── */
+/* ── 4. Header ───────────────────────────────────────────────── */
 #pi-header { background: #fff; border-bottom: 2px solid var(--pi-verde); }
 .pi-header-inner { display: flex; align-items: center; height: 76px; gap: 24px; }
 .pi-logo-wrapper { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
@@ -111,7 +122,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .pi-search-btn:hover { background: var(--pi-verde); border-color: var(--pi-verde); color: #fff; }
 
 
-/* ── 4. Navbar ───────────────────────────────────────────────── */
+/* ── 5. Navbar ───────────────────────────────────────────────── */
 #pi-navbar { background: var(--pi-verde-escuro); padding: 0; min-height: 46px; }
 #pi-navbar .navbar-collapse { align-items: stretch; }
 #pi-navbar .navbar-nav { align-items: stretch; }
@@ -139,8 +150,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 #pi-navbar .dropdown-item:hover::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--pi-verde); }
 #pi-navbar .pi-dropdown-destaque { color: var(--pi-verde); font-weight: 700; }
 #pi-navbar .pi-dropdown-destaque:hover { color: #fff; }
-#pi-navbar .navbar-toggler { border-color: rgba(255,255,255,.4); margin: 6px 0; }
-#pi-navbar .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu { display: block; animation: piDropFade .18s ease; }
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu.mega-menu { display: flex !important; animation: piDropFade .18s ease; }
@@ -162,7 +171,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 }
 
 
-/* ── 5. Hero / cabeçalho da secretaria ──────────────────────── */
+/* ── 6. Hero / cabeçalho ─────────────────────────────────────── */
 #pi-hero { background: var(--pi-verde-escuro); padding: 18px 0 0; position: relative; overflow: hidden; }
 .pi-hero-inner { position: relative; z-index: 2; padding-bottom: 12px; }
 
@@ -173,7 +182,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .pi-breadcrumb li[aria-current="page"] { color: rgba(255,255,255,.95); font-weight: 500; }
 .pi-breadcrumb-sep { color: rgba(255,255,255,.4); font-size: 0.625rem; }
 
-/* Título em caixa alta, igual ao antigo */
 .pi-hero-titulo {
   font-size: 1.5rem; font-weight: 900; color: #fff;
   letter-spacing: .2px; line-height: 1.2; margin: 0;
@@ -187,7 +195,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 @media (max-width: 575px) { .pi-hero-titulo { font-size: 1.125rem; } .pi-hero-ilustracao img { height: 70px; } }
 
 
-/* ── 6. Layout principal ─────────────────────────────────────── */
+/* ── 7. Layout principal ─────────────────────────────────────── */
 #pi-main { background: #fff; padding: 38px 0 56px; }
 .pi-layout { display: grid; grid-template-columns: 1fr 270px; gap: 40px; align-items: start; }
 @media (max-width: 991px) { .pi-layout { grid-template-columns: 1fr; } .pi-sidebar { order: -1; } }
@@ -204,7 +212,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .pi-btn-full { width: 100%; justify-content: center; }
 
 
-/* ── 7. Abas (tabs) ──────────────────────────────────────────── */
+/* ── 8. Abas (tabs) ──────────────────────────────────────────── */
 .sec-tabs-nav { display: flex; flex-wrap: wrap; border-bottom: 2px solid var(--pi-cinza-borda); margin-bottom: 28px; list-style: none; padding: 0; }
 .sec-tab-btn {
   display: inline-flex; align-items: center; gap: 6px;
@@ -220,16 +228,13 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .sec-tab-painel.ativo { display: block; }
 
 
-/* ── 8. Aba Secretaria ───────────────────────────────────────── */
-/* Título dentro da aba */
+/* ── 9. Aba Secretaria ───────────────────────────────────────── */
 .sec-titulo { font-size: 1.25rem; font-weight: 700; color: var(--pi-verde-escuro); margin-bottom: 14px; line-height: 1.3; }
 
-/* Texto descritivo */
 .sec-texto { font-size: 0.9375rem; color: #444; line-height: 1.8; margin-bottom: 22px; }
 .sec-texto p { margin-bottom: 14px; }
 .sec-texto p:last-child { margin-bottom: 0; }
 
-/* Lista de contato (estilo antigo: label bold + valor inline) */
 .sec-contato-lista { margin: 0 0 24px; }
 .sec-contato-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: #444; margin-bottom: 8px; line-height: 1.5; }
 .sec-contato-item:last-child { margin-bottom: 0; }
@@ -238,7 +243,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .sec-contato-item a { color: var(--pi-verde-escuro); text-decoration: none; }
 .sec-contato-item a:hover { text-decoration: underline; color: var(--pi-verde); }
 
-/* ── Card institucional do secretário ────────────────────────── */
 .sec-secretario-bloco {
   display: flex;
   align-items: flex-start;
@@ -255,7 +259,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   .sec-secretario-bloco { flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 20px 18px; }
 }
 
-/* Foto do secretário — maior e com moldura institucional */
 .sec-secretario-foto {
   width: 160px;
   height: 190px;
@@ -284,17 +287,11 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   .sec-secretario-foto { width: 130px; height: 154px; min-width: 130px; }
 }
 
-/* Corpo de texto do secretário */
-.sec-secretario-corpo {
-  flex: 1;
-  min-width: 0;
-}
-/* Separador sutil entre foto e texto no mobile */
+.sec-secretario-corpo { flex: 1; min-width: 0; }
 @media (max-width: 575px) {
   .sec-secretario-corpo { width: 100%; }
 }
 
-/* Badge de cargo */
 .sec-secretario-label {
   display: inline-block;
   font-size: 0.6875rem;
@@ -309,7 +306,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   border: 1px solid rgba(45,122,45,.18);
 }
 
-/* Nome do secretário */
 .sec-secretario-nome {
   font-size: 1.25rem;
   font-weight: 700;
@@ -317,8 +313,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   margin-bottom: 4px;
   line-height: 1.25;
 }
-
-/* Divisor entre nome e bio */
 .sec-secretario-nome::after {
   content: '';
   display: block;
@@ -333,19 +327,12 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   .sec-secretario-nome::after { margin-left: auto; margin-right: auto; }
 }
 
-/* Biografia */
-.sec-secretario-bio {
-  font-size: 0.875rem;
-  color: #555;
-  line-height: 1.8;
-}
+.sec-secretario-bio { font-size: 0.875rem; color: #555; line-height: 1.8; }
 .sec-secretario-bio p { margin-bottom: 10px; }
 .sec-secretario-bio p:last-child { margin-bottom: 0; }
 
 
-/* ── 9. Aba Departamentos ────────────────────────────────────── */
-
-/* Grid responsivo — 3 colunas no desktop */
+/* ── 10. Aba Departamentos ────────────────────────────────────── */
 .sec-depto-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -354,7 +341,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 @media (max-width: 900px) { .sec-depto-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 575px) { .sec-depto-grid { grid-template-columns: 1fr; } }
 
-/* Card de departamento — mais leve e elegante */
 .sec-depto-card {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -377,11 +363,8 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   box-shadow: 0 6px 20px rgba(45,122,45,.10);
   transform: translateY(-2px);
 }
-.sec-depto-card:hover::before {
-  background: var(--pi-verde);
-}
+.sec-depto-card:hover::before { background: var(--pi-verde); }
 
-/* Nome do departamento — com hierarquia visual clara */
 .sec-depto-nome {
   font-size: 0.9375rem;
   font-weight: 700;
@@ -392,7 +375,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   border-bottom: 1px solid var(--pi-cinza-borda);
 }
 
-/* Itens de informação — ícone + texto bem alinhados */
 .sec-depto-item {
   display: flex;
   align-items: flex-start;
@@ -404,7 +386,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 }
 .sec-depto-item:last-child { margin-bottom: 0; }
 
-/* Ícone com fundo circular sutil */
 .sec-depto-item i {
   color: var(--pi-verde);
   font-size: 0.8125rem;
@@ -419,7 +400,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   justify-content: center;
 }
 
-/* Label em linha própria para melhor leitura */
 .sec-depto-item strong {
   color: var(--pi-texto);
   font-weight: 600;
@@ -430,24 +410,16 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
   margin-bottom: 1px;
 }
 
-.sec-depto-item a {
-  color: var(--pi-verde-escuro);
-  text-decoration: none;
-  word-break: break-all;
-}
-.sec-depto-item a:hover {
-  text-decoration: underline;
-  color: var(--pi-verde);
-}
+.sec-depto-item a { color: var(--pi-verde-escuro); text-decoration: none; word-break: break-all; }
+.sec-depto-item a:hover { text-decoration: underline; color: var(--pi-verde); }
 
 
-/* ── 10. Aba Solicitação de Acesso ───────────────────────────── */
+/* ── 11. Aba Solicitação de Acesso ───────────────────────────── */
 .sec-acesso-texto { font-size: 0.9375rem; color: #444; line-height: 1.8; }
 .sec-acesso-texto p { margin-bottom: 14px; }
 .sec-acesso-texto p:last-child { margin-bottom: 0; }
 .sec-acesso-texto strong { color: var(--pi-texto); }
 
-/* Alerta amarelo fiel ao site antigo */
 .sec-aviso {
   background: #fffbea; border-left: 4px solid var(--pi-amarelo);
   border-radius: 0 6px 6px 0; padding: 14px 18px;
@@ -455,7 +427,6 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 }
 .sec-aviso strong { font-weight: 700; }
 
-/* Grid de formulários */
 .sec-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 22px; }
 @media (max-width: 575px) { .sec-form-grid { grid-template-columns: 1fr; } }
 .sec-form-item {
@@ -470,7 +441,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .sec-form-desc { font-size: 0.7rem; color: #888; margin-top: 2px; }
 
 
-/* ── 11. Aba Links Úteis ─────────────────────────────────────── */
+/* ── 12. Aba Links Úteis ─────────────────────────────────────── */
 .sec-links-categoria { margin-bottom: 28px; }
 .sec-links-categoria:last-child { margin-bottom: 0; }
 .sec-links-cat-titulo {
@@ -489,7 +460,7 @@ body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo); c
 .sec-links-lista li a i { font-size: 0.5rem; color: var(--pi-verde); margin-top: 5px; flex-shrink: 0; }
 
 
-/* ── 12. Sidebar ─────────────────────────────────────────────── */
+/* ── 13. Sidebar ─────────────────────────────────────────────── */
 .pi-sidebar-card { background: #fff; border: 1.5px solid var(--pi-cinza-borda); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
 .pi-sidebar-card h4 { font-size: 0.875rem; font-weight: 700; color: var(--pi-verde-escuro); letter-spacing: .3px; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--pi-verde-claro); display: flex; align-items: center; gap: 8px; }
 .pi-sidebar-card h4 i { font-size: 0.875rem; color: var(--pi-verde); }
@@ -521,7 +492,7 @@ body.high-contrast .pi-ctrl-btn-contraste { background: var(--pi-amarelo); color
 .pi-sidebar-contato p i { color: var(--pi-verde); flex-shrink: 0; }
 
 
-/* ── 13. Rodapé ──────────────────────────────────────────────── */
+/* ── 14. Rodapé ──────────────────────────────────────────────── */
 #pi-footer { background: var(--pi-verde-escuro); color: rgba(255,255,255,.7); padding: 42px 0 16px; }
 #pi-footer h6 { color: #fff; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,.15); padding-bottom: 8px; margin-bottom: 12px; }
 #pi-footer ul { list-style: none; padding: 0; margin: 0; }
@@ -538,21 +509,16 @@ body.high-contrast .pi-ctrl-btn-contraste { background: var(--pi-amarelo); color
 .pi-footer-bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 28px; padding-top: 16px; font-size: 0.6875rem; color: rgba(255,255,255,.35); text-align: center; }
 
 
-/* ── 14. Alto Contraste eMAG ─────────────────────────────────── */
-
-/* Base global */
+/* ── 15. Alto Contraste eMAG ─────────────────────────────────── */
 body.high-contrast { background: #000 !important; color: #fff !important; }
 
-/* Regra global: força branco em todos os textos (exceto links, botões, inputs e VLibras) */
 body.high-contrast *:not(a):not(button):not(input):not(select):not(textarea):not(.vw-plugin-wrapper):not([vw]) {
   color: #fff !important;
 }
 
-/* Links em amarelo vivo */
 body.high-contrast a,
 body.high-contrast a * { color: #ff0 !important; }
 
-/* Fundos pretos nos containers principais */
 body.high-contrast #pi-barra-topo,
 body.high-contrast #pi-navbar,
 body.high-contrast #pi-header,
@@ -560,36 +526,29 @@ body.high-contrast #pi-hero,
 body.high-contrast #pi-main,
 body.high-contrast #pi-footer { background: #000 !important; }
 
-/* Bordas visíveis nos blocos estruturais */
 body.high-contrast #pi-barra-topo,
 body.high-contrast #pi-navbar { border: 1px solid #fff !important; }
 body.high-contrast #pi-header { border-color: #fff !important; }
 body.high-contrast #pi-hero   { border-bottom: 2px solid #fff; }
 body.high-contrast #pi-footer { border-top: 1px solid #fff; }
 
-/* Oculta imagem decorativa do hero */
 body.high-contrast .pi-hero-ilustracao { display: none; }
 
-/* Campo de busca */
 body.high-contrast .pi-search-input { background: #000 !important; color: #fff !important; border-color: #fff !important; }
 
-/* Breadcrumb */
 body.high-contrast .pi-breadcrumb li,
 body.high-contrast .pi-breadcrumb li a { color: #ff0 !important; }
 
-/* Dropdowns da navbar */
 body.high-contrast #pi-navbar .dropdown-menu,
 body.high-contrast #pi-navbar .dropdown-menu.mega-menu { background: #111 !important; border: 1px solid #fff !important; }
 body.high-contrast #pi-navbar .dropdown-item,
 body.high-contrast #pi-navbar .mega-col .dropdown-item { color: #ff0 !important; }
 body.high-contrast #pi-navbar .dropdown-item:hover { background: #333 !important; color: #fff !important; }
 
-/* Abas */
 body.high-contrast .sec-tabs-nav      { border-color: #fff !important; }
 body.high-contrast .sec-tab-btn       { color: #aaa !important; }
 body.high-contrast .sec-tab-btn.ativo { color: #ff0 !important; border-bottom-color: #ff0 !important; }
 
-/* Cards e blocos internos */
 body.high-contrast .sec-depto-card,
 body.high-contrast .sec-form-item,
 body.high-contrast .pi-sidebar-card,
@@ -600,7 +559,6 @@ body.high-contrast .sec-secretario-label   { background: #222 !important; color:
 body.high-contrast .sec-depto-item i       { background: #222 !important; color: #ff0 !important; }
 body.high-contrast .sec-aviso              { background: #111 !important; border-color: #ff0 !important; }
 
-/* Formulário */
 body.high-contrast .form-card,
 body.high-contrast .form-help-card          { background: #000 !important; border-color: #fff !important; }
 body.high-contrast .form-header,
@@ -619,33 +577,18 @@ body.high-contrast .btn-upload { background: #000 !important; border-color: #fff
 body.high-contrast .btn-enviar  { background: #0a5c1a !important; border: 1px solid #fff !important; }
 body.high-contrast .btn-cancelar { background: #000 !important; border-color: #fff !important; color: #fff !important; }
 
-/* Sidebar de controles */
 body.high-contrast .pi-sidebar-contato { background: #000 !important; border-color: #fff !important; }
 
-/* Rodapé */
 body.high-contrast #pi-footer h6              { color: #fff !important; }
 body.high-contrast .pi-footer-bottom          { color: rgba(255,255,255,.6) !important; }
 
-/* Botão de contraste ativo — destaque amarelo */
 body.high-contrast .pi-barra-acesso-contraste { background: var(--pi-amarelo) !important; color: #000 !important; }
 body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !important; color: #000 !important; border-color: var(--pi-amarelo) !important; }
 
 
-/* ── 15. Skip navigation ─────────────────────────────────────── */
-.pi-skip-nav { position: absolute; top: -100px; left: 0; background: var(--pi-amarelo); color: #000; font-weight: 700; padding: 10px 20px; z-index: 9999; text-decoration: none; transition: top .1s; }
-.pi-skip-nav:focus { top: 0; }
-
-
 /* ── 16. Formulário institucional ────────────────────────────── */
+#formulario-servico { padding: 0 0 40px; }
 
-/* ── SEÇÃO PRINCIPAL ── */
-#formulario-servico {
-  padding: 0 0 40px;
-}
-
-
-
-/* ── CARD DO FORMULÁRIO ── */
 .form-card {
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -668,15 +611,9 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   text-transform: uppercase;
   letter-spacing: .03em;
 }
-.form-header p {
-  font-size: .92rem;
-  color: #555;
-  margin: 0;
-}
+.form-header p { font-size: .92rem; color: #555; margin: 0; }
 
-.form-body {
-  padding: 28px 28px 20px;
-}
+.form-body { padding: 28px 28px 20px; }
 
 .form-footer {
   background: #f8f9fa;
@@ -689,7 +626,6 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   flex-wrap: wrap;
 }
 
-/* ── SEÇÕES INTERNAS ── */
 .form-section-title {
   font-size: .78rem;
   font-weight: 700;
@@ -700,11 +636,8 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   padding-bottom: 8px;
   margin: 0 0 20px;
 }
-.form-section-title i {
-  margin-right: 6px;
-}
+.form-section-title i { margin-right: 6px; }
 
-/* ── LABELS E INPUTS ── */
 .form-body label {
   font-size: .83rem;
   font-weight: 600;
@@ -712,10 +645,7 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   margin-bottom: 4px;
   display: block;
 }
-.form-body label .req {
-  color: #c0392b;
-  margin-left: 2px;
-}
+.form-body label .req { color: #c0392b; margin-left: 2px; }
 .form-body .form-control,
 .form-body select.form-control,
 .form-body textarea.form-control {
@@ -734,52 +664,25 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   box-shadow: 0 0 0 .2rem rgba(40,167,69,.22);
   outline: none;
 }
-.form-body textarea.form-control {
-  resize: vertical;
-  min-height: 120px;
-}
+.form-body textarea.form-control { resize: vertical; min-height: 120px; }
 
-/* Estado de erro */
 .form-control.input-error {
   border-color: #c0392b !important;
   box-shadow: 0 0 0 .2rem rgba(192,57,43,.18) !important;
 }
-.form-group .error-msg {
-  display: none;
-  font-size: .8rem;
-  color: #c0392b;
-  margin-top: 4px;
-}
-.form-group.has-error .error-msg {
-  display: block;
-}
-.form-group.has-error .form-control {
-  border-color: #c0392b;
-  box-shadow: 0 0 0 .2rem rgba(192,57,43,.18);
-}
+.form-group .error-msg { display: none; font-size: .8rem; color: #c0392b; margin-top: 4px; }
+.form-group.has-error .error-msg { display: block; }
+.form-group.has-error .form-control { border-color: #c0392b; box-shadow: 0 0 0 .2rem rgba(192,57,43,.18); }
 
-/* Estado de sucesso */
 .form-control.input-success {
   border-color: #28a745 !important;
   box-shadow: 0 0 0 .2rem rgba(40,167,69,.18) !important;
 }
 
-/* ── CHECKBOXES PERSONALIZADOS ── */
-.form-check-green .form-check-input:checked {
-  accent-color: #28a745;
-}
-.form-check-label {
-  font-size: .88rem;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-}
+.form-check-green .form-check-input:checked { accent-color: #28a745; }
+.form-check-label { font-size: .88rem; color: #333; font-weight: 500; cursor: pointer; }
 
-/* ── BOTÃO DE UPLOAD ── */
-.btn-upload-wrap {
-  position: relative;
-  overflow: hidden;
-}
+.btn-upload-wrap { position: relative; overflow: hidden; }
 .btn-upload {
   display: block;
   width: 100%;
@@ -794,15 +697,8 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   cursor: pointer;
   transition: border-color .2s, background .2s;
 }
-.btn-upload:hover {
-  border-color: #28a745;
-  background: #f0fff4;
-  color: #1a5c2a;
-}
-.btn-upload i {
-  margin-right: 8px;
-  color: #28a745;
-}
+.btn-upload:hover { border-color: #28a745; background: #f0fff4; color: #1a5c2a; }
+.btn-upload i { margin-right: 8px; color: #28a745; }
 .btn-upload input[type="file"] {
   position: absolute;
   top: 0; left: 0;
@@ -810,14 +706,8 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   opacity: 0;
   cursor: pointer;
 }
-.upload-nome {
-  font-size: .8rem;
-  color: #666;
-  margin-top: 5px;
-  display: none;
-}
+.upload-nome { font-size: .8rem; color: #666; margin-top: 5px; display: none; }
 
-/* ── CAPTCHA ── */
 .form-captcha-wrap {
   display: flex;
   justify-content: flex-start;
@@ -825,7 +715,6 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   padding: 16px 0 8px;
 }
 
-/* ── BOTÕES ── */
 .btn-enviar {
   background: #28a745;
   border: none;
@@ -838,10 +727,8 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   transition: background .2s, box-shadow .2s;
   letter-spacing: .02em;
 }
-.btn-enviar:hover {
-  background: #1e7e34;
-  box-shadow: 0 4px 14px rgba(40,167,69,.35);
-}
+.btn-enviar:hover { background: #1e7e34; box-shadow: 0 4px 14px rgba(40,167,69,.35); }
+
 .btn-cancelar {
   background: transparent;
   border: 1.5px solid #adb5bd;
@@ -853,12 +740,8 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   cursor: pointer;
   transition: border-color .2s, color .2s;
 }
-.btn-cancelar:hover {
-  border-color: #495057;
-  color: #222;
-}
+.btn-cancelar:hover { border-color: #495057; color: #222; }
 
-/* ── CARD DE AJUDA ── */
 .form-help-card {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);
@@ -875,20 +758,10 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   text-transform: uppercase;
   letter-spacing: .06em;
 }
-.form-help-card .help-header i {
-  margin-right: 7px;
-  opacity: .85;
-}
-.form-help-card .help-body {
-  padding: 16px 18px;
-}
-.form-help-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-.form-help-item:last-child {
-  border-bottom: none;
-}
+.form-help-card .help-header i { margin-right: 7px; opacity: .85; }
+.form-help-card .help-body { padding: 16px 18px; }
+.form-help-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.form-help-item:last-child { border-bottom: none; }
 .form-help-item .help-tipo {
   font-size: .8rem;
   font-weight: 700;
@@ -897,14 +770,8 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   letter-spacing: .05em;
   margin-bottom: 3px;
 }
-.form-help-item p {
-  font-size: .83rem;
-  color: #555;
-  margin: 0;
-  line-height: 1.5;
-}
+.form-help-item p { font-size: .83rem; color: #555; margin: 0; line-height: 1.5; }
 
-/* ── ALERTA DE MENSAGEM ── */
 .form-alert {
   display: none;
   padding: 14px 18px;
@@ -913,78 +780,30 @@ body.high-contrast .pi-ctrl-btn-contraste     { background: var(--pi-amarelo) !i
   margin-bottom: 20px;
   border-left: 4px solid transparent;
 }
-.form-alert.alert-success {
-  background: #d4edda;
-  border-color: #28a745;
-  color: #155724;
-}
-.form-alert.alert-error {
-  background: #f8d7da;
-  border-color: #c0392b;
-  color: #721c24;
-}
+.form-alert.alert-success { background: #d4edda; border-color: #28a745; color: #155724; }
+.form-alert.alert-error   { background: #f8d7da; border-color: #c0392b; color: #721c24; }
 
-/* ── ALTO CONTRASTE ── */
+/* Alto contraste — formulário (duplicado do bloco 15 original,
+   mantido aqui por estar fora do bloco principal de contraste) */
 body.high-contrast .form-card,
-body.high-contrast .form-help-card {
-  background: #000;
-  border-color: #fff;
-}
+body.high-contrast .form-help-card { background: #000; border-color: #fff; }
 body.high-contrast .form-header,
-body.high-contrast .form-footer {
-  background: #111;
-  border-color: #fff;
-}
+body.high-contrast .form-footer { background: #111; border-color: #fff; }
 body.high-contrast .form-header h2,
-body.high-contrast label {
-  color: #fff;
-}
+body.high-contrast label { color: #fff; }
 body.high-contrast .form-body .form-control,
 body.high-contrast .form-body select.form-control,
-body.high-contrast .form-body textarea.form-control {
-  background: #000;
-  color: #fff;
-  border-color: #fff;
-}
-body.high-contrast .form-body .form-control:focus {
-  box-shadow: 0 0 0 .2rem rgba(255,255,255,.4);
-}
-body.high-contrast .btn-upload {
-  background: #000;
-  border-color: #fff;
-  color: #fff;
-}
-body.high-contrast .form-help-card .help-header {
-  background: #222;
-  border-bottom: 2px solid #fff;
-}
-body.high-contrast .form-help-item {
-  border-color: #444;
-}
-body.high-contrast .form-help-item p {
-  color: #ccc;
-}
+body.high-contrast .form-body textarea.form-control { background: #000; color: #fff; border-color: #fff; }
+body.high-contrast .form-body .form-control:focus { box-shadow: 0 0 0 .2rem rgba(255,255,255,.4); }
+body.high-contrast .btn-upload { background: #000; border-color: #fff; color: #fff; }
+body.high-contrast .form-help-card .help-header { background: #222; border-bottom: 2px solid #fff; }
+body.high-contrast .form-help-item { border-color: #444; }
+body.high-contrast .form-help-item p { color: #ccc; }
 
-/* ── RESPONSIVIDADE MOBILE ── */
 @media (max-width: 767px) {
-  .form-body {
-    padding: 18px 16px 14px;
-  }
-  .form-footer {
-    flex-direction: column-reverse;
-    gap: 8px;
-    padding: 14px 16px;
-  }
-  .btn-enviar,
-  .btn-cancelar {
-    width: 100%;
-    text-align: center;
-  }
-  .form-help-card {
-    position: static;
-    margin-top: 28px;
-  }
-  .form-header {
-    padding: 16px 16px 14px;
-  }
+  .form-body { padding: 18px 16px 14px; }
+  .form-footer { flex-direction: column-reverse; gap: 8px; padding: 14px 16px; }
+  .btn-enviar, .btn-cancelar { width: 100%; text-align: center; }
+  .form-help-card { position: static; margin-top: 28px; }
+  .form-header { padding: 16px 16px 14px; }
 }

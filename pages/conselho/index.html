@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Estilos próprios da página de conselho -->
+  <!-- Estilos da página de conselho -->
   <link rel="stylesheet" href="../../assets/css/conselho.css">
   <link rel="stylesheet" href="../../assets/css/index.css">
 </head>
@@ -23,19 +24,19 @@
        SKIP NAVIGATION — WCAG 2.4.1
   ════════════════════════════════════════════════════════════════ -->
   <a href="#cn-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
-  <barra-acessibilidade> </barra-acessibilidade>
+
+  <!-- Componentes globais: acessibilidade, busca e cabeçalho -->
+  <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
   <meu-header></meu-header>
 
-
   <!-- ══════════════════════════════════════════════════════════════
-       ÁREA DE IDENTIFICAÇÃO DA PÁGINA
-       Breadcrumb + título do conselho
+       HERO — Breadcrumb e título da página
   ════════════════════════════════════════════════════════════════ -->
   <div class="cn-page-header">
     <div class="container">
 
-      <!-- Breadcrumb -->
+      <!-- Trilha de navegação / breadcrumb (WCAG 2.4.8) -->
       <nav aria-label="Você está em" class="cn-breadcrumb-nav">
         <ol class="cn-breadcrumb">
           <li>
@@ -51,21 +52,17 @@
         </ol>
       </nav>
 
-      <!-- Título da página -->
       <h1 class="cn-page-titulo">
         CONSELHO MUNICIPAL DOS DIREITOS DA PESSOA COM DEFICIÊNCIA
       </h1>
 
     </div>
 
-    <!-- Ilustração decorativa do município (oculta de leitores de tela) -->
+    <!-- Ilustração decorativa (oculta de leitores de tela) -->
     <div class="pi-hero-ilustracao" aria-hidden="true">
       <img src="../../assets/img/conselho/ilustracao.png" alt="">
     </div>
-
   </div>
-  <!-- ══ /ÁREA DE IDENTIFICAÇÃO ══ -->
-
 
   <!-- ══════════════════════════════════════════════════════════════
        CONTEÚDO PRINCIPAL
@@ -74,9 +71,7 @@
     <div class="container">
       <div id="cn-conteudo" tabindex="-1">
 
-        <!-- ══════════════════════════════════════════════════════
-             NAVEGAÇÃO DE ABAS
-        ═════════════════════════════════════════════════════════ -->
+        <!-- Navegação de abas -->
         <nav class="cn-abas-nav" role="tablist" aria-label="Seções do conselho">
           <button class="cn-aba-btn cn-aba-ativa"
                   role="tab"
@@ -100,8 +95,6 @@
             Arquivos
           </button>
         </nav>
-        <!-- ══ /ABAS ══ -->
-
 
         <!-- ══════════════════════════════════════════════════════
              PAINEL — ABA "CONSELHO"
@@ -176,10 +169,9 @@
             </div>
           </div>
 
-          <!-- Divisor -->
           <hr class="cn-divisor">
 
-          <!-- Bloco de competências -->
+          <!-- Competências do CMDPCD -->
           <div class="cn-bloco-destaque">
             <h2 class="cn-subtitulo-destaque">
               <i class="fas fa-list-ul" aria-hidden="true"></i>
@@ -201,10 +193,9 @@
             <li>Convocar a Conferência Municipal dos Direitos da Pessoa com Deficiência.</li>
           </ol>
 
-          <!-- Divisor -->
           <hr class="cn-divisor">
 
-          <!-- Subtítulo e texto -->
+          <!-- Estrutura e composição -->
           <h2 class="cn-subtitulo">
             Estrutura e Composição do Conselho Municipal dos Direitos da Pessoa com Deficiência
           </h2>
@@ -222,7 +213,7 @@
             </p>
           </div>
 
-          <!-- Subtítulo -->
+          <!-- Papel dos conselheiros -->
           <h2 class="cn-subtitulo">Qual é o Papel dos Conselheiros Municipais</h2>
 
           <div class="cn-texto-institucional">
@@ -251,7 +242,6 @@
 
         </div>
         <!-- ══ /PAINEL CONSELHO ══ -->
-
 
         <!-- ══════════════════════════════════════════════════════
              PAINEL — ABA "COMPOSIÇÃO"
@@ -288,7 +278,6 @@
             </div>
           </div>
 
-          <!-- Divisor -->
           <hr class="cn-divisor">
 
           <!-- I — Representantes Governamentais -->
@@ -322,7 +311,7 @@
             </div>
           </div>
 
-          <!-- Secretaria de Indústria -->
+          <!-- Secretaria de Indústria, Comércio e Turismo -->
           <div class="cn-secretaria-bloco">
             <h3 class="cn-secretaria-nome">SECRETARIA MUNICIPAL DE INDÚSTRIA, COMÉRCIO E TURISMO</h3>
             <div class="cn-membro-linha">
@@ -335,7 +324,6 @@
             </div>
           </div>
 
-          <!-- Divisor -->
           <hr class="cn-divisor">
 
           <!-- II — Representantes da Sociedade Civil -->
@@ -381,7 +369,6 @@
         </div>
         <!-- ══ /PAINEL COMPOSIÇÃO ══ -->
 
-
         <!-- ══════════════════════════════════════════════════════
              PAINEL — ABA "ARQUIVOS"
         ═════════════════════════════════════════════════════════ -->
@@ -391,7 +378,7 @@
              aria-labelledby="tab-arquivos"
              hidden>
 
-          <!-- Sistema de acordeon de arquivos -->
+          <!-- Acordeão de arquivos por categoria -->
           <div class="cn-acordeon" role="list">
 
             <!-- Atas 2020 -->
@@ -534,7 +521,7 @@
             </div>
 
           </div>
-          <!-- ══ /ACORDEON ══ -->
+          <!-- ══ /ACORDEÃO ══ -->
 
         </div>
         <!-- ══ /PAINEL ARQUIVOS ══ -->
@@ -542,18 +529,13 @@
       </div>
     </div>
   </main>
-  <!-- ══ /CONTEÚDO PRINCIPAL ══ -->
-
 
   <!-- ══════════════════════════════════════════════════════════════
-       RODAPÉ — copiado do layout padrão
+       RODAPÉ — estrutura e conteúdo idênticos ao footer da home
   ════════════════════════════════════════════════════════════════ -->
-  
   <meu-footer></meu-footer>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       BOTÃO VOLTAR AO TOPO
-  ════════════════════════════════════════════════════════════════ -->
+  <!-- Botão voltar ao topo -->
   <button id="cn-btn-topo"
           class="cn-btn-topo"
           aria-label="Voltar ao topo da página"
@@ -561,9 +543,8 @@
     <i class="fas fa-chevron-up" aria-hidden="true"></i>
   </button>
 
-
   <!-- ══════════════════════════════════════════════════════════════
-       VLIBRAS — plugin de tradução para Libras (Governo Federal)
+       VLIBRAS — Plugin de tradução para Libras (Governo Federal)
   ════════════════════════════════════════════════════════════════ -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
@@ -572,19 +553,17 @@
     </div>
   </div>
 
-
   <!-- ══════════════════════════════════════════════════════════════
-       SCRIPTS
-       Ordem: jQuery → Bootstrap → VLibras → Script da página
+       SCRIPTS — Ordem: Cloudflare → jQuery → Bootstrap → VLibras → página
   ════════════════════════════════════════════════════════════════ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script src="../../js/conselho.js"></script>
-  <script src="../../components/acessibilidade-component.js"></script>
   <script src="../../components/searh-component.js"></script>
   <script src="../../components/header-component.js"></script>
   <script src="../../components/footer-component.js"></script>
+  <script src="../../components/acessibilidade-component.js"></script>
 
 </body>
 </html>

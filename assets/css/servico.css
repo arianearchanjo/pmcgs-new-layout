@@ -1,26 +1,29 @@
 /* ══════════════════════════════════════════════════════════════
    PÁGINA DE SERVIÇO — Prefeitura de Campina Grande do Sul
-   CSS autossuficiente: não depende de nenhum outro arquivo CSS.
+   Depende do index.css para: reset, body, focus, navbar-toggler
+   e variáveis globais.
 
    Organização:
-   1.  Variáveis e reset
-   2.  Skip navigation
-   3.  Barra superior (topo verde)
-   4.  Header (logomarca + busca)
-   5.  Navbar
-   6.  Hero + breadcrumb
-   7.  Layout principal
-   8.  Cabeçalho do serviço
-   9.  Seções de conteúdo
-   10. Listas
-   11. Botão de ação
-   12. Rodapé
-   13. Alto contraste eMAG
-   14. Responsividade
+    1.  Variáveis exclusivas da página
+    2.  Reset parcial (apenas ::before / ::after)
+    3.  Skip navigation
+    4.  Barra superior (topo verde)
+    5.  Header (logomarca + busca)
+    6.  Navbar
+    7.  Hero + breadcrumb
+    8.  Layout principal
+    9.  Seções de conteúdo
+   10.  Listas
+   11.  Botão de ação
+   12.  Sidebar de informações rápidas
+   13.  Rodapé
+   14.  Alto contraste eMAG
+   15.  Responsividade
 ══════════════════════════════════════════════════════════════ */
 
 
-/* ── 1. Variáveis e reset ────────────────────────────────────── */
+/* ── 1. Variáveis exclusivas da página ───────────────────────── */
+/* Mantidas: nomenclatura --pi-* é diferente do index.css       */
 :root {
   --pi-verde:        #2d7a2d;
   --pi-verde-escuro: #1e5c1e;
@@ -31,14 +34,18 @@
   --pi-cinza-borda:  #c8d8c8;
   --pi-texto:        #1a2a1a;
 }
-html { font-size: 1rem; }
-:focus-visible { outline: 3px solid var(--pi-amarelo); outline-offset: 2px; }
-:focus:not(:focus-visible) { outline: none; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-texto); }
 
 
-/* ── 2. Skip navigation ──────────────────────────────────────── */
+/* ── 2. Reset parcial — apenas pseudo-elementos ──────────────── */
+/* index.css cobre * { box-sizing; margin; padding }, html,      */
+/* body, :focus-visible e :focus:not(:focus-visible).            */
+*::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+/* ── 3. Skip navigation ──────────────────────────────────────── */
+/* Redeclarado aqui: o CSS da página carrega ANTES do index.css, */
+/* portanto esta regra precisa existir neste arquivo para         */
+/* garantir que o skip-nav fique oculto antes de qualquer estilo. */
 .pi-skip-nav {
   position: absolute; top: -100px; left: 0;
   background: var(--pi-amarelo); color: #000;
@@ -48,7 +55,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .pi-skip-nav:focus { top: 0; }
 
 
-/* ── 3. Barra superior ───────────────────────────────────────── */
+/* ── 4. Barra superior ───────────────────────────────────────── */
 #pi-barra-topo { background: var(--pi-verde); }
 .pi-barra-inner { display: flex; align-items: center; height: 50px; }
 .pi-barra-sep { width: 1px; height: 24px; background: rgba(255,255,255,.25); flex-shrink: 0; align-self: center; }
@@ -101,7 +108,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 @media (max-width: 768px)  { .pi-barra-badges .pi-badge-item:nth-child(n+3) { display: none; } }
 
 
-/* ── 4. Header ───────────────────────────────────────────────── */
+/* ── 5. Header ───────────────────────────────────────────────── */
 #pi-header { background: #fff; border-bottom: 2px solid var(--pi-verde); }
 .pi-header-inner { display: flex; align-items: center; height: 76px; gap: 24px; }
 .pi-logo-wrapper { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
@@ -125,7 +132,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .pi-search-btn:hover { background: var(--pi-verde); border-color: var(--pi-verde); color: #fff; }
 
 
-/* ── 5. Navbar ───────────────────────────────────────────────── */
+/* ── 6. Navbar ───────────────────────────────────────────────── */
 #pi-navbar { background: var(--pi-verde-escuro); padding: 0; min-height: 46px; }
 #pi-navbar .navbar-collapse { align-items: stretch; }
 #pi-navbar .navbar-nav { align-items: stretch; }
@@ -153,8 +160,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 #pi-navbar .dropdown-item:hover::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--pi-verde); }
 #pi-navbar .pi-dropdown-destaque { color: var(--pi-verde); font-weight: 700; }
 #pi-navbar .pi-dropdown-destaque:hover { color: #fff; }
-#pi-navbar .navbar-toggler { border-color: rgba(255,255,255,.4); margin: 6px 0; }
-#pi-navbar .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu { display: block; animation: piDropFade .18s ease; }
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu.mega-menu { display: flex !important; animation: piDropFade .18s ease; }
@@ -177,7 +182,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 
-/* ── 6. Hero + breadcrumb ────────────────────────────────────── */
+/* ── 7. Hero + breadcrumb ────────────────────────────────────── */
 #pi-hero { background: var(--pi-verde-escuro); padding: 18px 0 0; position: relative; overflow: hidden; }
 .pi-hero-inner { position: relative; z-index: 2; padding-bottom: 12px; }
 
@@ -200,7 +205,7 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 @media (max-width: 575px) { .pi-hero-titulo { font-size: 1.125rem; } .pi-hero-ilustracao img { height: 50px; } }
 
 
-/* ── 7. Layout principal ─────────────────────────────────────── */
+/* ── 8. Layout principal ─────────────────────────────────────── */
 #pi-main { background: #fff; padding: 40px 0 64px; }
 
 .servico-layout {
@@ -211,11 +216,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 }
 
 @media (max-width: 991px) { .servico-layout { grid-template-columns: 1fr; } }
-
-
-/* ── 8. Cabeçalho do serviço ─────────────────────────────────── */
-/* (o título principal já vem do hero — este bloco é para o
-   subtítulo opcional ou identificador visual na coluna) */
 
 
 /* ── 9. Seções de conteúdo ───────────────────────────────────── */
@@ -230,7 +230,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
   padding-bottom: 0;
 }
 
-/* Título de cada seção */
 .servico-secao-titulo {
   font-size: 1.25rem;
   font-weight: 700;
@@ -247,7 +246,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
   flex-shrink: 0;
 }
 
-/* Parágrafo descritivo */
 .servico-texto {
   font-size: 0.9375rem;
   color: #444;
@@ -285,7 +283,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
   margin-top: 8px;
 }
 
-/* Valor destacado (prazo, custo) */
 .servico-valor-destaque {
   display: inline-flex;
   align-items: center;
@@ -343,7 +340,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
 .btn-servico:active { transform: translateY(0); }
 .btn-servico i { font-size: 0.9375rem; }
 
-/* Botão secundário (outline) */
 .btn-servico-outline {
   display: inline-flex;
   align-items: center;
@@ -414,7 +410,6 @@ body { font-family: 'Roboto', sans-serif; background: #fff; color: var(--pi-text
   margin: 0;
 }
 
-/* Card de outros serviços */
 .servico-outros-card {
   background: #fff;
   border: 1.5px solid var(--pi-cinza-borda);

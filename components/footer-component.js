@@ -8,7 +8,7 @@
             <div class="col-md-3 col-sm-6 mb-4">
               <div class="d-flex align-items-center mb-3">
                 <a href="${base}index.html" class="logo-wrapper" aria-label="Página inicial">
-                  <img class="logo-img" src="${base}assets/img/pagina-inicial/logo-prefeitura.png" alt="Prefeitura de Campina Grande do Sul – Paraná" style="height:50px;">
+                  <img class="logo-img" src="../../assets/img/pagina-inicial/logo-prefeitura.png" alt="Prefeitura de Campina Grande do Sul – Paraná" style="height:50px;">
                 </a>
               </div>
               <h6>SOBRE CAMPINA</h6>
@@ -35,9 +35,9 @@
             <div class="col-md-3 col-sm-6 mb-4">
               <h6>PREFEITURA</h6>
               <ul>
-                <li><a href="${base}pages/prefeito/index.html">Prefeito</a></li>
-                <li><a href="${base}pages/vice-prefeito/index.html">Vice-Prefeito</a></li>
-                <li><a href="${base}pages/secretarios-municipais/index.html">Secretários</a></li>
+                <li><a href="../../pages/prefeito/index.html">Prefeito</a></li>
+                <li><a href="../../pages/vice-prefeito/index.html">Vice-Prefeito</a></li>
+                <li><a href="../../pages/secretarios-municipais/index.html">Secretários</a></li>
                 <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a></li>
                 <li><a href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria</a></li>
                 <li><a href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria</a></li>

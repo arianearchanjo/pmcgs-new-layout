@@ -1,201 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prefeito – Prefeitura de Campina Grande do Sul – PR</title>
   <meta name="description" content="Conheça o Prefeito de Campina Grande do Sul, sua biografia, atribuições e informações institucionais.">
+  <title>Prefeito – Prefeitura de Campina Grande do Sul – PR</title>
 
-  <!-- Bootstrap 4 -->
+  <!-- Frameworks e fontes externas -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Estilos da página -->
+
+  <!-- Estilos locais -->
   <link rel="stylesheet" href="../../assets/css/prefeito.css">
   <link rel="stylesheet" href="../../assets/css/index.css">
 </head>
 
 <body>
-  <barra-acessibilidade> </barra-acessibilidade>
 
-
+  <!-- ACESSIBILIDADE -->
   <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
-
-  <!-- ══ NAVBAR — menu principal ════════════════════════════════════
-       Menu de navegação principal com dropdowns e mega-menus.
-  ════════════════════════════════════════════════════════════════ -->
-  <nav id="pi-navbar" class="navbar navbar-expand-lg" aria-label="Menu principal">
-    <div class="container">
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#pi-nav-list"
-              aria-controls="pi-nav-list"
-              aria-expanded="false"
-              aria-label="Abrir menu de navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Itens do menu -->
-      <div class="collapse navbar-collapse" id="pi-nav-list">
-        <ul class="navbar-nav ml-auto">
-
-          <!-- Notícias -->
-          <li class="nav-item">
-            <a class="nav-link"
-               href="https://campinagrandedosul.pr.gov.br/noticias">NOTÍCIAS</a>
-          </li>
-
-          <!-- Serviços (dropdown) -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               data-toggle="dropdown"
-               aria-haspopup="true"
-               aria-expanded="false">SERVIÇOS</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-group-title">Tributos</div>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a>
-              <div class="dropdown-group-title">Protocolo</div>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic">Acesso à Informação</a>
-              <div class="dropdown-group-title">Diversos</div>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
-              <a class="dropdown-item"
-                 href="https://campinagrandedosul.pr.gov.br/consulta-enderecos">Endereços e Telefones</a>
-              <a class="dropdown-item pi-dropdown-destaque"
-                 href="https://campinagrandedosul.pr.gov.br/servicos">→ Mais Serviços</a>
-            </div>
-          </li>
-
-          <!-- Prefeitura (mega-menu) — item ativo -->
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               data-toggle="dropdown"
-               aria-haspopup="true"
-               aria-expanded="false">PREFEITURA</a>
-            <div class="dropdown-menu mega-menu">
-
-              <div class="mega-col">
-                <div class="dropdown-group-title">Secretarias</div>
-                <a class="dropdown-item" href="#">Administração</a>
-                <a class="dropdown-item" href="#">Cultura</a>
-                <a class="dropdown-item" href="#">Desenvolvimento Econômico</a>
-                <a class="dropdown-item" href="#">Desenvolvimento Social</a>
-                <a class="dropdown-item" href="#">Educação</a>
-                <a class="dropdown-item" href="#">Infraestrutura</a>
-                <a class="dropdown-item" href="#">Saúde</a>
-                <a class="dropdown-item" href="#">Tecnologia, Inovação e Transf. Digital</a>
-                <a class="dropdown-item" href="#">Urbanismo</a>
-              </div>
-
-              <div class="mega-col">
-                <div class="dropdown-group-title">Outros Órgãos</div>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria Geral</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/ouvidoria-geral">Ouvidoria Geral</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral</a>
-                <div class="dropdown-group-title" style="margin-top:14px;">Gestão</div>
-                <a class="dropdown-item active"
-                   href="https://campinagrandedosul.pr.gov.br/prefeito">Prefeito</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/vice-prefeito">Vice-Prefeito</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/secretarios-municipais">Secretários Municipais</a>
-              </div>
-
-            </div>
-          </li>
-
-          <!-- Transparência (mega-menu) -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               data-toggle="dropdown"
-               aria-haspopup="true"
-               aria-expanded="false">TRANSPARÊNCIA</a>
-            <div class="dropdown-menu mega-menu">
-
-              <div class="mega-col">
-                <div class="dropdown-group-title">Pessoal</div>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/servidores">Servidores</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/concursos">Concursos</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/diarias">Diárias</a>
-                <div class="dropdown-group-title" style="margin-top:14px;">Financeiro</div>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/contratos">Contratos</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/"
-                   target="_blank"
-                   rel="noopener noreferrer">PPA / LDO / LOA</a>
-              </div>
-
-              <div class="mega-col">
-                <div class="dropdown-group-title">Legislação e Informação</div>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a>
-                <a class="dropdown-item"
-                   href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a>
-                <a class="dropdown-item"
-                   href="https://radardatransparencia.atricon.org.br/"
-                   target="_blank"
-                   rel="noopener noreferrer">Radar da Transparência</a>
-                <a class="dropdown-item pi-dropdown-destaque"
-                   href="https://campinagrandedosul.pr.gov.br/transparencia">→ Portal da Transparência</a>
-              </div>
-
-            </div>
-          </li>
-
-          <!-- Conheça Campina -->
-          <li class="nav-item">
-            <a class="nav-link"
-               href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">CONHEÇA CAMPINA</a>
-          </li>
-
-          <!-- Ouvidoria -->
-          <li class="nav-item">
-            <a class="nav-link"
-               href="https://campinagrandedosul.pr.gov.br/ouvidoria">OUVIDORIA</a>
-          </li>
-
-        </ul>
-      </div>
-
-    </div>
-  </nav>
-
+  <barra-acessibilidade></barra-acessibilidade>
   <meu-search></meu-search>
+  <meu-header></meu-header>
+  <!-- /ACESSIBILIDADE -->
 
-  <!-- ══ HERO — título da página e breadcrumb ═══════════════════════
-       Faixa verde com título e trilha de navegação (breadcrumb).
-       A ilustração de fundo é decorativa (aria-hidden).
-  ════════════════════════════════════════════════════════════════ -->
+
+  <!-- HERO -->
   <section id="pi-hero" aria-label="Identificação da página">
     <div class="container">
       <div class="pi-hero-inner">
 
-        <!-- Trilha de navegação (breadcrumb) -->
+        <!-- Breadcrumb -->
         <nav aria-label="Você está em">
           <ol class="pi-breadcrumb">
             <li>
@@ -204,17 +41,13 @@
               </a>
             </li>
             <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep">
-                <i class="fas fa-chevron-right"></i>
-              </span>
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
             </li>
             <li>
               <a href="https://campinagrandedosul.pr.gov.br/prefeitura">Gestão</a>
             </li>
             <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep">
-                <i class="fas fa-chevron-right"></i>
-              </span>
+              <span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
             </li>
             <li aria-current="page">Prefeito</li>
           </ol>
@@ -225,26 +58,23 @@
       </div>
     </div>
 
-    <!-- Ilustração decorativa de fundo -->
+    <!-- Ilustração decorativa -->
     <div class="pi-hero-ilustracao" aria-hidden="true">
       <img src="../../assets/img/prefeito/ilustracao.png" alt="">
     </div>
   </section>
-  <!-- ══ fim hero ══ -->
+  <!-- /HERO -->
 
 
-  <!-- ══ CONTEÚDO PRINCIPAL ══════════════════════════════════════════
-       Layout em duas colunas: artigo principal + sidebar lateral.
-  ════════════════════════════════════════════════════════════════ -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main id="pi-main" aria-label="Conteúdo principal">
     <div class="container">
       <div id="pi-conteudo" class="pi-layout" tabindex="-1">
 
-
-        <!-- ── COLUNA PRINCIPAL ──────────────────────────────────── -->
+        <!-- ARTIGO PRINCIPAL -->
         <article>
 
-          <!-- Card de dados institucionais do prefeito -->
+          <!-- Card institucional -->
           <section class="pref-card-principal" aria-label="Dados institucionais do Prefeito">
             <div class="row align-items-center">
 
@@ -269,7 +99,6 @@
                   </span>
 
                   <h2 class="pref-nome">Luiz Carlos Assunção</h2>
-
                   <p class="pref-cargo-titulo">Prefeito de Campina Grande do Sul</p>
 
                   <hr class="pref-divisor" aria-hidden="true">
@@ -295,36 +124,31 @@
 
             </div>
           </section>
-          <!-- ── fim card principal ── -->
+          <!-- /Card institucional -->
 
 
-          <!-- Biografia do prefeito -->
+          <!-- Seção: Biografia -->
           <section class="pref-secao" aria-labelledby="sec-bio-titulo">
             <h2 id="sec-bio-titulo" class="pref-secao-titulo">
-              <i class="fas fa-user" aria-hidden="true"></i>
-              Biografia
+              <i class="fas fa-user" aria-hidden="true"></i> Biografia
             </h2>
             <div class="pref-bio-texto">
-              <p>
-                A biografia oficial do prefeito será inserida neste espaço.
-              </p>
+              <p>A biografia oficial do prefeito será inserida neste espaço.</p>
               <p>
                 Esta seção será utilizada para apresentar a trajetória pública,
                 formação e atuação política do prefeito de Campina Grande do Sul.
               </p>
             </div>
           </section>
-          <!-- ── fim seção biografia ── -->
+          <!-- /Seção: Biografia -->
 
 
-          <!-- Atribuições do prefeito -->
+          <!-- Seção: Atribuições -->
           <section class="pref-secao" aria-labelledby="sec-atrib-titulo">
             <h2 id="sec-atrib-titulo" class="pref-secao-titulo">
-              <i class="fas fa-list-check" aria-hidden="true"></i>
-              Atribuições do Prefeito
+              <i class="fas fa-list-check" aria-hidden="true"></i> Atribuições do Prefeito
             </h2>
-            <ul class="pref-atribuicoes-lista"
-                aria-label="Lista de atribuições legais do prefeito municipal">
+            <ul class="pref-atribuicoes-lista" aria-label="Lista de atribuições legais do prefeito municipal">
               <li>
                 <i class="fas fa-check-circle" aria-hidden="true"></i>
                 Representar oficialmente o município em atos públicos e relações institucionais
@@ -359,13 +183,13 @@
               </li>
             </ul>
           </section>
-          <!-- ── fim seção atribuições ── -->
+          <!-- /Seção: Atribuições -->
 
         </article>
-        <!-- ── fim coluna principal ── -->
+        <!-- /ARTIGO PRINCIPAL -->
 
 
-        <!-- ── SIDEBAR ───────────────────────────────────────────── -->
+        <!-- SIDEBAR -->
         <aside class="pi-sidebar" aria-label="Navegação lateral e acessibilidade">
 
           <!-- Controles de acessibilidade -->
@@ -374,22 +198,16 @@
             <div class="pi-ctrl-row">
               <span class="pi-ctrl-label">Tamanho da fonte</span>
               <div class="pi-ctrl-btns">
-                <button class="pi-ctrl-btn"
-                        id="pi-sb-fonte-aumentar"
-                        aria-label="Aumentar tamanho da fonte">A+</button>
-                <button class="pi-ctrl-btn"
-                        id="pi-sb-fonte-diminuir"
-                        aria-label="Diminuir tamanho da fonte">A-</button>
-                <button class="pi-ctrl-btn"
-                        id="pi-sb-fonte-resetar"
-                        aria-label="Restaurar tamanho da fonte padrão">A</button>
+                <button id="pi-sb-fonte-aumentar" class="pi-ctrl-btn" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button id="pi-sb-fonte-diminuir" class="pi-ctrl-btn" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button id="pi-sb-fonte-resetar" class="pi-ctrl-btn" aria-label="Restaurar tamanho da fonte padrão">A</button>
               </div>
             </div>
             <div class="pi-ctrl-row">
-              <button class="pi-ctrl-btn-contraste"
-                      id="pi-sb-btn-contraste"
-                      aria-pressed="false"
-                      aria-label="Ativar ou desativar alto contraste">
+              <button id="pi-sb-btn-contraste"
+                class="pi-ctrl-btn-contraste"
+                aria-pressed="false"
+                aria-label="Ativar ou desativar alto contraste">
                 <i class="fas fa-adjust" aria-hidden="true"></i> Alto Contraste
               </button>
             </div>
@@ -472,64 +290,46 @@
           <!-- Contato rápido -->
           <div class="pi-sidebar-card pi-sidebar-contato">
             <h3><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h3>
-            <p>
-              <i class="fas fa-clock" aria-hidden="true"></i>
-              Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30
-            </p>
-            <p>
-              <i class="fas fa-phone" aria-hidden="true"></i>
-              (41) 3162-7000
-            </p>
-            <p>
-              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              Praça Bento Munhoz, 30 – Centro
-            </p>
-            <a href="https://campinagrandedosul.pr.gov.br/ouvidoria"
-               class="pi-btn-verde pi-btn-full">
+            <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
+            <p><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7000</p>
+            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Praça Bento Munhoz, 30 – Centro</p>
+            <a href="https://campinagrandedosul.pr.gov.br/ouvidoria" class="pi-btn-verde pi-btn-full">
               <i class="fas fa-comments" aria-hidden="true"></i> Ouvidoria
             </a>
           </div>
 
         </aside>
-        <!-- ── fim sidebar ── -->
-
+        <!-- /SIDEBAR -->
 
       </div>
     </div>
   </main>
-  <!-- ══ fim conteúdo principal ══ -->
+  <!-- /CONTEÚDO PRINCIPAL -->
 
 
-  <!-- ══ RODAPÉ ══════════════════════════════════════════════════════
-       Contém: logo, links institucionais, contato e redes sociais.
-  ════════════════════════════════════════════════════════════════ -->
   <meu-footer></meu-footer>
-  <!-- ══ fim rodapé ══ -->
 
 
-  <!-- ══ VLIBRAS — tradutor de Libras ═══════════════════════════════
-       Widget do governo federal para tradução em Língua Brasileira
-       de Sinais. Não remover.
-  ════════════════════════════════════════════════════════════════ -->
+  <!-- VLibras: plugin de tradução para Libras (Governo Federal) -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-  <script data-cfasync="false"
-          src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-  <!-- Bootstrap 4 JS + jQuery (necessário para dropdowns do navbar) -->
+
+  <!-- Scripts externos -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-  <!-- Scripts da página -->
+  <!-- Scripts locais -->
   <script src="../../js/prefeito.js"></script>
-  <script src="../../components/footer-component.js"></script>
-  <script src="../../components/header-component.js"></script>
   <script src="../../components/searh-component.js"></script>
+  <script src="../../components/header-component.js"></script>
+  <script src="../../components/footer-component.js"></script>
   <script src="../../components/acessibilidade-component.js"></script>
+
 </body>
 </html>

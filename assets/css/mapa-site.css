@@ -2,73 +2,59 @@
    mapa-site.css — Página Mapa do Site
    Prefeitura de Campina Grande do Sul – PR
 
-   CSS isolado: não depende do style.css da home.
-   Recria a identidade visual completa do portal.
+   Depende do index.css para: reset, body, focus, navbar-toggler
+   e variáveis globais.
 
    Índice de seções:
-     1.  Variáveis e Reset
-     2.  Skip Navigation (WCAG 2.4.1)
-     3.  Barra Superior (Topo verde)
-     4.  Header (Logomarca e busca)
-     5.  Navbar (Menu principal)
-     6.  Hero / Cabeçalho da Página
-     7.  Main (Conteúdo principal)
-     8.  Introdução
-     9.  Grade de Seções
-    10.  Cards de Seção
-    11.  Listas de Links
-    12.  Listas de Redes Sociais
-    13.  Rodapé
-    14.  Alto Contraste eMAG
-    15.  Responsividade
+     1.  Variáveis exclusivas da página
+     2.  Reset parcial (apenas ::before / ::after)
+     3.  Skip Navigation (WCAG 2.4.1)
+     4.  Barra Superior (Topo verde)
+     5.  Header (Logomarca e busca)
+     6.  Navbar (Menu principal)
+     7.  Hero / Cabeçalho da Página
+     8.  Main (Conteúdo principal)
+     9.  Introdução
+    10.  Grade de Seções
+    11.  Cards de Seção
+    12.  Listas de Links
+    13.  Listas de Redes Sociais
+    14.  Rodapé
+    15.  Alto Contraste eMAG
    ══════════════════════════════════════════════════════════════════════════ */
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   1. VARIÁVEIS E RESET
-   Paleta institucional da Prefeitura — não alterar valores
+   1. VARIÁVEIS EXCLUSIVAS DA PÁGINA
+   Mantidas: nomenclatura --pi-* é diferente do index.css
    ══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --pi-verde:        #2d7a2d;   /* Verde principal */
-  --pi-verde-escuro: #1e5c1e;   /* Verde escuro (navbar, hero) */
-  --pi-verde-medio:  #3a9a3a;   /* Verde médio */
-  --pi-verde-claro:  #e8f5e8;   /* Verde claro (fundos suaves) */
-  --pi-amarelo:      #f5c518;   /* Amarelo (foco, destaques) */
-  --pi-cinza-bg:     #eef2ee;   /* Cinza esverdeado de fundo */
-  --pi-cinza-borda:  #c8d8c8;   /* Cinza esverdeado de bordas */
-  --pi-texto:        #1a2a1a;   /* Texto escuro principal */
-}
-
-/* Reset e base tipográfica */
-html { font-size: 1rem; }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background: #fff;
-  color: var(--pi-texto);
-}
-
-/* Indicador de foco visível (WCAG 2.4.7) — anel amarelo */
-:focus-visible {
-  outline: 3px solid var(--pi-amarelo);
-  outline-offset: 2px;
-}
-
-:focus:not(:focus-visible) {
-  outline: none;
+  --pi-verde:        #2d7a2d;
+  --pi-verde-escuro: #1e5c1e;
+  --pi-verde-medio:  #3a9a3a;
+  --pi-verde-claro:  #e8f5e8;
+  --pi-amarelo:      #f5c518;
+  --pi-cinza-bg:     #eef2ee;
+  --pi-cinza-borda:  #c8d8c8;
+  --pi-texto:        #1a2a1a;
 }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   2. SKIP NAVIGATION (WCAG 2.4.1)
-   Link oculto que aparece ao receber foco via teclado
+   2. RESET PARCIAL — apenas pseudo-elementos
+   index.css cobre * { box-sizing; margin; padding }
+   mas não declara ::before e ::after explicitamente
+   ══════════════════════════════════════════════════════════════════════════ */
+
+*::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. SKIP NAVIGATION (WCAG 2.4.1)
+   Redeclarado aqui: o CSS da página carrega ANTES do index.css,
+   portanto esta regra precisa existir neste arquivo para garantir
+   que o skip-nav fique oculto antes de qualquer outro estilo.
    ══════════════════════════════════════════════════════════════════════════ */
 
 .pi-skip-nav {
@@ -90,7 +76,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   3. BARRA SUPERIOR (Topo verde)
+   4. BARRA SUPERIOR (Topo verde)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-barra-topo {
@@ -111,7 +97,6 @@ body {
   align-self: center;
 }
 
-/* Bloco de controles de acessibilidade */
 .pi-barra-acesso {
   display: flex;
   align-items: center;
@@ -189,7 +174,6 @@ body {
   text-decoration: none;
 }
 
-/* Badges de acesso rápido */
 .pi-barra-badges {
   display: flex;
   align-items: center;
@@ -219,7 +203,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Badge ativo (página atual) */
+/* Badge ativo (página atual) — exclusivo deste arquivo */
 .pi-badge-item[aria-current="page"] {
   background: rgba(255, 255, 255, 0.20);
   border-color: rgba(255, 255, 255, 0.55);
@@ -236,7 +220,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Bloco de horário e telefone */
 .pi-barra-info-bloco {
   display: flex;
   align-items: center;
@@ -327,7 +310,6 @@ body {
   text-decoration: none;
 }
 
-/* Redes sociais na barra */
 .pi-barra-social {
   display: flex;
   align-items: center;
@@ -354,7 +336,6 @@ body {
   color: #fff;
 }
 
-/* Responsividade da barra superior */
 @media (max-width: 1000px) {
   .pi-barra-info-bloco { display: none; }
 }
@@ -365,7 +346,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   4. HEADER (Logomarca e busca)
+   5. HEADER (Logomarca e busca)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-header {
@@ -443,7 +424,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   5. NAVBAR (Menu principal com dropdowns e mega-menus)
+   6. NAVBAR (Menu principal com dropdowns e mega-menus)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-navbar {
@@ -474,7 +455,6 @@ body {
   color: #fff !important;
 }
 
-/* Dropdown padrão */
 #pi-navbar .dropdown-menu {
   border: none;
   border-radius: 0 0 6px 6px;
@@ -525,7 +505,6 @@ body {
 
 #pi-navbar .pi-dropdown-destaque:hover { color: #fff; }
 
-/* Mega-menu */
 #pi-navbar .dropdown-menu.mega-menu {
   display: none;
   min-width: 0;
@@ -578,7 +557,6 @@ body {
 
 #pi-navbar .mega-col .dropdown-item:hover::before { display: none; }
 
-/* Hover abre dropdown no desktop */
 @media (min-width: 992px) {
   #pi-navbar .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
@@ -600,18 +578,6 @@ body {
   }
 }
 
-/* Toggler mobile */
-#pi-navbar .pi-navbar-toggler,
-#pi-navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.4);
-  margin: 6px 0;
-}
-
-#pi-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,.9%29' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Menu mobile */
 @media (max-width: 991px) {
   #pi-navbar { min-height: 48px; }
 
@@ -700,7 +666,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   6. HERO / CABEÇALHO DA PÁGINA INTERNA
+   7. HERO / CABEÇALHO DA PÁGINA INTERNA
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-hero {
@@ -716,7 +682,6 @@ body {
   padding-bottom: 12px;
 }
 
-/* Breadcrumb */
 .pi-breadcrumb {
   display: flex;
   align-items: center;
@@ -756,7 +721,6 @@ body {
   font-size: 0.625rem;
 }
 
-/* Título da página */
 .pi-hero-titulo {
   font-size: 1.5rem;
   font-weight: 900;
@@ -767,7 +731,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Ilustração decorativa */
 .pi-hero-ilustracao {
   display: block;
   width: 100%;
@@ -791,7 +754,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   7. MAIN (Conteúdo principal)
+   8. MAIN (Conteúdo principal)
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-main {
@@ -802,14 +765,13 @@ body {
     radial-gradient(circle at 85% 75%, rgba(45,122,45,0.04) 0%, transparent 55%);
 }
 
-/* Foco via Alt+1 (atalho de teclado eMAG) */
 #pi-conteudo:focus {
   outline: none;
 }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   8. TEXTO INTRODUTÓRIO
+   9. TEXTO INTRODUTÓRIO
    ══════════════════════════════════════════════════════════════════════════ */
 
 .ms-intro-wrapper {
@@ -840,9 +802,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   9. GRADE DE SEÇÕES
-   Layout em grade responsivo: 3 colunas no desktop,
-   2 no tablet, 1 no mobile.
+   10. GRADE DE SEÇÕES
    ══════════════════════════════════════════════════════════════════════════ */
 
 .ms-grade {
@@ -868,8 +828,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   10. CARDS DE SEÇÃO
-   Cada bloco temático do mapa do site — visual refinado e moderno
+   11. CARDS DE SEÇÃO
    ══════════════════════════════════════════════════════════════════════════ */
 
 .ms-secao {
@@ -888,7 +847,6 @@ body {
   border-color: rgba(45,122,45,0.22);
 }
 
-/* Cabeçalho colorido do card */
 .ms-secao-header {
   background: linear-gradient(135deg, var(--pi-verde-escuro) 0%, var(--pi-verde) 100%);
   padding: 16px 20px 14px;
@@ -899,7 +857,6 @@ body {
   overflow: hidden;
 }
 
-/* Elemento decorativo do cabeçalho */
 .ms-secao-header::after {
   content: '';
   position: absolute;
@@ -922,7 +879,6 @@ body {
   border-radius: 50%;
 }
 
-/* Ícone dentro do cabeçalho */
 .ms-secao-icon {
   display: flex;
   align-items: center;
@@ -942,7 +898,6 @@ body {
   color: #fff;
 }
 
-/* Título da seção */
 .ms-secao-titulo {
   font-size: 0.75rem;
   font-weight: 800;
@@ -955,21 +910,17 @@ body {
   z-index: 1;
 }
 
-/* Linha divisória – não usada mais, mantida para compatibilidade */
 .ms-secao-divider {
   display: none;
 }
 
-/* Corpo do card (área dos links) */
 .ms-secao-body {
   padding: 16px 18px 14px;
 }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   11. LISTAS DE LINKS
-   Layout em grid de 2 colunas no desktop, 1 coluna no mobile.
-   Cada item com ícone quadrado verde.
+   12. LISTAS DE LINKS
    ══════════════════════════════════════════════════════════════════════════ */
 
 .ms-lista {
@@ -981,7 +932,6 @@ body {
   gap: 1px 8px;
 }
 
-/* 1 coluna quando a seção ocupa pouco espaço */
 @media (max-width: 575px) {
   .ms-lista {
     grid-template-columns: 1fr;
@@ -993,7 +943,6 @@ body {
   align-items: flex-start;
 }
 
-/* Link com ícone quadrado verde (marcador) */
 .ms-lista li a {
   display: flex;
   align-items: flex-start;
@@ -1008,7 +957,6 @@ body {
   width: 100%;
 }
 
-/* Ícone quadrado verde — gerado com ::before */
 .ms-lista li a::before {
   content: '';
   display: inline-block;
@@ -1036,11 +984,9 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   12. LISTA DE REDES SOCIAIS
-   Variação da lista com ícones específicos de cada rede
+   13. LISTA DE REDES SOCIAIS
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* Remove o ícone quadrado padrão da lista de redes sociais */
 .ms-lista-social li a::before {
   display: none;
 }
@@ -1050,7 +996,6 @@ body {
   font-weight: 500;
 }
 
-/* Ícone colorido de cada rede social */
 .ms-social-ico {
   font-size: 1rem;
   width: 22px;
@@ -1066,7 +1011,7 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   13. RODAPÉ
+   14. RODAPÉ
    ══════════════════════════════════════════════════════════════════════════ */
 
 #pi-footer {
@@ -1076,12 +1021,10 @@ body {
   font-size: 0.8125rem;
 }
 
-/* Wrapper da logomarca no footer */
 .pi-footer-logo-wrap {
   margin-bottom: 16px;
 }
 
-/* Títulos das colunas do footer */
 #pi-footer h6 {
   color: #fff;
   font-size: 0.6875rem;
@@ -1093,7 +1036,6 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Listas do footer */
 #pi-footer ul {
   list-style: none;
   padding: 0;
@@ -1116,7 +1058,6 @@ body {
   text-decoration: underline;
 }
 
-/* Bloco de informações de contato */
 .pi-footer-contact p {
   margin-bottom: 8px;
   display: flex;
@@ -1143,7 +1084,6 @@ body {
   text-decoration: underline;
 }
 
-/* Ícones das redes sociais no footer */
 .pi-footer-social {
   display: flex;
   gap: 6px;
@@ -1170,7 +1110,6 @@ body {
   color: #fff;
 }
 
-/* Linha de copyright */
 .pi-footer-bottom {
   margin-top: 32px;
   padding: 16px 0;
@@ -1182,12 +1121,9 @@ body {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   14. ALTO CONTRASTE eMAG
-   Ativado pela classe .high-contrast no <body>
-   Segue especificações do eMAG 3.1 e WCAG 1.4.3
+   15. ALTO CONTRASTE eMAG
    ══════════════════════════════════════════════════════════════════════════ */
 
-/* Base geral */
 body.high-contrast,
 body.high-contrast #pi-main {
   background-color: #000 !important;
@@ -1199,7 +1135,6 @@ body.high-contrast a * {
   color: #ff0 !important;
 }
 
-/* Barra superior */
 body.high-contrast #pi-barra-topo {
   background: #000 !important;
   border-bottom: 1px solid #fff;
@@ -1211,7 +1146,6 @@ body.high-contrast .pi-barra-acesso-contraste {
   border: 1px solid #fff;
 }
 
-/* Header */
 body.high-contrast #pi-header {
   background: #000 !important;
   border-color: #fff !important;
@@ -1233,7 +1167,6 @@ body.high-contrast .pi-search-btn {
   border-color: #fff !important;
 }
 
-/* Navbar */
 body.high-contrast #pi-navbar {
   background: #000 !important;
   border: 1px solid #fff !important;
@@ -1265,7 +1198,6 @@ body.high-contrast #pi-navbar .mega-col .dropdown-group-title {
   color: #ff0 !important;
 }
 
-/* Hero */
 body.high-contrast #pi-hero {
   background: #000 !important;
   border-bottom: 2px solid #fff;
@@ -1282,7 +1214,6 @@ body.high-contrast .pi-breadcrumb li a {
   color: #ff0 !important;
 }
 
-/* Introdução */
 body.high-contrast .ms-intro-wrapper {
   background: #000 !important;
   border-bottom: 1px solid #fff;
@@ -1296,7 +1227,6 @@ body.high-contrast .ms-intro-texto i {
   color: rgba(255,255,255,0.4) !important;
 }
 
-/* Cards de seção */
 body.high-contrast .ms-secao {
   background: #000 !important;
   border-color: #fff !important;
@@ -1323,7 +1253,6 @@ body.high-contrast .ms-secao-divider {
   border-color: #444 !important;
 }
 
-/* Links das listas */
 body.high-contrast .ms-lista li a {
   color: #ff0 !important;
   background: transparent !important;
@@ -1342,12 +1271,10 @@ body.high-contrast .ms-lista li a:hover::before {
   background: #fff !important;
 }
 
-/* Ícones das redes sociais */
 body.high-contrast .ms-social-ico {
   color: #ff0 !important;
 }
 
-/* Rodapé */
 body.high-contrast #pi-footer {
   background: #000 !important;
   border-top: 1px solid #fff;
@@ -1386,3 +1313,152 @@ body.high-contrast .pi-footer-bottom {
   color: rgba(255, 255, 255, 0.6) !important;
   border-color: rgba(255, 255, 255, 0.3) !important;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   16. GRADE DO MAPA DO SITE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.ms-grade-wrapper { padding-top: 40px; }
+
+.ms-grupo { margin-bottom: 40px; }
+
+.ms-grupo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--pi-verde);
+}
+
+.ms-grupo-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  background: var(--pi-verde);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ms-grupo-icon i { font-size: 1rem; color: #fff; }
+
+.ms-grupo-titulo {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--pi-verde-escuro);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.ms-grupo-badge {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid var(--pi-cinza-borda);
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.ms-colunas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 32px;
+  align-items: start;
+}
+
+.ms-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ms-links li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 4px;
+  font-size: 0.9375rem;
+  color: #333;
+  text-decoration: none;
+  line-height: 1.45;
+  border-bottom: 1px solid #e4ede4;
+  transition: color 0.15s, padding-left 0.15s;
+}
+
+.ms-links li:last-child a { border-bottom: none; }
+
+.ms-links li a::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  min-width: 5px;
+  background: var(--pi-cinza-borda);
+  border-radius: 50%;
+  margin-top: 8px;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.ms-links li a:hover {
+  color: var(--pi-verde);
+  padding-left: 6px;
+  text-decoration: none;
+}
+
+.ms-links li a:hover::before { background: var(--pi-verde); }
+
+.ms-sep {
+  border: none;
+  border-top: 1px solid #dce8dc;
+  margin: 0 0 40px;
+}
+
+@media (max-width: 767px) {
+  .ms-colunas { grid-template-columns: 1fr; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   17. ALTO CONTRASTE — complementos do mapa
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast .ms-grupo-header {
+  border-bottom-color: #fff !important;
+}
+
+body.high-contrast .ms-grupo-icon {
+  background: #333 !important;
+  border: 1px solid #ff0;
+}
+
+body.high-contrast .ms-grupo-icon i { color: #ff0 !important; }
+
+body.high-contrast .ms-grupo-titulo { color: #fff !important; }
+
+body.high-contrast .ms-grupo-badge {
+  background: #000 !important;
+  border-color: #fff !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .ms-links li a {
+  color: #ff0 !important;
+  border-bottom-color: #333 !important;
+}
+
+body.high-contrast .ms-links li a:hover { color: #fff !important; }
+
+body.high-contrast .ms-links li a::before { background: #ff0 !important; }
+
+body.high-contrast .ms-links li a:hover::before { background: #fff !important; }
+
+body.high-contrast .ms-sep { border-top-color: #444 !important; }
