@@ -13,6 +13,7 @@
  * 6. VLibras
  */
 
+document.addEventListener('DOMContentLoaded', function () {
 
 // ── 1. ACESSIBILIDADE eMAG ────────────────────────────────────────────────
 (function () {
@@ -96,6 +97,13 @@
   var semResultado = document.getElementById('gloss-sem-resultado');
 
   /**
+   * Seletor unificado para capturar tanto os botões de letra quanto o botão "Todos".
+   * O botão "Todos" usa apenas .gloss-letra-todos (sem .gloss-letra-btn),
+   * por isso ambas as classes precisam constar no seletor.
+   */
+  var SELETOR_BOTOES_FILTRO = '.gloss-letra-btn, .gloss-letra-todos';
+
+  /**
    * Restaura todos os textos dos cards ao HTML original (remove highlights).
    */
   function restaurarTextos() {
@@ -124,15 +132,21 @@
   /**
    * Lê os grupos existentes no DOM e gera um botão por letra do alfabeto,
    * desabilitando as que não têm termos.
+   * Os botões gerados recebem apenas .gloss-letra-btn (nunca .gloss-letra-todos).
    */
   (function gerarAlfabeto() {
-    var letrasComTermos = Array.prototype.map.call(
-      grupos,
-      function (el) { return el.dataset.grupo; }
-    );
+    // Extrai letras a partir do data-grupo de cada .gloss-grupo presente no DOM
+    var letrasComTermos = [];
+    grupos.forEach(function (el) {
+      var g = (el.dataset.grupo || '').toUpperCase().trim();
+      if (g && letrasComTermos.indexOf(g) === -1) letrasComTermos.push(g);
+    });
 
     var container = document.querySelector('.gloss-alfabeto');
     if (!container) return;
+
+    // Limpa conteúdo anterior (evita duplicatas em re-execuções)
+    container.innerHTML = '';
 
     'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function (letra) {
       var temTermos = letrasComTermos.indexOf(letra) !== -1;
@@ -182,23 +196,31 @@
     }
   }
 
-  // Delegação de eventos — botões de letra e "Todos"
-  document.addEventListener('click', function (e) {
-    var btn = e.target.closest('.gloss-letra-btn, .gloss-letra-todos');
-    if (!btn || btn.disabled) return;
-
-    var lista = document.getElementById('gloss-lista');
-    var letra = btn.dataset.letra;
-
-    // Desmarca todos, marca o clicado
-    document.querySelectorAll('.gloss-letra-btn, .gloss-letra-todos').forEach(function (b) {
+  /**
+   * Marca visualmente o botão ativo e desmarca os demais.
+   * @param {HTMLElement} btnAtivo
+   */
+  function marcarAtivo(btnAtivo) {
+    document.querySelectorAll(SELETOR_BOTOES_FILTRO).forEach(function (b) {
       b.classList.remove('ativo');
       b.setAttribute('aria-pressed', 'false');
     });
-    btn.classList.add('ativo');
-    btn.setAttribute('aria-pressed', 'true');
+    btnAtivo.classList.add('ativo');
+    btnAtivo.setAttribute('aria-pressed', 'true');
+  }
 
-    // Se havia pesquisa ativa, limpa antes de filtrar
+  // Delegação de eventos — botões de letra (.gloss-letra-btn) e "Todos" (.gloss-letra-todos)
+  document.addEventListener('click', function (e) {
+    // closest captura o botão mesmo se o clique cair em filho (ex.: ícone <i>)
+    var btn = e.target.closest(SELETOR_BOTOES_FILTRO);
+    if (!btn || btn.disabled) return;
+
+    var lista = document.getElementById('gloss-lista');
+    var letra = btn.dataset.letra || 'todos'; // fallback seguro
+
+    marcarAtivo(btn);
+
+    // Se havia pesquisa ativa, limpa antes de filtrar por letra
     var inputPesquisa = document.getElementById('gloss-input-pesquisa');
     if (inputPesquisa && inputPesquisa.value.trim().length > 0) {
       inputPesquisa.value = '';
@@ -213,6 +235,9 @@
 
     if (lista) lista.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+
+  // Inicializa o filtro garantindo que o estado visual coincide com letraAtiva = 'todos'
+  filtrarPorLetra('todos');
 
 
   // ── 4. CAMPO DE PESQUISA ──────────────────────────────────────────────────
@@ -357,8 +382,12 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+}); // fim do DOMContentLoaded
+
 
 // ── 6. VLIBRAS ────────────────────────────────────────────────────────────
+// Mantido fora do DOMContentLoaded: o widget VLibras inicializa de forma
+// assíncrona e não depende dos elementos do glossário.
 if (typeof window.VLibras !== 'undefined') {
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 }

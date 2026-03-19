@@ -743,6 +743,14 @@
           border-radius: 2px;
         }
 
+        /* Remove outline do foco programático em elementos-âncora de navegação */
+        /* (tabindex="-1" é adicionado via JS apenas para scroll/foco por atalho) */
+        #barra-topo:focus,
+        #pi-conteudo:focus,
+        #pi-footer:focus {
+          outline: none !important;
+        }
+
         /* ════════════════════════════════════════════════════════════
            TOAST DE FEEDBACK VISUAL (estilo Elotech)
            Posicionado no canto superior direito, faixa verde,

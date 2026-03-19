@@ -90,7 +90,13 @@ body {
   text-decoration: none;
   background: rgba(255, 255, 255, .15);
   border-radius: 3px;
-  padding: 2px 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .barra-acesso a:hover {
