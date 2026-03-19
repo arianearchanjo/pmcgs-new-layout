@@ -15,7 +15,7 @@
      7. Blocos e listas de links
      8. Página inicial — Bem-vindos
      9. Resultados de busca global
-    10. Alto Contraste eMAG
+    11. Alto Contraste eMAG
    ══════════════════════════════════════════════════════════════════════════ */
 
 
@@ -893,7 +893,130 @@ mark {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   10. ALTO CONTRASTE eMAG
+   10. MODAL DE AVISO — LINKS ELOTECH (SISTEMA EXTERNO)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+#pt-modal-elotech {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0, 0, 0, 0.52);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#pt-modal-elotech.ativo {
+  display: flex;
+}
+
+.pt-modal-caixa {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 28px 28px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  animation: ptModalIn 0.18s ease;
+  text-align: center;
+}
+
+@keyframes ptModalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.pt-modal-icone {
+  font-size: 2rem;
+  color: var(--pi-verde);
+  margin-bottom: 12px;
+}
+
+.pt-modal-titulo {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 0 0 10px;
+}
+
+.pt-modal-msg {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.pt-modal-msg strong { color: var(--pi-verde-escuro); }
+
+.pt-modal-acoes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.pt-modal-btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pt-modal-btn-sec {
+  background: #fff;
+  border-color: var(--pi-cinza-borda);
+  color: #555;
+}
+
+.pt-modal-btn-sec:hover {
+  background: var(--pi-cinza-bg);
+  border-color: #aaa;
+  color: #333;
+}
+
+.pt-modal-btn-pri {
+  background: var(--pi-verde-escuro);
+  border-color: var(--pi-verde-escuro);
+  color: #fff;
+}
+
+.pt-modal-btn-pri:hover {
+  background: var(--pi-verde-medio);
+  border-color: var(--pi-verde-medio);
+}
+
+.pt-modal-btn:focus-visible {
+  outline: 2px solid var(--pi-verde-escuro);
+  outline-offset: 2px;
+}
+
+/* Indicador visual sutil nos links Elotech (::after) */
+a.link-externo .pt-link-seta {
+  color: var(--pi-verde);
+}
+
+/* Alto contraste — modal */
+body.high-contrast #pt-modal-elotech { background: rgba(0, 0, 0, 0.85); }
+body.high-contrast .pt-modal-caixa { background: #000; border: 2px solid #fff; }
+body.high-contrast .pt-modal-titulo { color: #ff0; }
+body.high-contrast .pt-modal-msg { color: #fff; }
+body.high-contrast .pt-modal-msg strong { color: #ff0; }
+body.high-contrast .pt-modal-icone { color: #ff0; }
+body.high-contrast .pt-modal-btn-sec { background: #000; border-color: #fff; color: #fff; }
+body.high-contrast .pt-modal-btn-sec:hover { background: #222; }
+body.high-contrast .pt-modal-btn-pri { background: #ff0; border-color: #ff0; color: #000; }
+body.high-contrast .pt-modal-btn-pri:hover { background: #ffe000; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   11. ALTO CONTRASTE eMAG
    Segue exatamente a seção 11 do acessibilidade.css
    ══════════════════════════════════════════════════════════════════════════ */
 

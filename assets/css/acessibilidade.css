@@ -1113,6 +1113,54 @@
   margin-bottom: 40px;
 }
 
+/* ── Subtítulo interno de seção (h3 com ícone, menor que pi-secao-titulo) ── */
+.pi-subtitulo {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 24px 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pi-subtitulo i {
+  font-size: 0.875rem;
+  color: var(--pi-verde);
+  flex-shrink: 0;
+}
+
+/* ── Lista numerada de passos de uso ───────────────────────────────────── */
+.pi-lista-passos {
+  padding-left: 20px;
+  margin-bottom: 28px;
+  color: #444;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.pi-lista-passos li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.pi-lista-passos li:last-child {
+  margin-bottom: 0;
+}
+
+/* Alto contraste — subtítulo e lista de passos */
+body.high-contrast .pi-subtitulo {
+  color: #fff !important;
+}
+
+body.high-contrast .pi-subtitulo i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .pi-lista-passos {
+  color: #ddd !important;
+}
+
 
 /* ══════════════════════════════════════════════════════════════════════════
    9. SIDEBAR

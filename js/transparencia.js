@@ -1,7 +1,8 @@
 (function () {
   'use strict';
 
-  var anoAtivo = '2026';
+  // var anoAtivo = '2026'; // [DESATIVADO] Filtro de exercício comentado temporariamente.
+  var anoAtivo = 'todos';
   var secaoAtiva = 'inicio';
   var modoGlobalSearch = false;
 
@@ -34,6 +35,7 @@
     var alvo = document.getElementById('secao-' + id);
     if (alvo) { alvo.classList.add('visivel'); }
 
+    /* [DESATIVADO] Filtro de exercício comentado temporariamente.
     var filtro = document.getElementById('pt-filtro-barra');
     if (filtro) {
       var ocultarFiltro = (id === 'inicio' || id === 'busca');
@@ -43,8 +45,10 @@
     if (id !== 'inicio' && id !== 'busca') {
       aplicarFiltroAno(anoAtivo);
     }
+    */
   }
 
+  /* [DESATIVADO] Filtro de exercício comentado temporariamente.
   function aplicarFiltroAno(ano) {
     anoAtivo = ano;
 
@@ -71,6 +75,7 @@
     var aviso = secao.querySelector('.pt-aviso-vazio');
     if (aviso) { aviso.classList.toggle('visivel', visiv === 0); }
   }
+  */
 
   function escaparHTML(str) {
     return String(str)
@@ -100,8 +105,10 @@
     var secBusca = document.getElementById('secao-busca');
     if (secBusca) secBusca.classList.add('visivel');
 
+    /* [DESATIVADO] Filtro de exercício comentado temporariamente.
     var filtro = document.getElementById('pt-filtro-barra');
     if (filtro) filtro.classList.remove('pt-oculto');
+    */
 
     var desc = document.getElementById('pt-busca-desc');
     if (desc) {
@@ -161,13 +168,16 @@
         li.setAttribute('role', 'listitem');
 
         var nomeHL = destacarTexto(r.nome, termoLow);
-        var ext = r.externo ? ' target="_blank" rel="noopener"' : '';
+        var isElotech = r.href.indexOf('campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/') !== -1;
+        var extClass = r.externo ? (isElotech ? 'link-externo' : '') : '';
+        var ext = r.externo ? ' target="_blank" rel="noopener noreferrer"' : '';
+
         var ico = r.externo
           ? '<i class="fas fa-external-link-alt pt-resultado-seta" aria-hidden="true"></i>'
           : '<i class="fas fa-chevron-right pt-resultado-seta" aria-hidden="true"></i>';
 
         li.innerHTML =
-          '<a href="' + escaparHTML(r.href) + '"' + ext + '>' +
+          '<a href="' + escaparHTML(r.href) + '"' + ext + (extClass ? ' class="' + extClass + '"' : '') + '>' +
             '<span class="pt-resultado-categoria">' + escaparHTML(r.cat) + '</span>' +
             '<span class="pt-resultado-info"><span class="pt-resultado-nome">' + nomeHL + '</span></span>' +
             ico +
@@ -194,11 +204,13 @@
       });
     });
 
+    /* [DESATIVADO] Filtro de exercício comentado temporariamente.
     document.querySelectorAll('.pt-btn-ano').forEach(function (btn) {
       btn.addEventListener('click', function () {
         aplicarFiltroAno(btn.getAttribute('data-ano'));
       });
     });
+    */
 
     var inputBusca = document.getElementById('pt-busca');
     var btnBusca = document.getElementById('pt-busca-btn');
@@ -241,7 +253,64 @@
       });
     });
 
+    iniciarAvisoElotech();
     ativarSecao('inicio');
+  }
+
+  function iniciarAvisoElotech() {
+    var modal = document.createElement('div');
+    modal.id = 'pt-modal-elotech';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'pt-modal-titulo');
+    modal.setAttribute('aria-describedby', 'pt-modal-msg');
+    modal.innerHTML =
+      '<div class="pt-modal-caixa">' +
+        '<div class="pt-modal-icone" aria-hidden="true"><i class="fas fa-circle-info"></i></div>' +
+        '<h2 id="pt-modal-titulo" class="pt-modal-titulo">Sistema Externo</h2>' +
+        '<p id="pt-modal-msg" class="pt-modal-msg">Você será direcionado para um sistema externo.' +
+        ' Após o acesso, <strong>selecione o ano desejado</strong> no topo da página.</p>' +
+        '<div class="pt-modal-acoes">' +
+          '<button id="pt-modal-cancelar" class="pt-modal-btn pt-modal-btn-sec">Cancelar</button>' +
+          '<button id="pt-modal-confirmar" class="pt-modal-btn pt-modal-btn-pri">Continuar <i class="fas fa-external-link-alt" aria-hidden="true"></i></button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    var urlDestino = null;
+
+    function abrirModal(url) {
+      urlDestino = url;
+      modal.classList.add('ativo');
+      document.getElementById('pt-modal-confirmar').focus();
+    }
+
+    function fecharModal() {
+      modal.classList.remove('ativo');
+      urlDestino = null;
+    }
+
+    document.getElementById('pt-modal-cancelar').addEventListener('click', fecharModal);
+
+    document.getElementById('pt-modal-confirmar').addEventListener('click', function () {
+      if (urlDestino) { window.open(urlDestino, '_blank', 'noopener,noreferrer'); }
+      fecharModal();
+    });
+
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) { fecharModal(); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('ativo')) { fecharModal(); }
+    });
+
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.link-externo');
+      if (!link) return;
+      e.preventDefault();
+      abrirModal(link.getAttribute('href'));
+    });
   }
 
   if (document.readyState === 'loading') {
