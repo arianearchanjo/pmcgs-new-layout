@@ -20,15 +20,18 @@ html {
   font-size: 1rem;
 }
 
-/* ── Foco visível (WCAG 2.1 – 2.4.7) ── */
+/* ── Foco por teclado (WCAG 2.4.7) ──────────────────────────────────────────
+   :focus-visible dispara apenas quando o foco vem do teclado (Tab / setas).
+   Clique de mouse não aciona esta regra — nenhuma borda aparece no clique.   */
 :focus-visible {
-  outline: 3px solid var(--amarelo);
-  outline-offset: 2px;
+  outline: 3px solid var(--amarelo) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
 }
 
-/* Remove outline padrão feio apenas quando :focus-visible está disponível */
 :focus:not(:focus-visible) {
-  outline: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 * {
@@ -103,12 +106,6 @@ body {
   background: rgba(255, 255, 255, .28);
 }
 
-/* Foco visível nos botões de fonte — contraste sobre fundo verde */
-.barra-acesso a:focus-visible {
-  outline: 2px solid var(--amarelo);
-  outline-offset: 2px;
-}
-
 /* ── Botão de Alto Contraste ── */
 .barra-acesso-contraste {
   display: inline-flex;
@@ -129,11 +126,6 @@ body {
   background: rgba(255, 255, 255, .28);
   color: #fff;
   text-decoration: none;
-}
-
-.barra-acesso-contraste:focus-visible {
-  outline: 2px solid var(--amarelo);
-  outline-offset: 2px;
 }
 
 /* Indica visualmente quando o contraste está ativo */
@@ -273,12 +265,6 @@ body.high-contrast .barra-acesso-contraste {
 
 .header-search .input-group input::placeholder {
   color: #aaa;
-}
-
-.header-search .input-group input:focus {
-  box-shadow: none;
-  border-color: var(--verde);
-  background: #fff;
 }
 
 .header-search .input-group-append button {
@@ -673,8 +659,6 @@ body.high-contrast .barra-acesso-contraste {
     max-width: 800px;
   }
 }
-
-
 
 @media (max-width: 991px) {
   #grid-acesso-rapido {
@@ -1395,7 +1379,6 @@ footer ul li a:hover {
   margin-top: 0;
 }
 
-
 /* ══════════════════════════════════════════════════════════
    TRANSPARÊNCIA PÚBLICA
 ══════════════════════════════════════════════════════════ */
@@ -1585,11 +1568,6 @@ body.high-contrast a:visited {
 }
 
 body.high-contrast a:hover,
-body.high-contrast a:focus {
-  color: #fff !important;
-  background: #000 !important;
-  outline: 2px solid #ffff00 !important;
-}
 
 /* Fundos dos blocos principais */
 body.high-contrast header,
@@ -1640,13 +1618,6 @@ body.high-contrast textarea {
 body.high-contrast img {
   filter: grayscale(30%) contrast(110%);
 }
-
-/* Foco sempre visível */
-body.high-contrast *:focus-visible {
-  outline: 3px solid #ffff00 !important;
-  outline-offset: 2px !important;
-}
-
 
 @media (max-width: 575px) {
   .transp-card {
@@ -1843,6 +1814,7 @@ body.high-contrast *:focus-visible {
   transition: color 0.15s, border-color 0.15s;
   font-family: 'Roboto', sans-serif;
   outline: none;
+  box-shadow: none;
   white-space: nowrap;
 }
 
@@ -1862,11 +1834,6 @@ body.high-contrast *:focus-visible {
 .perfil-btn:hover i {
   color: var(--verde);
   transform: none;
-}
-
-.perfil-btn:focus-visible {
-  outline: 2px solid var(--amarelo);
-  outline-offset: -2px;
 }
 
 .perfil-btn.ativo {
@@ -2027,7 +1994,6 @@ body.high-contrast *:focus-visible {
   object-position: center;
   display: block;
 }
-
 
 /* Botão "Todos os serviços" — fixo à direita, abaixo do grid */
 .todos-servicos-wrapper {
