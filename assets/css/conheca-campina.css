@@ -25,7 +25,28 @@
    19.  Alto contraste
    20.  Responsividade
 ══════════════════════════════════════════════════════════════ */
+.pi-skip-nav {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
+.pi-skip-nav:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  z-index: 9999;
+  overflow: visible;
+}
 
 /* ── 1. Hero ─────────────────────────────────────────────────── */
 #pi-hero {
