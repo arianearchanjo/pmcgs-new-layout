@@ -582,7 +582,7 @@
                   <i class="fas fa-headphones" aria-hidden="true"></i>
                 </a>
 
-                <a href="${base}pages/acessibilidade/index.html" class="barra-acesso-icone" title="Página de Acessibilidade">
+                <a href="/pages/acessibilidade/" class="barra-acesso-icone" title="Página de Acessibilidade">
                   <i class="fas fa-universal-access" aria-hidden="true"></i>
                 </a>
               </div>
@@ -590,7 +590,7 @@
               <div class="barra-sep" aria-hidden="true"></div>
 
               <nav class="barra-badges" aria-label="Acesso rápido">
-                <a href="https://campinagrandedosul.pr.gov.br/mapa-do-site"
+                <a href="/pages/mapa-site/"
                    aria-label="Mapa do site"
                    class="barra-acesso-icone" style="width:auto; padding:0 10px; font-size:10px; font-weight:700;">
                   <i class="fas fa-sitemap" aria-hidden="true"></i>&nbsp; MAPA DO SITE

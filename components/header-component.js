@@ -18,7 +18,7 @@
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">SERVIÇOS</a>
             <div class="dropdown-menu">
               <div class="dropdown-group-title">Tributos</div>
-              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a>
+              <a class="dropdown-item" href="/pages/servico/">Consulta de Débitos</a>
               <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a>
               <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a>
               <div class="dropdown-group-title">Protocolo</div>
@@ -48,7 +48,7 @@
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/mulher">Mulher e Igualdade Racial</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/ordem-publica">Ordem Pública e Segurança</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/saude">Saúde</a>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/tecnologia-da-informacao">Tecnologia da Informação</a>
+                <a class="dropdown-item" href="${base}pages/secretarias/">Tecnologia da Informação</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/urbanismo">Urbanismo</a>
               </div>
               <div class="mega-col">
@@ -58,9 +58,9 @@
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/conselhos-municipais">Conselhos Municipais</a>
                 <div class="dropdown-group-title" style="margin-top:14px;">Gestão</div>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/prefeito">Prefeito</a>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/vice-prefeito">Vice-Prefeito</a>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/secretarios-municipais">Secretários Municipais</a>
+                  <a class="dropdown-item" href="/pages/prefeito/">Prefeito</a>
+                  <a class="dropdown-item" href="/pages/vice-prefeito/">Vice-Prefeito</a>
+                  <a class="dropdown-item" href="/pages/secretarios-municipais/">Secretários Municipais</a>
               </div>
             </div>
           </li>
@@ -88,13 +88,13 @@
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/faq">Perguntas e Respostas</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a>
                 <a class="dropdown-item" href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener">Radar da Transparência</a>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/transparencia" style="color:var(--verde);font-weight:700;">→ Portal da Transparência</a>
+                <a class="dropdown-item" href="/pages/transparencia/" style="color:var(--verde);font-weight:700;">→ Portal da Transparência</a>
               </div>
             </div>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">CONHEÇA CAMPINA</a>
+            <a class="nav-link" href="/pages/conheca-campina/">CONHEÇA CAMPINA</a>
           </li>
 
           <li class="nav-item">

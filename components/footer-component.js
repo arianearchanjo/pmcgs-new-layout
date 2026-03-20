@@ -38,7 +38,7 @@
               <nav aria-label="Serviços Municipais">
                 <h6>SERVIÇOS</h6>
                 <ul>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/consulta-de-debitos">Consulta de Débitos</a></li>
+                  <li><a href="${base}pages/servico/">Consulta de Débitos</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Todos os Serviços</a></li>

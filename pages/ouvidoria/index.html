@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ouvidoria – Portal da Prefeitura de Campina Grande do Sul – PR</title>
+  <meta name="description" content="Ouvidoria Municipal de Campina Grande do Sul. Faça solicitações, denúncias, elogios, sugestões e reclamações à Administração Pública Municipal.">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Estilos base do novo layout -->
+  <link rel="stylesheet" href="../../assets/css/acessibilidade.css">
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <!-- Estilos específicos da Ouvidoria -->
+  <link rel="stylesheet" href="../../assets/css/ouvidoria.css">
+</head>
+
+<body>
+
+  <!-- SKIP NAVIGATION — WCAG 2.4.1 -->
+  <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
+
+  <!-- Componentes globais -->
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       HERO — padrão institucional (idêntico às demais páginas internas)
+  ════════════════════════════════════════════════════════════════ -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">Ouvidoria</li>
+          </ol>
+        </nav>
+        <h1 class="pi-hero-titulo">Ouvidoria Municipal</h1>
+        <p class="pi-hero-subtitulo">Canal direto entre o cidadão e a Administração Pública Municipal</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ════════════════════════════════════════════════════════════════ -->
+  <main id="pi-main">
+    <div class="container" id="pi-conteudo" tabindex="-1">
+
+      <!-- Layout: col principal (col-lg-8) + sidebar (col-lg-4) -->
+      <div class="row ouv-layout-row">
+
+        <!-- ══════════════════════════════════════════════════════
+             COLUNA PRINCIPAL
+        ══════════════════════════════════════════════════════════ -->
+        <div class="col-12 col-lg-8">
+          <article>
+
+            <!-- Quais manifestações posso fazer? ─────────────────── -->
+            <section aria-labelledby="pi-manifestacoes-titulo" class="ouv-secao">
+              <h2 id="pi-manifestacoes-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-bullhorn" aria-hidden="true"></i>
+                Quais manifestações posso fazer?
+              </h2>
+              <hr class="ouv-divider">
+
+              <div class="ouv-mani-grid">
+                <a href="/cadastrar-manifestacao-ouvidoria/19"
+                  class="ouv-mani-card bg-solicitacoes"
+                  data-toggle="tooltip" data-placement="top"
+                  title="Utilize para fazer pedidos ou requerimentos formais."
+                  aria-label="Solicitações">
+                  <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                  <span>Solicitações</span>
+                </a>
+                <a href="/cadastrar-manifestacao-ouvidoria/20"
+                  class="ouv-mani-card bg-denuncias"
+                  data-toggle="tooltip" data-placement="top"
+                  title="Informe irregularidades, ilegalidades ou infrações."
+                  aria-label="Denúncias">
+                  <i class="fas fa-gavel" aria-hidden="true"></i>
+                  <span>Denúncias</span>
+                </a>
+                <a href="/cadastrar-manifestacao-ouvidoria/21"
+                  class="ouv-mani-card bg-elogios"
+                  data-toggle="tooltip" data-placement="top"
+                  title="Destaque aspectos positivos ou reconheça bons serviços."
+                  aria-label="Elogios">
+                  <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+                  <span>Elogios</span>
+                </a>
+                <a href="/cadastrar-manifestacao-ouvidoria/22"
+                  class="ouv-mani-card bg-sugestoes"
+                  data-toggle="tooltip" data-placement="top"
+                  title="Apresente ideias ou melhorias para os serviços."
+                  aria-label="Sugestões">
+                  <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                  <span>Sugestões</span>
+                </a>
+                <a href="/cadastrar-manifestacao-ouvidoria/23"
+                  class="ouv-mani-card bg-reclamacoes"
+                  data-toggle="tooltip" data-placement="top"
+                  title="Expresse insatisfação sobre algum serviço ou atendimento."
+                  aria-label="Reclamações">
+                  <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                  <span>Reclamações</span>
+                </a>
+                <a href="/consultar-manifestacao-ouvidoria"
+                  class="ouv-mani-card bg-protocolo"
+                  data-toggle="tooltip" data-placement="top"
+                  title="Consultar Protocolo pelo N°"
+                  aria-label="Consultar Protocolo">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <span>Consultar</span>
+                </a>
+              </div>
+
+              <p class="text-center mt-3 mb-0">
+                <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic"
+                  target="_blank" rel="noopener" class="ouv-link-esic">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  Para pedido de acesso a Informação clique aqui para acessar o e-SIC
+                </a>
+              </p>
+            </section>
+
+            <!-- Canais de Contato ────────────────────────────────── -->
+            <section aria-labelledby="pi-canais-titulo" class="ouv-secao">
+              <h2 id="pi-canais-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-address-book" aria-hidden="true"></i>
+                Canais de Contato
+              </h2>
+              <hr class="ouv-divider">
+
+              <div class="row ouv-contato-row">
+                <div class="col-12 col-md-4 mb-5">
+                  <div class="ouv-contato-card h-100">
+                    <div class="ouv-contato-icon-wrap" aria-hidden="true">
+                      <i class="fas fa-bullhorn fa-lg text-success"></i>
+                    </div>
+                    <h3 class="ouv-contato-titulo">Ouvidoria Geral</h3>
+                    <ul class="ouv-contato-lista">
+                      <li><i class="fas fa-user-tie" aria-hidden="true"></i><span>Patrícia Aparecida Lazarotto</span></li>
+                      <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Praça Bento Munhoz da Rocha, 30 – Sede</span></li>
+                      <li><i class="fas fa-phone" aria-hidden="true"></i><span>(41) 3162-7005</span></li>
+                      <li><i class="fas fa-envelope" aria-hidden="true"></i><span>ouvidoria@pmcgs.pr.gov.br</span></li>
+                      <li><i class="fas fa-clock" aria-hidden="true"></i><span>08:30–12:00 e 13:30–17:30 (Seg.–Sex.)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                  <div class="ouv-contato-card h-100">
+                    <div class="ouv-contato-icon-wrap" aria-hidden="true">
+                      <i class="fas fa-heartbeat fa-lg text-danger"></i>
+                    </div>
+                    <h3 class="ouv-contato-titulo">Ouvidoria da Saúde (SUS)</h3>
+                    <ul class="ouv-contato-lista">
+                      <li><i class="fas fa-user-tie" aria-hidden="true"></i><span>Cristiane Damásio de Oliveira</span></li>
+                      <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Rodovia do Caqui, 540 – Recanto Verde</span></li>
+                      <li><i class="fas fa-phone" aria-hidden="true"></i><span>(41) 3162-7155</span></li>
+                      <li><i class="fas fa-envelope" aria-hidden="true"></i><span>ouvidoriasus@pmcgs.pr.gov.br</span></li>
+                      <li><i class="fas fa-clock" aria-hidden="true"></i><span>08:30–12:00 e 13:30–17:30 (Seg.–Sex.)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 mb-5">
+                  <div class="ouv-contato-card h-100">
+                    <div class="ouv-contato-icon-wrap" aria-hidden="true">
+                      <i class="fas fa-user-shield fa-lg text-primary"></i>
+                    </div>
+                    <h3 class="ouv-contato-titulo">Ouvidoria da Guarda Municipal</h3>
+                    <ul class="ouv-contato-lista">
+                      <li><i class="fas fa-user-tie" aria-hidden="true"></i><span>André Henrique de Moura Vidolin</span></li>
+                      <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Rodovia do Caqui, 4943 – Araçatuba</span></li>
+                      <li><i class="fas fa-phone" aria-hidden="true"></i><span>(41) 3162-7251</span></li>
+                      <li><i class="fas fa-envelope" aria-hidden="true"></i><span>ouvidoriagcm@pmcgs.pr.gov.br</span></li>
+                      <li><i class="fas fa-clock" aria-hidden="true"></i><span>08:30–12:00 e 13:30–17:30 (Seg.–Sex.)</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Outros Serviços ──────────────────────────────────── -->
+            <section aria-labelledby="pi-servicos-titulo" class="ouv-secao">
+              <h2 id="pi-servicos-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-th-large" aria-hidden="true"></i>
+                Outros Serviços
+              </h2>
+              <hr class="ouv-divider">
+
+              <div class="row">
+                <div class="col-12 col-sm-6 mb-3">
+                  <div class="ouv-servico-card">
+                    <div><h3 class="ouv-servico-titulo">Iluminação Pública</h3><p>(41) 3162-7310</p></div>
+                    <i class="fas fa-lightbulb ouv-servico-icon" style="color:#e6a800;" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                  <div class="ouv-servico-card">
+                    <div><h3 class="ouv-servico-titulo">Coleta de Lixo / Manutenção de Estradas</h3><p>(41) 3162-7310</p></div>
+                    <i class="fas fa-tools ouv-servico-icon" style="color:#17A2B8;" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                  <div class="ouv-servico-card">
+                    <div><h3 class="ouv-servico-titulo">Perturbação de Sossego</h3><p>Telefone: 153</p></div>
+                    <i class="fas fa-bell-slash ouv-servico-icon" style="color:#DC3545;" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                  <div class="ouv-servico-card">
+                    <div><h3 class="ouv-servico-titulo">Maus-Tratos a Animais</h3><p>(41) 3162-7324</p></div>
+                    <i class="fas fa-paw ouv-servico-icon" style="color:#A0522D;" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                  <div class="ouv-servico-card">
+                    <div><h3 class="ouv-servico-titulo">Poda de Árvore</h3><p>(41) 3162-7321</p></div>
+                    <i class="fas fa-tree ouv-servico-icon" style="color:#28A745;" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                  <div class="ouv-servico-card">
+                    <div><h3 class="ouv-servico-titulo">Gestão de Cemitério</h3><p>(41) 3162-7325</p></div>
+                    <i class="fas fa-cross ouv-servico-icon" style="color:#6C757D;" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Sobre a Ouvidoria (abas) ─────────────────────────── -->
+            <section aria-labelledby="pi-sobre-titulo" class="ouv-secao">
+              <h2 id="pi-sobre-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                Sobre a Ouvidoria
+              </h2>
+              <hr class="ouv-divider">
+
+              <ul class="nav nav-tabs ouv-nav-tabs" id="ouv-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" id="ouv-tab-sobre" data-toggle="tab" href="#ouv-sobre"
+                    role="tab" aria-controls="ouv-sobre" aria-selected="true"><b>Sobre a Ouvidoria</b></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="ouv-tab-dados" data-toggle="tab" href="#ouv-dados"
+                    role="tab" aria-controls="ouv-dados" aria-selected="false"><b>Dados da Ouvidoria</b></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" id="ouv-tab-relatorios" data-toggle="tab" href="#ouv-relatorios"
+                    role="tab" aria-controls="ouv-relatorios" aria-selected="false"><b>Relatórios</b></a>
+                </li>
+              </ul>
+
+              <div class="tab-content ouv-tab-content" id="ouv-tabs-content">
+
+                <!-- Aba: Sobre -->
+                <div class="tab-pane fade show active" id="ouv-sobre" role="tabpanel" aria-labelledby="ouv-tab-sobre">
+                  <div class="row">
+                    <div class="col-12 col-md-6 mb-4">
+                      <div class="ouv-info-card h-100">
+                        <h3 class="ouv-info-titulo">
+                          <i class="fas fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                          O que é a Ouvidoria
+                        </h3>
+                        <p>Ouvidoria é um espaço em que o cidadão pode apresentar sugestões, elogios,
+                          solicitações, reclamações e denúncias. A Ouvidoria Pública é um canal entre o
+                          cidadão e a Administração Pública de modo que as manifestações decorrentes do
+                          exercício da cidadania provoquem a melhoria dos serviços públicos prestados.</p>
+
+                        <h3 class="ouv-info-titulo mt-4">
+                          <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                          Legislação
+                        </h3>
+                        <p>Os serviços prestados pela Ouvidoria Geral têm por embasamento as seguintes normativas:</p>
+                        <ul class="ouv-lista-legislacao">
+                          <li>
+                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                            <span><a href="http://leismunicipa.is/hswxt" target="_blank" rel="noopener">Lei Municipal nº. 706/2020:</a>
+                            institui a Ouvidoria Geral do Município de Campina Grande do Sul, e dá outras providências.</span>
+                          </li>
+                          <li>
+                            <i class="fas fa-file-contract" aria-hidden="true"></i>
+                            <span><a href="http://leismunicipa.is/jbmsz" target="_blank" rel="noopener">Decreto Municipal 1606/2021:</a>
+                            Regulamenta o procedimento de acesso às informações públicas no âmbito do Poder Executivo do Município de Campina Grande do Sul e suas entidades.</span>
+                          </li>
+                          <li>
+                            <i class="fas fa-file-signature" aria-hidden="true"></i>
+                            <span><a href="http://leismunicipa.is/00e2s" target="_blank" rel="noopener">Decreto Municipal 1841/2022:</a>
+                            Regulamenta os procedimentos relativos à atividade da Ouvidoria Geral no âmbito do Poder Executivo do Município de Campina Grande do Sul.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-4">
+                      <div class="ouv-info-card h-100">
+                        <h3 class="ouv-info-titulo">
+                          <i class="fas fa-bullhorn" aria-hidden="true"></i>
+                          O que é uma manifestação
+                        </h3>
+                        <p>Manifestar é o ato de expor, apresentar, declarar, tornar visível, publicar. A manifestação
+                          é uma forma de o cidadão expressar para a Ouvidoria seus anseios, angústias, dúvidas, opiniões.
+                          Assim, pode auxiliar o Poder Público a aprimorar a gestão de políticas e serviços, ou a combater
+                          a prática de atos ilícitos.</p>
+
+                        <p><strong>Quais são os tipos de manifestações?</strong></p>
+
+                        <dl class="ouv-glossario">
+                          <dt>Sugestão</dt>
+                          <dd>Proposição de ideia ou formulação de proposta de aprimoramento de políticas e serviços prestados pela Administração Pública municipal.</dd>
+                          <dt>Elogio</dt>
+                          <dd>Demonstração ou reconhecimento ou satisfação sobre o serviço oferecido ou atendimento recebido.</dd>
+                          <dt>Solicitação</dt>
+                          <dd>Requerimento de adoção de providência por parte da Administração.</dd>
+                          <dt>Reclamação</dt>
+                          <dd>Demonstração de insatisfação relativa a serviço público.</dd>
+                          <dt>Denúncia</dt>
+                          <dd>Comunicação de prática de ato ilícito cuja solução dependa da atuação de órgão de controle interno ou externo.</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Aba: Dados da Ouvidoria -->
+                <div class="tab-pane fade" id="ouv-dados" role="tabpanel" aria-labelledby="ouv-tab-dados">
+                  <div class="spweb-view" data-model="_SectionOuvidEstat" data-id="0">
+                    <p class="text-center text-muted p-5">Conteúdo dinâmico de Dados da Ouvidoria a ser exibido pelo sistema.</p>
+                  </div>
+                </div>
+
+                <!-- Aba: Relatórios -->
+                <div class="tab-pane fade" id="ouv-relatorios" role="tabpanel" aria-labelledby="ouv-tab-relatorios" style="min-height:250px;">
+                  <div class="spweb-file" data-model="_SectionFiles3" data-category="42" data-subcategory="0">
+                    <p class="text-center text-muted p-5">Conteúdo dinâmico de Relatórios a ser exibido pelo sistema.</p>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- Outras Informações ───────────────────────────────── -->
+            <section aria-labelledby="pi-atendimento-titulo" class="ouv-secao">
+              <h2 id="pi-atendimento-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                Outras Informações
+              </h2>
+              <hr class="ouv-divider">
+
+              <div class="row">
+                <div class="col-12 col-md-6 mb-4" id="presencial">
+                  <div class="ouv-info-card h-100">
+                    <h3 class="ouv-info-titulo">
+                      <i class="fas fa-building" aria-hidden="true"></i>
+                      Atendimento Presencial
+                    </h3>
+                    <p>Para atendimento presencial dirigir-se à
+                      <a href="https://maps.app.goo.gl/LtUtr6VZUAijMDAb9" target="_blank" rel="noopener">
+                        Praça Bento Munhoz da Rocha, 30 – Prefeitura Municipal.
+                      </a>
+                    </p>
+                    <p class="mb-0">
+                      <i class="fas fa-clock text-success mr-1" aria-hidden="true"></i>
+                      <strong>Horário:</strong> 08:30 às 12:00 e das 13:30 às 17:30.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4" id="canais">
+                  <div class="ouv-info-card h-100">
+                    <h3 class="ouv-info-titulo">
+                      <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                      Canais de Atendimento
+                    </h3>
+                    <p><i class="fas fa-file-signature text-success mr-2" aria-hidden="true"></i> Formulário Digital</p>
+                    <p><i class="fas fa-phone text-success mr-2" aria-hidden="true"></i> Telefone: (41) 3162-7005</p>
+                    <p class="mb-0">
+                      <i class="fas fa-envelope text-success mr-2" aria-hidden="true"></i>
+                      <a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Fluxo do Atendimento ─────────────────────────────── -->
+            <section aria-labelledby="pi-fluxo-titulo" class="ouv-secao">
+              <h2 id="pi-fluxo-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-route" aria-hidden="true"></i>
+                Fluxo do Atendimento
+              </h2>
+              <p class="ouv-subtexto mb-3">Clique nas etapas para ver os detalhes.</p>
+              <hr class="ouv-divider">
+
+              <div class="ouv-stepper" role="list" aria-label="Etapas do fluxo de atendimento">
+                <div class="step-card active" data-step="1" role="button" tabindex="0" aria-selected="true" aria-controls="step-details">
+                  <span class="step-num">1</span>
+                  <span class="step-label">Recebimento da Manifestação</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="2" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">2</span>
+                  <span class="step-label">Registro no Sistema</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="3" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">3</span>
+                  <span class="step-label">Análise Inicial (triagem)</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="4" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">4</span>
+                  <span class="step-label">Encaminhamento para o Órgão Responsável</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="5" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">5</span>
+                  <span class="step-label">Acompanhamento Interno</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="6" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">6</span>
+                  <span class="step-label">Resposta do Órgão Responsável</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="7" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">7</span>
+                  <span class="step-label">Resposta da Ouvidoria para o Cidadão</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="8" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">8</span>
+                  <span class="step-label">Encerramento da Manifestação</span>
+                </div>
+                <div class="step-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></div>
+                <div class="step-card" data-step="9" role="button" tabindex="0" aria-selected="false" aria-controls="step-details">
+                  <span class="step-num">9</span>
+                  <span class="step-label">Avaliação do Atendimento pelo Cidadão</span>
+                </div>
+              </div>
+
+              <div id="step-details" class="ouv-step-details mt-3" aria-live="polite" aria-atomic="true">
+                <p class="text-center text-muted mb-0">Clique em uma etapa para ver os detalhes.</p>
+              </div>
+            </section>
+
+            <!-- Pesquisa de Satisfação ───────────────────────────── -->
+            <section aria-labelledby="pi-pesquisa-titulo" class="ouv-secao">
+              <h2 id="pi-pesquisa-titulo" class="ouv-secao-titulo">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                Pesquisa de Satisfação
+              </h2>
+              <hr class="ouv-divider">
+              <p class="ouv-subtexto mb-4">Sua opinião é essencial para melhorarmos nossos serviços. Participe das pesquisas abaixo.</p>
+
+              <div class="row">
+                <div class="col-12 col-md-6 mb-3">
+                  <a href="https://www.campinagrandedosul.pr.gov.br/pesquisa-satisfa%C3%A7%C3%A3o-ouvidoria"
+                    target="_blank" rel="noopener" class="ouv-survey-btn"
+                    aria-label="Responder pesquisa de satisfação da Ouvidoria (abre em nova aba)">
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                    <div>
+                      <strong>Ouvidoria</strong>
+                      <span>Avalie o atendimento da Ouvidoria</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                  <a href="https://www.campinagrandedosul.pr.gov.br/pesquisa-satisfa%C3%A7%C3%A3o-servicos"
+                    target="_blank" rel="noopener" class="ouv-survey-btn"
+                    aria-label="Responder pesquisa de satisfação dos serviços ao cidadão (abre em nova aba)">
+                    <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                    <div>
+                      <strong>Serviços ao cidadão</strong>
+                      <span>Avalie os serviços prestados</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+          </article>
+        </div>
+        <!-- /COLUNA PRINCIPAL -->
+
+        <!-- ══════════════════════════════════════════════════════
+             SIDEBAR
+        ══════════════════════════════════════════════════════════ -->
+        <div class="col-12 col-lg-4">
+          <aside class="ouv-sidebar" aria-label="Navegação lateral e informações rápidas">
+
+            <!-- Fazer Manifestação -->
+            <div class="ouv-sb-card ouv-sb-destaque">
+              <h4 class="ouv-sb-titulo">
+                <i class="fas fa-pen-to-square" aria-hidden="true"></i>
+                Fazer Manifestação
+              </h4>
+              <ul class="ouv-sb-info">
+                <li><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</li>
+                <li><i class="fas fa-phone" aria-hidden="true"></i> (41) 3162-7005</li>
+                <li><i class="fas fa-envelope" aria-hidden="true"></i> ouvidoria@pmcgs.pr.gov.br</li>
+              </ul>
+              <a href="/cadastrar-manifestacao-ouvidoria/19" class="ouv-sb-btn-primary">
+                <i class="fas fa-bullhorn" aria-hidden="true"></i> Nova Manifestação
+              </a>
+              <a href="/consultar-manifestacao-ouvidoria" class="ouv-sb-btn-outline">
+                <i class="fas fa-search" aria-hidden="true"></i> Consultar Protocolo
+              </a>
+            </div>
+
+            <!-- Nesta Seção -->
+            <div class="ouv-sb-card">
+              <h4 class="ouv-sb-titulo">
+                <i class="fas fa-list" aria-hidden="true"></i>
+                Nesta Seção
+              </h4>
+              <ul class="ouv-sb-links">
+                <li class="active">
+                  <a href="#" aria-current="page">
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                    <span>Ouvidoria</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic" target="_blank" rel="noopener">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    <span>e-SIC – Acesso à Informação</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://campinagrandedosul.pr.gov.br/transparencia">
+                    <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                    <span>Transparência</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://campinagrandedosul.pr.gov.br/politica-privacidade">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <span>Política de Privacidade</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tipos de Manifestação -->
+            <div class="ouv-sb-card">
+              <h4 class="ouv-sb-titulo">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                Tipos de Manifestação
+              </h4>
+              <ul class="ouv-sb-links">
+                <li>
+                  <a href="/cadastrar-manifestacao-ouvidoria/19">
+                    <i class="fas fa-exclamation-circle" style="color:#0d9cb5;" aria-hidden="true"></i>
+                    <span>Solicitação</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/cadastrar-manifestacao-ouvidoria/20">
+                    <i class="fas fa-gavel" style="color:#e67800;" aria-hidden="true"></i>
+                    <span>Denúncia</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/cadastrar-manifestacao-ouvidoria/21">
+                    <i class="fas fa-thumbs-up" style="color:#1f9a3f;" aria-hidden="true"></i>
+                    <span>Elogio</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/cadastrar-manifestacao-ouvidoria/22">
+                    <i class="fas fa-lightbulb" style="color:#d4a800;" aria-hidden="true"></i>
+                    <span>Sugestão</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="/cadastrar-manifestacao-ouvidoria/23">
+                    <i class="fas fa-comment-dots" style="color:#c0392b;" aria-hidden="true"></i>
+                    <span>Reclamação</span>
+                    <i class="fas fa-chevron-right ouv-sb-arrow" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </aside>
+        </div>
+        <!-- /SIDEBAR -->
+
+      </div><!-- /row ouv-layout-row -->
+    </div><!-- /container -->
+  </main>
+
+  <meu-footer></meu-footer>
+
+  <!-- VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="../../components/acessibilidade-component.js"></script>
+  <script src="../../components/searh-component.js"></script>
+  <script src="../../components/header-component.js"></script>
+  <script src="../../components/footer-component.js"></script>
+  <script src="../../assets/js/ouvidoria.js"></script>
+
+</body>
+</html>
