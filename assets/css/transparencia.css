@@ -576,6 +576,192 @@
 
 
 /* ══════════════════════════════════════════════════════════════════════════
+   7b. ACESSO À INFORMAÇÃO — e-SIC, Responsáveis, LGPD
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Bloco de destaque (e-SIC) — borda lateral verde */
+.pt-bloco-destaque {
+  border-left: 4px solid var(--pi-verde);
+}
+
+/* Descrição textual dentro de blocos (Responsáveis, LGPD) */
+.pt-bloco-desc {
+  font-size: 0.875rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+  padding: 14px 20px 4px;
+  border-bottom: 1px solid #eef2ee;
+}
+
+/* Banner de chamada e-SIC */
+.pt-esic-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px;
+  background: var(--pi-verde-claro);
+  border-bottom: 1px solid #b8dab8;
+  flex-wrap: wrap;
+}
+
+.pt-esic-banner-corpo { flex: 1; min-width: 200px; }
+
+.pt-esic-chamada {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.pt-esic-desc {
+  font-size: 0.875rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pt-esic-desc strong { color: var(--pi-verde-escuro); }
+
+.pt-esic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: var(--pi-verde-escuro);
+  color: #fff !important;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--pt-trans);
+  flex-shrink: 0;
+}
+
+.pt-esic-btn:hover {
+  background: var(--pi-verde-medio);
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.pt-esic-btn:focus-visible {
+  outline: 2px solid var(--pi-verde-escuro);
+  outline-offset: 3px;
+}
+
+/* Lista de responsáveis */
+.pt-lista-responsaveis { list-style: none; padding: 0; margin: 0; }
+.pt-lista-responsaveis li { border-bottom: 1px solid #eef2ee; }
+.pt-lista-responsaveis li:last-child { border-bottom: none; }
+
+.pt-responsavel-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.pt-responsavel-icone {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(45, 122, 45, 0.09);
+  border-radius: 8px;
+  font-size: 1.0625rem;
+  color: var(--pi-verde);
+  flex-shrink: 0;
+}
+
+.pt-responsavel-icone-lgpd {
+  background: rgba(30, 92, 30, 0.12);
+  color: var(--pi-verde-escuro);
+}
+
+.pt-responsavel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pt-responsavel-cargo {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--pi-verde-escuro);
+  line-height: 1.2;
+}
+
+.pt-responsavel-nome {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--pi-texto);
+  line-height: 1.3;
+}
+
+.pt-responsavel-contato {
+  font-size: 0.8125rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1px;
+  flex-wrap: wrap;
+}
+
+.pt-responsavel-contato i {
+  font-size: 0.75rem;
+  color: var(--pi-verde);
+  flex-shrink: 0;
+}
+
+.pt-responsavel-contato a {
+  color: var(--pi-verde-escuro);
+  text-decoration: underline;
+  text-decoration-color: rgba(45,122,45,0.35);
+  text-underline-offset: 2px;
+}
+
+.pt-responsavel-contato a:hover {
+  color: var(--pi-verde);
+  text-decoration-color: var(--pi-verde);
+}
+
+@media (max-width: 575px) {
+  .pt-esic-banner { flex-direction: column; align-items: flex-start; }
+  .pt-esic-btn { width: 100%; justify-content: center; }
+  .pt-responsavel-item { padding: 14px 16px; gap: 12px; }
+  .pt-bloco-desc { padding: 12px 16px 4px; }
+}
+
+/* Alto contraste — Acesso à Informação */
+body.high-contrast .pt-bloco-destaque { border-left-color: #ff0 !important; }
+body.high-contrast .pt-bloco-desc { color: #ddd !important; border-color: #333 !important; }
+body.high-contrast .pt-esic-banner { background: #111 !important; border-color: #444 !important; }
+body.high-contrast .pt-esic-chamada { color: #ff0 !important; }
+body.high-contrast .pt-esic-desc { color: #ddd !important; }
+body.high-contrast .pt-esic-desc strong { color: #ff0 !important; }
+body.high-contrast .pt-esic-btn { background: #ff0 !important; color: #000 !important; }
+body.high-contrast .pt-esic-btn:hover { background: #ffe000 !important; }
+body.high-contrast .pt-responsavel-icone { background: #222 !important; color: #ff0 !important; }
+body.high-contrast .pt-responsavel-icone-lgpd { background: #222 !important; color: #ff0 !important; }
+body.high-contrast .pt-responsavel-cargo { color: #ff0 !important; }
+body.high-contrast .pt-responsavel-nome { color: #fff !important; }
+body.high-contrast .pt-responsavel-contato { color: #ddd !important; }
+body.high-contrast .pt-responsavel-contato i { color: #ff0 !important; }
+body.high-contrast .pt-responsavel-contato a { color: #ff0 !important; }
+body.high-contrast .pt-lista-responsaveis li { border-color: #333 !important; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
    8. PÁGINA INICIAL — BEM-VINDOS
    ══════════════════════════════════════════════════════════════════════════ */
 
@@ -1231,3 +1417,123 @@ body.high-contrast mark {
   background: rgba(255, 255, 0, 0.3) !important;
   color: #fff !important;
 }
+/* ══════════════════════════════════════════════════════════════════════════
+   PLANO MUNICIPAL DE EDUCAÇÃO — PME
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Bloco do plano atual (documento vigente) */
+.pt-pme-atual {
+  margin: 16px 20px 0;
+  background: #f8fcf8;
+  border: 1px solid #d4e8d4;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pt-pme-atual-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #eef7ee;
+  border-bottom: 1px solid #d4e8d4;
+}
+
+.pt-pme-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--pi-verde);
+  padding: 3px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.pt-pme-atual-titulo {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--pi-verde-escuro, #1a5e2a);
+  margin: 0;
+}
+
+.pt-pme-atual .pt-lista {
+  margin: 0;
+  padding: 0 4px;
+  border: none;
+}
+
+.pt-pme-atual .pt-lista li:last-child a {
+  border-bottom: none;
+}
+
+/* Bloco do histórico */
+.pt-pme-historico {
+  margin: 20px 20px 4px;
+  border-top: 1px solid #eaeaea;
+  padding-top: 16px;
+}
+
+.pt-pme-historico-titulo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pt-pme-historico-titulo i {
+  color: var(--pi-verde, #2e7d32);
+  font-size: 0.85em;
+}
+
+.pt-pme-historico-desc {
+  padding: 4px 0 10px !important;
+  border-bottom: none !important;
+}
+
+/* Lista do histórico com indicador de ano */
+.pt-lista-historico {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pt-lista-historico li a.pt-link {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.pt-historico-ano {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro, #1a5e2a);
+  background: #eef7ee;
+  border-right: 1px solid #d4e8d4;
+  padding: 0 12px;
+  margin-right: 12px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* Alto contraste — PME */
+body.high-contrast .pt-pme-atual { background: #111 !important; border-color: #444 !important; }
+body.high-contrast .pt-pme-atual-cabecalho { background: #222 !important; border-color: #444 !important; }
+body.high-contrast .pt-pme-badge { background: #ff0 !important; color: #000 !important; }
+body.high-contrast .pt-pme-atual-titulo { color: #ff0 !important; }
+body.high-contrast .pt-pme-historico { border-color: #444 !important; }
+body.high-contrast .pt-pme-historico-titulo { color: #ddd !important; }
+body.high-contrast .pt-lista-historico { border-color: #333 !important; }
+body.high-contrast .pt-historico-ano { background: #222 !important; border-color: #333 !important; color: #ff0 !important; }
