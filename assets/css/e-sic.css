@@ -1,0 +1,1137 @@
+/* =============================================================
+   esic.css — Estilos da página e-SIC
+   Prefeitura de Campina Grande do Sul
+   Compatível com o tema do portal (Bootstrap 4 + Roboto)
+   ============================================================= */
+
+/* ---------------------------------------------------------------
+   VARIÁVEIS E RESET
+--------------------------------------------------------------- */
+:root {
+  --esic-verde:        #2e7d32;
+  --esic-verde-claro:  #43a047;
+  --esic-verde-bg:     #e8f5e9;
+  --esic-azul:         #1565c0;
+  --esic-azul-claro:   #1976d2;
+  --esic-azul-bg:      #e3f2fd;
+  --esic-amarelo:      #f57f17;
+  --esic-amarelo-bg:   #fff8e1;
+  --esic-laranja:      #e65100;
+  --esic-laranja-bg:   #fff3e0;
+  --esic-vermelho:     #c62828;
+  --esic-vermelho-bg:  #ffebee;
+  --esic-roxo:         #6a1b9a;
+  --esic-roxo-bg:      #f3e5f5;
+  --esic-teal:         #00695c;
+  --esic-teal-bg:      #e0f2f1;
+  --esic-cinza:        #546e7a;
+  --esic-cinza-bg:     #eceff1;
+
+  --esic-texto:        #212121;
+  --esic-texto-medio:  #424242;
+  --esic-texto-leve:   #616161;
+  --esic-borda:        #e0e0e0;
+  --esic-bg-cinza:     #f5f5f5;
+  --esic-branco:       #ffffff;
+
+  --esic-radius:       8px;
+  --esic-radius-lg:    12px;
+  --esic-sombra:       0 2px 8px rgba(0,0,0,.08);
+  --esic-sombra-hover: 0 4px 16px rgba(0,0,0,.14);
+  --esic-transicao:    0.2s ease;
+}
+
+/* ---------------------------------------------------------------
+   NAVEGAÇÃO RÁPIDA (abas âncoras)
+--------------------------------------------------------------- */
+.esic-tabs-nav {
+  background: var(--esic-verde);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+
+.esic-tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.esic-tab-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 500;
+  padding: 14px 16px;
+  border-bottom: 3px solid transparent;
+  transition: color var(--esic-transicao), border-color var(--esic-transicao), background var(--esic-transicao);
+  white-space: nowrap;
+}
+
+.esic-tab-link:hover,
+.esic-tab-link:focus {
+  color: #fff;
+  border-bottom-color: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.08);
+  text-decoration: none;
+  outline: 2px solid transparent;
+}
+
+.esic-tab-link.active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.esic-tab-link i {
+  font-size: .85rem;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÕES GERAIS
+--------------------------------------------------------------- */
+.esic-section {
+  padding: 64px 0;
+}
+
+.esic-section--cinza {
+  background: var(--esic-bg-cinza);
+}
+
+.esic-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.esic-section-titulo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+/* Título dentro de aside/contato não centralizado */
+.esic-apresentacao-texto .esic-section-titulo,
+.esic-contato-info .esic-section-titulo {
+  text-align: left;
+}
+
+.esic-section-subtitulo {
+  font-size: 1rem;
+  color: var(--esic-texto-leve);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Rótulo verde acima do título */
+.esic-label {
+  display: inline-block;
+  background: var(--esic-verde-bg);
+  color: var(--esic-verde);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 1: APRESENTAÇÃO
+--------------------------------------------------------------- */
+.esic-apresentacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+
+.esic-apresentacao-texto p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--esic-texto-medio);
+  margin-bottom: 16px;
+}
+
+.esic-destaque-box {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--esic-azul-bg);
+  border-left: 4px solid var(--esic-azul);
+  border-radius: 0 var(--esic-radius) var(--esic-radius) 0;
+  padding: 16px 18px;
+  margin-top: 24px;
+}
+
+.esic-destaque-box i {
+  color: var(--esic-azul);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.esic-destaque-box p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.6;
+}
+
+/* Cards laterais */
+.esic-apresentacao-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.esic-card-destaque {
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--esic-sombra);
+  text-align: center;
+}
+
+.esic-card-destaque__icone {
+  width: 60px;
+  height: 60px;
+  background: var(--esic-verde-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.esic-card-destaque__icone i {
+  font-size: 1.5rem;
+  color: var(--esic-verde);
+}
+
+.esic-card-destaque--secundario .esic-card-destaque__icone {
+  background: var(--esic-azul-bg);
+}
+.esic-card-destaque--secundario .esic-card-destaque__icone i {
+  color: var(--esic-azul);
+}
+
+.esic-card-destaque__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 8px;
+}
+
+.esic-card-destaque__texto {
+  font-size: .875rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------
+   BOTÕES
+--------------------------------------------------------------- */
+.esic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--esic-radius);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background var(--esic-transicao), box-shadow var(--esic-transicao), transform var(--esic-transicao);
+}
+
+.esic-btn:hover,
+.esic-btn:focus {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: var(--esic-sombra-hover);
+}
+
+.esic-btn--primario {
+  background: var(--esic-verde);
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+}
+.esic-btn--primario:hover { background: var(--esic-verde-claro); color: #fff; }
+
+.esic-btn--secundario {
+  background: var(--esic-branco);
+  color: var(--esic-azul);
+  border: 2px solid var(--esic-azul);
+  width: 100%;
+  justify-content: center;
+}
+.esic-btn--secundario:hover { background: var(--esic-azul-bg); color: var(--esic-azul); }
+
+.esic-btn--sm {
+  padding: 8px 16px;
+  font-size: .8rem;
+  width: auto;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 2: CARDS DE AÇÕES
+--------------------------------------------------------------- */
+.esic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.esic-card {
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--esic-sombra);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--esic-transicao), transform var(--esic-transicao);
+}
+
+.esic-card:hover {
+  box-shadow: var(--esic-sombra-hover);
+  transform: translateY(-3px);
+}
+
+.esic-card__icone {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.esic-card__icone i { font-size: 1.3rem; }
+
+.esic-card__icone--verde  { background: var(--esic-verde-bg);   } .esic-card__icone--verde  i { color: var(--esic-verde);   }
+.esic-card__icone--azul   { background: var(--esic-azul-bg);    } .esic-card__icone--azul   i { color: var(--esic-azul);    }
+.esic-card__icone--laranja{ background: var(--esic-laranja-bg); } .esic-card__icone--laranja i{ color: var(--esic-laranja); }
+.esic-card__icone--roxo   { background: var(--esic-roxo-bg);    } .esic-card__icone--roxo   i { color: var(--esic-roxo);    }
+.esic-card__icone--teal   { background: var(--esic-teal-bg);    } .esic-card__icone--teal   i { color: var(--esic-teal);    }
+.esic-card__icone--vermelho{ background: var(--esic-vermelho-bg);} .esic-card__icone--vermelho i{ color: var(--esic-vermelho);}
+
+.esic-card__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 10px;
+}
+
+.esic-card__texto {
+  font-size: .875rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.esic-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--esic-verde);
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap var(--esic-transicao), color var(--esic-transicao);
+}
+
+.esic-card__link:hover {
+  color: var(--esic-verde-claro);
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 3: PASSO A PASSO
+--------------------------------------------------------------- */
+.esic-passos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Linha conectora vertical */
+.esic-passos::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 56px;
+  bottom: 28px;
+  width: 2px;
+  background: var(--esic-borda);
+}
+
+.esic-passo {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 0 0 36px 0;
+  position: relative;
+}
+
+.esic-passo:last-child {
+  padding-bottom: 0;
+}
+
+.esic-passo__numero {
+  width: 56px;
+  height: 56px;
+  background: var(--esic-verde);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(46,125,50,.3);
+}
+
+.esic-passo__conteudo {
+  padding-top: 12px;
+}
+
+.esic-passo__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 6px;
+}
+
+.esic-passo__texto {
+  font-size: .9rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 4: PRAZOS
+--------------------------------------------------------------- */
+.esic-prazos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.esic-prazo-card {
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px 20px 24px;
+  text-align: center;
+  box-shadow: var(--esic-sombra);
+  border-top: 4px solid transparent;
+}
+
+.esic-prazo-card--verde  { border-top-color: var(--esic-verde);    }
+.esic-prazo-card--amarelo{ border-top-color: var(--esic-amarelo);  }
+.esic-prazo-card--azul   { border-top-color: var(--esic-azul);     }
+.esic-prazo-card--vermelho{ border-top-color: var(--esic-vermelho);}
+
+.esic-prazo-card__numero {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.esic-prazo-card--verde   .esic-prazo-card__numero { color: var(--esic-verde);    }
+.esic-prazo-card--amarelo .esic-prazo-card__numero { color: var(--esic-amarelo);  }
+.esic-prazo-card--azul    .esic-prazo-card__numero { color: var(--esic-azul);     }
+.esic-prazo-card--vermelho .esic-prazo-card__numero{ color: var(--esic-vermelho); }
+
+.esic-prazo-card__unidade {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--esic-texto-leve);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.esic-prazo-card__titulo {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 8px;
+}
+
+.esic-prazo-card__texto {
+  font-size: .8rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.esic-prazo-card__base-legal {
+  color: var(--esic-texto-leve);
+  font-size: .75rem;
+  margin: 0;
+}
+
+/* Alertas informativos */
+.esic-alerta {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--esic-azul-bg);
+  border-left: 4px solid var(--esic-azul);
+  border-radius: 0 var(--esic-radius) var(--esic-radius) 0;
+  padding: 16px 18px;
+}
+
+.esic-alerta i {
+  color: var(--esic-azul);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.esic-alerta div { font-size: .875rem; color: var(--esic-texto-medio); line-height: 1.6; }
+
+.esic-alerta--destaque {
+  background: var(--esic-amarelo-bg);
+  border-left-color: var(--esic-amarelo);
+}
+
+.esic-alerta--destaque i { color: var(--esic-amarelo); }
+
+/* ---------------------------------------------------------------
+   SEÇÃO 5: RECURSOS E INSTÂNCIAS
+--------------------------------------------------------------- */
+.esic-recursos-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: .95rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.7;
+}
+
+.esic-instancias {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.esic-instancia {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 20px 24px;
+  box-shadow: var(--esic-sombra);
+}
+
+.esic-instancia__numero {
+  width: 48px;
+  height: 48px;
+  background: var(--esic-verde);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.esic-instancia__numero--especial {
+  background: var(--esic-cinza);
+  font-size: .65rem;
+}
+
+.esic-instancia__conteudo {}
+
+.esic-instancia__titulo {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 6px;
+}
+
+.esic-instancia__texto {
+  font-size: .85rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.esic-instancia__conector {
+  text-align: center;
+  padding: 8px 0;
+  color: var(--esic-borda);
+  font-size: 1.1rem;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 6: LEGISLAÇÃO
+--------------------------------------------------------------- */
+.esic-legislacao-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.esic-lei-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 20px 24px;
+  box-shadow: var(--esic-sombra);
+}
+
+.esic-lei-item__icone {
+  width: 44px;
+  height: 44px;
+  background: var(--esic-verde-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esic-lei-item__icone i { color: var(--esic-verde); font-size: 1.1rem; }
+
+.esic-lei-item__titulo {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 6px;
+}
+
+.esic-lei-item__texto {
+  font-size: .875rem;
+  color: var(--esic-texto-leve);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.esic-lei-item__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--esic-verde);
+  text-decoration: none;
+  transition: color var(--esic-transicao);
+}
+
+.esic-lei-item__link:hover { color: var(--esic-verde-claro); text-decoration: underline; }
+
+/* ---------------------------------------------------------------
+   SEÇÃO 7: ESTATÍSTICAS
+--------------------------------------------------------------- */
+.esic-estatisticas-filtro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 16px 20px;
+  margin-bottom: 32px;
+}
+
+.esic-filtro-label {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--esic-texto);
+  margin: 0;
+}
+
+.esic-filtro-controles {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.esic-filtro-select {
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 7px 12px;
+  font-size: .875rem;
+  color: var(--esic-texto);
+  background: var(--esic-branco);
+  cursor: pointer;
+}
+
+.esic-filtro-select:focus { outline: 2px solid var(--esic-verde); }
+
+.esic-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.esic-stat-card {
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: var(--esic-sombra);
+  transition: box-shadow var(--esic-transicao);
+  border-top: 3px solid var(--esic-cinza);
+}
+
+.esic-stat-card:hover { box-shadow: var(--esic-sombra-hover); }
+
+.esic-stat-card--verde   { border-top-color: var(--esic-verde);    }
+.esic-stat-card--amarelo { border-top-color: var(--esic-amarelo);  }
+.esic-stat-card--vermelho{ border-top-color: var(--esic-vermelho); }
+.esic-stat-card--cinza   { border-top-color: var(--esic-cinza);    }
+.esic-stat-card--azul    { border-top-color: var(--esic-azul);     }
+
+.esic-stat-card__icone {
+  width: 48px;
+  height: 48px;
+  background: var(--esic-cinza-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.esic-stat-card--verde   .esic-stat-card__icone { background: var(--esic-verde-bg);   }
+.esic-stat-card--amarelo .esic-stat-card__icone { background: var(--esic-amarelo-bg); }
+.esic-stat-card--vermelho .esic-stat-card__icone{ background: var(--esic-vermelho-bg);}
+.esic-stat-card--azul    .esic-stat-card__icone { background: var(--esic-azul-bg);    }
+
+.esic-stat-card__icone i { font-size: 1.2rem; color: var(--esic-cinza); }
+
+.esic-stat-card--verde   .esic-stat-card__icone i { color: var(--esic-verde);    }
+.esic-stat-card--amarelo .esic-stat-card__icone i { color: var(--esic-amarelo);  }
+.esic-stat-card--vermelho .esic-stat-card__icone i{ color: var(--esic-vermelho); }
+.esic-stat-card--azul    .esic-stat-card__icone i { color: var(--esic-azul);     }
+
+.esic-stat-card__numero {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--esic-texto);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.esic-stat-card__label {
+  font-size: .8rem;
+  color: var(--esic-texto-leve);
+  font-weight: 500;
+}
+
+.esic-estatisticas-nota {
+  font-size: .8rem;
+  color: var(--esic-texto-leve);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.esic-estatisticas-acoes {
+  display: flex;
+  justify-content: center;
+}
+
+.esic-estatisticas-acoes .esic-btn {
+  width: auto;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 8: FAQ
+--------------------------------------------------------------- */
+.esic-faq-busca {
+  max-width: 520px;
+  margin: 0 auto 32px;
+}
+
+.esic-faq-busca__wrapper {
+  position: relative;
+}
+
+.esic-faq-busca__icone {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--esic-texto-leve);
+  font-size: .9rem;
+  pointer-events: none;
+}
+
+.esic-faq-busca__campo {
+  width: 100%;
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 12px 14px 12px 40px;
+  font-size: .9rem;
+  color: var(--esic-texto);
+  background: var(--esic-branco);
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+}
+
+.esic-faq-busca__campo:focus {
+  outline: none;
+  border-color: var(--esic-verde);
+  box-shadow: 0 0 0 3px rgba(46,125,50,.12);
+}
+
+.esic-faq-lista {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.esic-faq-item {
+  background: var(--esic-branco);
+  border: 1px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  box-shadow: var(--esic-sombra);
+  overflow: hidden;
+  transition: border-color var(--esic-transicao);
+}
+
+.esic-faq-item[open] {
+  border-color: var(--esic-verde);
+}
+
+.esic-faq-item__pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--esic-texto);
+  list-style: none;
+  user-select: none;
+  transition: background var(--esic-transicao), color var(--esic-transicao);
+}
+
+/* Remove marcador padrão do summary */
+.esic-faq-item__pergunta::-webkit-details-marker { display: none; }
+
+.esic-faq-item__pergunta:hover {
+  background: var(--esic-verde-bg);
+  color: var(--esic-verde);
+}
+
+.esic-faq-item[open] .esic-faq-item__pergunta {
+  background: var(--esic-verde-bg);
+  color: var(--esic-verde);
+}
+
+.esic-faq-item__icone {
+  color: var(--esic-verde);
+  font-size: .8rem;
+  flex-shrink: 0;
+  transition: transform var(--esic-transicao);
+}
+
+.esic-faq-item[open] .esic-faq-item__icone {
+  transform: rotate(180deg);
+}
+
+.esic-faq-item__resposta {
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--esic-borda);
+}
+
+.esic-faq-item__resposta p {
+  font-size: .9rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.esic-faq-item__resposta a {
+  color: var(--esic-verde);
+  text-decoration: underline;
+}
+
+.esic-faq-sem-resultado {
+  text-align: center;
+  color: var(--esic-texto-leve);
+  font-size: .9rem;
+  padding: 24px;
+}
+
+/* ---------------------------------------------------------------
+   SEÇÃO 9: CONTATO
+--------------------------------------------------------------- */
+.esic-contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: start;
+}
+
+.esic-contato-info p {
+  font-size: .95rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.esic-contato-endereco {
+  font-style: normal;
+}
+
+.esic-contato-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.esic-contato-lista li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: .9rem;
+  color: var(--esic-texto-medio);
+}
+
+.esic-contato-lista li i {
+  color: var(--esic-verde);
+  font-size: .95rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.esic-contato-lista a {
+  color: var(--esic-verde);
+  text-decoration: none;
+}
+
+.esic-contato-lista a:hover { text-decoration: underline; }
+
+.esic-contato-acoes {
+  background: var(--esic-verde);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px 24px;
+  color: #fff;
+}
+
+.esic-contato-acoes__titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.esic-acesso-rapido-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.esic-acesso-rapido-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--esic-radius);
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+  font-size: .875rem;
+  font-weight: 500;
+  transition: background var(--esic-transicao), color var(--esic-transicao);
+}
+
+.esic-acesso-rapido-link i {
+  font-size: .9rem;
+  width: 18px;
+  text-align: center;
+}
+
+.esic-acesso-rapido-link:hover {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+   ANIMAÇÃO DOS NÚMEROS DAS ESTATÍSTICAS
+--------------------------------------------------------------- */
+@keyframes esic-count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.esic-stat-card__numero.animating {
+  animation: esic-count-up 0.4s ease forwards;
+}
+
+/* ---------------------------------------------------------------
+   RESPONSIVIDADE
+--------------------------------------------------------------- */
+
+/* Tablet: 992px */
+@media (max-width: 992px) {
+
+  .esic-apresentacao-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esic-apresentacao-lateral {
+    flex-direction: row;
+  }
+
+  .esic-apresentacao-lateral .esic-card-destaque {
+    flex: 1;
+  }
+
+  .esic-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .esic-prazos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .esic-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .esic-contato-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile: 768px */
+@media (max-width: 768px) {
+
+  .esic-section {
+    padding: 48px 0;
+  }
+
+  .esic-section-titulo {
+    font-size: 1.4rem;
+  }
+
+  .esic-tabs-list {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .esic-tabs-list::-webkit-scrollbar { display: none; }
+
+  .esic-tab-link span { display: none; }
+
+  .esic-tab-link {
+    padding: 12px 14px;
+    font-size: .9rem;
+  }
+
+  .esic-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esic-prazos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .esic-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .esic-apresentacao-lateral {
+    flex-direction: column;
+  }
+
+  .esic-passos::before {
+    left: 22px;
+  }
+
+  .esic-passo__numero {
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+  }
+
+  .esic-estatisticas-filtro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+/* Mobile pequeno: 480px */
+@media (max-width: 480px) {
+
+  .esic-prazos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esic-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .esic-tab-link {
+    padding: 12px 10px;
+  }
+}

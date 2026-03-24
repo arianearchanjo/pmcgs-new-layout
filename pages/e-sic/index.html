@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acesse o e-SIC – Sistema Eletrônico do Serviço de Informação ao Cidadão da Prefeitura de Campina Grande do Sul. Faça pedidos de acesso à informação pública conforme a Lei de Acesso à Informação (LAI).">
+  <title>e-SIC – Acesso à Informação – Prefeitura de Campina Grande do Sul – PR</title>
+
+  <!-- Frameworks e fontes externas -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos locais do portal -->
+  <link rel="stylesheet" href="../../assets/css/servico.css">
+  <link rel="stylesheet" href="../../assets/css/index.css">
+
+  <!-- Estilos da página e-SIC -->
+  <link rel="stylesheet" href="../../assets/css/e-sic.css">
+</head>
+
+<body>
+
+  <!-- ACESSIBILIDADE -->
+  <a class="pi-skip-nav" href="#pi-conteudo">Ir para o conteúdo principal</a>
+  <barra-acessibilidade></barra-acessibilidade>
+  <meu-search></meu-search>
+  <meu-header></meu-header>
+  <!-- /ACESSIBILIDADE -->
+
+
+  <!-- HERO -->
+  <section id="pi-hero" aria-label="Identificação da página">
+    <div class="container">
+      <div class="pi-hero-inner">
+        <nav aria-label="Você está em">
+          <ol class="pi-breadcrumb">
+            <li>
+              <a href="../../index.html">
+                <i class="fas fa-home" aria-hidden="true"></i> Início
+              </a>
+            </li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Serviços</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
+            <li aria-current="page">e-SIC – Acesso à Informação</li>
+          </ol>
+        </nav>
+        <h1 class="pi-hero-titulo">e-SIC – Acesso à Informação</h1>
+      </div>
+    </div>
+    <div class="pi-hero-ilustracao" aria-hidden="true">
+      <img src="../../assets/img/servico/ilustracao.png" alt="">
+    </div>
+  </section>
+  <!-- /HERO -->
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="pi-conteudo" tabindex="-1">
+
+    <!-- =============================================
+         NAVEGAÇÃO RÁPIDA (abas âncoras)
+    ============================================= -->
+    <nav class="esic-tabs-nav" aria-label="Navegação rápida do e-SIC">
+      <div class="container">
+        <ul class="esic-tabs-list" role="list">
+          <li><a href="#esic-sobre" class="esic-tab-link"><i class="fas fa-info-circle" aria-hidden="true"></i><span>Sobre o e-SIC</span></a></li>
+          <li><a href="#esic-acoes" class="esic-tab-link"><i class="fas fa-paper-plane" aria-hidden="true"></i><span>Fazer Pedido</span></a></li>
+          <li><a href="#esic-como-funciona" class="esic-tab-link"><i class="fas fa-route" aria-hidden="true"></i><span>Como Funciona</span></a></li>
+          <li><a href="#esic-prazos" class="esic-tab-link"><i class="fas fa-calendar-check" aria-hidden="true"></i><span>Prazos</span></a></li>
+          <li><a href="#esic-estatisticas" class="esic-tab-link"><i class="fas fa-chart-bar" aria-hidden="true"></i><span>Estatísticas</span></a></li>
+          <li><a href="#esic-faq" class="esic-tab-link"><i class="fas fa-question-circle" aria-hidden="true"></i><span>FAQ</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- =============================================
+         SEÇÃO 1: APRESENTAÇÃO
+    ============================================= -->
+    <section id="esic-sobre" class="esic-section" aria-labelledby="esic-sobre-titulo">
+      <div class="container">
+        <div class="esic-apresentacao-grid">
+
+          <div class="esic-apresentacao-texto">
+            <span class="esic-label">Lei nº 12.527/2011</span>
+            <h2 id="esic-sobre-titulo" class="esic-section-titulo">O que é o e-SIC?</h2>
+            <p>O <strong>e-SIC</strong> (Sistema Eletrônico do Serviço de Informação ao Cidadão) é o canal oficial da Prefeitura de Campina Grande do Sul para o exercício do direito de acesso à informação pública, garantido pela <strong>Lei de Acesso à Informação – LAI (Lei Federal nº 12.527/2011)</strong>.</p>
+            <p>Por meio do e-SIC, qualquer pessoa física ou jurídica pode encaminhar pedidos de acesso a documentos, dados e informações produzidas ou custodiadas pela Administração Municipal, <strong>de forma gratuita</strong>, sem necessidade de justificativa.</p>
+            <p>A transparência ativa é um compromisso da Prefeitura: informações de interesse coletivo são divulgadas espontaneamente. O e-SIC complementa esse compromisso com a <strong>transparência passiva</strong>, permitindo que você solicite dados específicos.</p>
+            <div class="esic-destaque-box" role="note" aria-label="Informação importante">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              <p>O acesso à informação pública é um direito fundamental. A identificação do solicitante não pode ser exigida como condição para o atendimento — apenas o CPF/CNPJ é coletado para fins de protocolo.</p>
+            </div>
+          </div>
+
+          <aside class="esic-apresentacao-lateral" aria-label="Acesso rápido">
+            <div class="esic-card-destaque">
+              <div class="esic-card-destaque__icone" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
+              <h3 class="esic-card-destaque__titulo">Acesse o e-SIC</h3>
+              <p class="esic-card-destaque__texto">Sistema oficial para pedidos de acesso à informação pública.</p>
+              <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic"
+                 class="esic-btn esic-btn--primario"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Acessar o sistema e-SIC (abre em nova aba)">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Acessar o Sistema
+              </a>
+            </div>
+            <div class="esic-card-destaque esic-card-destaque--secundario">
+              <div class="esic-card-destaque__icone" aria-hidden="true"><i class="fas fa-search"></i></div>
+              <h3 class="esic-card-destaque__titulo">Acompanhe seu Pedido</h3>
+              <p class="esic-card-destaque__texto">Informe o número do protocolo para verificar o status da sua solicitação.</p>
+              <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/sic-consulta"
+                 class="esic-btn esic-btn--secundario"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Consultar protocolo do e-SIC (abre em nova aba)">
+                <i class="fas fa-search" aria-hidden="true"></i> Consultar Protocolo
+              </a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 2: AÇÕES PRINCIPAIS
+    ============================================= -->
+    <section id="esic-acoes" class="esic-section esic-section--cinza" aria-labelledby="esic-acoes-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-acoes-titulo" class="esic-section-titulo">O que você deseja fazer?</h2>
+          <p class="esic-section-subtitulo">Escolha uma das opções abaixo para acessar os serviços do e-SIC.</p>
+        </header>
+        <div class="esic-cards-grid" role="list">
+
+          <article class="esic-card" role="listitem">
+            <div class="esic-card__icone esic-card__icone--verde" aria-hidden="true"><i class="fas fa-paper-plane"></i></div>
+            <h3 class="esic-card__titulo">Fazer Pedido de Informação</h3>
+            <p class="esic-card__texto">Solicite acesso a documentos, dados e informações produzidas pela Prefeitura. Gratuito, sem necessidade de justificativa.</p>
+            <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic"
+               class="esic-card__link" target="_blank" rel="noopener noreferrer">
+              Fazer pedido <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="esic-card" role="listitem">
+            <div class="esic-card__icone esic-card__icone--azul" aria-hidden="true"><i class="fas fa-clipboard-list"></i></div>
+            <h3 class="esic-card__titulo">Acompanhar Solicitação</h3>
+            <p class="esic-card__texto">Já fez um pedido? Informe o número do protocolo e consulte o andamento do seu processo.</p>
+            <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/sic-consulta"
+               class="esic-card__link" target="_blank" rel="noopener noreferrer">
+              Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="esic-card" role="listitem">
+            <div class="esic-card__icone esic-card__icone--laranja" aria-hidden="true"><i class="fas fa-question-circle"></i></div>
+            <h3 class="esic-card__titulo">Perguntas Frequentes</h3>
+            <p class="esic-card__texto">Tire dúvidas sobre o processo, prazos, tipos de informação que podem ser solicitadas e como recorrer.</p>
+            <a href="#esic-faq" class="esic-card__link">Ver FAQ <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="esic-card" role="listitem">
+            <div class="esic-card__icone esic-card__icone--roxo" aria-hidden="true"><i class="fas fa-balance-scale"></i></div>
+            <h3 class="esic-card__titulo">Base Legal (LAI)</h3>
+            <p class="esic-card__texto">Conheça a Lei de Acesso à Informação, o Decreto Municipal regulamentador e as normas que fundamentam o e-SIC.</p>
+            <a href="#esic-legislacao" class="esic-card__link">Ver legislação <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="esic-card" role="listitem">
+            <div class="esic-card__icone esic-card__icone--teal" aria-hidden="true"><i class="fas fa-chart-pie"></i></div>
+            <h3 class="esic-card__titulo">Estatísticas do e-SIC</h3>
+            <p class="esic-card__texto">Acesse os dados consolidados de pedidos recebidos, atendidos, indeferidos e o histórico de solicitações.</p>
+            <a href="#esic-estatisticas" class="esic-card__link">Ver dados <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="esic-card" role="listitem">
+            <div class="esic-card__icone esic-card__icone--vermelho" aria-hidden="true"><i class="fas fa-gavel"></i></div>
+            <h3 class="esic-card__titulo">Interpor Recurso</h3>
+            <p class="esic-card__texto">Pedido negado ou sem resposta no prazo? Saiba como recorrer e quais instâncias são responsáveis pelo julgamento.</p>
+            <a href="#esic-recursos" class="esic-card__link">Saiba como <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 3: COMO FUNCIONA
+    ============================================= -->
+    <section id="esic-como-funciona" class="esic-section" aria-labelledby="esic-como-funciona-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-como-funciona-titulo" class="esic-section-titulo">Como funciona o e-SIC?</h2>
+          <p class="esic-section-subtitulo">Um passo a passo simples para você exercer seu direito de acesso à informação.</p>
+        </header>
+        <ol class="esic-passos" aria-label="Passo a passo para fazer um pedido">
+
+          <li class="esic-passo">
+            <div class="esic-passo__numero" aria-hidden="true">1</div>
+            <div class="esic-passo__conteudo">
+              <h3 class="esic-passo__titulo">Acesse o sistema</h3>
+              <p class="esic-passo__texto">Acesse o e-SIC pelo botão nesta página. Você pode fazer um pedido identificado (informando CPF/CNPJ) ou anônimo — ambas as modalidades são aceitas.</p>
+            </div>
+          </li>
+
+          <li class="esic-passo">
+            <div class="esic-passo__numero" aria-hidden="true">2</div>
+            <div class="esic-passo__conteudo">
+              <h3 class="esic-passo__titulo">Registre seu pedido</h3>
+              <p class="esic-passo__texto">Descreva claramente qual informação ou documento você deseja. Seja específico — quanto mais detalhado, mais fácil será para a administração localizar e responder. Não é necessário justificar o motivo do pedido.</p>
+            </div>
+          </li>
+
+          <li class="esic-passo">
+            <div class="esic-passo__numero" aria-hidden="true">3</div>
+            <div class="esic-passo__conteudo">
+              <h3 class="esic-passo__titulo">Anote o protocolo</h3>
+              <p class="esic-passo__texto">Após o envio, você receberá um número de protocolo. Guarde-o: é necessário para acompanhar o andamento e para eventual recurso.</p>
+            </div>
+          </li>
+
+          <li class="esic-passo">
+            <div class="esic-passo__numero" aria-hidden="true">4</div>
+            <div class="esic-passo__conteudo">
+              <h3 class="esic-passo__titulo">Aguarde a resposta</h3>
+              <p class="esic-passo__texto">A Prefeitura tem <strong>20 dias corridos</strong> para responder, prorrogáveis por mais <strong>10 dias</strong> com justificativa. Acompanhe o status pelo número de protocolo a qualquer momento.</p>
+            </div>
+          </li>
+
+          <li class="esic-passo">
+            <div class="esic-passo__numero" aria-hidden="true">5</div>
+            <div class="esic-passo__conteudo">
+              <h3 class="esic-passo__titulo">Receba a resposta</h3>
+              <p class="esic-passo__texto">A resposta será enviada pelo e-SIC. Em caso de indeferimento, você receberá a justificativa legal e poderá interpor recurso no prazo de <strong>10 dias</strong>.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 4: PRAZOS LEGAIS
+    ============================================= -->
+    <section id="esic-prazos" class="esic-section esic-section--cinza" aria-labelledby="esic-prazos-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-prazos-titulo" class="esic-section-titulo">Prazos legais</h2>
+          <p class="esic-section-subtitulo">A Lei de Acesso à Informação estabelece prazos claros para garantir a efetividade do seu direito.</p>
+        </header>
+        <div class="esic-prazos-grid">
+
+          <div class="esic-prazo-card esic-prazo-card--verde" role="article">
+            <div class="esic-prazo-card__numero" aria-label="20 dias">20</div>
+            <div class="esic-prazo-card__unidade">dias</div>
+            <h3 class="esic-prazo-card__titulo">Prazo de Resposta</h3>
+            <p class="esic-prazo-card__texto">A Prefeitura tem até 20 dias corridos para responder ao seu pedido, contados da data do protocolo.</p>
+            <p class="esic-prazo-card__base-legal"><small>Art. 11, § 1º – Lei 12.527/2011</small></p>
+          </div>
+
+          <div class="esic-prazo-card esic-prazo-card--amarelo" role="article">
+            <div class="esic-prazo-card__numero" aria-label="mais 10 dias">+10</div>
+            <div class="esic-prazo-card__unidade">dias</div>
+            <h3 class="esic-prazo-card__titulo">Prorrogação</h3>
+            <p class="esic-prazo-card__texto">O prazo pode ser prorrogado por mais 10 dias, desde que justificado. Você será comunicado antes do vencimento.</p>
+            <p class="esic-prazo-card__base-legal"><small>Art. 11, § 2º – Lei 12.527/2011</small></p>
+          </div>
+
+          <div class="esic-prazo-card esic-prazo-card--azul" role="article">
+            <div class="esic-prazo-card__numero" aria-label="10 dias">10</div>
+            <div class="esic-prazo-card__unidade">dias</div>
+            <h3 class="esic-prazo-card__titulo">Prazo para Recurso</h3>
+            <p class="esic-prazo-card__texto">Em caso de negativa ou ausência de resposta, você tem 10 dias para interpor recurso à instância responsável.</p>
+            <p class="esic-prazo-card__base-legal"><small>Art. 15 – Lei 12.527/2011</small></p>
+          </div>
+
+          <div class="esic-prazo-card esic-prazo-card--vermelho" role="article">
+            <div class="esic-prazo-card__numero" aria-label="5 dias">5</div>
+            <div class="esic-prazo-card__unidade">dias</div>
+            <h3 class="esic-prazo-card__titulo">Resposta ao Recurso</h3>
+            <p class="esic-prazo-card__texto">A autoridade superior tem até 5 dias para dar ciência ao recorrente sobre o recebimento do recurso e indicar o prazo de resposta.</p>
+            <p class="esic-prazo-card__base-legal"><small>Art. 15, § 1º – Lei 12.527/2011</small></p>
+          </div>
+
+        </div>
+        <div class="esic-alerta" role="note">
+          <i class="fas fa-info-circle" aria-hidden="true"></i>
+          <div><strong>Gratuidade:</strong> O serviço é gratuito. Apenas a reprodução de documentos em formato físico pode gerar cobrança do valor de custo do material, desde que expressamente comunicado e aceito pelo solicitante.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 5: RECURSOS E INSTÂNCIAS
+    ============================================= -->
+    <section id="esic-recursos" class="esic-section" aria-labelledby="esic-recursos-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-recursos-titulo" class="esic-section-titulo">Como recorrer?</h2>
+          <p class="esic-section-subtitulo">Se seu pedido for indeferido ou não respondido no prazo, você pode recorrer às instâncias competentes.</p>
+        </header>
+        <div class="esic-recursos-intro">
+          <p>O recurso deve ser interposto no prazo de <strong>10 dias</strong> após a negativa ou o vencimento do prazo de resposta, por meio do próprio e-SIC. Informe o número do protocolo do pedido original e a justificativa da interposição.</p>
+        </div>
+        <div class="esic-instancias" role="list" aria-label="Instâncias de recurso">
+
+          <div class="esic-instancia" role="listitem">
+            <div class="esic-instancia__numero" aria-label="Primeira instância">1ª</div>
+            <div class="esic-instancia__conteudo">
+              <h3 class="esic-instancia__titulo">Autoridade hierárquica superior</h3>
+              <p class="esic-instancia__texto">Primeiro recurso dirigido à chefia imediata do servidor ou da unidade que respondeu (ou deixou de responder) ao pedido.</p>
+            </div>
+          </div>
+
+          <div class="esic-instancia__conector" aria-hidden="true"><i class="fas fa-arrow-down"></i></div>
+
+          <div class="esic-instancia" role="listitem">
+            <div class="esic-instancia__numero" aria-label="Segunda instância">2ª</div>
+            <div class="esic-instancia__conteudo">
+              <h3 class="esic-instancia__titulo">Controladoria Geral do Município</h3>
+              <p class="esic-instancia__texto">Caso o primeiro recurso seja mantido ou não respondido, o cidadão pode recorrer à Controladoria Geral Municipal para análise legal e de mérito.</p>
+            </div>
+          </div>
+
+          <div class="esic-instancia__conector" aria-hidden="true"><i class="fas fa-arrow-down"></i></div>
+
+          <div class="esic-instancia" role="listitem">
+            <div class="esic-instancia__numero" aria-label="Terceira instância">3ª</div>
+            <div class="esic-instancia__conteudo">
+              <h3 class="esic-instancia__titulo">Chefe do Poder Executivo</h3>
+              <p class="esic-instancia__texto">Se a decisão da Controladoria for desfavorável, o cidadão pode recorrer diretamente ao Prefeito Municipal, última instância administrativa no âmbito do Poder Executivo.</p>
+            </div>
+          </div>
+
+          <div class="esic-instancia__conector" aria-hidden="true"><i class="fas fa-arrow-down"></i></div>
+
+          <div class="esic-instancia" role="listitem">
+            <div class="esic-instancia__numero esic-instancia__numero--especial" aria-label="CGU">CGU</div>
+            <div class="esic-instancia__conteudo">
+              <h3 class="esic-instancia__titulo">Ministério Público / CGU</h3>
+              <p class="esic-instancia__texto">Para casos de omissão persistente, o Ministério Público estadual fiscaliza o cumprimento da LAI nos municípios. A CGU cuida dos órgãos do Poder Executivo Federal.</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="esic-alerta esic-alerta--destaque" role="note">
+          <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          <div><strong>Dica:</strong> Ao interpor recurso, informe o número do protocolo do pedido original e descreva claramente o motivo pelo qual você discorda da decisão ou considera a resposta insuficiente.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 6: LEGISLAÇÃO
+    ============================================= -->
+    <section id="esic-legislacao" class="esic-section esic-section--cinza" aria-labelledby="esic-legislacao-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-legislacao-titulo" class="esic-section-titulo">Base Legal</h2>
+          <p class="esic-section-subtitulo">O e-SIC é regulamentado pelas seguintes normas.</p>
+        </header>
+        <ul class="esic-legislacao-lista" aria-label="Lista de legislação do e-SIC">
+
+          <li class="esic-lei-item">
+            <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-file-contract"></i></div>
+            <div class="esic-lei-item__conteudo">
+              <h3 class="esic-lei-item__titulo">Lei Federal nº 12.527/2011 – Lei de Acesso à Informação (LAI)</h3>
+              <p class="esic-lei-item__texto">Regula o acesso a informações previsto na Constituição Federal. Estabelece procedimentos para que órgãos públicos respondam a pedidos de informação da sociedade.</p>
+              <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+                 class="esic-lei-item__link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Ver texto completo
+              </a>
+            </div>
+          </li>
+
+          <li class="esic-lei-item">
+            <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-file-contract"></i></div>
+            <div class="esic-lei-item__conteudo">
+              <h3 class="esic-lei-item__titulo">Decreto Municipal nº 1.606/2021</h3>
+              <p class="esic-lei-item__texto">Regulamenta o procedimento de acesso às informações públicas no âmbito do Poder Executivo do Município de Campina Grande do Sul e suas entidades.</p>
+              <a href="http://leismunicipa.is/jbmsz"
+                 class="esic-lei-item__link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Ver texto completo
+              </a>
+            </div>
+          </li>
+
+          <li class="esic-lei-item">
+            <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-file-contract"></i></div>
+            <div class="esic-lei-item__conteudo">
+              <h3 class="esic-lei-item__titulo">Decreto Federal nº 7.724/2012</h3>
+              <p class="esic-lei-item__texto">Regulamenta, no âmbito do Poder Executivo Federal, os procedimentos para a garantia do acesso à informação e a classificação de informações sob restrição de acesso.</p>
+              <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm"
+                 class="esic-lei-item__link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Ver texto completo
+              </a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 7: ESTATÍSTICAS
+    ============================================= -->
+    <section id="esic-estatisticas" class="esic-section" aria-labelledby="esic-estatisticas-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-estatisticas-titulo" class="esic-section-titulo">Estatísticas do e-SIC</h2>
+          <p class="esic-section-subtitulo">Dados consolidados desde a implantação do sistema em Campina Grande do Sul.</p>
+        </header>
+
+        <!-- Filtro de ano -->
+        <div class="esic-estatisticas-filtro">
+          <label for="esic-filtro-ano" class="esic-filtro-label">Filtrar por ano:</label>
+          <div class="esic-filtro-controles">
+            <select id="esic-filtro-ano" class="esic-filtro-select" aria-label="Selecionar ano para filtrar estatísticas">
+              <option value="todos">Todos os anos</option>
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+            </select>
+            <button id="esic-btn-filtrar" class="esic-btn esic-btn--primario esic-btn--sm" type="button">
+              <i class="fas fa-filter" aria-hidden="true"></i> Filtrar
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards de estatísticas -->
+        <div class="esic-stats-grid" id="esic-stats-container" aria-live="polite">
+
+          <div class="esic-stat-card">
+            <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-inbox"></i></div>
+            <div class="esic-stat-card__numero" id="stat-pedidos">149</div>
+            <div class="esic-stat-card__label">Pedidos Recebidos</div>
+          </div>
+
+          <div class="esic-stat-card esic-stat-card--verde">
+            <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+            <div class="esic-stat-card__numero" id="stat-atendidos">57</div>
+            <div class="esic-stat-card__label">Atendidos</div>
+          </div>
+
+          <div class="esic-stat-card esic-stat-card--amarelo">
+            <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-clock"></i></div>
+            <div class="esic-stat-card__numero" id="stat-pendentes">42</div>
+            <div class="esic-stat-card__label">Pendentes</div>
+          </div>
+
+          <div class="esic-stat-card esic-stat-card--vermelho">
+            <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-times-circle"></i></div>
+            <div class="esic-stat-card__numero" id="stat-indeferidos">44</div>
+            <div class="esic-stat-card__label">Indeferidos</div>
+          </div>
+
+          <div class="esic-stat-card esic-stat-card--cinza">
+            <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-ban"></i></div>
+            <div class="esic-stat-card__numero" id="stat-cancelados">6</div>
+            <div class="esic-stat-card__label">Cancelados</div>
+          </div>
+
+          <div class="esic-stat-card esic-stat-card--azul">
+            <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
+            <div class="esic-stat-card__numero" id="stat-media">778</div>
+            <div class="esic-stat-card__label">Média de Resposta (dias)</div>
+          </div>
+
+        </div>
+
+        <p class="esic-estatisticas-nota" id="esic-stats-nota">
+          <i class="fas fa-info-circle" aria-hidden="true"></i>
+          Dados acumulados desde a implantação do e-SIC. Fonte: Sistema Elotech. Atualizado em março de 2026.
+        </p>
+
+        <div class="esic-estatisticas-acoes">
+          <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic/estatisticas"
+             class="esic-btn esic-btn--secundario"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-chart-bar" aria-hidden="true"></i> Ver relatório completo
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 8: FAQ
+    ============================================= -->
+    <section id="esic-faq" class="esic-section esic-section--cinza" aria-labelledby="esic-faq-titulo">
+      <div class="container">
+        <header class="esic-section-header">
+          <h2 id="esic-faq-titulo" class="esic-section-titulo">Perguntas Frequentes</h2>
+          <p class="esic-section-subtitulo">Tire suas dúvidas sobre o e-SIC e a Lei de Acesso à Informação.</p>
+        </header>
+
+        <div class="esic-faq-busca">
+          <label for="esic-faq-input" class="sr-only">Buscar pergunta</label>
+          <div class="esic-faq-busca__wrapper">
+            <i class="fas fa-search esic-faq-busca__icone" aria-hidden="true"></i>
+            <input type="search" id="esic-faq-input" class="esic-faq-busca__campo"
+              placeholder="Busque uma pergunta..." autocomplete="off"
+              aria-label="Buscar pergunta nas perguntas frequentes">
+          </div>
+        </div>
+
+        <div id="esic-faq-lista" class="esic-faq-lista" aria-label="Lista de perguntas frequentes">
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Qualquer pessoa pode fazer um pedido de informação?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Sim. Qualquer pessoa física ou jurídica, brasileira ou estrangeira, pode fazer um pedido de acesso à informação. Não é necessário justificar o motivo da solicitação.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Preciso me identificar para fazer um pedido?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>A identificação com CPF/CNPJ é coletada para fins de protocolo. Porém, a identidade do solicitante não pode ser exigida como condição para o atendimento — você pode optar por uma solicitação anônima.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Quais informações podem ser solicitadas?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Podem ser solicitadas quaisquer informações produzidas, custodiadas ou gerenciadas pela Prefeitura, exceto aquelas sujeitas a sigilo legal (como informações pessoais de terceiros ou classificadas). A LAI lista taxativamente as hipóteses de sigilo.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>O serviço é gratuito?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Sim. O acesso à informação é gratuito. A única exceção é a eventual cobrança pelo custo de reprodução de documentos físicos, desde que autorizado expressamente pelo solicitante.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Qual é o prazo para receber a resposta?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>O prazo é de <strong>20 dias corridos</strong>, contados da data do protocolo. Esse prazo pode ser prorrogado por mais <strong>10 dias</strong>, desde que a Prefeitura comunique a prorrogação com justificativa.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>O que acontece se meu pedido for negado?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Em caso de indeferimento, você receberá a justificativa legal da negativa. Você poderá interpor recurso no prazo de <strong>10 dias</strong> pelo próprio e-SIC, informando o número do protocolo e o motivo da discordância.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Posso solicitar dados pessoais de terceiros?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Não. A LAI protege a intimidade e a vida privada das pessoas. Informações pessoais são sigilosas e não podem ser divulgadas sem consentimento, exceto quando há interesse público preponderante reconhecido em lei.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Como acompanho meu pedido após o envio?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Após o envio, você receberá um número de protocolo. Acesse a área de <a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/sic-consulta" target="_blank" rel="noopener noreferrer">Consulta de Processos</a> no e-SIC, informe o número e acompanhe o andamento.</p>
+            </div>
+          </details>
+
+          <details class="esic-faq-item" data-faq>
+            <summary class="esic-faq-item__pergunta">
+              <span>Existe atendimento presencial?</span>
+              <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
+            </summary>
+            <div class="esic-faq-item__resposta">
+              <p>Sim. Além do sistema eletrônico, você pode comparecer pessoalmente à Ouvidoria Geral do Município, na Praça Bento Munhoz da Rocha, 30 – Sede. Horário: 08h30 às 12h00 e 13h30 às 17h30 (segunda a sexta-feira).</p>
+            </div>
+          </details>
+
+        </div>
+
+        <p class="esic-faq-sem-resultado" id="esic-faq-sem-resultado" hidden aria-live="polite">
+          Nenhuma pergunta encontrada para "<span id="esic-faq-busca-termo"></span>".
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =============================================
+         SEÇÃO 9: CONTATO
+    ============================================= -->
+    <section id="esic-contato" class="esic-section" aria-labelledby="esic-contato-titulo">
+      <div class="container">
+        <div class="esic-contato-grid">
+
+          <div class="esic-contato-info">
+            <h2 id="esic-contato-titulo" class="esic-section-titulo">Responsável pelo e-SIC</h2>
+            <p>O e-SIC é gerenciado pela Ouvidoria Geral do Município, responsável por assegurar o cumprimento da Lei de Acesso à Informação no âmbito da Prefeitura de Campina Grande do Sul.</p>
+            <address class="esic-contato-endereco">
+              <ul class="esic-contato-lista" aria-label="Dados de contato da Ouvidoria Geral">
+                <li><i class="fas fa-user" aria-hidden="true"></i><span><strong>Ouvidora:</strong> Patrícia Aparecida Lazarotto</span></li>
+                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Praça Bento Munhoz da Rocha, 30 – Campina Grande do Sul, PR</span></li>
+                <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+554131627005">(41) 3162-7005</a></li>
+                <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:ouvidoria@pmcgs.pr.gov.br">ouvidoria@pmcgs.pr.gov.br</a></li>
+                <li><i class="fas fa-clock" aria-hidden="true"></i><span>Segunda a Sexta: 08h30 às 12h00 e 13h30 às 17h30</span></li>
+              </ul>
+            </address>
+          </div>
+
+          <div class="esic-contato-acoes">
+            <h3 class="esic-contato-acoes__titulo">Acesso Rápido</h3>
+            <nav aria-label="Links rápidos do e-SIC">
+              <ul class="esic-acesso-rapido-lista">
+                <li><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic" target="_blank" rel="noopener noreferrer" class="esic-acesso-rapido-link"><i class="fas fa-paper-plane" aria-hidden="true"></i>Fazer Pedido de Informação</a></li>
+                <li><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/sic-consulta" target="_blank" rel="noopener noreferrer" class="esic-acesso-rapido-link"><i class="fas fa-search" aria-hidden="true"></i>Consultar Protocolo</a></li>
+                <li><a href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic/estatisticas" target="_blank" rel="noopener noreferrer" class="esic-acesso-rapido-link"><i class="fas fa-chart-bar" aria-hidden="true"></i>Ver Estatísticas</a></li>
+                <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm" target="_blank" rel="noopener noreferrer" class="esic-acesso-rapido-link"><i class="fas fa-balance-scale" aria-hidden="true"></i>Lei 12.527/2011 (LAI)</a></li>
+                <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria" class="esic-acesso-rapido-link"><i class="fas fa-headset" aria-hidden="true"></i>Ouvidoria Geral</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- /CONTEÚDO PRINCIPAL -->
+
+
+  <meu-footer></meu-footer>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="../../js/servico.js"></script>
+  <script src="../../components/searh-component.js"></script>
+  <script src="../../components/header-component.js"></script>
+  <script src="../../components/footer-component.js"></script>
+  <script src="../../components/acessibilidade-component.js"></script>
+  <script src="../../js/e-sic.js"></script>
+
+</body>
+</html>
