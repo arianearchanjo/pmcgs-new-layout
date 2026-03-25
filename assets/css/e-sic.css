@@ -1,25 +1,50 @@
-/* =============================================================
-   esic.css — Estilos da página e-SIC
-   Prefeitura de Campina Grande do Sul
-   Compatível com o tema do portal (Bootstrap 4 + Roboto)
-   ============================================================= */
+/* ══════════════════════════════════════════════════════════════════════════
+   e-sic.css — Página e-SIC (Serviço de Informação ao Cidadão)
+   Prefeitura de Campina Grande do Sul – PR
 
-/* ---------------------------------------------------------------
-   VARIÁVEIS E RESET
---------------------------------------------------------------- */
+   Índice de seções:
+     1. Variáveis Locais
+     2. Skip Navigation (herdada do acessibilidade.css via index.css)
+     3. Navegação Rápida (abas âncoras)
+     4. Layout Principal (herdado do padrão pi-layout)
+     5. Conteúdo — Elementos Específicos do e-SIC
+        5.1 Grid de cards de ações
+        5.2 Passo a passo
+        5.3 Cards de prazos
+        5.4 Alertas
+        5.5 Instâncias de recursos
+        5.6 Lista de legislação
+        5.7 Estatísticas e filtro
+        5.8 FAQ
+        5.9 Formulário interno
+     6. Sidebar — ajustes específicos do e-SIC
+     7. Animações
+     8. Responsividade
+     9. Alto Contraste eMAG
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. VARIÁVEIS LOCAIS
+   Compatíveis com as variáveis --pi- do acessibilidade.css / index.css.
+   Prefixo --esic- para não conflitar.
+   ══════════════════════════════════════════════════════════════════════════ */
+
 :root {
-  --esic-verde:        #2e7d32;
-  --esic-verde-claro:  #43a047;
-  --esic-verde-bg:     #e8f5e9;
+  /* Reutiliza a paleta institucional verde como principal */
+  --esic-verde:        #2d7a2d;
+  --esic-verde-claro:  #3a9a3a;
+  --esic-verde-bg:     #e8f5e8;
+
+  /* Cores semânticas para status dos pedidos */
   --esic-azul:         #1565c0;
-  --esic-azul-claro:   #1976d2;
   --esic-azul-bg:      #e3f2fd;
   --esic-amarelo:      #f57f17;
   --esic-amarelo-bg:   #fff8e1;
-  --esic-laranja:      #e65100;
-  --esic-laranja-bg:   #fff3e0;
   --esic-vermelho:     #c62828;
   --esic-vermelho-bg:  #ffebee;
+  --esic-laranja:      #e65100;
+  --esic-laranja-bg:   #fff3e0;
   --esic-roxo:         #6a1b9a;
   --esic-roxo-bg:      #f3e5f5;
   --esic-teal:         #00695c;
@@ -27,29 +52,56 @@
   --esic-cinza:        #546e7a;
   --esic-cinza-bg:     #eceff1;
 
-  --esic-texto:        #212121;
-  --esic-texto-medio:  #424242;
+  /* Texto e superfícies */
+  --esic-texto:        #1a2a1a;
+  --esic-texto-medio:  #3a3a3a;
   --esic-texto-leve:   #616161;
-  --esic-borda:        #e0e0e0;
-  --esic-bg-cinza:     #f5f5f5;
+  --esic-borda:        #c8d8c8;
   --esic-branco:       #ffffff;
 
+  /* Tokens de UI */
   --esic-radius:       8px;
   --esic-radius-lg:    12px;
-  --esic-sombra:       0 2px 8px rgba(0,0,0,.08);
-  --esic-sombra-hover: 0 4px 16px rgba(0,0,0,.14);
+  --esic-sombra:       0 2px 8px rgba(0, 0, 0, 0.07);
+  --esic-sombra-hover: 0 6px 20px rgba(45, 122, 45, 0.13);
   --esic-transicao:    0.2s ease;
 }
 
-/* ---------------------------------------------------------------
-   NAVEGAÇÃO RÁPIDA (abas âncoras)
---------------------------------------------------------------- */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. SKIP NAVIGATION
+   Definida no acessibilidade.css; declarada aqui para garantir disponibilidade
+   caso o e-SIC seja carregado sem aquele arquivo.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.pi-skip-nav {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #f5c518;
+  color: #000;
+  font-weight: 700;
+  padding: 10px 20px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+
+.pi-skip-nav:focus {
+  top: 0;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. NAVEGAÇÃO RÁPIDA (abas âncoras sticky)
+   ══════════════════════════════════════════════════════════════════════════ */
+
 .esic-tabs-nav {
   background: var(--esic-verde);
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  z-index: 200;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .esic-tabs-list {
@@ -58,18 +110,17 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0;
 }
 
 .esic-tab-link {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: rgba(255,255,255,.85);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  padding: 14px 16px;
+  padding: 13px 16px;
   border-bottom: 3px solid transparent;
   transition: color var(--esic-transicao), border-color var(--esic-transicao), background var(--esic-transicao);
   white-space: nowrap;
@@ -78,8 +129,8 @@
 .esic-tab-link:hover,
 .esic-tab-link:focus {
   color: #fff;
-  border-bottom-color: rgba(255,255,255,.6);
-  background: rgba(255,255,255,.08);
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
   text-decoration: none;
   outline: 2px solid transparent;
 }
@@ -90,224 +141,54 @@
 }
 
 .esic-tab-link i {
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
-/* ---------------------------------------------------------------
-   SEÇÕES GERAIS
---------------------------------------------------------------- */
-.esic-section {
-  padding: 64px 0;
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. LAYOUT PRINCIPAL
+   Reutiliza as classes .pi-layout, .pi-sidebar, .pi-secao-titulo, etc.
+   do acessibilidade.css. Apenas sobrescreve o que for necessário.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Garante que .pi-btn-verde--sm funcione sem quebrar o padrão base */
+.pi-btn-verde--sm {
+  padding: 7px 14px;
+  font-size: 0.8125rem;
 }
 
-.esic-section--cinza {
-  background: var(--esic-bg-cinza);
+/* Espaço extra entre botões da sidebar de ações */
+.esic-sidebar-btn-mt {
+  margin-top: 10px;
 }
 
-.esic-section-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
 
-.esic-section-titulo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--esic-texto);
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
+/* ══════════════════════════════════════════════════════════════════════════
+   5. CONTEÚDO — ELEMENTOS ESPECÍFICOS DO e-SIC
+   ══════════════════════════════════════════════════════════════════════════ */
 
-/* Título dentro de aside/contato não centralizado */
-.esic-apresentacao-texto .esic-section-titulo,
-.esic-contato-info .esic-section-titulo {
-  text-align: left;
-}
+/* ── 5.1 Grid de cards de ações ──────────────────────────────────────────── */
 
-.esic-section-subtitulo {
-  font-size: 1rem;
-  color: var(--esic-texto-leve);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Rótulo verde acima do título */
-.esic-label {
-  display: inline-block;
-  background: var(--esic-verde-bg);
-  color: var(--esic-verde);
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 12px;
-}
-
-/* ---------------------------------------------------------------
-   SEÇÃO 1: APRESENTAÇÃO
---------------------------------------------------------------- */
-.esic-apresentacao-grid {
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 48px;
-  align-items: start;
-}
-
-.esic-apresentacao-texto p {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--esic-texto-medio);
-  margin-bottom: 16px;
-}
-
-.esic-destaque-box {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  background: var(--esic-azul-bg);
-  border-left: 4px solid var(--esic-azul);
-  border-radius: 0 var(--esic-radius) var(--esic-radius) 0;
-  padding: 16px 18px;
-  margin-top: 24px;
-}
-
-.esic-destaque-box i {
-  color: var(--esic-azul);
-  font-size: 1.3rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.esic-destaque-box p {
-  margin: 0;
-  font-size: .9rem;
-  color: var(--esic-texto-medio);
-  line-height: 1.6;
-}
-
-/* Cards laterais */
-.esic-apresentacao-lateral {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.esic-card-destaque {
-  background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
-  border-radius: var(--esic-radius-lg);
-  padding: 28px 24px;
-  box-shadow: var(--esic-sombra);
-  text-align: center;
-}
-
-.esic-card-destaque__icone {
-  width: 60px;
-  height: 60px;
-  background: var(--esic-verde-bg);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-}
-
-.esic-card-destaque__icone i {
-  font-size: 1.5rem;
-  color: var(--esic-verde);
-}
-
-.esic-card-destaque--secundario .esic-card-destaque__icone {
-  background: var(--esic-azul-bg);
-}
-.esic-card-destaque--secundario .esic-card-destaque__icone i {
-  color: var(--esic-azul);
-}
-
-.esic-card-destaque__titulo {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--esic-texto);
-  margin-bottom: 8px;
-}
-
-.esic-card-destaque__texto {
-  font-size: .875rem;
-  color: var(--esic-texto-leve);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* ---------------------------------------------------------------
-   BOTÕES
---------------------------------------------------------------- */
-.esic-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: .875rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: var(--esic-radius);
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  transition: background var(--esic-transicao), box-shadow var(--esic-transicao), transform var(--esic-transicao);
-}
-
-.esic-btn:hover,
-.esic-btn:focus {
-  text-decoration: none;
-  transform: translateY(-1px);
-  box-shadow: var(--esic-sombra-hover);
-}
-
-.esic-btn--primario {
-  background: var(--esic-verde);
-  color: #fff;
-  width: 100%;
-  justify-content: center;
-}
-.esic-btn--primario:hover { background: var(--esic-verde-claro); color: #fff; }
-
-.esic-btn--secundario {
-  background: var(--esic-branco);
-  color: var(--esic-azul);
-  border: 2px solid var(--esic-azul);
-  width: 100%;
-  justify-content: center;
-}
-.esic-btn--secundario:hover { background: var(--esic-azul-bg); color: var(--esic-azul); }
-
-.esic-btn--sm {
-  padding: 8px 16px;
-  font-size: .8rem;
-  width: auto;
-}
-
-/* ---------------------------------------------------------------
-   SEÇÃO 2: CARDS DE AÇÕES
---------------------------------------------------------------- */
 .esic-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .esic-card {
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius-lg);
-  padding: 28px 24px;
+  padding: 26px 22px;
   box-shadow: var(--esic-sombra);
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--esic-transicao), transform var(--esic-transicao);
+  transition: box-shadow var(--esic-transicao), transform var(--esic-transicao), border-color var(--esic-transicao);
 }
 
 .esic-card:hover {
   box-shadow: var(--esic-sombra-hover);
+  border-color: var(--esic-verde);
   transform: translateY(-3px);
 }
 
@@ -322,13 +203,13 @@
   flex-shrink: 0;
 }
 
-.esic-card__icone i { font-size: 1.3rem; }
+.esic-card__icone i { font-size: 1.25rem; }
 
-.esic-card__icone--verde  { background: var(--esic-verde-bg);   } .esic-card__icone--verde  i { color: var(--esic-verde);   }
-.esic-card__icone--azul   { background: var(--esic-azul-bg);    } .esic-card__icone--azul   i { color: var(--esic-azul);    }
-.esic-card__icone--laranja{ background: var(--esic-laranja-bg); } .esic-card__icone--laranja i{ color: var(--esic-laranja); }
-.esic-card__icone--roxo   { background: var(--esic-roxo-bg);    } .esic-card__icone--roxo   i { color: var(--esic-roxo);    }
-.esic-card__icone--teal   { background: var(--esic-teal-bg);    } .esic-card__icone--teal   i { color: var(--esic-teal);    }
+.esic-card__icone--verde   { background: var(--esic-verde-bg);   } .esic-card__icone--verde   i { color: var(--esic-verde);   }
+.esic-card__icone--azul    { background: var(--esic-azul-bg);    } .esic-card__icone--azul    i { color: var(--esic-azul);    }
+.esic-card__icone--laranja { background: var(--esic-laranja-bg); } .esic-card__icone--laranja i { color: var(--esic-laranja); }
+.esic-card__icone--roxo    { background: var(--esic-roxo-bg);    } .esic-card__icone--roxo    i { color: var(--esic-roxo);    }
+.esic-card__icone--teal    { background: var(--esic-teal-bg);    } .esic-card__icone--teal    i { color: var(--esic-teal);    }
 .esic-card__icone--vermelho{ background: var(--esic-vermelho-bg);} .esic-card__icone--vermelho i{ color: var(--esic-vermelho);}
 
 .esic-card__titulo {
@@ -339,18 +220,18 @@
 }
 
 .esic-card__texto {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--esic-texto-leve);
   line-height: 1.65;
   flex: 1;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .esic-card__link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--esic-verde);
   text-decoration: none;
@@ -364,26 +245,32 @@
   text-decoration: none;
 }
 
-/* ---------------------------------------------------------------
-   SEÇÃO 3: PASSO A PASSO
---------------------------------------------------------------- */
+/* Cards laterais da apresentação (recursos no padrão pi-) */
+.esic-apresentacao-lateral {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+
+/* ── 5.2 Passo a Passo ───────────────────────────────────────────────────── */
+
 .esic-passos {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
   position: relative;
-  max-width: 780px;
-  margin: 0 auto;
+  max-width: 760px;
 }
 
 /* Linha conectora vertical */
 .esic-passos::before {
   content: '';
   position: absolute;
-  left: 28px;
+  left: 27px;
   top: 56px;
   bottom: 28px;
   width: 2px;
@@ -416,7 +303,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 1;
-  box-shadow: 0 2px 8px rgba(46,125,50,.3);
+  box-shadow: 0 2px 8px rgba(45, 122, 45, 0.3);
 }
 
 .esic-passo__conteudo {
@@ -431,39 +318,39 @@
 }
 
 .esic-passo__texto {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: var(--esic-texto-leve);
   line-height: 1.7;
   margin: 0;
 }
 
-/* ---------------------------------------------------------------
-   SEÇÃO 4: PRAZOS
---------------------------------------------------------------- */
+
+/* ── 5.3 Cards de Prazos ─────────────────────────────────────────────────── */
+
 .esic-prazos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 32px;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
 .esic-prazo-card {
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius-lg);
-  padding: 28px 20px 24px;
+  padding: 26px 18px 22px;
   text-align: center;
   box-shadow: var(--esic-sombra);
   border-top: 4px solid transparent;
 }
 
-.esic-prazo-card--verde  { border-top-color: var(--esic-verde);    }
-.esic-prazo-card--amarelo{ border-top-color: var(--esic-amarelo);  }
-.esic-prazo-card--azul   { border-top-color: var(--esic-azul);     }
-.esic-prazo-card--vermelho{ border-top-color: var(--esic-vermelho);}
+.esic-prazo-card--verde   { border-top-color: var(--esic-verde);    }
+.esic-prazo-card--amarelo { border-top-color: var(--esic-amarelo);  }
+.esic-prazo-card--azul    { border-top-color: var(--esic-azul);     }
+.esic-prazo-card--vermelho{ border-top-color: var(--esic-vermelho); }
 
 .esic-prazo-card__numero {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
   line-height: 1;
   margin-bottom: 2px;
@@ -475,35 +362,42 @@
 .esic-prazo-card--vermelho .esic-prazo-card__numero{ color: var(--esic-vermelho); }
 
 .esic-prazo-card__unidade {
-  font-size: .75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   color: var(--esic-texto-leve);
   font-weight: 600;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .esic-prazo-card__titulo {
-  font-size: .9rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--esic-texto);
   margin-bottom: 8px;
 }
 
 .esic-prazo-card__texto {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--esic-texto-leve);
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
 .esic-prazo-card__base-legal {
+  font-size: 0.75rem;
   color: var(--esic-texto-leve);
-  font-size: .75rem;
   margin: 0;
 }
 
-/* Alertas informativos */
+.esic-prazo-card__base-legal i {
+  color: var(--esic-verde);
+  margin-right: 4px;
+}
+
+
+/* ── 5.4 Alertas / Destaques ─────────────────────────────────────────────── */
+
 .esic-alerta {
   display: flex;
   gap: 14px;
@@ -521,33 +415,30 @@
   margin-top: 2px;
 }
 
-.esic-alerta div { font-size: .875rem; color: var(--esic-texto-medio); line-height: 1.6; }
+.esic-alerta div {
+  font-size: 0.875rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.65;
+}
 
 .esic-alerta--destaque {
   background: var(--esic-amarelo-bg);
   border-left-color: var(--esic-amarelo);
 }
 
-.esic-alerta--destaque i { color: var(--esic-amarelo); }
-
-/* ---------------------------------------------------------------
-   SEÇÃO 5: RECURSOS E INSTÂNCIAS
---------------------------------------------------------------- */
-.esic-recursos-intro {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  text-align: center;
-  font-size: .95rem;
-  color: var(--esic-texto-medio);
-  line-height: 1.7;
+.esic-alerta--destaque i {
+  color: var(--esic-amarelo);
 }
 
+
+/* ── 5.5 Instâncias de Recursos ──────────────────────────────────────────── */
+
 .esic-instancias {
-  max-width: 640px;
-  margin: 0 auto 32px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  max-width: 640px;
+  margin-bottom: 32px;
 }
 
 .esic-instancia {
@@ -555,7 +446,7 @@
   gap: 20px;
   align-items: flex-start;
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius);
   padding: 20px 24px;
   box-shadow: var(--esic-sombra);
@@ -570,27 +461,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: .85rem;
+  font-size: 0.875rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .esic-instancia__numero--especial {
   background: var(--esic-cinza);
-  font-size: .65rem;
+  font-size: 0.7rem;
 }
 
-.esic-instancia__conteudo {}
-
 .esic-instancia__titulo {
-  font-size: .95rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--esic-texto);
   margin-bottom: 6px;
 }
 
 .esic-instancia__texto {
-  font-size: .85rem;
+  font-size: 0.8125rem;
   color: var(--esic-texto-leve);
   line-height: 1.65;
   margin: 0;
@@ -598,21 +487,21 @@
 
 .esic-instancia__conector {
   text-align: center;
-  padding: 8px 0;
+  padding: 6px 0;
   color: var(--esic-borda);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
-/* ---------------------------------------------------------------
-   SEÇÃO 6: LEGISLAÇÃO
---------------------------------------------------------------- */
+
+/* ── 5.6 Lista de Legislação ─────────────────────────────────────────────── */
+
 .esic-legislacao-lista {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .esic-lei-item {
@@ -620,10 +509,16 @@
   gap: 18px;
   align-items: flex-start;
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius);
   padding: 20px 24px;
   box-shadow: var(--esic-sombra);
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+}
+
+.esic-lei-item:hover {
+  border-color: var(--esic-verde);
+  box-shadow: var(--esic-sombra-hover);
 }
 
 .esic-lei-item__icone {
@@ -637,17 +532,20 @@
   flex-shrink: 0;
 }
 
-.esic-lei-item__icone i { color: var(--esic-verde); font-size: 1.1rem; }
+.esic-lei-item__icone i {
+  color: var(--esic-verde);
+  font-size: 1.1rem;
+}
 
 .esic-lei-item__titulo {
-  font-size: .95rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--esic-texto);
   margin-bottom: 6px;
 }
 
 .esic-lei-item__texto {
-  font-size: .875rem;
+  font-size: 0.8125rem;
   color: var(--esic-texto-leve);
   line-height: 1.65;
   margin-bottom: 10px;
@@ -657,35 +555,45 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--esic-verde);
   text-decoration: none;
   transition: color var(--esic-transicao);
 }
 
-.esic-lei-item__link:hover { color: var(--esic-verde-claro); text-decoration: underline; }
+.esic-lei-item__link:hover {
+  color: var(--esic-verde-claro);
+  text-decoration: underline;
+}
 
-/* ---------------------------------------------------------------
-   SEÇÃO 7: ESTATÍSTICAS
---------------------------------------------------------------- */
+
+/* ── 5.7 Estatísticas e filtro ───────────────────────────────────────────── */
+
 .esic-estatisticas-filtro {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius);
-  padding: 16px 20px;
-  margin-bottom: 32px;
+  padding: 14px 20px;
+  margin-bottom: 28px;
 }
 
 .esic-filtro-label {
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--esic-texto);
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.esic-filtro-label i {
+  color: var(--esic-verde);
 }
 
 .esic-filtro-controles {
@@ -695,36 +603,45 @@
 }
 
 .esic-filtro-select {
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius);
   padding: 7px 12px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: var(--esic-texto);
   background: var(--esic-branco);
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color var(--esic-transicao);
 }
 
-.esic-filtro-select:focus { outline: 2px solid var(--esic-verde); }
+.esic-filtro-select:focus {
+  outline: 2px solid var(--esic-verde);
+  outline-offset: 1px;
+  border-color: var(--esic-verde);
+}
 
 .esic-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .esic-stat-card {
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius-lg);
-  padding: 28px 20px;
+  padding: 26px 18px;
   text-align: center;
   box-shadow: var(--esic-sombra);
-  transition: box-shadow var(--esic-transicao);
+  transition: box-shadow var(--esic-transicao), transform var(--esic-transicao);
   border-top: 3px solid var(--esic-cinza);
 }
 
-.esic-stat-card:hover { box-shadow: var(--esic-sombra-hover); }
+.esic-stat-card:hover {
+  box-shadow: var(--esic-sombra-hover);
+  transform: translateY(-2px);
+}
 
 .esic-stat-card--verde   { border-top-color: var(--esic-verde);    }
 .esic-stat-card--amarelo { border-top-color: var(--esic-amarelo);  }
@@ -733,22 +650,22 @@
 .esic-stat-card--azul    { border-top-color: var(--esic-azul);     }
 
 .esic-stat-card__icone {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   background: var(--esic-cinza-bg);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 16px;
+  margin: 0 auto 14px;
 }
 
-.esic-stat-card--verde   .esic-stat-card__icone { background: var(--esic-verde-bg);   }
-.esic-stat-card--amarelo .esic-stat-card__icone { background: var(--esic-amarelo-bg); }
-.esic-stat-card--vermelho .esic-stat-card__icone{ background: var(--esic-vermelho-bg);}
-.esic-stat-card--azul    .esic-stat-card__icone { background: var(--esic-azul-bg);    }
+.esic-stat-card--verde   .esic-stat-card__icone { background: var(--esic-verde-bg);    }
+.esic-stat-card--amarelo .esic-stat-card__icone { background: var(--esic-amarelo-bg);  }
+.esic-stat-card--vermelho .esic-stat-card__icone{ background: var(--esic-vermelho-bg); }
+.esic-stat-card--azul    .esic-stat-card__icone { background: var(--esic-azul-bg);     }
 
-.esic-stat-card__icone i { font-size: 1.2rem; color: var(--esic-cinza); }
+.esic-stat-card__icone i { font-size: 1.1rem; color: var(--esic-cinza); }
 
 .esic-stat-card--verde   .esic-stat-card__icone i { color: var(--esic-verde);    }
 .esic-stat-card--amarelo .esic-stat-card__icone i { color: var(--esic-amarelo);  }
@@ -764,35 +681,31 @@
 }
 
 .esic-stat-card__label {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--esic-texto-leve);
   font-weight: 500;
 }
 
 .esic-estatisticas-nota {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--esic-texto-leve);
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.esic-estatisticas-acoes {
-  display: flex;
-  justify-content: center;
+.esic-estatisticas-nota i {
+  color: var(--esic-verde);
+  flex-shrink: 0;
 }
 
-.esic-estatisticas-acoes .esic-btn {
-  width: auto;
-}
 
-/* ---------------------------------------------------------------
-   SEÇÃO 8: FAQ
---------------------------------------------------------------- */
+/* ── 5.8 FAQ ─────────────────────────────────────────────────────────────── */
+
 .esic-faq-busca {
   max-width: 520px;
-  margin: 0 auto 32px;
+  margin: 0 auto 28px;
 }
 
 .esic-faq-busca__wrapper {
@@ -805,30 +718,29 @@
   top: 50%;
   transform: translateY(-50%);
   color: var(--esic-texto-leve);
-  font-size: .9rem;
+  font-size: 0.875rem;
   pointer-events: none;
 }
 
 .esic-faq-busca__campo {
   width: 100%;
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius);
-  padding: 12px 14px 12px 40px;
-  font-size: .9rem;
+  padding: 11px 14px 11px 40px;
+  font-size: 0.875rem;
   color: var(--esic-texto);
   background: var(--esic-branco);
+  font-family: 'Roboto', sans-serif;
   transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
 }
 
 .esic-faq-busca__campo:focus {
   outline: none;
   border-color: var(--esic-verde);
-  box-shadow: 0 0 0 3px rgba(46,125,50,.12);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.12);
 }
 
 .esic-faq-lista {
-  max-width: 800px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -836,7 +748,7 @@
 
 .esic-faq-item {
   background: var(--esic-branco);
-  border: 1px solid var(--esic-borda);
+  border: 1.5px solid var(--esic-borda);
   border-radius: var(--esic-radius);
   box-shadow: var(--esic-sombra);
   overflow: hidden;
@@ -852,9 +764,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 20px;
+  padding: 15px 20px;
   cursor: pointer;
-  font-size: .95rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--esic-texto);
   list-style: none;
@@ -862,8 +774,9 @@
   transition: background var(--esic-transicao), color var(--esic-transicao);
 }
 
-/* Remove marcador padrão do summary */
-.esic-faq-item__pergunta::-webkit-details-marker { display: none; }
+.esic-faq-item__pergunta::-webkit-details-marker {
+  display: none;
+}
 
 .esic-faq-item__pergunta:hover {
   background: var(--esic-verde-bg);
@@ -877,7 +790,7 @@
 
 .esic-faq-item__icone {
   color: var(--esic-verde);
-  font-size: .8rem;
+  font-size: 0.8rem;
   flex-shrink: 0;
   transition: transform var(--esic-transicao);
 }
@@ -892,129 +805,236 @@
 }
 
 .esic-faq-item__resposta p {
-  font-size: .9rem;
+  font-size: 0.875rem;
   color: var(--esic-texto-medio);
   line-height: 1.75;
   margin: 0;
 }
 
-.esic-faq-item__resposta a {
-  color: var(--esic-verde);
-  text-decoration: underline;
-}
-
 .esic-faq-sem-resultado {
   text-align: center;
   color: var(--esic-texto-leve);
-  font-size: .9rem;
+  font-size: 0.875rem;
   padding: 24px;
 }
 
-/* ---------------------------------------------------------------
-   SEÇÃO 9: CONTATO
---------------------------------------------------------------- */
-.esic-contato-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 48px;
-  align-items: start;
+
+/* ── 5.9 Formulário interno ──────────────────────────────────────────────── */
+
+.esic-form-bloco {
+  background: var(--esic-branco);
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius-lg);
+  padding: 28px;
+  box-shadow: var(--esic-sombra);
 }
 
-.esic-contato-info p {
-  font-size: .95rem;
+.esic-form-intro {
+  font-size: 0.9rem;
   color: var(--esic-texto-medio);
   line-height: 1.7;
   margin-bottom: 24px;
 }
 
+.esic-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.esic-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.esic-form-row--inline {
+  align-items: flex-end;
+}
+
+.esic-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.esic-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.esic-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--esic-texto);
+}
+
+.esic-form-label abbr {
+  color: var(--esic-vermelho);
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.esic-form-input,
+.esic-form-select {
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--esic-texto);
+  background: #f9fdf9;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+  width: 100%;
+}
+
+.esic-form-input:focus,
+.esic-form-select:focus {
+  outline: none;
+  border-color: var(--esic-verde);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.12);
+  background: #fff;
+}
+
+.esic-form-input::placeholder {
+  color: #aab0aa;
+}
+
+.esic-form-textarea {
+  border: 1.5px solid var(--esic-borda);
+  border-radius: var(--esic-radius);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--esic-texto);
+  background: #f9fdf9;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+  min-height: 140px;
+  width: 100%;
+  transition: border-color var(--esic-transicao), box-shadow var(--esic-transicao);
+}
+
+.esic-form-textarea:focus {
+  outline: none;
+  border-color: var(--esic-verde);
+  box-shadow: 0 0 0 3px rgba(45, 122, 45, 0.12);
+  background: #fff;
+}
+
+.esic-form-textarea::placeholder {
+  color: #aab0aa;
+}
+
+.esic-form-hint {
+  font-size: 0.8rem;
+  color: var(--esic-texto-leve);
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  line-height: 1.5;
+}
+
+.esic-form-hint i {
+  color: var(--esic-verde);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.esic-form-check-group {
+  margin-bottom: 20px;
+}
+
+.esic-form-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.8125rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.esic-form-check input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--esic-verde);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.esic-form-acoes {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.esic-form-btn-submit {
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+/* Resultado consulta de protocolo */
+.esic-consulta-tabela {
+  margin-top: 20px;
+}
+
+/* Confirmação de pedido enviado */
+.esic-form-confirmacao {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1.5px solid var(--esic-borda);
+  margin-top: 24px;
+}
+
+.esic-confirmacao-icone {
+  font-size: 3rem;
+  color: var(--esic-verde);
+  margin-bottom: 16px;
+}
+
+.esic-form-confirmacao h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--esic-texto);
+  margin-bottom: 12px;
+}
+
+.esic-form-confirmacao p {
+  font-size: 0.9rem;
+  color: var(--esic-texto-medio);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+/* Endereço postal no bloco de contato */
 .esic-contato-endereco {
   font-style: normal;
 }
 
-.esic-contato-lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
-.esic-contato-lista li {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  font-size: .9rem;
-  color: var(--esic-texto-medio);
-}
+/* ══════════════════════════════════════════════════════════════════════════
+   6. SIDEBAR — ajustes específicos do e-SIC
+   ══════════════════════════════════════════════════════════════════════════ */
 
-.esic-contato-lista li i {
-  color: var(--esic-verde);
-  font-size: .95rem;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.esic-contato-lista a {
-  color: var(--esic-verde);
-  text-decoration: none;
-}
-
-.esic-contato-lista a:hover { text-decoration: underline; }
-
-.esic-contato-acoes {
-  background: var(--esic-verde);
-  border-radius: var(--esic-radius-lg);
-  padding: 28px 24px;
-  color: #fff;
-}
-
-.esic-contato-acoes__titulo {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 18px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-}
-
-.esic-acesso-rapido-lista {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.esic-acesso-rapido-link {
+/* O bloco de ações rápidas deve ter espaço interno entre os botões */
+.pi-sidebar-contato .pi-btn-outline {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: var(--esic-radius);
-  color: rgba(255,255,255,.9);
-  text-decoration: none;
-  font-size: .875rem;
-  font-weight: 500;
-  transition: background var(--esic-transicao), color var(--esic-transicao);
-}
-
-.esic-acesso-rapido-link i {
-  font-size: .9rem;
-  width: 18px;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
   text-align: center;
 }
 
-.esic-acesso-rapido-link:hover {
-  background: rgba(255,255,255,.15);
-  color: #fff;
-  text-decoration: none;
-}
 
-/* ---------------------------------------------------------------
-   ANIMAÇÃO DOS NÚMEROS DAS ESTATÍSTICAS
---------------------------------------------------------------- */
+/* ══════════════════════════════════════════════════════════════════════════
+   7. ANIMAÇÕES
+   ══════════════════════════════════════════════════════════════════════════ */
+
 @keyframes esic-count-up {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1024,24 +1044,13 @@
   animation: esic-count-up 0.4s ease forwards;
 }
 
-/* ---------------------------------------------------------------
-   RESPONSIVIDADE
---------------------------------------------------------------- */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. RESPONSIVIDADE
+   ══════════════════════════════════════════════════════════════════════════ */
 
 /* Tablet: 992px */
 @media (max-width: 992px) {
-
-  .esic-apresentacao-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .esic-apresentacao-lateral {
-    flex-direction: row;
-  }
-
-  .esic-apresentacao-lateral .esic-card-destaque {
-    flex: 1;
-  }
 
   .esic-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1055,21 +1064,13 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .esic-contato-grid {
-    grid-template-columns: 1fr;
+  .esic-instancias {
+    max-width: 100%;
   }
 }
 
 /* Mobile: 768px */
 @media (max-width: 768px) {
-
-  .esic-section {
-    padding: 48px 0;
-  }
-
-  .esic-section-titulo {
-    font-size: 1.4rem;
-  }
 
   .esic-tabs-list {
     overflow-x: auto;
@@ -1078,13 +1079,17 @@
     scrollbar-width: none;
   }
 
-  .esic-tabs-list::-webkit-scrollbar { display: none; }
+  .esic-tabs-list::-webkit-scrollbar {
+    display: none;
+  }
 
-  .esic-tab-link span { display: none; }
+  .esic-tab-link span {
+    display: none;
+  }
 
   .esic-tab-link {
     padding: 12px 14px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .esic-cards-grid {
@@ -1100,7 +1105,7 @@
   }
 
   .esic-apresentacao-lateral {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .esic-passos::before {
@@ -1118,6 +1123,21 @@
     align-items: flex-start;
   }
 
+  .esic-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .esic-form-row--inline {
+    grid-template-columns: 1fr;
+  }
+
+  .esic-form-btn-submit {
+    align-self: flex-start;
+  }
+
+  .esic-form-bloco {
+    padding: 20px 16px;
+  }
 }
 
 /* Mobile pequeno: 480px */
@@ -1134,4 +1154,266 @@
   .esic-tab-link {
     padding: 12px 10px;
   }
+
+  .esic-instancia {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   9. ALTO CONTRASTE eMAG
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.high-contrast .esic-tabs-nav {
+  background: #000 !important;
+  border-bottom: 1px solid #fff;
+}
+
+body.high-contrast .esic-tab-link {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-tab-link.active,
+body.high-contrast .esic-tab-link:hover {
+  color: #fff !important;
+  border-bottom-color: #fff !important;
+}
+
+body.high-contrast .esic-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-card:hover {
+  border-color: #ff0 !important;
+}
+
+body.high-contrast .esic-card__titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-card__texto {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-card__link {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-card__icone {
+  background: #222 !important;
+}
+
+body.high-contrast .esic-card__icone i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-alerta,
+body.high-contrast .esic-alerta--destaque {
+  background: #111 !important;
+  border-left-color: #ff0 !important;
+}
+
+body.high-contrast .esic-alerta i,
+body.high-contrast .esic-alerta--destaque i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-alerta div {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-passo__numero {
+  background: #333 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-passos::before {
+  background: #555 !important;
+}
+
+body.high-contrast .esic-passo__titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-passo__texto {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-prazo-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-prazo-card__numero {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-prazo-card__titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-prazo-card__texto,
+body.high-contrast .esic-prazo-card__unidade,
+body.high-contrast .esic-prazo-card__base-legal {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-instancia {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-instancia__numero {
+  background: #333 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-instancia__titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-instancia__texto {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-lei-item {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-lei-item__icone {
+  background: #222 !important;
+}
+
+body.high-contrast .esic-lei-item__icone i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-lei-item__titulo {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-lei-item__texto {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-lei-item__link {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-estatisticas-filtro {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-filtro-label {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-filtro-select {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-stat-card {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-stat-card__numero {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-stat-card__label {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-stat-card__icone {
+  background: #222 !important;
+}
+
+body.high-contrast .esic-stat-card__icone i {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-estatisticas-nota {
+  color: #ccc !important;
+}
+
+body.high-contrast .esic-faq-item {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-faq-item[open] {
+  border-color: #ff0 !important;
+}
+
+body.high-contrast .esic-faq-item__pergunta {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-faq-item__pergunta:hover,
+body.high-contrast .esic-faq-item[open] .esic-faq-item__pergunta {
+  background: #111 !important;
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-faq-item__icone {
+  color: #ff0 !important;
+}
+
+body.high-contrast .esic-faq-item__resposta {
+  border-top-color: #333 !important;
+}
+
+body.high-contrast .esic-faq-item__resposta p {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-faq-busca__campo {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-form-bloco {
+  background: #000 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-form-input,
+body.high-contrast .esic-form-select,
+body.high-contrast .esic-form-textarea {
+  background: #111 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .esic-form-label {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-form-hint {
+  color: #ccc !important;
+}
+
+body.high-contrast .esic-form-check {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-form-confirmacao h3 {
+  color: #fff !important;
+}
+
+body.high-contrast .esic-form-confirmacao p {
+  color: #ddd !important;
+}
+
+body.high-contrast .esic-confirmacao-icone {
+  color: #ff0 !important;
 }
