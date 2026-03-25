@@ -12,7 +12,7 @@ class MeuSearch extends HTMLElement {
           <div class="row align-items-center" style="display: flex; flex-wrap: wrap;">
             <div class="col-md-4">
               <a href="index.html">
-                <img src="../../assets/img/pagina-inicial/logo-prefeitura.png" style="max-width: 250px;">
+                <img src="/assets/img/pagina-inicial/logo-prefeitura.png" style="max-width: 250px;">
               </a>
             </div>
             <div class="col-md-8">

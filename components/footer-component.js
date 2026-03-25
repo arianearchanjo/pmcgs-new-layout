@@ -11,7 +11,7 @@
               <div class="d-flex align-items-center mb-3">
                 <a href="${base}index.html" class="logo-wrapper" aria-label="Página inicial">
                   <img class="logo-img"
-                       src="../../assets/img/pagina-inicial/logo-prefeitura.png"
+                       src="/assets/img/pagina-inicial/logo-prefeitura.png"
                        alt="Prefeitura de Campina Grande do Sul – Paraná"
                        style="height:50px;">
                 </a>
