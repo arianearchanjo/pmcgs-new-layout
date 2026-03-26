@@ -460,6 +460,138 @@
 .pi-footer-bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 28px; padding-top: 16px; font-size: 0.6875rem; color: rgba(255,255,255,.35); text-align: center; }
 
 
+/* ── 13b. Secretaria Responsável (artigo) ────────────────────── */
+.servico-secao-secretaria .servico-secretaria-destaque {
+  background: var(--pi-verde-claro);
+  border: 1.5px solid var(--pi-cinza-borda);
+  border-left: 4px solid var(--pi-verde);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: 4px;
+}
+
+.servico-secretaria-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.servico-secretaria-nome i {
+  color: var(--pi-verde);
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+.servico-secretaria-nome span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+}
+
+.servico-secretaria-contatos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.servico-secretaria-contatos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+.servico-secretaria-contatos li i {
+  color: var(--pi-verde);
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 16px;
+  text-align: center;
+}
+.servico-secretaria-contatos li a {
+  color: var(--pi-verde-escuro);
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-all;
+}
+.servico-secretaria-contatos li a:hover {
+  text-decoration: underline;
+  color: var(--pi-verde);
+}
+
+
+/* ── 13c. Secretaria Responsável (sidebar card) ──────────────── */
+.servico-secretaria-card {
+  background: #fff;
+  border: 1.5px solid var(--pi-cinza-borda);
+  border-top: 4px solid var(--pi-verde);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.servico-secretaria-card h3 {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--pi-verde-claro);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.servico-secretaria-card h3 i {
+  color: var(--pi-verde);
+  font-size: 0.875rem;
+}
+.servico-secretaria-card-nome {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--pi-verde-escuro);
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+.servico-secretaria-card-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.servico-secretaria-card-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #555;
+  line-height: 1.45;
+}
+.servico-secretaria-card-lista li i {
+  color: var(--pi-verde);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 14px;
+  text-align: center;
+}
+.servico-secretaria-card-lista li a {
+  color: var(--pi-verde-escuro);
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-all;
+}
+.servico-secretaria-card-lista li a:hover {
+  color: var(--pi-verde);
+  text-decoration: underline;
+}
+
+
 /* ── 14. Alto Contraste eMAG ─────────────────────────────────── */
 body.high-contrast { background: #000 !important; color: #fff !important; }
 body.high-contrast a { color: #ff0 !important; }
@@ -496,6 +628,19 @@ body.high-contrast .servico-info-linha dt { color: #ff0 !important; }
 body.high-contrast .servico-info-linha dd { color: #fff !important; }
 body.high-contrast .servico-outros-card { background: #000 !important; border-color: #fff !important; }
 body.high-contrast .servico-outros-links li a { color: #ff0 !important; }
+body.high-contrast .servico-secretaria-destaque { background: #111 !important; border-color: #fff !important; border-left-color: #ff0 !important; }
+body.high-contrast .servico-secretaria-nome span { color: #fff !important; }
+body.high-contrast .servico-secretaria-nome i,
+body.high-contrast .servico-secretaria-contatos li i { color: #ff0 !important; }
+body.high-contrast .servico-secretaria-contatos li,
+body.high-contrast .servico-secretaria-contatos li a { color: #ff0 !important; }
+body.high-contrast .servico-secretaria-card { background: #000 !important; border-color: #fff !important; }
+body.high-contrast .servico-secretaria-card h3,
+body.high-contrast .servico-secretaria-card-nome { color: #fff !important; }
+body.high-contrast .servico-secretaria-card h3 i,
+body.high-contrast .servico-secretaria-card-lista li i { color: #ff0 !important; }
+body.high-contrast .servico-secretaria-card-lista li,
+body.high-contrast .servico-secretaria-card-lista li a { color: #ff0 !important; }
 body.high-contrast #pi-footer { background: #000 !important; border-top: 1px solid #fff; }
 body.high-contrast #pi-footer h6 { color: #fff !important; }
 body.high-contrast #pi-footer ul li a,
