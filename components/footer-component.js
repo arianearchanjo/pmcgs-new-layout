@@ -9,7 +9,7 @@
             <!-- ===== COLUNA 1: LOGO + DESCRIÇÃO + SOBRE CAMPINA ===== -->
             <div class="col-md-3 col-sm-6 mb-4">
               <div class="d-flex align-items-center mb-3">
-                <a href="${base}index.html" class="logo-wrapper" aria-label="Página inicial">
+                <a href="index.html" class="logo-wrapper" aria-label="Página inicial">
                   <img class="logo-img"
                        src="../../assets/img/pagina-inicial/logo-prefeitura.png"
                        alt="Prefeitura de Campina Grande do Sul – Paraná"
@@ -38,18 +38,18 @@
               <nav aria-label="Serviços Municipais">
                 <h6>SERVIÇOS</h6>
                 <ul>
-                  <li><a href="${base}pages/servico/">Consulta de Débitos</a></li>
+                  <li><a href="/pages/servico/">Consulta de Débitos</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Todos os Serviços</a></li>
+                  <li><a href="/pages/portal-servicos/">Todos os Serviços</a></li>
                 </ul>
               </nav>
 
               <nav aria-label="Prefeitura" class="mt-3">
                 <h6>PREFEITURA</h6>
                 <ul>
-                  <li><a href="${base}pages/prefeito/index.html">Prefeito</a></li>
-                  <li><a href="${base}pages/secretarios-municipais/index.html">Secretários</a></li>
+                  <li><a href="/pages/prefeito/index.html">Prefeito</a></li>
+                  <li><a href="/pages/secretarios-municipais/index.html">Secretários</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a></li>
                 </ul>
               </nav>
@@ -62,10 +62,10 @@
               <nav aria-label="Transparência">
                 <h6>TRANSPARÊNCIA</h6>
                 <ul>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a></li>
+                  <li><a href="/pages/transparencia/">Portal da Transparência</a></li>
+                  <li><a href="/pages/e-sic/">Acesso à Informação</a></li>
                   <li><a href="https://campinagrandedosul.pr.gov.br/politica-de-privacidade">Política de Privacidade</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/mapa-do-site">Mapa do Site</a></li>
+                  <li><a href="/pages/mapa-site">Mapa do Site</a></li>
                 </ul>
               </nav>
 

@@ -24,11 +24,11 @@
               <div class="dropdown-group-title">Protocolo</div>
               <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a>
               <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a>
-              <a class="dropdown-item" href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic">Acesso à Informação</a>
+              <a class="dropdown-item" href="/pages/e-sic/">Acesso à Informação</a>
               <div class="dropdown-group-title">Diversos</div>
               <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
               <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-enderecos">Endereços e Telefones</a>
-              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/servicos" style="color:var(--verde);font-weight:700;">→ Mais Serviços</a>
+              <a class="dropdown-item" href="/pages/portal-servicos/" style="color:var(--verde);font-weight:700;">→ Mais Serviços</a>
             </div>
           </li>
 
@@ -48,7 +48,7 @@
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/mulher">Mulher e Igualdade Racial</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/ordem-publica">Ordem Pública e Segurança</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/saude">Saúde</a>
-                <a class="dropdown-item" href="${base}pages/secretarias/">Tecnologia da Informação</a>
+                <a class="dropdown-item" href="/pages/secretarias/">Tecnologia da Informação</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/urbanismo">Urbanismo</a>
               </div>
               <div class="mega-col">
@@ -85,8 +85,8 @@
                 <div class="dropdown-group-title">Legislação e Informação</div>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a>
                 <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/lista-espera-cmeis">Lista de Espera – CMEIs</a>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/faq">Perguntas e Respostas</a>
-                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a>
+                <a class="dropdown-item" href="/pages/perguntas-frequentes/">Perguntas e Respostas</a>
+                <a class="dropdown-item" href="/pages/e-sic">Acesso à Informação</a>
                 <a class="dropdown-item" href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener">Radar da Transparência</a>
                 <a class="dropdown-item" href="/pages/transparencia/" style="color:var(--verde);font-weight:700;">→ Portal da Transparência</a>
               </div>

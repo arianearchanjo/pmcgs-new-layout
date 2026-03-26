@@ -595,7 +595,7 @@
                    class="barra-acesso-icone" style="width:auto; padding:0 10px; font-size:10px; font-weight:700;">
                   <i class="fas fa-sitemap" aria-hidden="true"></i>&nbsp; MAPA DO SITE
                 </a>
-                <a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao"
+                <a href="/pages/e-sic/"
                    aria-label="Acesso à informação"
                    class="barra-acesso-icone" style="width:auto; padding:0 10px; font-size:10px; font-weight:700;">
                   <i class="fas fa-info-circle" aria-hidden="true"></i>&nbsp; ACESSO À INFORMAÇÃO
