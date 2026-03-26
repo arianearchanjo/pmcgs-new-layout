@@ -76,7 +76,7 @@
 }
 
 .esic-sidebar-btn-mt {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 
@@ -432,7 +432,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  max-width: 640px;
+  max-width: 100%;
   margin-bottom: 32px;
 }
 
@@ -615,6 +615,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 16px;
+  align-items: stretch;
 }
 
 .esic-stat-card {
@@ -626,6 +627,11 @@
   box-shadow: var(--esic-sombra);
   transition: box-shadow var(--esic-transicao), transform var(--esic-transicao);
   border-top: 3px solid var(--esic-cinza);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
 }
 
 .esic-stat-card:hover {
@@ -832,33 +838,33 @@
   margin-top: 4px;
 }
 
-/* ── Linha de consulta de protocolo (CORRIGIDA) ───────────────────────────
-   Substitui o antigo .esic-form-row--inline que causava o botão "Consultar"
-   ocupar a altura errada. Agora o input cresce e o botão alinha ao fundo. */
+/* ── Linha de consulta de protocolo ──────────────────────────────────────── */
 
 .esic-consulta-row {
   display: flex;
-  gap: 16px;
-  align-items: flex-end;          /* alinha o botão com a base do input */
-  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: nowrap;
 }
 
 .esic-consulta-row .esic-form-group {
-  flex: 1 1 260px;
+  flex: 1 1 auto;
   margin-bottom: 0;
 }
 
 .esic-consulta-btn-col {
   flex-shrink: 0;
+  align-self: flex-end;
   padding-bottom: 0;
 }
 
 .esic-consulta-btn {
   white-space: nowrap;
-  height: 42px;                   /* mesma altura do input */
-  padding: 0 22px;
+  height: 42px;
+  padding: 0 30px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -905,6 +911,39 @@
 /* Endereço postal */
 .esic-contato-endereco { font-style: normal; }
 
+/* ── Cards de contato — alturas uniformes ────────────────────────────────
+   Sobrescreve o grid global para garantir que todos os 4 cards
+   (Endereço, Horário, Telefone, E-mail) fiquem com a mesma altura.    */
+
+.pi-compromisso-bloco .pi-selos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pi-compromisso-bloco .pi-selo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+  .pi-compromisso-bloco .pi-selos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .pi-compromisso-bloco .pi-selos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ── 5.9 Erros de validação ──────────────────────────────────────────────── */
 
@@ -920,18 +959,25 @@
    6. SIDEBAR — ajustes específicos do e-SIC
    ══════════════════════════════════════════════════════════════════════════ */
 
+.pi-sidebar-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .pi-sidebar-contato .pi-btn-verde,
 .pi-sidebar-contato .pi-btn-outline {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   width: 100%;
-  min-height: 42px;
-
+  min-height: 44px;
   padding: 10px 16px;
   box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
 }
 
 /* Bloco de prazo em destaque na sidebar (registrar-pedido.html) */
@@ -994,7 +1040,7 @@
 @media (max-width: 992px) {
   .esic-cards-grid  { grid-template-columns: repeat(2, 1fr); }
   .esic-prazos-grid { grid-template-columns: repeat(2, 1fr); }
-  .esic-stats-grid  { grid-template-columns: repeat(3, 1fr); }
+  .esic-stats-grid  { grid-template-columns: repeat(2, 1fr); }
   .esic-instancias  { max-width: 100%; }
   .esic-cta-bloco   { flex-direction: column; align-items: flex-start; }
 }

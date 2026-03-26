@@ -1,68 +1,125 @@
 /**
- * ouvidoria.js — Página da Ouvidoria
- * Prefeitura de Campina Grande do Sul – PR
+ * ouvidoria.js — Scripts da página Ouvidoria Geral do Município
+ * Prefeitura de Campina Grande do Sul
  *
- * Seções:
- *   1. Tooltips Bootstrap
- *   2. Stepper interativo (Fluxo do Atendimento)
+ * Funcionalidades:
+ * 1. Destaque do passo ativo no fluxo de atendimento (clique/teclado)
+ * 2. Botão "voltar ao topo" (mostrar/ocultar por scroll)
+ * 3. Animação de entrada dos cards (Intersection Observer)
  */
 
-
-/* ══════════════════════════════════════════════════════════════════════════
-   1. TOOLTIPS BOOTSTRAP
-   ══════════════════════════════════════════════════════════════════════════ */
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
+(function () {
+  'use strict';
 
 
-/* ══════════════════════════════════════════════════════════════════════════
-   2. STEPPER INTERATIVO — Fluxo do Atendimento
-   ══════════════════════════════════════════════════════════════════════════ */
+  /* ============================================================
+     1. FLUXO DE ATENDIMENTO — destaque ao clicar no passo
+  ============================================================ */
+  function initFluxoPassos() {
+    var passos = document.querySelectorAll('.ouv-passo');
+    if (!passos.length) return;
 
-var stepDetails = {
-  1: '<b>Recebimento da Manifestação</b><ul><li>Canais disponíveis: Presencialmente, telefone, formulário eletrônico (site) e E-mail.</li><li>Tipos de manifestação: Solicitação, Denúncia, Elogio, Sugestão e Reclamação.</li></ul>',
-  2: '<b>Registro no Sistema</b><ul><li>Cadastro da manifestação no sistema da ouvidoria.</li><li>Geração de protocolo para acompanhamento.</li></ul>',
-  3: '<b>Análise Inicial (Triagem)</b><ul><li>Verificação de: clareza das informações, tipo e natureza da demanda.</li></ul>',
-  4: '<b>Encaminhamento para o Responsável</b><ul><li>A manifestação é direcionada ao setor competente da administração pública municipal.</li></ul>',
-  5: '<b>Acompanhamento Interno</b><ul><li>Monitoramento dos prazos de resposta.</li><li>Contato com o órgão caso haja necessidade de complementação ou agilidade.</li></ul>',
-  6: '<b>Resposta do Órgão</b><ul><li>A resposta do setor responsável é analisada pela ouvidoria.</li><li>Se a resposta for insuficiente, retorna ao órgão para complementação.</li></ul>',
-  7: '<b>Resposta da Ouvidoria para o Cidadão</b><ul><li>A resposta é encaminhada ao cidadão.</li></ul>',
-  8: '<b>Encerramento da Manifestação</b><ul><li>Registro do encerramento no sistema.</li></ul>',
-  9: '<b>Avaliação do Atendimento (Opcional)</b><ul><li>O cidadão pode avaliar o atendimento e registrar satisfação ou insatisfação com a resposta.</li></ul>'
-};
+    passos.forEach(function (passo) {
+      /* Tornar o passo clicável via teclado */
+      passo.setAttribute('tabindex', '0');
+      passo.setAttribute('role', 'button');
 
-function updateStepSelection(el) {
-  document.querySelectorAll('.step-card').forEach(function (card) {
-    card.classList.remove('active');
-    card.setAttribute('aria-selected', 'false');
-  });
+      function toggleAtivo() {
+        var jaAtivo = passo.classList.contains('ouv-passo--ativo');
 
-  el.classList.add('active');
-  el.setAttribute('aria-selected', 'true');
+        /* Remove destaque de todos */
+        passos.forEach(function (p) {
+          p.classList.remove('ouv-passo--ativo');
+        });
 
-  var step = el.getAttribute('data-step');
-  var details = document.getElementById('step-details');
-  details.innerHTML = stepDetails[step];
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.step-card').forEach(function (card) {
-    card.addEventListener('click', function () {
-      updateStepSelection(this);
-    });
-    card.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        updateStepSelection(this);
+        /* Aplica (ou remove) no clicado */
+        if (!jaAtivo) {
+          passo.classList.add('ouv-passo--ativo');
+          passo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }
+
+      passo.addEventListener('click', toggleAtivo);
+      passo.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleAtivo();
+        }
+      });
     });
+  }
+
+
+  /* ============================================================
+     2. BOTÃO VOLTAR AO TOPO
+  ============================================================ */
+  function initBackTop() {
+    var btn = document.querySelector('.pi-back-top');
+    if (!btn) return;
+
+    function toggleVisivel() {
+      if (window.scrollY > 400) {
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+      } else {
+        btn.style.opacity = '0';
+        btn.style.pointerEvents = 'none';
+      }
+    }
+
+    btn.style.opacity = '0';
+    btn.style.pointerEvents = 'none';
+    btn.style.transition = 'opacity 0.3s ease';
+
+    window.addEventListener('scroll', toggleVisivel, { passive: true });
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+
+  /* ============================================================
+     3. ANIMAÇÃO DE ENTRADA — cards e itens de legislação
+  ============================================================ */
+  function initAnimacoesEntrada() {
+    if (!('IntersectionObserver' in window)) return;
+
+    var alvos = document.querySelectorAll(
+      '.ouv-card, .ouv-lei-item, .ouv-servico-item, .ouv-pesquisa-card'
+    );
+
+    if (!alvos.length) return;
+
+    /* Prepara o estado inicial */
+    alvos.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    alvos.forEach(function (el) { observer.observe(el); });
+  }
+
+
+  /* ============================================================
+     INICIALIZAÇÃO
+  ============================================================ */
+  document.addEventListener('DOMContentLoaded', function () {
+    initFluxoPassos();
+    initBackTop();
+    initAnimacoesEntrada();
   });
 
-  // Ativa a primeira etapa ao carregar
-  var firstStep = document.querySelector('.step-card[data-step="1"]');
-  if (firstStep) {
-    updateStepSelection(firstStep);
-  }
-});
+})();
