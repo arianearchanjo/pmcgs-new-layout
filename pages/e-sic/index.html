@@ -7,142 +7,51 @@
   <title>e-SIC – Serviço de Informação ao Cidadão – Portal da Prefeitura de Campina Grande do Sul – PR</title>
   <meta name="description" content="Acesse o Serviço de Informação ao Cidadão (e-SIC) da Prefeitura de Campina Grande do Sul e solicite informações públicas conforme a Lei de Acesso à Informação.">
 
-  <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Estilos globais do portal -->
   <link rel="stylesheet" href="../../assets/css/index.css">
-  <!-- Estilos da página e-SIC -->
   <link rel="stylesheet" href="../../assets/css/e-sic.css">
-    <link rel="stylesheet" href="../../assets/css/acessibilidade.css">
-
+  <link rel="stylesheet" href="../../assets/css/acessibilidade.css">
 </head>
 
 <body>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       SKIP NAVIGATION — WCAG 2.4.1
-  ════════════════════════════════════════════════════════════════ -->
   <a href="#pi-conteudo" class="pi-skip-nav">Ir para o conteúdo principal</a>
 
-  <!-- Componentes globais -->
-  <barra-acessibilidade></barra-acessibilidade>
-  <meu-search></meu-search>
-  <meu-header></meu-header>
+    <!-- Componentes globais -->
+    <barra-acessibilidade> </barra-acessibilidade>
+    <meu-search></meu-search>
+    <meu-header></meu-header>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       HERO — Título da página e breadcrumb
-  ════════════════════════════════════════════════════════════════ -->
+  <!-- HERO -->
   <section id="pi-hero" aria-label="Identificação da página">
     <div class="container">
       <div class="pi-hero-inner">
-
         <nav aria-label="Você está em">
           <ol class="pi-breadcrumb">
-            <li>
-              <a href="../../index.html">
-                <i class="fas fa-home" aria-hidden="true"></i> Início
-              </a>
-            </li>
-            <li aria-hidden="true">
-              <span class="pi-breadcrumb-sep">
-                <i class="fas fa-chevron-right"></i>
-              </span>
-            </li>
+            <li><a href="../../index.html"><i class="fas fa-home" aria-hidden="true"></i> Início</a></li>
+            <li aria-hidden="true"><span class="pi-breadcrumb-sep"><i class="fas fa-chevron-right"></i></span></li>
             <li aria-current="page">e-SIC</li>
           </ol>
         </nav>
-
         <h1 class="pi-hero-titulo">e-SIC — Serviço de Informação ao Cidadão</h1>
-
       </div>
     </div>
-
     <div class="pi-hero-ilustracao" aria-hidden="true">
       <img src="../../assets/img/esic/ilustracao.png" alt="">
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       NAVEGAÇÃO RÁPIDA (abas âncoras)
-  ════════════════════════════════════════════════════════════════ -->
-  <nav class="esic-tabs-nav" aria-label="Navegação rápida da página e-SIC">
-    <div class="container">
-      <ul class="esic-tabs-list" role="list">
-        <li role="listitem">
-          <a href="#esic-apresentacao" class="esic-tab-link active" aria-current="true">
-            <i class="fas fa-info-circle" aria-hidden="true"></i>
-            <span>Sobre o e-SIC</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-acoes" class="esic-tab-link">
-            <i class="fas fa-th-large" aria-hidden="true"></i>
-            <span>Ações</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-como-funciona" class="esic-tab-link">
-            <i class="fas fa-route" aria-hidden="true"></i>
-            <span>Como Funciona</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-prazos" class="esic-tab-link">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <span>Prazos</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-recursos" class="esic-tab-link">
-            <i class="fas fa-gavel" aria-hidden="true"></i>
-            <span>Recursos</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-legislacao" class="esic-tab-link">
-            <i class="fas fa-balance-scale" aria-hidden="true"></i>
-            <span>Legislação</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-estatisticas" class="esic-tab-link">
-            <i class="fas fa-chart-bar" aria-hidden="true"></i>
-            <span>Estatísticas</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-faq" class="esic-tab-link">
-            <i class="fas fa-question-circle" aria-hidden="true"></i>
-            <span>FAQ</span>
-          </a>
-        </li>
-        <li role="listitem">
-          <a href="#esic-contato" class="esic-tab-link">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <span>Contato</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ══════════════════════════════════════════════════════════════
-       CONTEÚDO PRINCIPAL
-  ════════════════════════════════════════════════════════════════ -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main id="pi-main">
     <div class="container">
       <div id="pi-conteudo" class="pi-layout" tabindex="-1">
 
-        <!-- ── COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <!-- COLUNA PRINCIPAL -->
         <article>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 1: APRESENTAÇÃO
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 1: APRESENTAÇÃO -->
           <section id="esic-apresentacao" aria-labelledby="esic-intro-titulo">
             <h2 id="esic-intro-titulo" class="pi-secao-titulo">
               <i class="fas fa-info-circle" aria-hidden="true"></i>
@@ -166,18 +75,14 @@
 
             <div class="esic-apresentacao-lateral">
               <div class="pi-recurso-card">
-                <div class="pi-recurso-icon" aria-hidden="true">
-                  <i class="fas fa-user-check"></i>
-                </div>
+                <div class="pi-recurso-icon" aria-hidden="true"><i class="fas fa-user-check"></i></div>
                 <div class="pi-recurso-corpo">
                   <h3>Transparência Ativa</h3>
                   <p>Informações publicadas proativamente no portal, sem necessidade de solicitação.</p>
                 </div>
               </div>
               <div class="pi-recurso-card">
-                <div class="pi-recurso-icon" aria-hidden="true">
-                  <i class="fas fa-search"></i>
-                </div>
+                <div class="pi-recurso-icon" aria-hidden="true"><i class="fas fa-search"></i></div>
                 <div class="pi-recurso-corpo">
                   <h3>Transparência Passiva</h3>
                   <p>Informações fornecidas mediante pedido formal registrado neste serviço.</p>
@@ -193,11 +98,27 @@
                 o motivo do pedido.
               </div>
             </div>
+
+            <!-- CTA DESTAQUE: REGISTRAR PEDIDO -->
+            <div class="esic-cta-bloco">
+              <div class="esic-cta-texto">
+                <h3 class="esic-cta-titulo">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                  Solicite informações públicas agora
+                </h3>
+                <p>
+                  Registre seu pedido de acesso à informação de forma simples, gratuita e sem necessidade
+                  de justificativa. Você receberá um número de protocolo para acompanhar a resposta.
+                </p>
+              </div>
+              <a href="registrar-pedido.html" class="esic-cta-btn">
+                <i class="fas fa-plus-circle" aria-hidden="true"></i>
+                Registrar Pedido
+              </a>
+            </div>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 2: AÇÕES DISPONÍVEIS
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 2: AÇÕES DISPONÍVEIS -->
           <section id="esic-acoes" aria-labelledby="esic-acoes-titulo" class="pi-mt-secao">
             <h2 id="esic-acoes-titulo" class="pi-secao-titulo">
               <i class="fas fa-th-large" aria-hidden="true"></i>
@@ -216,7 +137,7 @@
                   Solicite acesso a documentos, dados ou informações produzidos ou custodiados pela
                   Prefeitura. Sem necessidade de justificativa.
                 </p>
-                <a href="#esic-formulario" class="esic-card__link">
+                <a href="registrar-pedido.html" class="esic-card__link">
                   Fazer pedido <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </article>
@@ -286,7 +207,7 @@
                   Encontre respostas às perguntas mais comuns sobre o funcionamento do e-SIC e
                   os seus direitos como cidadão.
                 </p>
-                <a href="#esic-faq" class="esic-card__link">
+                <a href="../../faq/index.html" class="esic-card__link">
                   Ver FAQ <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </article>
@@ -294,141 +215,7 @@
             </div>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 3: FORMULÁRIO — REGISTRAR PEDIDO
-          ═══════════════════════════════════════════════════ -->
-          <section id="esic-formulario" aria-labelledby="esic-form-titulo" class="pi-mt-secao">
-            <h2 id="esic-form-titulo" class="pi-secao-titulo">
-              <i class="fas fa-plus-circle" aria-hidden="true"></i>
-              Registrar Novo Pedido
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="esic-form-bloco">
-              <p class="esic-form-intro">
-                Preencha o formulário abaixo para registrar seu pedido de acesso à informação.
-                Todos os campos marcados com <abbr title="obrigatório">*</abbr> são obrigatórios.
-                Após o envio, você receberá um número de protocolo para acompanhamento.
-              </p>
-
-              <form class="esic-form" id="esic-pedido-form" novalidate aria-label="Formulário de pedido de acesso à informação">
-
-                <div class="esic-form-row">
-                  <div class="esic-form-group">
-                    <label class="esic-form-label" for="esic-solicitante-nome">
-                      Nome completo <abbr title="obrigatório">*</abbr>
-                    </label>
-                    <input type="text" id="esic-solicitante-nome" name="nome"
-                           class="esic-form-input" required
-                           autocomplete="name"
-                           placeholder="Seu nome completo">
-                  </div>
-                  <div class="esic-form-group">
-                    <label class="esic-form-label" for="esic-solicitante-email">
-                      E-mail <abbr title="obrigatório">*</abbr>
-                    </label>
-                    <input type="email" id="esic-solicitante-email" name="email"
-                           class="esic-form-input" required
-                           autocomplete="email"
-                           placeholder="seu@email.com.br">
-                  </div>
-                </div>
-
-                <div class="esic-form-row">
-                  <div class="esic-form-group">
-                    <label class="esic-form-label" for="esic-solicitante-telefone">
-                      Telefone (opcional)
-                    </label>
-                    <input type="tel" id="esic-solicitante-telefone" name="telefone"
-                           class="esic-form-input"
-                           autocomplete="tel"
-                           placeholder="(41) 9 0000-0000">
-                  </div>
-                  <div class="esic-form-group">
-                    <label class="esic-form-label" for="esic-orgao">
-                      Órgão / Secretaria solicitada
-                    </label>
-                    <select id="esic-orgao" name="orgao" class="esic-form-select">
-                      <option value="">Selecione (opcional)</option>
-                      <option value="gabinete">Gabinete do Prefeito</option>
-                      <option value="administracao">Secretaria de Administração</option>
-                      <option value="financas">Secretaria de Finanças</option>
-                      <option value="educacao">Secretaria de Educação</option>
-                      <option value="saude">Secretaria de Saúde</option>
-                      <option value="obras">Secretaria de Obras e Infraestrutura</option>
-                      <option value="assistencia">Secretaria de Assistência Social</option>
-                      <option value="meio-ambiente">Secretaria de Meio Ambiente</option>
-                      <option value="outro">Outro / Não sei</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="esic-form-group">
-                  <label class="esic-form-label" for="esic-pedido-texto">
-                    Descrição do pedido <abbr title="obrigatório">*</abbr>
-                  </label>
-                  <textarea id="esic-pedido-texto" name="pedido"
-                            class="esic-form-textarea" required
-                            rows="6"
-                            placeholder="Descreva com detalhes a informação que você solicita. Seja específico sobre o período, documentos ou dados desejados."></textarea>
-                  <span class="esic-form-hint">
-                    <i class="fas fa-info-circle" aria-hidden="true"></i>
-                    Não é necessário justificar o motivo do pedido. Seja claro e objetivo.
-                  </span>
-                </div>
-
-                <div class="esic-form-group">
-                  <label class="esic-form-label" for="esic-formato-resposta">
-                    Formato preferido de resposta
-                  </label>
-                  <select id="esic-formato-resposta" name="formato" class="esic-form-select">
-                    <option value="email">E-mail</option>
-                    <option value="pdf">Documento PDF</option>
-                    <option value="presencial">Consulta presencial</option>
-                  </select>
-                </div>
-
-                <div class="esic-form-check-group">
-                  <label class="esic-form-check">
-                    <input type="checkbox" id="esic-lgpd-aceite" name="lgpd" required>
-                    <span>
-                      Declaro que li e concordo com o tratamento dos meus dados pessoais conforme a
-                      <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong> e
-                      a política de privacidade do portal.
-                    </span>
-                  </label>
-                </div>
-
-                <div class="esic-form-acoes">
-                  <button type="submit" class="pi-btn-verde" id="esic-submit-btn">
-                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                    Enviar Pedido
-                  </button>
-                  <button type="reset" class="pi-btn-outline" id="esic-reset-btn">
-                    <i class="fas fa-undo" aria-hidden="true"></i>
-                    Limpar
-                  </button>
-                </div>
-
-              </form>
-
-              <div class="esic-form-confirmacao" id="esic-confirmacao" hidden aria-live="polite">
-                <div class="esic-confirmacao-icone" aria-hidden="true">
-                  <i class="fas fa-check-circle"></i>
-                </div>
-                <h3>Pedido registrado com sucesso!</h3>
-                <p>Seu protocolo é: <strong id="esic-protocolo-numero">e-SIC-2026-000000</strong></p>
-                <p>Guarde este número para acompanhar a resposta. Você também receberá uma confirmação por e-mail.</p>
-                <button class="pi-btn-outline" id="esic-novo-pedido-btn">
-                  <i class="fas fa-plus" aria-hidden="true"></i> Registrar novo pedido
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 3b: ACOMPANHAR PEDIDO
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 3: ACOMPANHAR PEDIDO -->
           <section id="esic-acompanhar" aria-labelledby="esic-acomp-titulo" class="pi-mt-secao">
             <h2 id="esic-acomp-titulo" class="pi-secao-titulo">
               <i class="fas fa-search" aria-hidden="true"></i>
@@ -442,9 +229,9 @@
                 andamento do seu pedido.
               </p>
 
-              <form class="esic-form esic-form--compacto" id="esic-consulta-form" novalidate
+              <form class="esic-form" id="esic-consulta-form" novalidate
                     aria-label="Formulário de consulta de pedido">
-                <div class="esic-form-row esic-form-row--inline">
+                <div class="esic-consulta-row">
                   <div class="esic-form-group">
                     <label class="esic-form-label" for="esic-protocolo-input">
                       Número de protocolo <abbr title="obrigatório">*</abbr>
@@ -458,10 +245,12 @@
                       O número de protocolo foi enviado ao seu e-mail no momento do cadastro.
                     </span>
                   </div>
-                  <button type="submit" class="pi-btn-verde esic-form-btn-submit">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                    Consultar
-                  </button>
+                  <div class="esic-consulta-btn-col">
+                    <button type="submit" class="pi-btn-verde esic-consulta-btn">
+                      <i class="fas fa-search" aria-hidden="true"></i>
+                      Consultar
+                    </button>
+                  </div>
                 </div>
               </form>
 
@@ -477,21 +266,14 @@
                     </tr>
                   </thead>
                   <tbody id="esic-resultado-tbody">
-                    <tr>
-                      <td>—</td>
-                      <td>—</td>
-                      <td>—</td>
-                      <td>—</td>
-                    </tr>
+                    <tr><td>—</td><td>—</td><td>—</td><td>—</td></tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 4: COMO FUNCIONA (PASSO A PASSO)
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 4: COMO FUNCIONA -->
           <section id="esic-como-funciona" aria-labelledby="esic-passos-titulo" class="pi-mt-secao">
             <h2 id="esic-passos-titulo" class="pi-secao-titulo">
               <i class="fas fa-route" aria-hidden="true"></i>
@@ -499,15 +281,15 @@
             </h2>
             <hr class="pi-secao-divider">
 
-            <ol class="esic-passos" aria-label="Passo a passo do processo de pedido de acesso à informação">
+            <ol class="esic-passos" aria-label="Passo a passo do processo">
 
               <li class="esic-passo">
                 <div class="esic-passo__numero" aria-hidden="true">1</div>
                 <div class="esic-passo__conteudo">
                   <h3 class="esic-passo__titulo">Registre seu pedido</h3>
                   <p class="esic-passo__texto">
-                    Preencha o formulário nesta página informando nome, e-mail e a descrição detalhada
-                    da informação desejada. Não é necessário justificar o pedido nem apresentar
+                    Preencha o formulário na página de registro informando nome, e-mail e a descrição
+                    detalhada da informação desejada. Não é necessário justificar o pedido nem apresentar
                     documentos de identificação.
                   </p>
                 </div>
@@ -518,7 +300,7 @@
                 <div class="esic-passo__conteudo">
                   <h3 class="esic-passo__titulo">Receba o protocolo</h3>
                   <p class="esic-passo__texto">
-                    Após o envio, você receberá por e-mail um número de protocolo único. Guarde-o para
+                    Após o envio, você receberá por e-mail um número de protocolo único para
                     acompanhar o andamento do seu pedido em qualquer momento.
                   </p>
                 </div>
@@ -529,8 +311,8 @@
                 <div class="esic-passo__conteudo">
                   <h3 class="esic-passo__titulo">Pedido é analisado</h3>
                   <p class="esic-passo__texto">
-                    O órgão responsável recebe e analisa o pedido, verificando a disponibilidade
-                    das informações solicitadas. O prazo de resposta é de até <strong>20 dias úteis</strong>.
+                    O órgão responsável recebe e analisa o pedido. O prazo de resposta é de até
+                    <strong>20 dias úteis</strong>.
                   </p>
                 </div>
               </li>
@@ -540,9 +322,8 @@
                 <div class="esic-passo__conteudo">
                   <h3 class="esic-passo__titulo">Resposta enviada</h3>
                   <p class="esic-passo__texto">
-                    A resposta é enviada ao e-mail cadastrado no prazo legal. Caso a informação
-                    precise de mais tempo para ser reunida, você será notificado da prorrogação
-                    de até 10 dias adicionais.
+                    A resposta é enviada ao e-mail cadastrado no prazo legal. Caso necessário,
+                    você será notificado de eventual prorrogação de até 10 dias adicionais.
                   </p>
                 </div>
               </li>
@@ -553,8 +334,7 @@
                   <h3 class="esic-passo__titulo">Recurso (se necessário)</h3>
                   <p class="esic-passo__texto">
                     Se a resposta for insatisfatória ou o pedido for negado, você pode interpor
-                    recurso à autoridade hierarquicamente superior no prazo de 10 dias corridos
-                    a partir da ciência da decisão.
+                    recurso à autoridade hierarquicamente superior no prazo de 10 dias corridos.
                   </p>
                 </div>
               </li>
@@ -562,9 +342,7 @@
             </ol>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 5: PRAZOS
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 5: PRAZOS -->
           <section id="esic-prazos" aria-labelledby="esic-prazos-titulo" class="pi-mt-secao">
             <h2 id="esic-prazos-titulo" class="pi-secao-titulo">
               <i class="fas fa-clock" aria-hidden="true"></i>
@@ -573,59 +351,34 @@
             <hr class="pi-secao-divider">
 
             <div class="esic-prazos-grid" role="list">
-
               <article class="esic-prazo-card esic-prazo-card--verde" role="listitem">
                 <div class="esic-prazo-card__numero">20</div>
                 <div class="esic-prazo-card__unidade">dias úteis</div>
                 <h3 class="esic-prazo-card__titulo">Prazo de Resposta</h3>
-                <p class="esic-prazo-card__texto">
-                  Prazo máximo para resposta ao pedido de acesso à informação.
-                </p>
-                <p class="esic-prazo-card__base-legal">
-                  <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                  Art. 11 da LAI (Lei nº 12.527/2011)
-                </p>
+                <p class="esic-prazo-card__texto">Prazo máximo para resposta ao pedido de acesso à informação.</p>
+                <p class="esic-prazo-card__base-legal"><i class="fas fa-balance-scale" aria-hidden="true"></i> Art. 11 da LAI (Lei nº 12.527/2011)</p>
               </article>
-
               <article class="esic-prazo-card esic-prazo-card--amarelo" role="listitem">
                 <div class="esic-prazo-card__numero">10</div>
                 <div class="esic-prazo-card__unidade">dias úteis</div>
                 <h3 class="esic-prazo-card__titulo">Prorrogação</h3>
-                <p class="esic-prazo-card__texto">
-                  Extensão permitida, mediante justificativa comunicada ao solicitante.
-                </p>
-                <p class="esic-prazo-card__base-legal">
-                  <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                  Art. 11, §2º da LAI
-                </p>
+                <p class="esic-prazo-card__texto">Extensão permitida, mediante justificativa comunicada ao solicitante.</p>
+                <p class="esic-prazo-card__base-legal"><i class="fas fa-balance-scale" aria-hidden="true"></i> Art. 11, §2º da LAI</p>
               </article>
-
               <article class="esic-prazo-card esic-prazo-card--azul" role="listitem">
                 <div class="esic-prazo-card__numero">10</div>
                 <div class="esic-prazo-card__unidade">dias corridos</div>
                 <h3 class="esic-prazo-card__titulo">Prazo de Recurso</h3>
-                <p class="esic-prazo-card__texto">
-                  Prazo para o solicitante interpor recurso após receber a resposta.
-                </p>
-                <p class="esic-prazo-card__base-legal">
-                  <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                  Art. 15 da LAI
-                </p>
+                <p class="esic-prazo-card__texto">Prazo para o solicitante interpor recurso após receber a resposta.</p>
+                <p class="esic-prazo-card__base-legal"><i class="fas fa-balance-scale" aria-hidden="true"></i> Art. 15 da LAI</p>
               </article>
-
               <article class="esic-prazo-card esic-prazo-card--vermelho" role="listitem">
                 <div class="esic-prazo-card__numero">5</div>
                 <div class="esic-prazo-card__unidade">dias úteis</div>
                 <h3 class="esic-prazo-card__titulo">Resp. ao Recurso</h3>
-                <p class="esic-prazo-card__texto">
-                  Prazo para a autoridade superior responder ao recurso interposto.
-                </p>
-                <p class="esic-prazo-card__base-legal">
-                  <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                  Art. 15, §2º da LAI
-                </p>
+                <p class="esic-prazo-card__texto">Prazo para a autoridade superior responder ao recurso interposto.</p>
+                <p class="esic-prazo-card__base-legal"><i class="fas fa-balance-scale" aria-hidden="true"></i> Art. 15, §2º da LAI</p>
               </article>
-
             </div>
 
             <div class="esic-alerta esic-alerta--destaque">
@@ -638,9 +391,7 @@
             </div>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 6: RECURSOS E INSTÂNCIAS
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 6: RECURSOS E INSTÂNCIAS -->
           <section id="esic-recursos" aria-labelledby="esic-recursos-titulo" class="pi-mt-secao">
             <h2 id="esic-recursos-titulo" class="pi-secao-titulo">
               <i class="fas fa-gavel" aria-hidden="true"></i>
@@ -649,74 +400,46 @@
             <hr class="pi-secao-divider">
 
             <p class="pi-intro-texto">
-              Caso a resposta seja insatisfatória ou o acesso à informação seja negado sem justificativa
-              adequada, o solicitante pode interpor recurso sucessivamente às seguintes instâncias:
+              Caso a resposta seja insatisfatória ou o acesso seja negado sem justificativa adequada,
+              o solicitante pode interpor recurso sucessivamente às seguintes instâncias:
             </p>
 
             <div class="esic-instancias" role="list">
-
               <article class="esic-instancia" role="listitem">
                 <div class="esic-instancia__numero" aria-label="1ª Instância">1ª</div>
                 <div class="esic-instancia__conteudo">
                   <h3 class="esic-instancia__titulo">Autoridade Hierarquicamente Superior</h3>
-                  <p class="esic-instancia__texto">
-                    Secretário ou dirigente responsável pelo órgão que proferiu a resposta original.
-                    Prazo de 10 dias corridos após a ciência da negativa.
-                  </p>
+                  <p class="esic-instancia__texto">Secretário ou dirigente responsável pelo órgão que proferiu a resposta original. Prazo de 10 dias corridos após a ciência da negativa.</p>
                 </div>
               </article>
-
-              <div class="esic-instancia__conector" aria-hidden="true">
-                <i class="fas fa-chevron-down"></i>
-              </div>
-
+              <div class="esic-instancia__conector" aria-hidden="true"><i class="fas fa-chevron-down"></i></div>
               <article class="esic-instancia" role="listitem">
                 <div class="esic-instancia__numero" aria-label="2ª Instância">2ª</div>
                 <div class="esic-instancia__conteudo">
                   <h3 class="esic-instancia__titulo">Controladoria Municipal</h3>
-                  <p class="esic-instancia__texto">
-                    Órgão de controle interno responsável por fiscalizar o cumprimento da LAI.
-                    Analisa os recursos não solucionados nas instâncias anteriores.
-                  </p>
+                  <p class="esic-instancia__texto">Órgão de controle interno responsável por fiscalizar o cumprimento da LAI. Analisa os recursos não solucionados nas instâncias anteriores.</p>
                 </div>
               </article>
-
-              <div class="esic-instancia__conector" aria-hidden="true">
-                <i class="fas fa-chevron-down"></i>
-              </div>
-
+              <div class="esic-instancia__conector" aria-hidden="true"><i class="fas fa-chevron-down"></i></div>
               <article class="esic-instancia" role="listitem">
                 <div class="esic-instancia__numero" aria-label="3ª Instância">3ª</div>
                 <div class="esic-instancia__conteudo">
                   <h3 class="esic-instancia__titulo">Câmara Municipal</h3>
-                  <p class="esic-instancia__texto">
-                    Poder Legislativo com competência para fiscalizar o Executivo Municipal.
-                    Pode ser acionado em caso de descumprimento reiterado da LAI.
-                  </p>
+                  <p class="esic-instancia__texto">Poder Legislativo com competência para fiscalizar o Executivo Municipal. Pode ser acionado em caso de descumprimento reiterado da LAI.</p>
                 </div>
               </article>
-
-              <div class="esic-instancia__conector" aria-hidden="true">
-                <i class="fas fa-chevron-down"></i>
-              </div>
-
+              <div class="esic-instancia__conector" aria-hidden="true"><i class="fas fa-chevron-down"></i></div>
               <article class="esic-instancia" role="listitem">
                 <div class="esic-instancia__numero esic-instancia__numero--especial" aria-label="Instância Especial">CGU</div>
                 <div class="esic-instancia__conteudo">
                   <h3 class="esic-instancia__titulo">CGU — Controladoria-Geral da União</h3>
-                  <p class="esic-instancia__texto">
-                    Para recursos contra órgãos federais ou quando o município desrespeita sistematicamente
-                    a LAI. Atua também como instância recursal de última instância no âmbito federal.
-                  </p>
+                  <p class="esic-instancia__texto">Para recursos contra órgãos federais ou quando o município desrespeita sistematicamente a LAI.</p>
                 </div>
               </article>
-
             </div>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 7: LEGISLAÇÃO
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 7: LEGISLAÇÃO -->
           <section id="esic-legislacao" aria-labelledby="esic-leg-titulo" class="pi-mt-secao">
             <h2 id="esic-leg-titulo" class="pi-secao-titulo">
               <i class="fas fa-balance-scale" aria-hidden="true"></i>
@@ -725,98 +448,42 @@
             <hr class="pi-secao-divider">
 
             <ul class="esic-legislacao-lista" aria-label="Legislação aplicável ao e-SIC">
-
               <li class="esic-lei-item">
-                <div class="esic-lei-item__icone" aria-hidden="true">
-                  <i class="fas fa-file-alt"></i>
-                </div>
+                <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
                 <div>
                   <h3 class="esic-lei-item__titulo">Lei Federal nº 12.527/2011 — Lei de Acesso à Informação (LAI)</h3>
-                  <p class="esic-lei-item__texto">
-                    Principal norma que regula o acesso a informações previsto na Constituição Federal.
-                    Estabelece os procedimentos para solicitação, prazos de resposta e hipóteses de
-                    sigilo. Aplica-se a todos os órgãos e entidades dos Poderes Executivo, Legislativo
-                    e Judiciário da União, Estados, Distrito Federal e Municípios.
-                  </p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
-                     class="esic-lei-item__link"
-                     target="_blank" rel="noopener noreferrer"
-                     aria-label="Ler a Lei nº 12.527/2011 no site do Planalto (abre em nova aba)">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                    Ler a lei completa
-                  </a>
+                  <p class="esic-lei-item__texto">Principal norma que regula o acesso a informações previsto na Constituição Federal. Estabelece os procedimentos para solicitação, prazos de resposta e hipóteses de sigilo.</p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm" class="esic-lei-item__link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Ler a lei completa</a>
                 </div>
               </li>
-
               <li class="esic-lei-item">
-                <div class="esic-lei-item__icone" aria-hidden="true">
-                  <i class="fas fa-file-alt"></i>
-                </div>
+                <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
                 <div>
                   <h3 class="esic-lei-item__titulo">Decreto Federal nº 7.724/2012</h3>
-                  <p class="esic-lei-item__texto">
-                    Regulamenta a LAI no âmbito do Poder Executivo Federal, detalhando os procedimentos
-                    para classificação e desclassificação de informações sigilosas, tratamento de
-                    informações pessoais e funcionamento dos Serviços de Informação ao Cidadão.
-                  </p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm"
-                     class="esic-lei-item__link"
-                     target="_blank" rel="noopener noreferrer"
-                     aria-label="Ler o Decreto nº 7.724/2012 no site do Planalto (abre em nova aba)">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                    Ler o decreto completo
-                  </a>
+                  <p class="esic-lei-item__texto">Regulamenta a LAI no âmbito do Poder Executivo Federal, detalhando os procedimentos para classificação de informações sigilosas e funcionamento dos SICs.</p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7724.htm" class="esic-lei-item__link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Ler o decreto completo</a>
                 </div>
               </li>
-
               <li class="esic-lei-item">
-                <div class="esic-lei-item__icone" aria-hidden="true">
-                  <i class="fas fa-file-alt"></i>
-                </div>
+                <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-file-alt"></i></div>
                 <div>
                   <h3 class="esic-lei-item__titulo">Lei Federal nº 13.709/2018 — LGPD</h3>
-                  <p class="esic-lei-item__texto">
-                    Lei Geral de Proteção de Dados Pessoais. Regula o tratamento de dados informados
-                    nos pedidos de acesso à informação, assegurando a privacidade dos solicitantes
-                    e o uso adequado das informações coletadas.
-                  </p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
-                     class="esic-lei-item__link"
-                     target="_blank" rel="noopener noreferrer"
-                     aria-label="Ler a Lei nº 13.709/2018 no site do Planalto (abre em nova aba)">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                    Ler a lei completa
-                  </a>
+                  <p class="esic-lei-item__texto">Lei Geral de Proteção de Dados Pessoais. Regula o tratamento de dados informados nos pedidos, assegurando a privacidade dos solicitantes.</p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" class="esic-lei-item__link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Ler a lei completa</a>
                 </div>
               </li>
-
               <li class="esic-lei-item">
-                <div class="esic-lei-item__icone" aria-hidden="true">
-                  <i class="fas fa-landmark"></i>
-                </div>
+                <div class="esic-lei-item__icone" aria-hidden="true"><i class="fas fa-landmark"></i></div>
                 <div>
                   <h3 class="esic-lei-item__titulo">Constituição Federal — Art. 5º, XXXIII</h3>
-                  <p class="esic-lei-item__texto">
-                    Fundamento constitucional do direito de acesso à informação: "todos têm direito a
-                    receber dos órgãos públicos informações de seu interesse particular, ou de interesse
-                    coletivo ou geral".
-                  </p>
-                  <a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
-                     class="esic-lei-item__link"
-                     target="_blank" rel="noopener noreferrer"
-                     aria-label="Ler a Constituição Federal no site do Planalto (abre em nova aba)">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                    Ler a Constituição
-                  </a>
+                  <p class="esic-lei-item__texto">Fundamento constitucional do direito de acesso à informação pública, garantindo a todos o direito a receber informações de interesse particular ou coletivo.</p>
+                  <a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" class="esic-lei-item__link" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Ler a Constituição</a>
                 </div>
               </li>
-
             </ul>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 8: ESTATÍSTICAS
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 8: ESTATÍSTICAS -->
           <section id="esic-estatisticas" aria-labelledby="esic-stats-titulo" class="pi-mt-secao">
             <h2 id="esic-stats-titulo" class="pi-secao-titulo">
               <i class="fas fa-chart-bar" aria-hidden="true"></i>
@@ -826,8 +493,7 @@
 
             <div class="esic-estatisticas-filtro" role="search" aria-label="Filtrar estatísticas por ano">
               <label class="esic-filtro-label" for="esic-filtro-ano">
-                <i class="fas fa-filter" aria-hidden="true"></i>
-                Filtrar por ano:
+                <i class="fas fa-filter" aria-hidden="true"></i> Filtrar por ano:
               </label>
               <div class="esic-filtro-controles">
                 <select id="esic-filtro-ano" class="esic-filtro-select" aria-label="Selecione o ano">
@@ -838,62 +504,42 @@
                   <option value="2023">2023</option>
                 </select>
                 <button class="pi-btn-verde pi-btn-verde--sm" id="esic-btn-filtrar">
-                  <i class="fas fa-search" aria-hidden="true"></i>
-                  Filtrar
+                  <i class="fas fa-search" aria-hidden="true"></i> Filtrar
                 </button>
               </div>
             </div>
 
             <div class="esic-stats-grid" role="list">
-
               <article class="esic-stat-card esic-stat-card--verde" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true">
-                  <i class="fas fa-inbox"></i>
-                </div>
-                <div class="esic-stat-card__numero" id="stat-pedidos" aria-label="Total de pedidos recebidos">0</div>
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-inbox"></i></div>
+                <div class="esic-stat-card__numero" id="stat-pedidos">0</div>
                 <div class="esic-stat-card__label">Pedidos Recebidos</div>
               </article>
-
               <article class="esic-stat-card esic-stat-card--verde" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true">
-                  <i class="fas fa-check-circle"></i>
-                </div>
-                <div class="esic-stat-card__numero" id="stat-atendidos" aria-label="Total de pedidos atendidos">0</div>
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                <div class="esic-stat-card__numero" id="stat-atendidos">0</div>
                 <div class="esic-stat-card__label">Atendidos</div>
               </article>
-
               <article class="esic-stat-card esic-stat-card--amarelo" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true">
-                  <i class="fas fa-hourglass-half"></i>
-                </div>
-                <div class="esic-stat-card__numero" id="stat-pendentes" aria-label="Total de pedidos pendentes">0</div>
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
+                <div class="esic-stat-card__numero" id="stat-pendentes">0</div>
                 <div class="esic-stat-card__label">Em Andamento</div>
               </article>
-
               <article class="esic-stat-card esic-stat-card--vermelho" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true">
-                  <i class="fas fa-times-circle"></i>
-                </div>
-                <div class="esic-stat-card__numero" id="stat-indeferidos" aria-label="Total de pedidos indeferidos">0</div>
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-times-circle"></i></div>
+                <div class="esic-stat-card__numero" id="stat-indeferidos">0</div>
                 <div class="esic-stat-card__label">Indeferidos</div>
               </article>
-
               <article class="esic-stat-card esic-stat-card--cinza" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true">
-                  <i class="fas fa-ban"></i>
-                </div>
-                <div class="esic-stat-card__numero" id="stat-cancelados" aria-label="Total de pedidos cancelados">0</div>
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-ban"></i></div>
+                <div class="esic-stat-card__numero" id="stat-cancelados">0</div>
                 <div class="esic-stat-card__label">Cancelados</div>
               </article>
-
               <article class="esic-stat-card esic-stat-card--azul" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true">
-                  <i class="fas fa-stopwatch"></i>
-                </div>
-                <div class="esic-stat-card__numero" id="stat-media" aria-label="Prazo médio de resposta em horas">0</div>
+                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-stopwatch"></i></div>
+                <div class="esic-stat-card__numero" id="stat-media">0</div>
                 <div class="esic-stat-card__label">Prazo Médio (horas)</div>
               </article>
-
             </div>
 
             <p class="esic-estatisticas-nota" id="esic-stats-nota" aria-live="polite">
@@ -902,160 +548,7 @@
             </p>
           </section>
 
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 9: FAQ
-          ═══════════════════════════════════════════════════ -->
-          <section id="esic-faq" aria-labelledby="esic-faq-titulo" class="pi-mt-secao">
-            <h2 id="esic-faq-titulo" class="pi-secao-titulo">
-              <i class="fas fa-question-circle" aria-hidden="true"></i>
-              Perguntas Frequentes
-            </h2>
-            <hr class="pi-secao-divider">
-
-            <div class="esic-faq-busca" role="search">
-              <div class="esic-faq-busca__wrapper">
-                <i class="fas fa-search esic-faq-busca__icone" aria-hidden="true"></i>
-                <input type="search"
-                       id="esic-faq-input"
-                       class="esic-faq-busca__campo"
-                       placeholder="Pesquisar nas perguntas frequentes…"
-                       aria-label="Pesquisar nas perguntas frequentes"
-                       autocomplete="off">
-              </div>
-            </div>
-
-            <p class="esic-faq-sem-resultado" id="esic-faq-sem-resultado" hidden aria-live="polite">
-              Nenhum resultado encontrado para
-              "<strong id="esic-faq-busca-termo"></strong>".
-              Tente outros termos.
-            </p>
-
-            <div class="esic-faq-lista">
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Qualquer pessoa pode fazer um pedido?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    Sim. Qualquer pessoa física ou jurídica, brasileira ou estrangeira, pode solicitar
-                    informações ao poder público sem necessidade de justificar o motivo do pedido.
-                    O acesso à informação é um direito fundamental garantido pelo Art. 5º, XXXIII
-                    da Constituição Federal e regulamentado pela Lei nº 12.527/2011.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Preciso me identificar para fazer um pedido?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    Sim, mas apenas para que possamos enviar a resposta ao seu e-mail. Nome e e-mail
-                    são solicitados para fins de comunicação. Não é necessário informar CPF, RG ou
-                    qualquer outro documento de identificação, nem justificar o motivo do pedido.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Qual é o prazo para receber a resposta?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    O prazo legal é de até <strong>20 dias úteis</strong> a partir do registro do pedido.
-                    Esse prazo pode ser prorrogado por mais <strong>10 dias úteis</strong> mediante
-                    comunicação justificada ao solicitante antes do vencimento original.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>O que faço se a resposta for negada ou incompleta?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    Você pode interpor recurso no prazo de <strong>10 dias corridos</strong> após receber
-                    a resposta. O recurso deve ser dirigido à autoridade hierarquicamente superior ao
-                    servidor que proferiu a decisão. Caso o recurso também seja negado, é possível
-                    recorrer à Controladoria Municipal.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Que tipo de informação posso solicitar?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    Você pode solicitar qualquer informação produzida, detida ou custodiada pela
-                    Prefeitura, como: contratos, licitações, despesas públicas, dados de servidores,
-                    projetos de obras, atos administrativos, relatórios e muito mais. São exceções
-                    as informações classificadas como sigilosas, dados pessoais de terceiros e
-                    informações que possam colocar em risco a segurança da sociedade ou do Estado.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Como acompanho meu pedido?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    Após o registro, você recebe um número de protocolo por e-mail. Use esse número
-                    na seção "Acompanhar Pedido" desta mesma página para consultar o andamento em
-                    tempo real. Você também será notificado por e-mail a cada atualização.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Existe algum custo para fazer um pedido?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    O serviço é <strong>gratuito</strong>. Pode ser cobrado apenas o custo de
-                    reprodução de documentos físicos (cópias), quando necessário e previamente
-                    informado ao solicitante. Documentos em formato digital são sempre fornecidos
-                    sem custo.
-                  </p>
-                </div>
-              </details>
-
-              <details class="esic-faq-item" data-faq>
-                <summary class="esic-faq-item__pergunta">
-                  <span>Meus dados pessoais estão protegidos?</span>
-                  <i class="fas fa-chevron-down esic-faq-item__icone" aria-hidden="true"></i>
-                </summary>
-                <div class="esic-faq-item__resposta">
-                  <p>
-                    Sim. Os dados fornecidos são tratados em conformidade com a
-                    <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>
-                    e utilizados exclusivamente para fins de tramitação e resposta ao pedido.
-                    Consulte nossa Política de Privacidade para mais informações.
-                  </p>
-                </div>
-              </details>
-
-            </div>
-          </section>
-
-          <!-- ═══════════════════════════════════════════════════
-               SEÇÃO 10: CONTATO
-          ═══════════════════════════════════════════════════ -->
+          <!-- SEÇÃO 9: CONTATO -->
           <section id="esic-contato" aria-labelledby="esic-contato-titulo" class="pi-mt-secao">
             <div class="pi-compromisso-bloco">
               <h2 id="esic-contato-titulo">
@@ -1063,8 +556,8 @@
                 Contato e Atendimento Presencial
               </h2>
               <p>
-                Além do atendimento eletrônico pelo formulário desta página, o e-SIC também pode ser
-                acessado presencialmente, por telefone ou por e-mail nos canais abaixo.
+                Além do atendimento eletrônico, o e-SIC também pode ser acessado presencialmente,
+                por telefone ou por e-mail nos canais abaixo.
               </p>
               <div class="pi-selos-grid">
                 <address class="pi-selo esic-contato-endereco">
@@ -1092,7 +585,7 @@
                   <i class="fas fa-envelope" aria-hidden="true"></i>
                   <div>
                     <strong>E-mail</strong><br>
-                    <span class="pi-selo-sub">esic@campinagrandedosul.pr.gov.br</span>
+                    <span class="pi-selo-sub"><a href="mailto:esic@campinagrandedosul.pr.gov.br">esic@campinagrandedosul.pr.gov.br</a></span>
                   </div>
                 </div>
               </div>
@@ -1100,15 +593,14 @@
           </section>
 
         </article>
-        <!-- ── /COLUNA PRINCIPAL ─────────────────────────────────── -->
+        <!-- /COLUNA PRINCIPAL -->
 
-        <!-- ── SIDEBAR ──────────────────────────────────────────── -->
+        <!-- SIDEBAR -->
         <aside class="pi-sidebar" aria-label="Navegação lateral e ferramentas">
 
-          <!-- Ações rápidas -->
           <div class="pi-sidebar-card pi-sidebar-contato">
             <h4><i class="fas fa-bolt" aria-hidden="true"></i> Ações Rápidas</h4>
-            <a href="#esic-formulario" class="pi-btn-verde pi-btn-full">
+            <a href="registrar-pedido.html" class="pi-btn-verde pi-btn-full">
               <i class="fas fa-plus-circle" aria-hidden="true"></i> Registrar Pedido
             </a>
             <a href="#esic-acompanhar" class="pi-btn-outline pi-btn-full esic-sidebar-btn-mt">
@@ -1116,13 +608,18 @@
             </a>
           </div>
 
-          <!-- Navegação interna -->
           <div class="pi-sidebar-card">
             <h4><i class="fas fa-list" aria-hidden="true"></i> Nesta Página</h4>
             <ul class="pi-sidebar-links" aria-label="Seções desta página">
               <li class="ativo">
                 <a href="#esic-apresentacao" aria-current="page">
                   <span><i class="fas fa-info-circle pi-sidebar-ico pi-sidebar-ico-ativo" aria-hidden="true"></i>Sobre o e-SIC</span>
+                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#esic-acompanhar">
+                  <span><i class="fas fa-search pi-sidebar-ico" aria-hidden="true"></i>Acompanhar Pedido</span>
                   <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </a>
               </li>
@@ -1157,15 +654,14 @@
                 </a>
               </li>
               <li>
-                <a href="#esic-faq">
-                  <span><i class="fas fa-question-circle pi-sidebar-ico" aria-hidden="true"></i>FAQ</span>
+                <a href="../../faq/index.html">
+                  <span><i class="fas fa-question-circle pi-sidebar-ico" aria-hidden="true"></i>Perguntas Frequentes</span>
                   <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </a>
               </li>
             </ul>
           </div>
 
-          <!-- Páginas relacionadas -->
           <div class="pi-sidebar-card">
             <h4><i class="fas fa-sitemap" aria-hidden="true"></i> Transparência</h4>
             <ul class="pi-sidebar-links" aria-label="Páginas de transparência relacionadas">
@@ -1196,7 +692,6 @@
             </ul>
           </div>
 
-          <!-- Contato rápido -->
           <div class="pi-sidebar-card pi-sidebar-contato">
             <h4><i class="fas fa-phone-alt" aria-hidden="true"></i> Contato</h4>
             <p><i class="fas fa-clock" aria-hidden="true"></i> Seg. a Sex. — 8h30 às 12h e 13h30 às 17h30</p>
@@ -1207,37 +702,27 @@
           </div>
 
         </aside>
-        <!-- ── /SIDEBAR ──────────────────────────────────────────── -->
+        <!-- /SIDEBAR -->
 
       </div>
     </div>
   </main>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       RODAPÉ
-  ════════════════════════════════════════════════════════════════ -->
   <meu-footer></meu-footer>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       VLIBRAS
-  ════════════════════════════════════════════════════════════════ -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
+    <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       SCRIPTS
-  ════════════════════════════════════════════════════════════════ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script src="../../components/acessibilidade-component.js"></script>
-  <script src="../../components/searh-component.js"></script>
-  <script src="../../components/header-component.js"></script>
-  <script src="../../components/footer-component.js"></script>
+    <script src="../../components/searh-component.js"></script>
+    <script src="../../components/header-component.js"></script>
+    <script src="../../components/footer-component.js"></script>
+    <script src="../../components/acessibilidade-component.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
   <script src="../../assets/js/e-sic.js"></script>
 
 </body>

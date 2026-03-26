@@ -17,9 +17,204 @@
 
 <body>
 
-  <barra-acessibilidade> </barra-acessibilidade>
-  <meu-search></meu-search>
-  <meu-header></meu-header>
+  <!-- ═══════════════════════════════════════════════════════
+       BARRA DE ACESSIBILIDADE
+  ════════════════════════════════════════════════════════ -->
+  <div id="barra-topo" role="banner" lang="pt-BR">
+    <div class="container">
+      <div class="barra-inner">
+
+        <div class="barra-acesso" aria-label="Controles de acessibilidade">
+          <span aria-hidden="true">Acessibilidade</span>
+          <a href="#" id="pi-btn-fonte-aumentar" role="button" aria-label="Aumentar fonte">A+</a>
+          <a href="#" id="pi-btn-fonte-diminuir" role="button" aria-label="Diminuir fonte">A-</a>
+          <a href="#" id="pi-btn-fonte-resetar"  role="button" aria-label="Restaurar fonte">A</a>
+          <a href="#" id="pi-btn-contraste" class="barra-acesso-contraste"
+             role="button" aria-label="Ativar alto contraste" aria-pressed="false" title="Alto contraste">
+            <i class="fas fa-adjust" aria-hidden="true"></i>
+          </a>
+          <a href="#" id="pi-btn-tts"
+             role="button"
+             aria-label="Converter o texto em áudio"
+             aria-pressed="false"
+             title="Converter o texto em áudio"
+             class="barra-acesso-tts">
+            <i class="fas fa-headphones" aria-hidden="true"></i>
+          </a>
+          <a href="/pages/acessibilidade/" class="barra-acesso-icone" title="Página de Acessibilidade">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="barra-sep" aria-hidden="true"></div>
+
+        <nav class="barra-badges" aria-label="Acesso rápido">
+          <a href="/pages/mapa-site/"
+             aria-label="Mapa do site"
+             class="barra-acesso-icone" style="width:auto; padding:0 10px; font-size:10px; font-weight:700;">
+            <i class="fas fa-sitemap" aria-hidden="true"></i>&nbsp; MAPA DO SITE
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao"
+             aria-label="Acesso à informação"
+             class="barra-acesso-icone" style="width:auto; padding:0 10px; font-size:10px; font-weight:700;">
+            <i class="fas fa-info-circle" aria-hidden="true"></i>&nbsp; ACESSO À INFORMAÇÃO
+          </a>
+          <a href="https://campinagrandedosul.pr.gov.br/ouvidoria"
+             aria-label="Ouvidoria"
+             class="barra-acesso-icone" style="width:auto; padding:0 10px; font-size:10px; font-weight:700;">
+            <i class="fas fa-comments" aria-hidden="true"></i>&nbsp; OUVIDORIA
+          </a>
+        </nav>
+
+        <div class="barra-sep" aria-hidden="true"></div>
+
+        <div class="barra-info-bloco" aria-label="Informações de atendimento">
+          <div class="barra-horario">
+            <i class="fas fa-clock"></i>
+            <div class="barra-horario-texto">
+              <span class="barra-horario-dias">Seg – Sex</span>
+              <span class="barra-horario-horas">08h30–12h · 13h30–17h30</span>
+            </div>
+          </div>
+          <div class="barra-sep" aria-hidden="true"></div>
+          <a href="tel:+554131627000" class="barra-telefone">
+            <span>(41) 3162-7000</span> <small>PREFEITURA</small>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER DE BUSCA — Logo + campo de pesquisa
+  ════════════════════════════════════════════════════════ -->
+  <header id="header" style="background: #fff; border-bottom: 1px solid #eee; padding: 15px 0; display: block !important;">
+    <div class="container">
+      <div class="row align-items-center" style="display: flex; flex-wrap: wrap;">
+        <div class="col-md-4">
+          <a href="index.html">
+            <img src="assets/img/pagina-inicial/logo-prefeitura.png" style="max-width: 250px;">
+          </a>
+        </div>
+        <div class="col-md-8">
+          <form action="#" class="input-group">
+            <input type="text" class="form-control" placeholder="O que você procura?">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-success"><i class="fas fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR — Menu principal
+  ════════════════════════════════════════════════════════ -->
+  <nav id="pi-navbar" class="navbar navbar-expand-lg navbar-main" aria-label="Menu principal">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://campinagrandedosul.pr.gov.br/noticias">NOTÍCIAS</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">SERVIÇOS</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-group-title">Tributos</div>
+              <a class="dropdown-item" href="/pages/servico/">Consulta de Débitos</a>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/emissao-da-certidao-de-debitos">Certidão de Débitos</a>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a>
+              <div class="dropdown-group-title">Protocolo</div>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-de-processos">Consulta de Processos</a>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a>
+              <a class="dropdown-item" href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/esic">Acesso à Informação</a>
+              <div class="dropdown-group-title">Diversos</div>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-enderecos">Endereços e Telefones</a>
+              <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/servicos" style="color:var(--verde);font-weight:700;">→ Mais Serviços</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">PREFEITURA</a>
+            <div class="dropdown-menu mega-menu">
+              <div class="mega-col">
+                <div class="dropdown-group-title">Secretarias</div>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/administracao">Administração</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/cultura">Cultura</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-economico">Desenvolvimento Econômico</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-social">Desenvolvimento Social</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/desenvolvimento-sustentavel">Desenvolvimento Sustentável</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/educacao">Educação</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/governo-assuntos-juridicos">Governo e Assuntos Jurídicos</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/infraestrutura">Infraestrutura</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/mulher">Mulher e Igualdade Racial</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/ordem-publica">Ordem Pública e Segurança</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/saude">Saúde</a>
+                <a class="dropdown-item" href="pages/secretarias/">Tecnologia da Informação</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/urbanismo">Urbanismo</a>
+              </div>
+              <div class="mega-col">
+                <div class="dropdown-group-title">Outros Órgãos</div>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/controladoria-geral">Controladoria Geral</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/ouvidoria-geral">Ouvidoria Geral</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/procuradoria-geral">Procuradoria Geral</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/conselhos-municipais">Conselhos Municipais</a>
+                <div class="dropdown-group-title" style="margin-top:14px;">Gestão</div>
+                  <a class="dropdown-item" href="/pages/prefeito/">Prefeito</a>
+                  <a class="dropdown-item" href="/pages/vice-prefeito/">Vice-Prefeito</a>
+                  <a class="dropdown-item" href="/pages/secretarios-municipais/">Secretários Municipais</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">TRANSPARÊNCIA</a>
+            <div class="dropdown-menu mega-menu">
+              <div class="mega-col">
+                <div class="dropdown-group-title">Pessoal</div>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/servidores">Servidores</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/concursos">Concursos</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/diarias">Diárias</a>
+                <div class="dropdown-group-title" style="margin-top:14px;">Financeiro</div>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/contratos">Contratos</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/convenios">Convênios</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/" target="_blank" rel="noopener">PPA / LDO / LOA</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/" target="_blank" rel="noopener">Emendas Parlamentares</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.oxy.elotech.com.br/portaltransparencia/1/obraspublicas" target="_blank" rel="noopener">Obras Públicas</a>
+              </div>
+              <div class="mega-col">
+                <div class="dropdown-group-title">Legislação e Informação</div>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/consulta-legislacao-municipal">Legislação Municipal</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/lista-espera-cmeis">Lista de Espera – CMEIs</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/faq">Perguntas e Respostas</a>
+                <a class="dropdown-item" href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a>
+                <a class="dropdown-item" href="https://radardatransparencia.atricon.org.br/" target="_blank" rel="noopener">Radar da Transparência</a>
+                <a class="dropdown-item" href="/pages/transparencia/" style="color:var(--verde);font-weight:700;">→ Portal da Transparência</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/conheca-campina/">CONHEÇA CAMPINA</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://campinagrandedosul.pr.gov.br/ouvidoria" style="color:#ffe066 !important;font-weight:700;white-space:nowrap;">OUVIDORIA</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
   <!-- ═══════════════════════════════════════════════════════
@@ -606,7 +801,154 @@
   <!-- ═══════════════════════════════════════════════════════
        RODAPÉ — Links institucionais, contato e créditos
   ════════════════════════════════════════════════════════ -->
-  <meu-footer></meu-footer>
+  <footer id="pi-footer">
+    <div class="container">
+      <div class="row">
+
+        <!-- ===== COLUNA 1: LOGO + DESCRIÇÃO + SOBRE CAMPINA ===== -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <a href="index.html" class="logo-wrapper" aria-label="Página inicial">
+              <img class="logo-img"
+                   src="assets/img/pagina-inicial/logo-prefeitura.png"
+                   alt="Prefeitura de Campina Grande do Sul – Paraná"
+                   style="height:50px;">
+            </a>
+          </div>
+
+          <p class="footer-institutional-text" style="font-size:0.75rem;">
+            Município do estado do Paraná, na Região Metropolitana de Curitiba.
+          </p>
+
+          <nav aria-label="Sobre o Município" class="mt-3">
+            <h6>SOBRE CAMPINA</h6>
+            <ul>
+              <li><a href="https://campinagrandedosul.pr.gov.br/historia-do-municipio">História do Município</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/dados-municipais">Dados Municipais</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/mapa-turismo">Mapa do Turismo</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/campina-grande-do-sul">Conheça Campina</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- ===== COLUNA 2: SERVIÇOS + PREFEITURA ===== -->
+        <div class="col-md-3 col-sm-6 mb-4">
+
+          <nav aria-label="Serviços Municipais">
+            <h6>SERVIÇOS</h6>
+            <ul>
+              <li><a href="pages/servico/">Consulta de Débitos</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/emissao-da-nota-fiscal-de-servicos">Nota Fiscal de Serviços</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/licitacoes">Licitações</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/servicos">Todos os Serviços</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Prefeitura" class="mt-3">
+            <h6>PREFEITURA</h6>
+            <ul>
+              <li><a href="pages/prefeito/index.html">Prefeito</a></li>
+              <li><a href="pages/secretarios-municipais/index.html">Secretários</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/ouvidoria">Ouvidoria</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+        <!-- ===== COLUNA 3: TRANSPARÊNCIA + OUTRAS ENTIDADES ===== -->
+        <div class="col-md-3 col-sm-6 mb-4">
+
+          <nav aria-label="Transparência">
+            <h6>TRANSPARÊNCIA</h6>
+            <ul>
+              <li><a href="https://campinagrandedosul.pr.gov.br/transparencia">Portal da Transparência</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/acesso-a-informacao">Acesso à Informação</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/politica-de-privacidade">Política de Privacidade</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/mapa-do-site">Mapa do Site</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Outras Entidades" class="mt-3">
+            <h6>OUTRAS ENTIDADES</h6>
+            <ul>
+              <li><a href="https://campinagrandedosul.pr.gov.br/previcamp" target="_blank" rel="noopener noreferrer">PREVICAMP</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/fascamp" target="_blank" rel="noopener noreferrer">FASCAMP</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/assercamp" target="_blank" rel="noopener noreferrer">ASSERCAMP</a></li>
+              <li><a href="https://campinagrandedosul.pr.gov.br/camara-municipal" target="_blank" rel="noopener noreferrer">Câmara Municipal</a></li>
+            </ul>
+          </nav>
+
+        </div>
+
+        <!-- ===== COLUNA 4: CONTATO + REDES SOCIAIS ===== -->
+        <div class="col-md-3 col-sm-6 mb-4">
+
+          <h6>CONTATO</h6>
+          <address class="footer-contact" aria-label="Informações de contato da Prefeitura" style="font-style:normal;">
+
+            <p>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              Praça Bento Munhoz, 30 – Centro<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Campina Grande do Sul – PR
+            </p>
+
+            <p>
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:+554131627000" style="color:rgba(255,255,255,.6);">(41) 3162-7000</a>
+            </p>
+
+            <p>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:faleconosco@pmcgs.pr.gov.br" style="color:rgba(255,255,255,.6);">faleconosco@pmcgs.pr.gov.br</a>
+            </p>
+
+            <p>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              <strong>Seg. a Sex.</strong> – 8h30–12h / 13h30–17h30
+            </p>
+
+          </address>
+
+          <h6 class="mt-3">REDES SOCIAIS</h6>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;" aria-label="Redes sociais da Prefeitura">
+            <a href="https://www.facebook.com/PrefDeCampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Facebook da Prefeitura"
+               style="color:rgba(255,255,255,.6);font-size:20px;">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/prefdecampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram da Prefeitura"
+               style="color:rgba(255,255,255,.6);font-size:20px;">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/@prefdecampina"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="YouTube da Prefeitura"
+               style="color:rgba(255,255,255,.6);font-size:20px;">
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+            <a href="https://campinagrandedosul.pr.gov.br/whatsapp"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="WhatsApp da Prefeitura"
+               style="color:rgba(255,255,255,.6);font-size:20px;">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===== FOOTER BOTTOM ===== -->
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,.12); margin-top: 28px; padding-top: 16px; font-size: 0.6875rem; color: rgba(255,255,255,.35); text-align: center;">
+        &copy; 2026 Prefeitura Municipal de Campina Grande do Sul – PR &nbsp;|&nbsp;
+        Praça Bento Munhoz da Rocha Neto, 30 – Centro – CEP 83.435-001 &nbsp;|&nbsp;
+        Mantido pela STI – Secretaria de Tecnologia da Informação
+      </div>
+
+    </div>
+  </footer>
 
   <!-- ═══════════════════════════════════════════════════════
        VLIBRAS — Plugin de tradução para Libras (GovBR)
@@ -619,26 +961,13 @@
   </div>
 
   <!-- ═══════════════════════════════════════════════════════
-       SCRIPTS — jQuery, Bootstrap e scripts do portal
+       SCRIPTS — jQuery, Bootstrap, VLibras e scripts do portal
        Carregados ao final do body para melhor performance
   ════════════════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script src="js/index.js"></script>
 
-  <!-- ══ SCRIPTS — jQuery → Bootstrap → VLibras → script.js ══ -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
-<script src="js/index.js"></script>
-
-
-<script src="components/acessibilidade-component.js"></script>
-<script src="components/searh-component.js"></script>
-<script src="components/header-component.js"></script>
-<script src="components/footer-component.js"></script>
-
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
 </body>
-
 </html>
