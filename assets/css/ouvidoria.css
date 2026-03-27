@@ -11,7 +11,7 @@
    ══════════════════════════════════════════════════════════════════════════ */
 :root {
   /* — Ouvidoria — cores principais */
-  --ouv-primario:       #2d7a2d;   
+  --ouv-primario:       #2d7a2d;
   --ouv-primario-claro: #3a9a3a;
   --ouv-primario-bg:    #e8f5e8;
 
@@ -47,6 +47,16 @@
   --ouv-sombra:         0 2px 8px rgba(0, 0, 0, 0.07);
   --ouv-sombra-hover:   0 6px 20px rgba(45, 122, 45, 0.13);
   --ouv-transicao:      0.2s ease;
+
+  /* — Paleta --pi- (migrada de acessibilidade.css, usada pelo hero e breadcrumb) — */
+  --pi-verde:        #2d7a2d;
+  --pi-verde-escuro: #1e5c1e;
+  --pi-verde-medio:  #3a9a3a;
+  --pi-verde-claro:  #e8f5e8;
+  --pi-amarelo:      #f5c518;
+  --pi-cinza-bg:     #eef2ee;
+  --pi-cinza-borda:  #c8d8c8;
+  --pi-texto:        #1a2a1a;
 }
 
 
@@ -109,14 +119,14 @@ address { font-style: normal; }
 /* Layout de 2 colunas: conteúdo + sidebar */
 .pi-layout {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 350px;
   gap: 32px;
   padding: 32px 0 48px;
   align-items: start;
 }
 
 .pi-layout__content { min-width: 0; }
-.pi-layout__sidebar  { display: flex; flex-direction: column; gap: 20px; }
+.pi-layout__sidebar  { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 
 
 /* ── Seções ──────────────────────────────────────────────────────────────── */
@@ -147,8 +157,12 @@ address { font-style: normal; }
   background: var(--ouv-branco);
   border: 1.5px solid var(--ouv-borda);
   border-radius: var(--ouv-radius-lg);
-  padding: 22px;
+  padding: 26px;
   box-shadow: var(--ouv-sombra);
+  min-width: 0;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .pi-sidebar-titulo {
@@ -168,21 +182,25 @@ address { font-style: normal; }
 
 /* ── Botões ──────────────────────────────────────────────────────────────── */
 .pi-btn-verde {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 10px;
   background: var(--ouv-primario);
   color: #fff;
   font-size: 0.875rem;
   font-weight: 700;
-  padding: 12px 18px;
+  padding: 9px 16px;
+  min-height: 44px;
+  border: 1.5px solid transparent;
   border-radius: var(--ouv-radius);
   text-decoration: none;
   width: 100%;
+  box-sizing: border-box;
   transition: background var(--ouv-transicao), box-shadow var(--ouv-transicao),
               transform var(--ouv-transicao);
   box-shadow: 0 2px 8px rgba(45, 122, 45, 0.18);
+  line-height: 1.3;
 }
 
 .pi-btn-verde:hover, .pi-btn-verde:focus {
@@ -194,20 +212,23 @@ address { font-style: normal; }
 }
 
 .pi-btn-outline {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 10px;
   background: transparent;
   color: var(--ouv-primario);
   font-size: 0.875rem;
   font-weight: 600;
-  padding: 10px 18px;
+  padding: 11px 16px;
+  min-height: 44px;
   border: 1.5px solid var(--ouv-primario);
   border-radius: var(--ouv-radius);
   text-decoration: none;
   width: 100%;
+  box-sizing: border-box;
   transition: background var(--ouv-transicao), color var(--ouv-transicao);
+  line-height: 1.3;
 }
 
 .pi-btn-outline:hover, .pi-btn-outline:focus {
@@ -279,11 +300,8 @@ address { font-style: normal; }
 
 
 /* ── Breadcrumb ──────────────────────────────────────────────────────────── */
-.pi-breadcrumb {
-  background: var(--ouv-primario-bg);
-  border-bottom: 1px solid var(--ouv-borda);
-}
 
+/* Variante usada no portal (pi-breadcrumb__lista) */
 .pi-breadcrumb__lista {
   display: flex;
   list-style: none;
@@ -303,6 +321,46 @@ address { font-style: normal; }
 .pi-breadcrumb__lista a { color: var(--ouv-primario); text-decoration: none; }
 .pi-breadcrumb__lista a:hover { text-decoration: underline; }
 .pi-breadcrumb__lista [aria-current="page"] { color: var(--ouv-texto-medio); font-weight: 500; }
+
+/* Variante usada no hero desta página (pi-breadcrumb) — migrada de acessibilidade.css */
+.pi-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.pi-breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pi-breadcrumb li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pi-breadcrumb li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pi-breadcrumb li[aria-current="page"] {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.pi-breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.625rem;
+}
 
 
 /* ── Footer stub ─────────────────────────────────────────────────────────── */
@@ -373,8 +431,58 @@ address { font-style: normal; }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   5. HERO DA PÁGINA
+   5. HERO DA PÁGINA — migrado de acessibilidade.css
    ══════════════════════════════════════════════════════════════════════════ */
+
+/* Hero de página interna (id #pi-hero) */
+#pi-hero {
+  background: var(--pi-verde-escuro);
+  padding: 18px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pi-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pi-hero-titulo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pi-hero-subtitulo {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 5px;
+  font-weight: 300;
+}
+
+.pi-hero-ilustracao {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.pi-hero-ilustracao img {
+  display: block;
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.18;
+}
+
+/* Hero stub alternativo (classe .ouv-hero) */
 .ouv-hero {
   background: linear-gradient(135deg, var(--ouv-primario) 0%, #1e5c1e 100%);
   padding: 36px 0;
@@ -904,8 +1012,27 @@ address { font-style: normal; }
 /* ══════════════════════════════════════════════════════════════════════════
    14. SIDEBAR — BOTÕES E CONTATOS
    ══════════════════════════════════════════════════════════════════════════ */
-.ouv-sidebar-btn { display: flex; width: 100%; }
-.ouv-sidebar-btn-mt { margin-top: 10px; }
+.pi-sidebar-bloco nav[aria-label] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.ouv-sidebar-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ouv-sidebar-btn i {
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+}
+
+.ouv-sidebar-btn-mt { margin-top: 8px; }
 
 .ouv-contato-grupo { margin-bottom: 4px; }
 
@@ -923,30 +1050,77 @@ address { font-style: normal; }
   font-size: 0.8125rem;
   color: var(--ouv-texto-medio);
   margin-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .ouv-contato-grupo__endereco {
   font-size: 0.8125rem;
   color: var(--ouv-texto-leve);
-  line-height: 1.7;
+  line-height: 1.6;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.ouv-contato-grupo__endereco p { margin: 0 0 4px; }
+.ouv-contato-grupo__endereco p {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0 0 5px;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.ouv-contato-grupo__endereco p > i {
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  margin-top: 3px;
+  color: var(--ouv-primario);
+}
+
+.ouv-contato-grupo__endereco p > span,
+.ouv-contato-grupo__endereco p > br {
+  display: block;
+}
 
 .ouv-contato-grupo__endereco a {
   color: var(--ouv-primario);
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.ouv-contato-grupo__endereco a > i {
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  margin-top: 3px;
 }
 
 .ouv-contato-grupo__endereco a:hover { text-decoration: underline; }
 
 .ouv-contato-grupo__horario {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
   margin-top: 6px;
   font-size: 0.8rem;
   color: var(--ouv-texto-leve);
+}
+
+.ouv-contato-grupo__horario > i {
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  margin-top: 3px;
+  color: var(--ouv-primario);
 }
 
 .ouv-contato-grupo__horario span { display: block; }
@@ -969,7 +1143,14 @@ address { font-style: normal; }
   text-decoration: none;
   display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: 7px;
+}
+
+.ouv-sidebar-endereco a > i {
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  margin-top: 3px;
 }
 
 .ouv-sidebar-endereco a:hover { text-decoration: underline; }
@@ -979,12 +1160,18 @@ address { font-style: normal; }
   color: var(--ouv-texto-leve);
   display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: 7px;
   line-height: 1.6;
   margin: 0;
 }
 
-.ouv-sidebar-horario i { color: var(--ouv-primario); flex-shrink: 0; margin-top: 2px; }
+.ouv-sidebar-horario i {
+  color: var(--ouv-primario);
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  margin-top: 3px;
+}
 
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1006,7 +1193,13 @@ address { font-style: normal; }
   .ouv-servicos-grid { grid-template-columns: repeat(2, 1fr); }
   .ouv-cta-bloco     { flex-direction: column; align-items: flex-start; }
 
-  .pi-header__nav { display: none; } /* menu mobile não implementado neste stub */
+  .pi-header__nav { display: none; }
+}
+
+/* Hero responsivo */
+@media (max-width: 575px) {
+  .pi-hero-titulo { font-size: 1.125rem; }
+  .pi-hero-ilustracao img { height: 70px; }
 }
 
 /* Mobile: 768px */
@@ -1038,6 +1231,74 @@ address { font-style: normal; }
 /* ══════════════════════════════════════════════════════════════════════════
    17. ALTO CONTRASTE eMAG
    ══════════════════════════════════════════════════════════════════════════ */
+
+/* Base global — migrada de acessibilidade.css */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast *:not(a):not(button):not(input):not(.vw-plugin-wrapper):not([vw]) {
+  color: #fff !important;
+}
+
+body.high-contrast #pi-hero {
+  background: #000 !important;
+  border-bottom: 2px solid #fff;
+}
+
+body.high-contrast .pi-hero-ilustracao {
+  display: none;
+}
+
+body.high-contrast .pi-hero-titulo,
+body.high-contrast .pi-hero-subtitulo {
+  color: #fff !important;
+}
+
+body.high-contrast .pi-breadcrumb li,
+body.high-contrast .pi-breadcrumb li a {
+  color: #ff0 !important;
+}
+
+/* Botões */
+body.high-contrast .pi-btn-verde {
+  background: #ff0 !important;
+  color: #000 !important;
+  border: 1px solid #fff !important;
+}
+
+body.high-contrast .pi-btn-verde:hover {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+body.high-contrast .pi-btn-outline {
+  background: transparent !important;
+  color: #ff0 !important;
+  border-color: #ff0 !important;
+}
+
+body.high-contrast .pi-btn-outline:hover {
+  background: #ff0 !important;
+  color: #000 !important;
+}
+
+/* Sidebar contato */
+body.high-contrast .pi-sidebar-contato {
+  background: #111 !important;
+  border-color: #fff !important;
+}
+
+body.high-contrast .pi-sidebar-contato p {
+  color: #ddd !important;
+}
+
+body.high-contrast .pi-sidebar-contato p i {
+  color: #ff0 !important;
+}
+
+/* Cards de manifestação */
 body.high-contrast .ouv-cta-bloco           { background: #000 !important; border: 2px solid #fff !important; }
 body.high-contrast .ouv-cta-titulo,
 body.high-contrast .ouv-cta-texto p         { color: #fff !important; }
