@@ -12,6 +12,7 @@ Abaixo estão os links para visualização direta de cada página desenvolvida:
 
 ### 🏛️ Institucional e Governo
 * [Página Inicial](https://arianearchanjo.github.io/pmcgs-new-layout/)
+* [Gestão](https://arianearchanjo.github.io/pmcgs-new-layout/pages/gestao/)
 * [Prefeito](https://arianearchanjo.github.io/pmcgs-new-layout/pages/prefeito/)
 * [Vice-Prefeito](https://arianearchanjo.github.io/pmcgs-new-layout/pages/vice-prefeito/)
 * [Secretarias](https://arianearchanjo.github.io/pmcgs-new-layout/pages/secretarias/)
@@ -24,6 +25,7 @@ Abaixo estão os links para visualização direta de cada página desenvolvida:
 * [Ouvidoria](https://arianearchanjo.github.io/pmcgs-new-layout/pages/ouvidoria/)
 * [Registrar Pedido](https://arianearchanjo.github.io/pmcgs-new-layout/pages/registrar-pedido/)
 * [Acessibilidade](https://arianearchanjo.github.io/pmcgs-new-layout/pages/acessibilidade/)
+* [Política de Privacidade](https://arianearchanjo.github.io/pmcgs-new-layout/pages/politica-privacidade/)
 
 ### 🛠️ Serviços e Informação
 * [Portal de Serviços](https://arianearchanjo.github.io/pmcgs-new-layout/pages/portal-servicos/)
