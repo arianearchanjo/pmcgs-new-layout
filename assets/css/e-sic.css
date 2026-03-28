@@ -917,7 +917,7 @@
 
 .pi-compromisso-bloco .pi-selos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
   align-items: stretch;
 }
@@ -932,16 +932,11 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 992px) {
-  .pi-compromisso-bloco .pi-selos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .pi-compromisso-bloco .pi-selos-grid {
-    grid-template-columns: 1fr;
-  }
+/* Card de E-mail oculto conforme solicitado */
+.pi-compromisso-bloco .pi-selos-grid .pi-selo--email,
+.pi-compromisso-bloco .pi-selos-grid .pi-selo:has(a[href^="mailto"]),
+.pi-compromisso-bloco .pi-selos-grid .pi-selo:has([data-cfemail]) {
+  display: none;
 }
 
 
