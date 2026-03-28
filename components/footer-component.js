@@ -64,7 +64,7 @@
                 <ul>
                   <li><a href="../transparencia/">Portal da Transparência</a></li>
                   <li><a href="../e-sic/">Acesso à Informação</a></li>
-                  <li><a href="https://campinagrandedosul.pr.gov.br/politica-de-privacidade">Política de Privacidade</a></li>
+                  <li><a href="../politica-privacidade/">Política de Privacidade</a></li>
                   <li><a href="../mapa-site">Mapa do Site</a></li>
                 </ul>
               </nav>
