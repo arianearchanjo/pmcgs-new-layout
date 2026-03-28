@@ -111,7 +111,7 @@
                   de justificativa. Você receberá um número de protocolo para acompanhar a resposta.
                 </p>
               </div>
-              <a href="../registrar-pedido/" class="esic-cta-btn">
+              <a href="../e-sic/registrar-pedido.html" class="esic-cta-btn">
                 <i class="fas fa-plus-circle" aria-hidden="true"></i>
                 Registrar Pedido
               </a>
@@ -137,7 +137,7 @@
                   Solicite acesso a documentos, dados ou informações produzidos ou custodiados pela
                   Prefeitura. Sem necessidade de justificativa.
                 </p>
-                <a href="../registrar-pedido/" class="esic-card__link">
+                <a href="../e-sic/registrar-pedido.html" class="esic-card__link">
                   Fazer pedido <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </article>
@@ -179,7 +179,7 @@
                   Veja os dados consolidados de pedidos recebidos, atendidos, indeferidos e os
                   prazos médios de resposta.
                 </p>
-                <a href="#esic-estatisticas" class="esic-card__link">
+                <a href="../e-sic/estatisticas.html" class="esic-card__link">
                   Ver dados <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </article>
@@ -483,7 +483,7 @@
             </ul>
           </section>
 
-          <!-- SEÇÃO 8: ESTATÍSTICAS -->
+          <!-- SEÇÃO 8: LINK PARA ESTATÍSTICAS -->
           <section id="esic-estatisticas" aria-labelledby="esic-stats-titulo" class="pi-mt-secao">
             <h2 id="esic-stats-titulo" class="pi-secao-titulo">
               <i class="fas fa-chart-bar" aria-hidden="true"></i>
@@ -491,61 +491,22 @@
             </h2>
             <hr class="pi-secao-divider">
 
-            <div class="esic-estatisticas-filtro" role="search" aria-label="Filtrar estatísticas por ano">
-              <label class="esic-filtro-label" for="esic-filtro-ano">
-                <i class="fas fa-filter" aria-hidden="true"></i> Filtrar por ano:
-              </label>
-              <div class="esic-filtro-controles">
-                <select id="esic-filtro-ano" class="esic-filtro-select" aria-label="Selecione o ano">
-                  <option value="todos">Todos os anos</option>
-                  <option value="2026">2026</option>
-                  <option value="2025">2025</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
-                </select>
-                <button class="pi-btn-verde pi-btn-verde--sm" id="esic-btn-filtrar">
-                  <i class="fas fa-search" aria-hidden="true"></i> Filtrar
-                </button>
+            <div class="esic-cta-bloco">
+              <div class="esic-cta-texto">
+                <h3 class="esic-cta-titulo">
+                  <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                  Dados consolidados do e-SIC
+                </h3>
+                <p style="color:rgba(255,255,255,0.88);margin:0;font-size:0.9375rem;line-height:1.6;">
+                  Acesse relatórios anuais, gráficos de distribuição por gênero, faixa etária e
+                  escolaridade, além dos totais acumulados desde a implantação do serviço.
+                </p>
               </div>
+              <a href="../e-sic/estatisticas.html" class="esic-cta-btn">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                Ver Estatísticas
+              </a>
             </div>
-
-            <div class="esic-stats-grid" role="list">
-              <article class="esic-stat-card esic-stat-card--verde" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-inbox"></i></div>
-                <div class="esic-stat-card__numero" id="stat-pedidos">0</div>
-                <div class="esic-stat-card__label">Pedidos Recebidos</div>
-              </article>
-              <article class="esic-stat-card esic-stat-card--verde" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
-                <div class="esic-stat-card__numero" id="stat-atendidos">0</div>
-                <div class="esic-stat-card__label">Atendidos</div>
-              </article>
-              <article class="esic-stat-card esic-stat-card--amarelo" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
-                <div class="esic-stat-card__numero" id="stat-pendentes">0</div>
-                <div class="esic-stat-card__label">Em Andamento</div>
-              </article>
-              <article class="esic-stat-card esic-stat-card--vermelho" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-times-circle"></i></div>
-                <div class="esic-stat-card__numero" id="stat-indeferidos">0</div>
-                <div class="esic-stat-card__label">Indeferidos</div>
-              </article>
-              <article class="esic-stat-card esic-stat-card--cinza" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-ban"></i></div>
-                <div class="esic-stat-card__numero" id="stat-cancelados">0</div>
-                <div class="esic-stat-card__label">Cancelados</div>
-              </article>
-              <article class="esic-stat-card esic-stat-card--azul" role="listitem">
-                <div class="esic-stat-card__icone" aria-hidden="true"><i class="fas fa-stopwatch"></i></div>
-                <div class="esic-stat-card__numero" id="stat-media">0</div>
-                <div class="esic-stat-card__label">Prazo Médio (horas)</div>
-              </article>
-            </div>
-
-            <p class="esic-estatisticas-nota" id="esic-stats-nota" aria-live="polite">
-              <i class="fas fa-info-circle" aria-hidden="true"></i>
-              Dados acumulados desde a implantação do e-SIC. Fonte: Sistema interno. Atualizado em março de 2026.
-            </p>
           </section>
 
           <!-- SEÇÃO 9: CONTATO -->
@@ -585,7 +546,7 @@
                   <i class="fas fa-envelope" aria-hidden="true"></i>
                   <div>
                     <strong>E-mail</strong><br>
-                    <span class="pi-selo-sub"><a href="mailto:esic@campinagrandedosul.pr.gov.br">esic@campinagrandedosul.pr.gov.br</a></span>
+                    <span class="pi-selo-sub"><a href="/cdn-cgi/l/email-protection#c2a7b1aba182a1a3afb2abaca3a5b0a3aca6a7a6adb1b7aeecb2b0eca5adb4eca0b0"><span class="__cf_email__" data-cfemail="b2d7c1dbd1f2d1d3dfc2dbdcd3d5c0d3dcd6d7d6ddc1c7de9cc2c09cd5ddc49cd0c0">[email&#160;protected]</span></a></span>
                   </div>
                 </div>
               </div>
@@ -600,7 +561,7 @@
 
           <div class="pi-sidebar-card pi-sidebar-contato">
             <h4><i class="fas fa-bolt" aria-hidden="true"></i> Ações Rápidas</h4>
-            <a href="../registrar-pedido/" class="pi-btn-verde pi-btn-full">
+            <a href="../e-sic/registrar-pedido.html" class="pi-btn-verde pi-btn-full">
               <i class="fas fa-plus-circle" aria-hidden="true"></i> Registrar Pedido
             </a>
             <a href="#esic-acompanhar" class="pi-btn-outline pi-btn-full esic-sidebar-btn-mt">
@@ -648,7 +609,7 @@
                 </a>
               </li>
               <li>
-                <a href="#esic-estatisticas">
+                <a href="../e-sic/estatisticas.html">
                   <span><i class="fas fa-chart-bar pi-sidebar-ico" aria-hidden="true"></i>Estatísticas</span>
                   <i class="fas fa-chevron-right" aria-hidden="true"></i>
                 </a>
@@ -714,6 +675,7 @@
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>
   </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
