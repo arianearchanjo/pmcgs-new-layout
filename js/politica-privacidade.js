@@ -1,33 +1,39 @@
 /**
- * prefeito.js — Prefeitura de Campina Grande do Sul
+ * politica-privacidade.js — Prefeitura de Campina Grande do Sul
  *
  * Funcionalidades:
  *  1. Acessibilidade eMAG — controle de fonte e alto contraste
  *  2. VLibras — widget de Língua Brasileira de Sinais
  *  3. Atalhos de teclado eMAG (Alt+1 / Alt+2 / Alt+3)
+ *
+ * IDs esperados na sidebar desta página (prefixo pp-sb-*):
+ *   pp-sb-fonte-aumentar | pp-sb-fonte-diminuir | pp-sb-fonte-resetar
+ *   pp-sb-btn-contraste
+ *
+ * Obs.: a barra-acessibilidade global já expõe os IDs pi-btn-* via
+ * acessibilidade-component.js; aqui vinculamos apenas os controles
+ * locais da sidebar desta página.
  */
 
 
 /* ══════════════════════════════════════════════════════════════
    1. ACESSIBILIDADE eMAG
-   Gerencia o tamanho da fonte e o modo de alto contraste.
-   Os valores são persistidos no localStorage entre sessões.
 ══════════════════════════════════════════════════════════════ */
 
 (function () {
 
   /* --- Configurações de fonte --- */
-  var FONTE_BASE  = 16; // tamanho padrão em px
-  var FONTE_MIN   = 14; // menor tamanho permitido
-  var FONTE_MAX   = 22; // maior tamanho permitido
-  var FONTE_STEP  = 2;  // incremento/decremento por clique
+  var FONTE_BASE = 16;
+  var FONTE_MIN  = 14;
+  var FONTE_MAX  = 22;
+  var FONTE_STEP = 2;
 
-  /* --- Chaves de armazenamento --- */
+  /* --- Chaves de armazenamento (compartilhadas com todo o portal) --- */
   var FONTE_KEY     = 'pmcgs_fontSize';
   var CONTRASTE_KEY = 'pmcgs_highContrast';
 
 
-  /* ── Funções de fonte ─────────────────────────────────────── */
+  /* ── Fonte ─────────────────────────────────────────────────── */
 
   function aplicarFonte(px) {
     px = Math.min(FONTE_MAX, Math.max(FONTE_MIN, px));
@@ -51,14 +57,14 @@
   })();
 
 
-  /* ── Funções de alto contraste ────────────────────────────── */
+  /* ── Alto contraste ─────────────────────────────────────────── */
 
   function aplicarContraste(ativo) {
     document.body.classList.toggle('high-contrast', ativo);
 
     /* Atualiza aria-pressed nos botões da barra global (pi-btn-*)
-       e da sidebar local desta página (pi-sb-btn-contraste)        */
-    ['pi-btn-contraste', 'pi-sb-btn-contraste'].forEach(function (id) {
+       e da sidebar local desta página (pp-sb-btn-contraste)        */
+    ['pi-btn-contraste', 'pp-sb-btn-contraste'].forEach(function (id) {
       var btn = document.getElementById(id);
       if (btn) btn.setAttribute('aria-pressed', ativo ? 'true' : 'false');
     });
@@ -76,7 +82,7 @@
   })();
 
 
-  /* ── Utilitário: vincular evento de clique a um elemento ──── */
+  /* ── Utilitário bind ────────────────────────────────────────── */
 
   function bind(id, fn) {
     var el = document.getElementById(id);
@@ -88,49 +94,20 @@
   }
 
 
-  /* ── Vincular botões após o DOM estar completamente carregado ── */
+  /* ── Botões da sidebar da política de privacidade (pp-sb-*) ── */
 
-  function vincularBotoes() {
-
-    /* Barra superior (IDs injetados pelo acessibilidade-component) */
-    bind('pi-btn-fonte-aumentar', function () { aplicarFonte(fonteAtual() + FONTE_STEP); });
-    bind('pi-btn-fonte-diminuir', function () { aplicarFonte(fonteAtual() - FONTE_STEP); });
-    bind('pi-btn-fonte-resetar',  function () { aplicarFonte(FONTE_BASE); });
-    bind('pi-btn-contraste', function () {
-      aplicarContraste(!document.body.classList.contains('high-contrast'));
-    });
-
-    /* Sidebar da página do Prefeito */
-    bind('pi-sb-fonte-aumentar', function () { aplicarFonte(fonteAtual() + FONTE_STEP); });
-    bind('pi-sb-fonte-diminuir', function () { aplicarFonte(fonteAtual() - FONTE_STEP); });
-    bind('pi-sb-fonte-resetar',  function () { aplicarFonte(FONTE_BASE); });
-    bind('pi-sb-btn-contraste',  function () {
-      aplicarContraste(!document.body.classList.contains('high-contrast'));
-    });
-  }
-
-  /*
-   * O script é carregado ao final do <body>, portanto o DOM nativo
-   * já está disponível. Porém a <barra-acessibilidade> é um web
-   * component que pode renderizar seus botões de forma assíncrona.
-   * Usamos DOMContentLoaded como fallback seguro para os botões
-   * da sidebar (que são HTML estático), e um pequeno delay para
-   * tentar capturar os botões do componente quando disponíveis.
-   */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', vincularBotoes);
-  } else {
-    vincularBotoes();
-  }
+  bind('pp-sb-fonte-aumentar', function () { aplicarFonte(fonteAtual() + FONTE_STEP); });
+  bind('pp-sb-fonte-diminuir', function () { aplicarFonte(fonteAtual() - FONTE_STEP); });
+  bind('pp-sb-fonte-resetar',  function () { aplicarFonte(FONTE_BASE); });
+  bind('pp-sb-btn-contraste',  function () {
+    aplicarContraste(!document.body.classList.contains('high-contrast'));
+  });
 
 })();
 
 
 /* ══════════════════════════════════════════════════════════════
    2. VLIBRAS
-   Inicializa o widget de tradução para Língua Brasileira de
-   Sinais, fornecido pelo Governo Federal.
-   O script vlibras-plugin.js deve ser carregado antes deste.
 ══════════════════════════════════════════════════════════════ */
 
 if (typeof window.VLibras !== 'undefined') {
@@ -140,20 +117,17 @@ if (typeof window.VLibras !== 'undefined') {
 
 /* ══════════════════════════════════════════════════════════════
    3. ATALHOS DE TECLADO eMAG
-   Padrão de acessibilidade do governo brasileiro (eMAG 3.1):
-
-   Alt+1 → Ir para o conteúdo principal
-   Alt+2 → Ir para o menu de navegação
-   Alt+3 → Ir para o rodapé
+   Alt+1 → conteúdo principal  (#pp-conteudo)
+   Alt+2 → menu de navegação   (#pi-nav-list .nav-link)
+   Alt+3 → rodapé              (#pi-footer)
 ══════════════════════════════════════════════════════════════ */
 
 document.addEventListener('keydown', function (e) {
   if (!e.altKey) return;
 
-  /* Alt+1 — foca e rola até o conteúdo principal */
   if (e.key === '1' || e.keyCode === 49) {
     e.preventDefault();
-    var conteudo = document.getElementById('pi-conteudo');
+    var conteudo = document.getElementById('pp-conteudo');
     if (conteudo) {
       conteudo.setAttribute('tabindex', '-1');
       conteudo.focus();
@@ -161,18 +135,15 @@ document.addEventListener('keydown', function (e) {
     }
   }
 
-  /* Alt+2 — foca o primeiro item do menu de navegação */
   if (e.key === '2' || e.keyCode === 50) {
     e.preventDefault();
     var primeiroLink = document.querySelector('#pi-nav-list .nav-link');
     if (primeiroLink) primeiroLink.focus();
   }
 
-  /* Alt+3 — rola até o rodapé */
   if (e.key === '3' || e.keyCode === 51) {
     e.preventDefault();
     var rodape = document.getElementById('pi-footer');
     if (rodape) rodape.scrollIntoView({ behavior: 'smooth' });
   }
-
 });
