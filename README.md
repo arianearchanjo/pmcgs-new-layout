@@ -22,8 +22,10 @@ Abaixo estão os links para visualização direta de cada página desenvolvida:
 ### 🔍 Transparência e Cidadania
 * [Portal da Transparência](https://arianearchanjo.github.io/pmcgs-new-layout/pages/transparencia/)
 * [e-SIC (Acesso à Informação)](https://arianearchanjo.github.io/pmcgs-new-layout/pages/e-sic/)
+* [Estatisticas do e-SIC (Acesso à Informação)](https://arianearchanjo.github.io/pmcgs-new-layout/pages/e-sic/estatisticas.html)
+* [Registrar Pedido no e-SIC](https://arianearchanjo.github.io/pmcgs-new-layout/pages/e-sic/registrar-pedido.html)
 * [Ouvidoria](https://arianearchanjo.github.io/pmcgs-new-layout/pages/ouvidoria/)
-* [Registrar Pedido](https://arianearchanjo.github.io/pmcgs-new-layout/pages/registrar-pedido/)
+* [Formulário da Ouvidoria](https://arianearchanjo.github.io/pmcgs-new-layout/pages/formularios/)
 * [Acessibilidade](https://arianearchanjo.github.io/pmcgs-new-layout/pages/acessibilidade/)
 * [Política de Privacidade](https://arianearchanjo.github.io/pmcgs-new-layout/pages/politica-privacidade/)
 
@@ -32,12 +34,11 @@ Abaixo estão os links para visualização direta de cada página desenvolvida:
 * [Serviços Individualizados](https://arianearchanjo.github.io/pmcgs-new-layout/pages/servico/)
 * [Unidades de Saúde](https://arianearchanjo.github.io/pmcgs-new-layout/pages/unidade-saude/)
 * [Escolas e CMEIs](https://arianearchanjo.github.io/pmcgs-new-layout/pages/escola-cmeis/)
-* [Perguntas Frequentes](https://arianearchanjo.github.io/pmcgs-new-layout/pages/perguntas-frequentes/)
 
 ### 📋 Apoio e Utilidades
 * [Conheça Campina Grande do Sul](https://arianearchanjo.github.io/pmcgs-new-layout/pages/conheca-campina/)
 * [Glossário](https://arianearchanjo.github.io/pmcgs-new-layout/pages/glossario/)
-* [Formulários](https://arianearchanjo.github.io/pmcgs-new-layout/pages/formularios/)
 * [Mapa do Site](https://arianearchanjo.github.io/pmcgs-new-layout/pages/mapa-site/)
+* [Perguntas Frequentes](https://arianearchanjo.github.io/pmcgs-new-layout/pages/perguntas-frequentes/)
 
 ---
