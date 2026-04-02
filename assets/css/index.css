@@ -44,6 +44,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #fff;
   color: var(--texto);
+  text-align: justify;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1276,6 +1277,7 @@ footer ul li a:hover {
 .footer-contact p {
   font-size: 0.8125rem;
   margin-bottom: 6px;
+  text-align: left;
 }
 
 .footer-contact i {
